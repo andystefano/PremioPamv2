@@ -1,38 +1,469 @@
-.App {
+ 
+
+body {
+  cursor: url('../public/img/cursor.png');
+}
+
+a, button {
+  cursor: url('../public/img/pointer.png'), auto;
+}
+
+header{
+  background-color: #FFF6E6;
+}
+
+#section_1{
+  background-color: #E9D9FC;
+		margin-top: -4px;
+		display: flex;
+		flex-direction: row;
+		width:100%;
+}
+
+#faq{
+  background-color: #E9D9FC;
+}
+
+.presentan{
+  float: left;
+  width: 40%;
+  background-color: #E9D9FC;
+  display: flex;
+  justify-content: center;
+  padding-top: 3.6rem;
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+  .presentan > img {
+    width: 38%;
+    margin-right: 3rem;
+  }
+
+
+
+.icons-header {
+  padding-top: 12%;
+  float: left;
+  width: 10%;
+  background-color: #E9D9FC;
+  text-align: left;
+}
+.icons-header > div {
+  padding: 12px 0px 12px 78px;
+}
+.icons__img{
+  max-height: 27px;
+}
+
+.contenido{
+  padding-top: 56px;
+  float: left;
+  width: 50%;
+  background-color:#E9D9FC;
+  text-align: left;
+}
+
+h1 {
+  color: #F0000C;
+  font-size: 50px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 58px;
+}
+
+h2 {
+  color: #F0030D;
+  margin-bottom: 0px;
+  text-align: left;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.contenido__subtitulo {
+  
+}
+
+.texto__principal {
+  padding: 0px 0px 31px 0px;
+}
+.texto__principal > p {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  color: #F0000C;
+  font-size: 18px;
+}
+
+.texto__premios > p, .texto__premios > h2, .premio__container {
+  
+}
+
+.premio__medium {
+  font-weight:500;
+}
+.premio__semibold {
+  font-weight:600;
+}
+.postular-btns {
+  margin-top: 65px;
+    margin-bottom: 113px;
+}
+.postular-btns > a {
+  text-decoration: none;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: solid 2px #F0000C;
+  cursor:pointer;
+}
+.btn__postula {
+  background-color: #F0000C;
+  color: #E9D9FC;
+  margin-right: 29px;
+  padding: 17px 28px 17px 28px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn__bases {
+  color: #F0000C;
+  background-color: #E9D9FC;
+  padding: 17px 28px 17px 28px;
+}
+.btn__postula:hover {
+  background-color: #D7040E;
+  border-color:#D7040E;
+}
+.btn__bases:hover {
+  background-color: #D7040E;
+  color: #E9D9FC;
+  border-color:#D7040E;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ganadoras__text {
+  display:none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.faq-container {
+  padding: 61px 37px 51px 37px;
+  width:auto;
+}
+
+
+#section_2{
+  background-color: #FFF6E6;
+}
+
+
+
+footer {
+  display: block;
+  unicode-bidi: isolate;
+  background-color: #FFF6E6;
+
+}
+
+ 
+#IMGLogoFooter{
+  max-width: 50%;
+}
+
+#Footer {
+  background-color: #FFF6E6;
+  display: flex;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  padding: 59px 80px 89px 114px;
+  text-align: left;
+  justify-content: space-between;
+}
+
+#Derecha {
+  justify-content: center;
   display: flex;
   flex-direction: column;
+  padding: 281px 72px 16px 220px;
+}
+
+#Derecha > a {
+  text-decoration: none;
+}
+
+.derecha__bold {
+  font-weight: 600;
+  color: #F0000C;
+}
+
+#Derecha > div.icons-footer > a {
+  margin-right: 15px;
+}
+
+h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.derecha__regular {
+  font-weight: 400;
+  color:#F0000C;
+}
+
+
+#IMGGanadoras-mobile{
+display:none;
+}
+
+#LinkVotaMobile, .media-kit-mobile, .izquierda__texts-mobile {
+  display: none;
+}
+
+.icons-footer {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.media-kit {
+  display: flex;
+  align-items: baseline;
+  padding-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#LinkVotaMobile, .media-kit-mobile, .izquierda__texts-mobile {
+  display: none;
 }
+
+
+.text-cream{
+  color:#F0000C;
+}
+
+#HeaderIMG-mobile{
+  display:none;
+}
+
+
+@media (max-width: 768px) {
+	#HeaderIMG, #IMGGanadoras {
+		display:none;
+	}
+	#HeaderIMG-mobile {
+		display: block;
+    	width: 100%;
+	}
+	#IMGGanadoras-mobile {
+		display:flex;
+	}
+
+	.presentan{
+		display: none;
+	}
+
+	.container {
+		padding:0;
+	}
+
+	.contenido{
+		padding-top: 54px;
+		width: 100%;
+		width: 100%;
+	}
+	.contenido > h1 {
+		padding: 18px 26px;
+	}
+	.icons-header {
+		display: none
+	}
+
+	h1 {
+		font-size: 30px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 32px;
+	}
+
+	body > header > div:nth-child(3) > div:nth-child(2) > p {
+		font-size: calc(3.6vw);
+		letter-spacing: calc(0.01vw);
+		line-height: calc(4.3vw);
+		font-family: Helvetica, Sans-Serif;
+		font-weight: bold !important;
+		margin-left: 5%;
+		margin-right: 5%;
+		padding: 0%;
+	}
+
+	.contenido__subtitulo {
+		padding: 0px 0px 0px 26px;
+	}
+
+	.texto__principal {
+		max-width: 338px;
+		padding: 0px 31px;
+	}
+	.texto__principal > p {
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 26px;
+	}
+
+	.texto__premios > p, .texto__premios > h2, .premio__container {
+		margin-left: 34px;
+	}
+
+	.postular-btns {
+		display: flex;
+		flex-direction: column;
+		margin-top:40px;
+		margin-bottom: 53px;
+	}
+
+	.postular-btns > a {
+		margin-top: 35px;
+		margin-left: 35px;
+		max-width: 210px;
+    	text-align: center;
+	}
+
+	.ganadoras__text {
+		display:none;
+	}
+
+	.faq-container {
+		padding: 61px 37px 51px 37px;
+		width:auto;
+	}
+
+	#Footer {
+		flex-direction:column;
+		align-content: center;
+		padding: 54px 0px;
+	}
+	#IMGLogoFooter {
+		max-width:169px;
+		/* padding-bottom: 53px;
+		padding-left: 32px; */
+	}
+	.izquierda__texts, .media-kit {
+		display:none;
+	}
+	.izquierda__texts-mobile{
+		display: flex;
+		flex-direction: column;
+	}
+	.copyright {
+		font-size: 16px;
+		padding-bottom: 24px;
+		padding-top: 12px;
+	}
+	.icons-footer {
+		padding-bottom: 20px;
+		padding-top: 33px;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.icon__footer {
+		max-width: 33px;
+	}
+	.hashtag__footer {
+		max-width: 127px;
+	}
+
+	.media-kit-mobile {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+	.detail__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+
+	}
+	.detail__container > a {
+		text-decoration: none;
+		padding-right: 20px;
+	}
+	.media-kit-mobile > a {
+		text-decoration: none;
+	}
+	.media-kit-mobile > a >  h4 {
+		font-size: 20px;
+		padding-left: 20px;
+	}
+
+	#Derecha {
+    padding: 7px;
+	}
+
+	#Derecha > a > h4 {
+		font-size: 22px;
+	}
+	.derecha__bold {
+		padding: 0;
+	}
+	.derecha__regular {
+		padding:0px 0px 24px 0px;
+	}
+
+	#Footer > #Izquierda > img {
+		width: 100%;
+		margin-left: 0%;
+	}
+	.container-convocatoria-mobile {
+		padding: 25px 15px 0px 15px;
+	}
+
+	#LinkVotaMobile {
+		/* display: flex;
+		max-width: 342px; */
+		width: 100%;
+		display: block;
+	}
+
+	.convocatoria-mobile{
+		display:flex;
+		flex-direction: column;
+	}
+	.logos-mobile-container {
+		background-color: #F0000C;
+		padding: 28px 0px 60px 28px;
+	}
+	.convocatoria-mobile > h3 {
+		font-family: 'Inter', sans-serif;
+		color: #F0000C;
+		font-size:26px;
+		text-align:left;
+		padding: 10px 0px 10px 28px;
+	}
+
+	.convocatoria-mobile > img {
+		max-width: 360px;
+	}
+
+	#VotarCerrar2{
+		margin-right: 13%;
+	}
+
+	.arrow {
+		display:none
+	}
+
+}
+
