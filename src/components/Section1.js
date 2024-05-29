@@ -38,7 +38,7 @@ function Section1() {
 </div>
 <div class="postular-btns">
 <a class="btn__bases"  href="bases_pam_2024.pdf" target="_blank" > BASES 2024 </a>
-<a class="btn__bases" href="https://premiopam.cl/ganadores.html" target="_blank" style={{marginLeft:'1rem'}}> POSTULA TU OBRA AQUÍ</a>
+<a className="btn__bases" href="https://premiopam.cl/ganadores.html" target="_blank"> POSTULA TU OBRA AQUÍ</a>
 </div>
 
 </div>

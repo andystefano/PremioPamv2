@@ -104,9 +104,7 @@ p {
   font-size: 18px;
 }
 
-.texto__premios > p, .texto__premios > h2, .premio__container {
-  
-}
+ 
 
 .premio__medium {
   font-weight:500;
@@ -129,6 +127,11 @@ p {
   border: solid 2px #F0000C;
   cursor:pointer;
 }
+
+#section_1 > div > div.contenido > div > div.postular-btns > a:nth-child(2){
+	margin-left: 1rem  !important;
+}
+
 .btn__postula {
   background-color: #F0000C;
   color: #E9D9FC;
@@ -311,8 +314,9 @@ display:none;
 	}
 
 	.texto__principal {
-		max-width: 338px;
-		padding: 0px 31px;
+        max-width: 100%;
+        padding: 0px 31px;
+        text-align: justify;
 	}
 	.texto__principal > p {
 		font-size: 22px;
@@ -323,6 +327,12 @@ display:none;
 
 	.texto__premios > p, .texto__premios > h2, .premio__container {
 		margin-left: 34px;
+	}
+
+	.texto__premios > h2{
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		font-weight: 800;
 	}
 
 	.postular-btns {
@@ -337,6 +347,10 @@ display:none;
 		margin-left: 35px;
 		max-width: 210px;
     	text-align: center;
+	}
+
+	#section_1 > div > div.contenido > div > div.postular-btns > a:nth-child(2){
+		margin-left: 35px !important;
 	}
 
 	.ganadoras__text {
