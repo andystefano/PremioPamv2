@@ -30,13 +30,13 @@ header{
   background-color: #E9D9FC;
   display: flex;
   justify-content: center;
-  padding-top: 3.6rem;
+  padding-top: 61px;
   align-self: flex-start;
   align-items: flex-start;
 }
 
   .presentan > img {
-    width: 38%;
+    width: 42%;
     margin-right: 3rem;
   }
 
