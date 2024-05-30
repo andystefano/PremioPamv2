@@ -38,6 +38,7 @@ header{
   .presentan > img {
     width: 42%;
     margin-right: 3rem;
+	margin-bottom: 3rem;
   }
 
 
@@ -286,6 +287,94 @@ display:none;
 
 #LOGOS_MOVIL{
 	display: none;
+}
+
+
+label {
+    color: #f0000c;
+    margin-bottom: 0px;
+    font-family: "Roboto Mono", monospace;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-bottom: 9px;
+}
+
+
+
+
+.frow {
+    width: 100%;
+}
+
+.frow > .c1 {
+    width: 100%;
+}
+
+.frow > .c1 > textarea {
+    width: 100%;
+    height: 168px;
+    border: none;
+    background: rgba(240, 0, 12, 0.12);
+    color: #f0000c;
+    font-family: "Roboto Mono", monospace;
+}
+
+.frow > .c1 > span {
+    visibility: hidden;
+    display: inline-block;
+}
+
+
+.frow > .c1 > input {
+    width: 100%;
+    height: 35px;
+    border: none;
+    background: rgba(240, 0, 12, 0.12);
+    color: #f0000c;
+    font-family: "Roboto Mono", monospace;
+}
+
+ 
+
+.frow > .c2 {
+    float: left;
+	width: 50%;
+}
+
+.frow > .c2 > span {
+    visibility: hidden;
+}
+
+.frow > .c2 > input {
+    width: 100%;
+    height: 35px;
+    border: none;
+    background: rgba(240, 0, 12, 0.12);
+    color: #f0000c;
+    font-family: "Roboto Mono", monospace;
+}
+
+ 
+
+
+.frow > .c2 > label {
+    width: 100%;
+    display: inline-block;
+}
+
+
+.frow > .c2 > label {
+    width: 100%;
+    display: inline-block;
+    font-family: "Roboto Mono", monospace;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
 }
 
 @media (max-width: 768px) {

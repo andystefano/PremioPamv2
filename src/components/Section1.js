@@ -60,7 +60,7 @@ function Section1() {
               </a>
               <a
                 className="btn__bases"
-                href="https://premiopam.cl/ganadores.html"
+                href="/postula"
                 target="_blank"
               >
                 {" "}
