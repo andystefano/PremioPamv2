@@ -1,6 +1,9 @@
  
 
 import React  from 'react';
+import { FaInstagram } from "react-icons/fa6";
+import { ImFacebook } from "react-icons/im";
+import { AiOutlineLinkedin } from "react-icons/ai";
 
 
 
@@ -15,7 +18,9 @@ function Footer() {
 
 <div id="Izquierda">
 
-<img id="IMGLogoFooter" src="img/logo-footer-2024.png" />
+<img id="IMGLogoFooterDesk" src="img/logoFooterDesk.png" />
+<img id="IMGLogoFooterMovil" src="img/logoFooterMovil.png" />
+
 </div>
 
 <div id="Derecha">
@@ -25,12 +30,19 @@ function Footer() {
 
  
 
+ 
 
 <div class="icons-footer">
-<a href="https://www.instagram.com/antennaorg/?hl=es-la" target="_blank"><img class="icon__footer" src="img/icons/rrss-instagram.svg" alt="Instagram"/></a>
-<a href="https://www.facebook.com/antennaorg" target="_blank"><img class="icon__footer" src="img/icons/rrss-facebook.svg" alt="facebook"/></a>
-<a href="https://www.linkedin.com/company/antennaorg/" target="_blank"><img class="icon__footer" src="img/icons/rrss-linkedin.svg" alt="linkedin"/></a>
-<a href="https://www.premiopam.cl/" target="_blank"><img class="hashtag__footer" src="img/icons/PremioPAM2023-horizontal.svg" alt="premio-pam"/></a>
+<a href="https://www.instagram.com/antennaorg/?hl=es-la" target="_blank">
+  <FaInstagram size={32}  color="#F0000C"/>
+  </a>
+<a href="https://www.facebook.com/antennaorg" target="_blank">
+<ImFacebook size={24}  color="#F0000C"/>
+  </a>
+<a href="https://www.linkedin.com/company/antennaorg/" target="_blank">
+<AiOutlineLinkedin size={35}  color="#F0000C"/>
+  </a>
+<a href="https://www.premiopam.cl/" target="_blank"><img style={{maxHeight:'20px'}} class="hashtag__footer" src="img/icons/hashtag_1.png" alt="premio-pam"/></a>
 
 </div>
 

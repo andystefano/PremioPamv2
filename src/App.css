@@ -5,7 +5,7 @@ body {
 }
 
 a, button {
-  cursor: url('../public/img/pointer.png'), auto;
+  cursor: pointer;
 }
 
 header{
@@ -71,26 +71,37 @@ h1 {
   font-style: normal;
   font-weight: 700;
   line-height: 58px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
-  color: #F0030D;
-  margin-bottom: 0px;
-  text-align: left;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+	color: #F0030D;
+	margin-bottom: 0px;
+	text-align: left;
+	font-family: 'Roboto Mono', monospace;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
 }
 
-.contenido__subtitulo {
-  
+#premios_titulo{
+	color: #F0030D;
+	margin-bottom: 0px;
+	text-align: left;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 17px !important;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .texto__principal {
   padding: 0px 0px 31px 0px;
 }
+
 .texto__principal > p {
   font-size: 22px;
   font-style: normal;
@@ -118,11 +129,10 @@ p {
 }
 .postular-btns > a {
   text-decoration: none;
-
   font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   line-height: normal;
   border: solid 2px #F0000C;
   cursor:pointer;
@@ -178,8 +188,13 @@ footer {
 }
 
  
-#IMGLogoFooter{
-  max-width: 50%;
+
+#IMGLogoFooterDesk {
+	max-width:169px;
+	display: block;
+}
+#IMGLogoFooterMovil {
+	display: none;
 }
 
 #Footer {
@@ -196,7 +211,7 @@ footer {
   justify-content: center;
   display: flex;
   flex-direction: column;
-  padding: 281px 72px 16px 220px;
+  padding: 190px 72px 16px 220px;
 }
 
 #Derecha > a {
@@ -235,10 +250,13 @@ display:none;
 }
 
 .icons-footer {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 10px;
+	margin-top: 2rem;
 }
-
+  
 .media-kit {
   display: flex;
   align-items: baseline;
@@ -252,6 +270,9 @@ display:none;
 
 .text-cream{
   color:#F0000C;
+  color: #F0000C;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
 }
 
 #HeaderIMG-mobile{
@@ -259,7 +280,25 @@ display:none;
 }
 
 
+.container_logo_movil{
+	display: none;
+}
+
+#LOGOS_MOVIL{
+	display: none;
+}
+
 @media (max-width: 768px) {
+
+	#LOGOS_MOVIL{
+		display: block;
+	}
+
+	.container_logo_movil{
+		background-color: #F0000C;
+		display: block;
+	}
+
 	#HeaderIMG, #IMGGanadoras {
 		display:none;
 	}
@@ -315,8 +354,8 @@ display:none;
 
 	.texto__principal {
         max-width: 100%;
-        padding: 0px 31px;
-        text-align: justify;
+        padding: 0px 31px 20px 31px;
+        text-align: start;
 	}
 	.texto__principal > p {
 		font-size: 22px;
@@ -337,20 +376,16 @@ display:none;
 
 	.postular-btns {
 		display: flex;
-		flex-direction: column;
-		margin-top:40px;
-		margin-bottom: 53px;
+        flex-direction: column;
+        align-items: center;
+		margin-top: 40px;
+		margin-bottom: 70px;
 	}
 
 	.postular-btns > a {
 		margin-top: 35px;
-		margin-left: 35px;
 		max-width: 210px;
     	text-align: center;
-	}
-
-	#section_1 > div > div.contenido > div > div.postular-btns > a:nth-child(2){
-		margin-left: 35px !important;
 	}
 
 	.ganadoras__text {
@@ -365,12 +400,14 @@ display:none;
 	#Footer {
 		flex-direction:column;
 		align-content: center;
-		padding: 54px 0px;
+		padding: 54px 31px;
 	}
-	#IMGLogoFooter {
-		max-width:169px;
-		/* padding-bottom: 53px;
-		padding-left: 32px; */
+	#IMGLogoFooterDesk {
+		display: none;
+	}
+	#IMGLogoFooterMovil {
+		max-width:80%;
+		display: block;
 	}
 	.izquierda__texts, .media-kit {
 		display:none;
@@ -386,7 +423,6 @@ display:none;
 	}
 	.icons-footer {
 		padding-bottom: 20px;
-		padding-top: 33px;
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
@@ -424,6 +460,7 @@ display:none;
 
 	#Derecha {
     padding: 7px;
+	margin-top: 3rem;
 	}
 
 	#Derecha > a > h4 {
@@ -436,10 +473,7 @@ display:none;
 		padding:0px 0px 24px 0px;
 	}
 
-	#Footer > #Izquierda > img {
-		width: 100%;
-		margin-left: 0%;
-	}
+ 
 	.container-convocatoria-mobile {
 		padding: 25px 15px 0px 15px;
 	}
