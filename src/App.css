@@ -65,6 +65,9 @@ header{
   text-align: left;
 }
 
+
+
+
 h1 {
   color: #F0000C;
   font-size: 50px;
@@ -76,6 +79,44 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.titulo_principal{
+	color: #F0000C;
+    font-size: 50px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contenido__titulo {
+	color: #F0000C;
+    font-size: 50px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+	font-size: 16px;
+}
+
+#faq_titulo{
+	color: #F0000C;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+}
+
+.faq_item_titulo{
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-family: Inter, sans-serif;
+    font-weight: 600;
+}
+
 h2 {
 	color: #F0030D;
 	margin-bottom: 0px;
@@ -84,6 +125,16 @@ h2 {
 	font-style: normal;
 	font-weight: 600;
 	line-height: normal;
+}
+
+h2.contenido__subtitulo {
+    color: #F0030D;
+    margin-bottom: 0px;
+    text-align: left;
+    font-family: 'Roboto Mono', monospace;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 #premios_titulo{
@@ -426,6 +477,15 @@ label {
 		line-height: 32px;
 	}
 
+	.titulo_principal{
+		font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+	}
+
+
+
 	body > header > div:nth-child(3) > div:nth-child(2) > p {
 		font-size: calc(3.6vw);
 		letter-spacing: calc(0.01vw);
@@ -435,6 +495,11 @@ label {
 		margin-left: 5%;
 		margin-right: 5%;
 		padding: 0%;
+	}
+
+	.contenido__titulo {
+		font-size: 16px;
+		padding: 0px 26px;
 	}
 
 	.contenido__subtitulo {

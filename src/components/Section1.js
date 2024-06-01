@@ -13,8 +13,8 @@ function Section1() {
           <img src="img/logos.png" />
         </div>
         <div class="contenido">
-          <h2 class="contenido__subtitulo">PREMIO PAM 2024</h2>
-          <h1>
+          <h2 class="contenido__titulo">PREMIO PAM 2024</h2>
+          <h1 className='titulo_principal'>
             CINCO AÑOS RECONOCIENDO <br /> ARTISTAS MUJERES
           </h1>
 
