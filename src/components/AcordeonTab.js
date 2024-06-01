@@ -11,7 +11,7 @@ function AcordeonTab({titulo,contenido}) {
 
 
   return (
-    <div className="acordeon-radius px-4  mt-4">
+    <div className="acordeon-radius px-4  mt-2">
             <div className="flex items-center ml-auto"  style={{
                   color: '#F0000C',
                   borderBottom:'3px solid #f0e9e9'
@@ -20,7 +20,7 @@ function AcordeonTab({titulo,contenido}) {
                 className="text-black  font-unbounded  font-normal text-left w-11/12"
               >
                 <h3 
-                 onClick={() => setOpenTab(!openTab)}  className="text-cream font-medium w-full text-base sd:text-2xl sm:text-2xl lg:text-2xl xl:text-2xl  pt-5 pb-1 font-medium text-left faq_item_titulo">
+                 onClick={() => setOpenTab(!openTab)}  className="  w-full  pt-5 pb-1 text-left titulo__item_faq">
                 {titulo}
                 </h3>
               </div>
@@ -37,9 +37,9 @@ function AcordeonTab({titulo,contenido}) {
               <div>
 
               {openTab && (
-                      <div className=" pb-5">
+                      <div className="">
                       <p       dangerouslySetInnerHTML={{ __html: contenido }}
- className="text-cream font-medium w-full text-xs sd:text-xl md:text-xl lg:text-xl xl:text-xl py-3 font-medium text-left pl-3">                      
+ className="font-medium w-full py-3 font-medium text-left pl-3 texto__item_faq">                      
                       </p>
                     </div>
                     )}
