@@ -1,11 +1,41 @@
  
 
 body {
-  cursor: url('../public/img/cursor.png');
+  cursor: url('../public/img/cursor.png'), auto;
+
 }
 
+ 
+
 a, button {
-  cursor: pointer;
+	cursor: url('../public/img/pointer.png'), auto;
+  }
+
+
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: rgb(0,0,0);
+background: linear-gradient(97deg, rgba(233, 217, 252, 1) 0%, rgba(240, 0, 12, 1) 25%, rgba(239,68,68,0.6564399441417192) 31%, rgba(255, 246, 230, 1) 65%, rgba(233, 217, 252, 1) 90%);
+border-radius: 5px;
+
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 5px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: pink; 
+  border-radius: 5px;
 }
 
 header{
