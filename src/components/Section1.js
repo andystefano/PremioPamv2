@@ -61,7 +61,6 @@ function Section1() {
               <a
                 className="btn__bases"
                 href="/postula"
-                target="_blank"
               >
                 {" "}
                 POSTULA TU OBRA AQUÍ

@@ -10,7 +10,7 @@ function Section1() {
     <section id="section_1" class="flex justify-center">
       <div className="w-full mx-auto  container">
         <div className="presentan">
-          <img src="img/logos.png" />
+          <img src="img/logos.png" alt='Presentadores y auspiciador' />
         </div>
         <div class="contenido">
           <h2 class="contenido__subtitulo">POSTULACIÓN PREMIO PAM 2024</h2>
@@ -43,7 +43,7 @@ function Section1() {
             <div class="c2">
                 <label>Fecha de Nacimiento*</label>
                 <input type="hidden" name="FECHA_DE_NACIMIENTO" id="FECHA_DE_NACIMIENTO" class="fecha flatpickr-input" rel="datepicker" placeholder="Seleccione una fecha..." />
-                <input class="fecha form-control input" placeholder="Seleccione una fecha..." tabindex="0" type="text" />
+                <input class="fecha form-control input" placeholder="Seleccione una fecha..." tabindex="0" type="date" />
                 <span>Error</span>
             </div>
         </div>
@@ -84,8 +84,7 @@ function Section1() {
 
         <div class="frow">
             <div class="c1">
-                <label>Biografía de la artista*</label>
-                <p>(máximo 500 palabras)</p>
+                <label>Biografía de la artista* (máximo 500 palabras)</label>
                 <textarea name="BIOGRAFIA" id="BIOGRAFIA" required=""></textarea>
                 <span>Error</span>
             </div>
@@ -94,8 +93,7 @@ function Section1() {
         <div class="frow">
             <div class="c1">
             <div >
-            <label>Redes Sociales<br /></label>
-                    <p>&nbsp;(optativo)</p>
+            <label>Redes Sociales (opcional)</label>
                 </div>
                 <input type="text" name="RRSS" id="RRSS" />
                 <span>Error</span>
@@ -105,8 +103,7 @@ function Section1() {
         <div class="frow">
             <div class="c1">
                 <div>
-                    <label>Postulado por </label>
-                    <p>&nbsp;(optativo)</p>
+                    <label>Postulado por (optativo)</label>
                 </div>
                 <input type="text" name="POSTULADA_POR" id="POSTULADA_POR" />
                 <span>Error</span>
@@ -116,8 +113,7 @@ function Section1() {
         <div class="frow">
             <div class="c1">
                 <div>
-                    <label>Parentesco </label>
-                    <p>&nbsp;(optativo)</p>
+                    <label>Parentesco (optativo)</label>
                 </div>
                 <input type="text" name="PARENTESCO" id="PARENTESCO" />
                 <span>Error</span>
@@ -128,10 +124,10 @@ function Section1() {
             <div class="c2">
                 <label>Fotografía de retrato </label>
                 <p>Adjunta un archivo formato jpg con máximo 50mb</p>
-                <input type="file" name="FOTOGRAFIA_RETRATO" id="FOTOGRAFIA_RETRATO" class="inputfile" accept="image/jpeg" />
+                <input type="file" className='hidden' name="FOTOGRAFIA_RETRATO" id="FOTOGRAFIA_RETRATO" class="inputfile" accept="image/jpeg" />
                 <span id="FOTOGRAFIA_RETRATO_ERROR">Error</span>
                 <label for="FOTOGRAFIA_RETRATO">
-                    <img src="img/adjuntar-retrato.png" id="IMG_FOTOGRAFIA_RETRATO" />
+                    <img src="img/upload_select_await.png"  className='m-1' id="IMG_FOTOGRAFIA_RETRATO" />
                 </label>
             </div>
 
@@ -154,26 +150,18 @@ function Section1() {
         </div>
 
         <div class="frow">
-            <div class="c2 dimensiones-desktop">
-                <label >Dimensiones*</label>
-                <p>(medidas en cm)</p>
+            <div class="c2">
+                <label >Dimensiones* (medidas en cm)</label>
                 <input type="text" name="DIMENCIONES" id="DIMENCIONES" required="" />
                 <span>Error</span>
             </div>
-            <div class="c2 fecha-creacion-desktop">
+            <div class="c2">
                 <label >Año de creación*</label>
-                <input type="text" placeholder="1981" name="FECHA_CREACION" id="FECHA_CREACION" required="" />
+                <input type="number" placeholder="1981" name="FECHA_CREACION" id="FECHA_CREACION" required="" />
                 <span>Error</span>
             </div>
         </div>
-
-        <div class="frow">
-            <div class="c1">
-                <label>Año de creación*</label>
-                <input  type="text"  name="FECHA_CREACION" id="FECHA_CREACION"  maxlength="10" class="fecha" />
-                <span>Error</span>
-            </div>
-        </div>
+ 
 
         <div class="frow">
             <div class="c1">
@@ -205,9 +193,9 @@ function Section1() {
                     </div>
                     <div>
                         <label for="FOTOGRAFIA_OBRA_1">
-                            <img  src="img/adjuntar-retrato.png" id="F01Placeholder" />
+                            <img  src="img/upload_select_await.png"  className='m-1' id="F01Placeholder" />
                         </label>
-                        <input type="file" id="FOTOGRAFIA_OBRA_1" name="FOTOGRAFIA_OBRA_1" required="" accept="image/jpeg" />
+                        <input type="file"  className='hidden' id="FOTOGRAFIA_OBRA_1" name="FOTOGRAFIA_OBRA_1" required="" accept="image/jpeg" />
                     </div>
                 </div>
 
@@ -217,9 +205,9 @@ function Section1() {
                     </div>
                     <div>
                         <label for="FOTOGRAFIA_OBRA_2">
-                            <img src="img/adjuntar-retrato.png" id="F02Placeholder" />
+                            <img src="img/upload_select_await.png"  className='m-1' id="F02Placeholder" />
                         </label>
-                        <input type="file" id="FOTOGRAFIA_OBRA_2" name="FOTOGRAFIA_OBRA_2" accept="image/jpeg" />
+                        <input type="file"  className='hidden' id="FOTOGRAFIA_OBRA_2" name="FOTOGRAFIA_OBRA_2" accept="image/jpeg" />
                     </div>
                 </div>
 
@@ -229,9 +217,9 @@ function Section1() {
                     </div>
                     <div>
                         <label for="FOTOGRAFIA_OBRA_3">
-                            <img  src="img/adjuntar-retrato.png" id="F03Placeholder" />
+                            <img  src="img/upload_select_await.png"   className='m-1'  id="F03Placeholder" />
                         </label>
-                        <input type="file" id="FOTOGRAFIA_OBRA_3" name="FOTOGRAFIA_OBRA_3" accept="image/jpeg" />
+                        <input type="file"  className='hidden' id="FOTOGRAFIA_OBRA_3" name="FOTOGRAFIA_OBRA_3" accept="image/jpeg" />
                     </div>
                 </div>
             </div>

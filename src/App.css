@@ -394,6 +394,11 @@ label {
     width: 100%;
 }
 
+
+.frow > .c1 > input {
+	padding: 0px 10px;
+}
+ 
 .frow > .c1 > textarea {
     width: 100%;
     height: 168px;
@@ -401,6 +406,7 @@ label {
     background: rgba(240, 0, 12, 0.12);
     color: #f0000c;
     font-family: "Roboto Mono", monospace;
+	padding: 10px 10px;
 }
 
 .frow > .c1 > span {
@@ -423,6 +429,14 @@ label {
 .frow > .c2 {
     float: left;
 	width: 50%;
+}
+
+.frow > .c2:first-child {
+    padding-right: 20px;
+}
+
+.frow > .c2 > input {
+    padding: 0px 10px;
 }
 
 .frow > .c2 > span {
@@ -476,6 +490,28 @@ label {
     text-align: left;
 }
 
+
+input[type="submit"] {
+    background-color: #f0000c;
+    color: #e9d9fc;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    cursor: pointer;
+    width: 213px;
+    height: 59px;
+	margin-bottom: 3rem;
+}
+
+input[type="submit"]:hover {
+    color: #f0000c;
+    background-color: #fff6e674;
+    border: solid 1px #f0000c;
+}
 @media (max-width: 768px) {
 
 	#LOGOS_MOVIL{
