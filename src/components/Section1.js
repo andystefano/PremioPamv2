@@ -10,7 +10,16 @@ function Section1() {
     <section id="section_1" class="flex justify-center">
       <div className="w-full mx-auto  container">
         <div className="presentan">
-          <img src="img/logos.png" />
+        <h2 class="presentan__titulo">PRESENTA:</h2>
+          <img src="img/PRESENTA.png" />
+        <h2 class="presentan__titulo">AUSPICIA:</h2>
+        <img src="img/AUSPICIA.png" />  
+        <h2 class="presentan__titulo">COLABORA:</h2>
+        <img src="img/COLABORA1.png" />  
+        <img src="img/COLABORA2.png" />  
+
+        <h2 class="presentan__titulo">APOYA:</h2>
+        <img src="img/APOYA.png" />                          
         </div>
         <div class="contenido">
           <h2 class="contenido__titulo">PREMIO PAM 2024</h2>
@@ -60,7 +69,7 @@ function Section1() {
               </a>
               <a
                 className="btn__bases"
-                href="/postula"
+                href="/postulacion"
               >
                 {" "}
                 POSTULA TU OBRA AQUÍ

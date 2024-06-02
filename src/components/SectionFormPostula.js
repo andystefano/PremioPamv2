@@ -24,7 +24,7 @@ function Section1() {
 
 
     <fieldset>
-        <h3>1. Datos personales</h3>
+        <h3 className='titulo_ficha'>1. Datos personales</h3>
         <p class="campos-obligatorios">Campos con asterisco (*) son obligatorios</p>
         <div class="frow">
             <div class="c1">
@@ -103,7 +103,7 @@ function Section1() {
         <div class="frow">
             <div class="c1">
                 <div>
-                    <label>Postulado por (optativo)</label>
+                    <label>Postulado por (opcional)</label>
                 </div>
                 <input type="text" name="POSTULADA_POR" id="POSTULADA_POR" />
                 <span>Error</span>
@@ -113,7 +113,7 @@ function Section1() {
         <div class="frow">
             <div class="c1">
                 <div>
-                    <label>Parentesco (optativo)</label>
+                    <label>Parentesco (opcional)</label>
                 </div>
                 <input type="text" name="PARENTESCO" id="PARENTESCO" />
                 <span>Error</span>
@@ -124,7 +124,7 @@ function Section1() {
             <div class="c2">
                 <label>Fotografía de retrato </label>
                 <p>Adjunta un archivo formato jpg con máximo 50mb</p>
-                <input type="file" className='hidden' name="FOTOGRAFIA_RETRATO" id="FOTOGRAFIA_RETRATO" class="inputfile" accept="image/jpeg" />
+                <input type="file" className='hidden' name="FOTOGRAFIA_RETRATO" id="FOTOGRAFIA_RETRATO" accept="image/jpeg" />
                 <span id="FOTOGRAFIA_RETRATO_ERROR">Error</span>
                 <label for="FOTOGRAFIA_RETRATO">
                     <img src="img/upload_select_await.png"  className='m-1' id="IMG_FOTOGRAFIA_RETRATO" />
@@ -139,7 +139,7 @@ function Section1() {
 
 
     <fieldset>
-        <h3>2. Ficha técnica </h3>
+        <h3 className='titulo_ficha'>2. Ficha técnica </h3>
         <p class="campos-obligatorios">Campos con asterisco (*) son obligatorios</p>
         <div class="frow">
             <div class="c1">
@@ -231,7 +231,7 @@ function Section1() {
             <div class="c1">
             <div  >
             <label>Para obras audiovisuales escribir link</label>
-                    <p >&nbsp;(optativo)</p>
+                    <p >&nbsp;(opcional)</p>
                 </div>
                 <input type="text" name="LINK_WEB" id="LINK_WEB" />
                 <span>Error</span>

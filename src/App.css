@@ -63,12 +63,14 @@ header{
   padding-top: 61px;
   align-self: flex-start;
   align-items: flex-start;
+  flex-direction: column;
 }
 
   .presentan > img {
-    width: 42%;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
     margin-right: 3rem;
-	margin-bottom: 3rem;
+    width: 54%;
   }
 
 
@@ -121,6 +123,18 @@ h1 {
 }
 
 .contenido__titulo {
+	color: #F0000C;
+    font-size: 50px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+	font-size: 16px;
+}
+
+.presentan__titulo {
 	color: #F0000C;
     font-size: 50px;
     font-family: 'Inter', sans-serif;
@@ -511,6 +525,14 @@ input[type="submit"]:hover {
     color: #f0000c;
     background-color: #fff6e674;
     border: solid 1px #f0000c;
+}
+
+
+.titulo_ficha {
+    font-family: 'Inter', sans-serif;
+    color: #F0000C;
+    font-size: 20px;
+    font-weight: 700;
 }
 @media (max-width: 768px) {
 
