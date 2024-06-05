@@ -3,18 +3,22 @@ import React  from 'react';
 import { FaInstagram } from "react-icons/fa6";
 import { ImFacebook } from "react-icons/im";
 import { AiOutlineLinkedin } from "react-icons/ai";
+import Presentadores from './Presentadores'; // Si es una exportación por defecto
 
-function Section1() {
+
+
+
+function SectionFormPostula() {
 
   return (
     <section id="section_1" class="flex justify-center">
       <div className="w-full mx-auto  container">
-        <div className="presentan">
-          <img src="img/logos.png" alt='Presentadores y auspiciador' />
+      <div className="presentan">
+         <Presentadores/>                        
         </div>
         <div class="contenido">
-          <h2 class="contenido__subtitulo">POSTULACIÓN PREMIO PAM 2024</h2>
-          <h1>COMPLETE LA SIGUIENTE INFORMACIÓN:</h1>
+          <h1 className='!mb-0'>POSTULACIÓN PREMIO PAM 2024</h1>
+          <h2 class="!mt-1 !mb-12 contenido__titulo" style={{lineHeight: 'normal'}}>COMPLETE LA SIGUIENTE INFORMACIÓN:</h2>
 
 
 
@@ -25,7 +29,7 @@ function Section1() {
 
     <fieldset>
         <h3 className='titulo_ficha'>1. Datos personales</h3>
-        <p class="campos-obligatorios">Campos con asterisco (*) son obligatorios</p>
+        <p class="campos-obligatorios mb-6">Campos con asterisco (*) son obligatorios</p>
         <div class="frow">
             <div class="c1">
                 <label>Nombre y Apellido*</label>
@@ -123,11 +127,11 @@ function Section1() {
         <div class="frow">
             <div class="c2">
                 <label>Fotografía de retrato </label>
-                <p>Adjunta un archivo formato jpg con máximo 50mb</p>
+                <p className='w-full'>Adjunta un archivo formato jpg con máximo 50mb</p>
                 <input type="file" className='hidden' name="FOTOGRAFIA_RETRATO" id="FOTOGRAFIA_RETRATO" accept="image/jpeg" />
                 <span id="FOTOGRAFIA_RETRATO_ERROR">Error</span>
                 <label for="FOTOGRAFIA_RETRATO">
-                    <img src="img/upload_select_await.png"  className='m-1' id="IMG_FOTOGRAFIA_RETRATO" />
+                    <img src="img/upload_select_await.png"  className='m-1 upload' id="IMG_FOTOGRAFIA_RETRATO" />
                 </label>
             </div>
 
@@ -183,7 +187,7 @@ function Section1() {
         <div class="frow">
             <div class="c3">
                 <label>Imágenes de la obra postulada*</label>
-                <p>(Adjunta al menos un archivo formato jpg con máximo 5mb)</p>
+                <p style={{minWidth:'100%'}}>(Adjunta al menos un archivo formato jpg con máximo 5mb)</p>
             </div>
 
             <div class="c3">
@@ -193,7 +197,7 @@ function Section1() {
                     </div>
                     <div>
                         <label for="FOTOGRAFIA_OBRA_1">
-                            <img  src="img/upload_select_await.png"  className='m-1' id="F01Placeholder" />
+                            <img  src="img/upload_select_await.png"  className='m-1 upload' id="F01Placeholder" />
                         </label>
                         <input type="file"  className='hidden' id="FOTOGRAFIA_OBRA_1" name="FOTOGRAFIA_OBRA_1" required="" accept="image/jpeg" />
                     </div>
@@ -205,7 +209,7 @@ function Section1() {
                     </div>
                     <div>
                         <label for="FOTOGRAFIA_OBRA_2">
-                            <img src="img/upload_select_await.png"  className='m-1' id="F02Placeholder" />
+                            <img src="img/upload_select_await.png"  className='m-1 upload' id="F02Placeholder" />
                         </label>
                         <input type="file"  className='hidden' id="FOTOGRAFIA_OBRA_2" name="FOTOGRAFIA_OBRA_2" accept="image/jpeg" />
                     </div>
@@ -217,7 +221,7 @@ function Section1() {
                     </div>
                     <div>
                         <label for="FOTOGRAFIA_OBRA_3">
-                            <img  src="img/upload_select_await.png"   className='m-1'  id="F03Placeholder" />
+                            <img  src="img/upload_select_await.png"   className='m-1 upload'  id="F03Placeholder" />
                         </label>
                         <input type="file"  className='hidden' id="FOTOGRAFIA_OBRA_3" name="FOTOGRAFIA_OBRA_3" accept="image/jpeg" />
                     </div>
@@ -227,9 +231,10 @@ function Section1() {
             <span id="ErrorFotografiasObra" class="errorForm"></span>
         </div>
 
+<br/>
         <div class="frow">
             <div class="c1">
-            <div  >
+            <div >
             <label>Para obras audiovisuales escribir link</label>
                     <p >&nbsp;(opcional)</p>
                 </div>
@@ -284,4 +289,4 @@ function Section1() {
   );
 }
 
-export default Section1;
+export default SectionFormPostula;

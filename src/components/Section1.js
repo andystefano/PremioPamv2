@@ -3,6 +3,8 @@ import React  from 'react';
 import { FaInstagram } from "react-icons/fa6";
 import { ImFacebook } from "react-icons/im";
 import { AiOutlineLinkedin } from "react-icons/ai";
+import Presentadores from './Presentadores'; // Si es una exportación por defecto
+
 
 function Section1() {
 
@@ -10,16 +12,7 @@ function Section1() {
     <section id="section_1" class="flex justify-center">
       <div className="w-full mx-auto  container">
         <div className="presentan">
-        <h2 class="presentan__titulo">PRESENTA:</h2>
-          <img src="img/PRESENTA.png" />
-        <h2 class="presentan__titulo">AUSPICIA:</h2>
-        <img src="img/AUSPICIA.png" />  
-        <h2 class="presentan__titulo">COLABORA:</h2>
-        <img src="img/COLABORA1.png" />  
-        <img src="img/COLABORA2.png" />  
-
-        <h2 class="presentan__titulo">APOYA:</h2>
-        <img src="img/APOYA.png" />                          
+         <Presentadores/>                        
         </div>
         <div class="contenido">
           <h2 class="contenido__titulo">PREMIO PAM 2024</h2>
