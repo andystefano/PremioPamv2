@@ -535,6 +535,11 @@ input[type="submit"]:hover {
 }
 @media (max-width: 768px) {
 
+
+	.FPAM{
+		padding: 0px 26px;
+	}
+
 	#LOGOS_MOVIL{
 		display: block;
 	}
