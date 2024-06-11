@@ -396,15 +396,27 @@ label {
     padding-bottom: 9px;
 }
 
-
-
-
 .frow {
     width: 100%;
+	display: flex;;
 }
 
 .frow > .c1 {
     width: 100%;
+}
+
+
+
+.frow > .c2 > div, .frow > .c1 > div{
+	color: #5b0e0e;
+    width: 100%;
+    display: inline-block;
+    font-family: "Roboto Mono", monospace;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
 }
 
 
@@ -504,7 +516,7 @@ label {
 }
 
 
-input[type="submit"] {
+button[type="submit"] {
     background-color: #f0000c;
     color: #e9d9fc;
     border: none;

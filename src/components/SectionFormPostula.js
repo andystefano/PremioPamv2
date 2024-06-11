@@ -10,43 +10,81 @@ function SectionFormPostula() {
   return (
     <Formik
       initialValues={{ 
-            NOMBRE_APELLLIDO: '',
-            EDAD: '',
-            FECHA_DE_NACIMIENTO: '',
-            TELEFONO: '',
-            EMAIL: '',
-            NACIONALIDAD: '',
-            LUGAR_RESIDENCIA: '',
-            CIUDAD_RESIDENCIA: '',
-            BIOGRAFIA: '',
-            RRSS: '',
-            POSTULADA_POR: '',
-            PARENTESCO: '',
-            FOTOGRAFIA_RETRATO: '',
-            TITULO_DE_OBRA: '',
-            DIMENCIONES: '',
-            FECHA_CREACION: '',
-            TECNICA: '',
-            STATMENT: '',
-            FOTOGRAFIA_OBRA_1: '',
-            FOTOGRAFIA_OBRA_2: '',
-            FOTOGRAFIA_OBRA_3: '',
-            CV: ''
+        NOMBRE_APELLLIDO: '',
+        EDAD: '',
+        FECHA_DE_NACIMIENTO: '',
+        TELEFONO: '',
+        EMAIL: '',
+        NACIONALIDAD: '',
+        LUGAR_RESIDENCIA: '',
+        CIUDAD_RESIDENCIA: '',
+        BIOGRAFIA: '',
+        RRSS: '',
+        POSTULADA_POR: '',
+        PARENTESCO: '',
+        FOTOGRAFIA_RETRATO: '',
+        TITULO_DE_OBRA: '',
+        DIMENCIONES: '',
+        FECHA_CREACION: '',
+        TECNICA: '',
+        STATMENT: '',
+        FOTOGRAFIA_OBRA_1: '',
+        FOTOGRAFIA_OBRA_2: '',
+        FOTOGRAFIA_OBRA_3: '',
+        CV: ''
       }}
-
       validationSchema={Yup.object({
-        NOMBRE_APELLLIDO: Yup.string().required('Requerido'),
-        EDAD: Yup.number().required('Requerido').min(60, 'Debe tener 60 años o más'),
-        EMAIL: Yup.string().email('Dirección de correo inválida').required('Requerido')
+        NOMBRE_APELLLIDO: Yup.string().required('Campo obligatorio'),
+        EDAD: Yup.number().required('Campo obligatorio').min(60, 'Debe tener 60 años o más'),
+        EMAIL: Yup.string().email('Dirección de correo inválida').required('Campo obligatorio'),
+        FECHA_DE_NACIMIENTO: Yup.string().required('Campo obligatorio'),
+        TELEFONO: Yup.string().required('Campo obligatorio'),
+
+        NACIONALIDAD: Yup.string().required('Campo obligatorio'),
+        LUGAR_RESIDENCIA: Yup.string().required('Campo obligatorio'),
+        CIUDAD_RESIDENCIA: Yup.string().required('Campo obligatorio'),
+        BIOGRAFIA: Yup.string().required('Campo obligatorio'),
+
+        RRSS: Yup.string().required('Campo obligatorio'),
+        POSTULADA_POR: Yup.string().required('Campo obligatorio'),
+        PARENTESCO: Yup.string().required('Campo obligatorio'),
+
+        FOTOGRAFIA_RETRATO: Yup.string().required('Campo obligatorio'),
+        TITULO_DE_OBRA: Yup.string().required('Campo obligatorio'),
+        DIMENCIONES: Yup.string().required('Campo obligatorio'),
+        TECNICA: Yup.string().required('Campo obligatorio'),
+        STATMENT: Yup.string().required('Campo obligatorio'),
+        FOTOGRAFIA_OBRA_1: Yup.string().required('Campo obligatorio'),
+        FOTOGRAFIA_OBRA_2: Yup.string().required('Campo obligatorio'),
+        FOTOGRAFIA_OBRA_3: Yup.string().required('Campo obligatorio'),
+        CV: Yup.string().required('Campo obligatorio'),
+
+        
       })}
       onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
+        // Aquí manejar el envío del formulario por AJAX
+        console.log('Intentando enviar')
+        fetch('https://premiopam.cl/GuardaFormulario.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+          alert('Formulario enviado con éxito');
           setSubmitting(false);
-        }, 400);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('Hubo un error al enviar el formulario');
+          setSubmitting(false);
+        });
       }}
     >
-      {({ isSubmitting }) => (
+      {({ isSubmitting, handleSubmit }) => (
         <section id="section_1" className="flex justify-center">
           <div className="w-full mx-auto container">
             <div className="presentan">
@@ -58,101 +96,94 @@ function SectionFormPostula() {
                 COMPLETE LA SIGUIENTE INFORMACIÓN:
               </h2>
 
-              <form action="GuardaFormulario.php" className="FPAM" id="FPAM" method="post" encType="multipart/form-data">
+              <form className="FPAM" id="FPAM" onSubmit={handleSubmit} encType="multipart/form-data">
                 <fieldset>
                   <h3 className="titulo_ficha">1. Datos personales</h3>
                   <p className="campos-obligatorios mb-6">Campos con asterisco (*) son obligatorios</p>
                   <div className="frow">
                     <div className="c1">
                       <label>Nombre y Apellido*</label>
-                      <Field type="text" name="NOMBRE_APELLLIDO" id="NOMBRE_APELLLIDO" required />
-                      <span>Error</span>
+                      <Field type="text" name="NOMBRE_APELLLIDO" id="NOMBRE_APELLLIDO" />
+                      <ErrorMessage name="NOMBRE_APELLLIDO" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
                     <div className="c2">
                       <label>Edad*</label>
-                      <input type="number" name="EDAD" id="EDAD" required min="60" />
-                      <span>Error</span>
+                      <Field type="number" name="EDAD" id="EDAD" min="60" />
+                      <ErrorMessage className='ErrorMessage' name="EDAD" component="div" />
                     </div>
                     <div className="c2">
                       <label>Fecha de Nacimiento*</label>
-                      <input type="hidden" name="FECHA_DE_NACIMIENTO" id="FECHA_DE_NACIMIENTO" className="fecha flatpickr-input" rel="datepicker" placeholder="Seleccione una fecha..." />
-                      <input className="fecha form-control input" placeholder="Seleccione una fecha..." tabIndex="0" type="date" />
-                      <span>Error</span>
+                      <Field type="date" name="FECHA_DE_NACIMIENTO" id="FECHA_DE_NACIMIENTO" className="fecha flatpickr-input" />
+                      <ErrorMessage name="FECHA_DE_NACIMIENTO" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
                     <div className="c2 edad-tel-desktop">
                       <label>Teléfono*</label>
-                      <input type="tel" placeholder="(56 9) 9345 3456" name="TELEFONO" id="TELEFONO" required />
-                      <span>Error</span>
+                      <Field type="tel" name="TELEFONO" id="TELEFONO" />
+                      <ErrorMessage name="TELEFONO" component="div" />
                     </div>
                     <div className="c2 fecha-mail-desktop">
                       <label>E-Mail*</label>
-                      <Field type="email" name="EMAIL" id="EMAIL" required />
-                      <span>Error</span>
+                      <Field type="email" name="EMAIL" id="EMAIL" />
+                      <ErrorMessage name="EMAIL" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
                     <div className="c1">
                       <label>Nacionalidad*</label>
-                      <input type="text" name="NACIONALIDAD" id="NACIONALIDAD" required />
-                      <span>Error</span>
+                      <Field type="text" name="NACIONALIDAD" id="NACIONALIDAD" />
+                      <ErrorMessage name="NACIONALIDAD" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
                     <div className="c2 residencia-desktop">
                       <label>País de residencia*</label>
-                      <input type="text" name="LUGAR_RESIDENCIA" id="LUGAR_RESIDENCIA" required />
-                      <span>Error</span>
+                      <Field type="text" name="LUGAR_RESIDENCIA" id="LUGAR_RESIDENCIA" />
+                      <ErrorMessage name="LUGAR_RESIDENCIA" component="div" />
                     </div>
                     <div className="c2 ciudad-desktop">
                       <label>Ciudad de residencia*</label>
-                      <input type="text" name="CIUDAD_RESIDENCIA" id="CIUDAD_RESIDENCIA" required />
-                      <span>Error</span>
+                      <Field type="text" name="CIUDAD_RESIDENCIA" id="CIUDAD_RESIDENCIA" />
+                      <ErrorMessage name="CIUDAD_RESIDENCIA" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
                     <div className="c1">
                       <label>Biografía de la artista* (máximo 500 palabras)</label>
-                      <textarea name="BIOGRAFIA" id="BIOGRAFIA" required></textarea>
-                      <span>Error</span>
+                      <Field as="textarea" name="BIOGRAFIA" id="BIOGRAFIA" />
+                      <ErrorMessage name="BIOGRAFIA" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
                     <div className="c1">
-                      <div>
-                        <label>Redes Sociales (opcional)</label>
-                      </div>
-                      <input type="text" name="RRSS" id="RRSS" />
-                      <span>Error</span>
+                      <label>Redes Sociales (opcional)</label>
+                      <Field type="text" name="RRSS" id="RRSS" />
+                      <ErrorMessage name="RRSS" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
                     <div className="c1">
-                      <div>
-                        <label>Postulado por (opcional)</label>
-                      </div>
-                      <input type="text" name="POSTULADA_POR" id="POSTULADA_POR" />
-                      <span>Error</span>
+                      <label>Postulado por (opcional)</label>
+                      <Field type="text" name="POSTULADA_POR" id="POSTULADA_POR" />
+                      <ErrorMessage name="POSTULADA_POR" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
                     <div className="c1">
-                      <div>
-                        <label>Parentesco (opcional)</label>
-                      </div>
-                      <input type="text" name="PARENTESCO" id="PARENTESCO" />
-                      <span>Error</span>
+                      <label>Parentesco (opcional)</label>
+                      <Field type="text" name="PARENTESCO" id="PARENTESCO" />
+                      <ErrorMessage name="PARENTESCO" component="div" />
                     </div>
                   </div>
 
@@ -161,7 +192,7 @@ function SectionFormPostula() {
                       <label>Fotografía de retrato </label>
                       <p className="w-full">Adjunta un archivo formato jpg con máximo 50mb</p>
                       <input type="file" className="hidden" name="FOTOGRAFIA_RETRATO" id="FOTOGRAFIA_RETRATO" accept="image/jpeg" />
-                      <span id="FOTOGRAFIA_RETRATO_ERROR">Error</span>
+                      <ErrorMessage name="FOTOGRAFIA_RETRATO" component="div" />
                       <label htmlFor="FOTOGRAFIA_RETRATO">
                         <img src="img/upload_select_await.png" className="m-1 upload" id="IMG_FOTOGRAFIA_RETRATO" alt="Upload" />
                       </label>
@@ -179,98 +210,95 @@ function SectionFormPostula() {
                   <div className="frow">
                     <div className="c1">
                       <label>Título de la obra*</label>
-                      <input type="text" name="TITULO_DE_OBRA" id="TITULO_DE_OBRA" required />
-                      <span>Error</span>
+                      <Field type="text" name="TITULO_DE_OBRA" id="TITULO_DE_OBRA" />
+                      <ErrorMessage name="TITULO_DE_OBRA" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
                     <div className="c2">
                       <label>Dimensiones* (medidas en cm)</label>
-                      <input type="text" name="DIMENCIONES" id="DIMENCIONES" required />
-                      <span>Error</span>
+                      <Field type="text" name="DIMENCIONES" id="DIMENCIONES" />
+                      <ErrorMessage name="DIMENCIONES" component="div" />
                     </div>
                     <div className="c2">
-                      <label>Año de creación*</label>
-                      <input type="number" placeholder="1981" name="FECHA_CREACION" id="FECHA_CREACION" required />
-                      <span>Error</span>
+                      <label>Fecha de creación*</label>
+                      <Field type="date" name="FECHA_CREACION" id="FECHA_CREACION" className="fecha flatpickr-input" />
+                      <ErrorMessage name="FECHA_CREACION" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
                     <div className="c1">
                       <label>Técnica*</label>
-                      <input type="text" name="TECNICA" id="TECNICA" required />
-                      <span>Error</span>
+                      <Field type="text" name="TECNICA" id="TECNICA" />
+                      <ErrorMessage name="TECNICA" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
                     <div className="c1">
-                      <label>Descripción de la obra*</label>
-                      <p>(máximo 500 palabras)</p>
-                      <textarea name="STATMENT" id="STATMENT" required></textarea>
-                      <span>Error</span>
+                      <label>Statement* (máximo 500 palabras)</label>
+                      <Field as="textarea" name="STATMENT" id="STATMENT" />
+                      <ErrorMessage name="STATMENT" component="div" />
                     </div>
                   </div>
 
                   <div className="frow">
-                    <div className="c3">
-                      <label>Imágenes de la obra postulada*</label>
-                      <p style={{ minWidth: '100%' }}>(Adjunta al menos un archivo formato jpg con máximo 5mb)</p>
+                    <div className="c2">
+                      <label>Fotografía de la obra 1* </label>
+                      <p>Adjunta un archivo formato jpg con máximo 50mb</p>
+                      <input type="file" className="hidden" name="FOTOGRAFIA_OBRA_1" id="FOTOGRAFIA_OBRA_1" accept="image/jpeg" />
+                      <ErrorMessage name="FOTOGRAFIA_OBRA_1" component="div" />
+                      <label htmlFor="FOTOGRAFIA_OBRA_1">
+                        <img src="img/upload_select_await.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_1" alt="Upload" />
+                      </label>
                     </div>
-
-                    <div className="c3">
-                      <div id="FO1">
-                        <div>
-                          <span className="errorForm"></span>
-                        </div>
-                        <div>
-                          <label htmlFor="FOTOGRAFIA_OBRA_1">
-                            <img src="img/upload_select_await.png" className="m-1 upload" id="F01Placeholder" alt="Upload" />
-                          </label>
-                          <input type="file" className="hidden" id="FOTOGRAFIA_OBRA_1" name="FOTOGRAFIA_OBRA_1" accept="image/jpeg" />
-                          <span id="FOTOGRAFIA_OBRA_1_ERROR">Error</span>
-                        </div>
-                      </div>
-
-                      <div id="FO2">
-                        <div>
-                          <span className="errorForm"></span>
-                        </div>
-                        <div>
-                          <label htmlFor="FOTOGRAFIA_OBRA_2">
-                            <img src="img/upload_select_await.png" className="m-1 upload" id="F02Placeholder" alt="Upload" />
-                          </label>
-                          <input type="file" className="hidden" id="FOTOGRAFIA_OBRA_2" name="FOTOGRAFIA_OBRA_2" accept="image/jpeg" />
-                          <span id="FOTOGRAFIA_OBRA_2_ERROR">Error</span>
-                        </div>
-                      </div>
-
-                      <div id="FO3">
-                        <div>
-                          <span className="errorForm"></span>
-                        </div>
-                        <div>
-                          <label htmlFor="FOTOGRAFIA_OBRA_3">
-                            <img src="img/upload_select_await.png" className="m-1 upload" id="F03Placeholder" alt="Upload" />
-                          </label>
-                          <input type="file" className="hidden" id="FOTOGRAFIA_OBRA_3" name="FOTOGRAFIA_OBRA_3" accept="image/jpeg" />
-                          <span id="FOTOGRAFIA_OBRA_3_ERROR">Error</span>
-                        </div>
-                      </div>
+                    <div className="c2">
+                      <label>Fotografía de la obra 2 </label>
+                      <p>Adjunta un archivo formato jpg con máximo 50mb</p>
+                      <input type="file" className="hidden" name="FOTOGRAFIA_OBRA_2" id="FOTOGRAFIA_OBRA_2" accept="image/jpeg" />
+                      <ErrorMessage name="FOTOGRAFIA_OBRA_2" component="div" />
+                      <label htmlFor="FOTOGRAFIA_OBRA_2">
+                        <img src="img/upload_select_await.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_2" alt="Upload" />
+                      </label>
                     </div>
                   </div>
 
                   <div className="frow">
-                    <div className="c1">
-                      <label>Currículum Vitae* (máximo 5mb)</label>
-                      <input type="file" name="CV" id="CV" accept="application/pdf" />
-                      <span id="CV_ERROR">Error</span>
+                    <div className="c2">
+                      <label>Fotografía de la obra 3 </label>
+                      <p>Adjunta un archivo formato jpg con máximo 50mb</p>
+                      <input type="file" className="hidden" name="FOTOGRAFIA_OBRA_3" id="FOTOGRAFIA_OBRA_3" accept="image/jpeg" />
+                      <ErrorMessage name="FOTOGRAFIA_OBRA_3" component="div" />
+                      <label htmlFor="FOTOGRAFIA_OBRA_3">
+                        <img src="img/upload_select_await.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_3" alt="Upload" />
+                      </label>
+                    </div>
+                    <div className="c2">
+                      {/* Espacio vacío */}
+                    </div>
+                  </div>
+
+                  <div className="frow">
+                    <div className="c2">
+                      <label>Currículum vitae</label>
+                      <p>Adjunta un archivo en formato pdf con máximo 10mb</p>
+                      <input type="file" className="hidden" name="CV" id="CV" accept=".pdf" />
+                      <ErrorMessage name="CV" component="div" />
+                      <label htmlFor="CV">
+                        <img src="img/upload_select_await.png" className="m-1 upload" id="IMG_CV" alt="Upload" />
+                      </label>
+                    </div>
+                    <div className="c2">
+                      {/* Espacio vacío */}
                     </div>
                   </div>
                 </fieldset>
-                <button type="submit" disabled={isSubmitting}>Submit</button>
+
+                <div className="flex justify-center">
+                  <button type="submit" disabled={isSubmitting} className="btn-enviar">Enviar</button>
+                </div>
               </form>
             </div>
           </div>
