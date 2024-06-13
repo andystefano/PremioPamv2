@@ -35,8 +35,10 @@ function SectionFormPostula() {
         FOTOGRAFIA_OBRA_1: null,
         FOTOGRAFIA_OBRA_2: null,
         FOTOGRAFIA_OBRA_3: null,
-        CV: null,
-        FOTOGRAFIA_RETRATO_X: null
+        FOTOGRAFIA_RETRATO_X: null,
+        FOTOGRAFIA_OBRA_1_X: null,
+        FOTOGRAFIA_OBRA_2_X: null,
+        FOTOGRAFIA_OBRA_3_X: null,
       }}
       validationSchema={Yup.object({
         NOMBRE_APELLLIDO: Yup.string().required('Campo obligatorio'),
@@ -197,6 +199,7 @@ function SectionFormPostula() {
                       id="FOTOGRAFIA_RETRATO"
                     />
                       <ErrorMessage name="FOTOGRAFIA_RETRATO" component="div" />
+                      <ErrorMessage name="FOTOGRAFIA_RETRATO_X" component="div" />
 
                       <label htmlFor="FOTOGRAFIA_RETRATO">
                         <img src="img/boton_adjuntar_retrato.png" className="m-1 upload" id="IMG_FOTOGRAFIA_RETRATO" alt="Upload" />
