@@ -55,75 +55,10 @@ function SectionFormPostula() {
         DIMENCIONES: Yup.string().required('Campo obligatorio'),
         TECNICA: Yup.string().required('Campo obligatorio'),
         STATMENT: Yup.string().required('Campo obligatorio'),
-        FOTOGRAFIA_RETRATO: Yup.mixed()
-        .test('fileSize', 'Máximo 10 MB', function (value) {
-          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
-          console.log('value:::',value);
-          console.log('value.size:::',value.size);
-          console.log('value.length:::',value.length);
-          console.log('FILE_SIZE max:::',FILE_SIZE);
 
-
-          
-          return value.size <= FILE_SIZE;
-        })
-        .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
-          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
-          return SUPPORTED_FORMATS.includes(value.type);
-        })
-        .required('Obligatorio imagen JPG, máximo 10 MB'),
-        FOTOGRAFIA_RETRATO_X: Yup.mixed()
-        .test('fileSize', 'Máximo 10 MB', function (value) {
-          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
-          console.log('value:::',value);
-          console.log('value.size:::',value.size);
-          console.log('value.length:::',value.length);
-          console.log('FILE_SIZE max:::',FILE_SIZE);
-
-
-          
-          return value.size <= FILE_SIZE;
-        })
-        .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
-          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
-          return SUPPORTED_FORMATS.includes(value.type);
-        })
-        .required('Obligatorio imagen JPG, máximo 10 MB'),
-        FOTOGRAFIA_OBRA_1: Yup
-        .mixed()
-        .test(
-          'fileSize',
-          'Maximo 10 mb',
-          value => value && value.size <= FILE_SIZE
-        )
-        .test(
-          'fileFormat',
-          'Formato de archivo debe ser jpg',
-          value => value && SUPPORTED_FORMATS.includes(value.type)
-        ).required('Obligatorio imagen jpg, máx 10mb.')
-        ,
-        FOTOGRAFIA_OBRA_2: Yup.mixed()
-        .test('fileSize', 'Máximo 10 MB', value => !value || value.size <= FILE_SIZE)
-        .test('fileFormat', 'Formato de archivo debe ser jpg', function (value) {
-          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
-          return SUPPORTED_FORMATS.includes(value.type);
-        })
-        .nullable()
-        .notRequired(),
-        FOTOGRAFIA_OBRA_3:  Yup.mixed()
-        .test('fileSize', 'Máximo 10 MB', value => !value || value.size <= FILE_SIZE)
-        .test('fileFormat', 'Formato de archivo debe ser jpg', function (value) {
-          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
-          return SUPPORTED_FORMATS.includes(value.type);
-        })
-        .nullable()
-        .notRequired(),
-        CV: Yup.mixed()
-        .test('fileSize', 'Maximo 10 mb', value => value && value.size <= FILE_SIZE)
-        .test('fileFormat', 'Formato de archivo debe ser PDF', value => value && SUPPORTED_CV_FORMATS.includes(value.type))
-        .required('Obligatorio PDF, máx 10mb.'),
       })}
-      onSubmit={(values, { setSubmitting }) => {
+
+        onSubmit={(values, { setSubmitting }) => {
         // Aquí manejar el envío del formulario por AJAX
         console.log('Intentando enviar')
 
@@ -132,8 +67,7 @@ function SectionFormPostula() {
           formData.append(key, values[key]);
         });
 
-
-        fetch('https://premiopam.cl/GuardaFormulario.php', {
+        fetch('/GuardaFormulario.php', {
           method: 'POST',
           body: formData,
         })
@@ -261,14 +195,8 @@ function SectionFormPostula() {
                       className="hidden"
                       name="FOTOGRAFIA_RETRATO"
                       id="FOTOGRAFIA_RETRATO"
-
-                      onChange={(event) => {
-                        const file = event.currentTarget.files[0];
-                        setFieldValue('FOTOGRAFIA_RETRATO_X', file); // Guarda el archivo en el campo de Formik
-                      }}
                     />
                       <ErrorMessage name="FOTOGRAFIA_RETRATO" component="div" />
-                      <ErrorMessage name="FOTOGRAFIA_RETRATO_X" component="div" />
 
                       <label htmlFor="FOTOGRAFIA_RETRATO">
                         <img src="img/boton_adjuntar_retrato.png" className="m-1 upload" id="IMG_FOTOGRAFIA_RETRATO" alt="Upload" />
