@@ -1,12 +1,16 @@
-import React from 'react';
-import { FaInstagram } from "react-icons/fa6";
-import { ImFacebook } from "react-icons/im";
-import { AiOutlineLinkedin } from "react-icons/ai";
+import React, { useState  } from 'react';
 import Presentadores from './Presentadores';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
+const FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+const SUPPORTED_FORMATS = ['image/jpeg'];
+const SUPPORTED_CV_FORMATS = ['application/pdf'];
+
+
 function SectionFormPostula() {
+
+
   return (
     <Formik
       initialValues={{ 
@@ -22,16 +26,17 @@ function SectionFormPostula() {
         RRSS: '',
         POSTULADA_POR: '',
         PARENTESCO: '',
-        FOTOGRAFIA_RETRATO: '',
         TITULO_DE_OBRA: '',
         DIMENCIONES: '',
         FECHA_CREACION: '',
         TECNICA: '',
         STATMENT: '',
-        FOTOGRAFIA_OBRA_1: '',
-        FOTOGRAFIA_OBRA_2: '',
-        FOTOGRAFIA_OBRA_3: '',
-        CV: ''
+        FOTOGRAFIA_RETRATO: null,
+        FOTOGRAFIA_OBRA_1: null,
+        FOTOGRAFIA_OBRA_2: null,
+        FOTOGRAFIA_OBRA_3: null,
+        CV: null,
+        FOTOGRAFIA_RETRATO_X: null
       }}
       validationSchema={Yup.object({
         NOMBRE_APELLLIDO: Yup.string().required('Campo obligatorio'),
@@ -39,37 +44,98 @@ function SectionFormPostula() {
         EMAIL: Yup.string().email('Dirección de correo inválida').required('Campo obligatorio'),
         FECHA_DE_NACIMIENTO: Yup.string().required('Campo obligatorio'),
         TELEFONO: Yup.string().required('Campo obligatorio'),
-
         NACIONALIDAD: Yup.string().required('Campo obligatorio'),
         LUGAR_RESIDENCIA: Yup.string().required('Campo obligatorio'),
         CIUDAD_RESIDENCIA: Yup.string().required('Campo obligatorio'),
         BIOGRAFIA: Yup.string().required('Campo obligatorio'),
-
         RRSS: Yup.string().required('Campo obligatorio'),
         POSTULADA_POR: Yup.string().required('Campo obligatorio'),
         PARENTESCO: Yup.string().required('Campo obligatorio'),
-
-        FOTOGRAFIA_RETRATO: Yup.string().required('Campo obligatorio'),
         TITULO_DE_OBRA: Yup.string().required('Campo obligatorio'),
         DIMENCIONES: Yup.string().required('Campo obligatorio'),
         TECNICA: Yup.string().required('Campo obligatorio'),
         STATMENT: Yup.string().required('Campo obligatorio'),
-        FOTOGRAFIA_OBRA_1: Yup.string().required('Campo obligatorio'),
-        FOTOGRAFIA_OBRA_2: Yup.string().required('Campo obligatorio'),
-        FOTOGRAFIA_OBRA_3: Yup.string().required('Campo obligatorio'),
-        CV: Yup.string().required('Campo obligatorio'),
+        FOTOGRAFIA_RETRATO: Yup.mixed()
+        .test('fileSize', 'Máximo 10 MB', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          console.log('value:::',value);
+          console.log('value.size:::',value.size);
+          console.log('value.length:::',value.length);
+          console.log('FILE_SIZE max:::',FILE_SIZE);
 
-        
+
+          
+          return value.size <= FILE_SIZE;
+        })
+        .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          return SUPPORTED_FORMATS.includes(value.type);
+        })
+        .required('Obligatorio imagen JPG, máximo 10 MB'),
+        FOTOGRAFIA_RETRATO_X: Yup.mixed()
+        .test('fileSize', 'Máximo 10 MB', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          console.log('value:::',value);
+          console.log('value.size:::',value.size);
+          console.log('value.length:::',value.length);
+          console.log('FILE_SIZE max:::',FILE_SIZE);
+
+
+          
+          return value.size <= FILE_SIZE;
+        })
+        .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          return SUPPORTED_FORMATS.includes(value.type);
+        })
+        .required('Obligatorio imagen JPG, máximo 10 MB'),
+        FOTOGRAFIA_OBRA_1: Yup
+        .mixed()
+        .test(
+          'fileSize',
+          'Maximo 10 mb',
+          value => value && value.size <= FILE_SIZE
+        )
+        .test(
+          'fileFormat',
+          'Formato de archivo debe ser jpg',
+          value => value && SUPPORTED_FORMATS.includes(value.type)
+        ).required('Obligatorio imagen jpg, máx 10mb.')
+        ,
+        FOTOGRAFIA_OBRA_2: Yup.mixed()
+        .test('fileSize', 'Máximo 10 MB', value => !value || value.size <= FILE_SIZE)
+        .test('fileFormat', 'Formato de archivo debe ser jpg', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          return SUPPORTED_FORMATS.includes(value.type);
+        })
+        .nullable()
+        .notRequired(),
+        FOTOGRAFIA_OBRA_3:  Yup.mixed()
+        .test('fileSize', 'Máximo 10 MB', value => !value || value.size <= FILE_SIZE)
+        .test('fileFormat', 'Formato de archivo debe ser jpg', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          return SUPPORTED_FORMATS.includes(value.type);
+        })
+        .nullable()
+        .notRequired(),
+        CV: Yup.mixed()
+        .test('fileSize', 'Maximo 10 mb', value => value && value.size <= FILE_SIZE)
+        .test('fileFormat', 'Formato de archivo debe ser PDF', value => value && SUPPORTED_CV_FORMATS.includes(value.type))
+        .required('Obligatorio PDF, máx 10mb.'),
       })}
       onSubmit={(values, { setSubmitting }) => {
         // Aquí manejar el envío del formulario por AJAX
         console.log('Intentando enviar')
+
+        const formData = new FormData();
+        Object.keys(values).forEach(key => {
+          formData.append(key, values[key]);
+        });
+
+
         fetch('https://premiopam.cl/GuardaFormulario.php', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
+          body: formData,
         })
         .then(response => response.json())
         .then(data => {
@@ -84,7 +150,7 @@ function SectionFormPostula() {
         });
       }}
     >
-      {({ isSubmitting, handleSubmit }) => (
+      {({ isSubmitting,setFieldValue, handleSubmit }) => (
         <section id="section_1" className="flex justify-center">
           <div className="w-full mx-auto container">
             <div className="presentan">
@@ -189,12 +255,23 @@ function SectionFormPostula() {
 
                   <div className="frow">
                     <div className="c2">
-                      <label>Fotografía de retrato </label>
-                      <p className="w-full">Adjunta un archivo formato jpg con máximo 50mb</p>
-                      <input type="file" className="hidden" name="FOTOGRAFIA_RETRATO" id="FOTOGRAFIA_RETRATO" accept="image/jpeg" />
+                      <label>Fotografía de retrato (*)</label>
+                      <Field
+                      type="file"
+                      className="hidden"
+                      name="FOTOGRAFIA_RETRATO"
+                      id="FOTOGRAFIA_RETRATO"
+
+                      onChange={(event) => {
+                        const file = event.currentTarget.files[0];
+                        setFieldValue('FOTOGRAFIA_RETRATO_X', file); // Guarda el archivo en el campo de Formik
+                      }}
+                    />
                       <ErrorMessage name="FOTOGRAFIA_RETRATO" component="div" />
+                      <ErrorMessage name="FOTOGRAFIA_RETRATO_X" component="div" />
+
                       <label htmlFor="FOTOGRAFIA_RETRATO">
-                        <img src="img/upload_select_await.png" className="m-1 upload" id="IMG_FOTOGRAFIA_RETRATO" alt="Upload" />
+                        <img src="img/boton_adjuntar_retrato.png" className="m-1 upload" id="IMG_FOTOGRAFIA_RETRATO" alt="Upload" />
                       </label>
                     </div>
 
@@ -247,20 +324,23 @@ function SectionFormPostula() {
                   <div className="frow">
                     <div className="c2">
                       <label>Fotografía de la obra 1* </label>
-                      <p>Adjunta un archivo formato jpg con máximo 50mb</p>
-                      <input type="file" className="hidden" name="FOTOGRAFIA_OBRA_1" id="FOTOGRAFIA_OBRA_1" accept="image/jpeg" />
+                      <Field  type="file"
+
+
+                      className="hidden" name="FOTOGRAFIA_OBRA_1" id="FOTOGRAFIA_OBRA_1" />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_1" component="div" />
                       <label htmlFor="FOTOGRAFIA_OBRA_1">
-                        <img src="img/upload_select_await.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_1" alt="Upload" />
+                        <img src="img/boton_adjuntar_obra.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_1" alt="Upload" />
                       </label>
                     </div>
                     <div className="c2">
                       <label>Fotografía de la obra 2 </label>
-                      <p>Adjunta un archivo formato jpg con máximo 50mb</p>
-                      <input type="file" className="hidden" name="FOTOGRAFIA_OBRA_2" id="FOTOGRAFIA_OBRA_2" accept="image/jpeg" />
+                      <Field  type="file"
+
+                      className="hidden" name="FOTOGRAFIA_OBRA_2" id="FOTOGRAFIA_OBRA_2" />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_2" component="div" />
                       <label htmlFor="FOTOGRAFIA_OBRA_2">
-                        <img src="img/upload_select_await.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_2" alt="Upload" />
+                        <img src="img/boton_adjuntar_obra.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_2" alt="Upload" />
                       </label>
                     </div>
                   </div>
@@ -268,11 +348,11 @@ function SectionFormPostula() {
                   <div className="frow">
                     <div className="c2">
                       <label>Fotografía de la obra 3 </label>
-                      <p>Adjunta un archivo formato jpg con máximo 50mb</p>
-                      <input type="file" className="hidden" name="FOTOGRAFIA_OBRA_3" id="FOTOGRAFIA_OBRA_3" accept="image/jpeg" />
+                      <Field type="file"
+                      className="hidden" name="FOTOGRAFIA_OBRA_3" id="FOTOGRAFIA_OBRA_3"  />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_3" component="div" />
                       <label htmlFor="FOTOGRAFIA_OBRA_3">
-                        <img src="img/upload_select_await.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_3" alt="Upload" />
+                        <img src="img/boton_adjuntar_obra.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_3" alt="Upload" />
                       </label>
                     </div>
                     <div className="c2">
@@ -283,11 +363,11 @@ function SectionFormPostula() {
                   <div className="frow">
                     <div className="c2">
                       <label>Currículum vitae</label>
-                      <p>Adjunta un archivo en formato pdf con máximo 10mb</p>
-                      <input type="file" className="hidden" name="CV" id="CV" accept=".pdf" />
+                      <Field type="file"
+                                       className="hidden" name="CV" id="CV"  />
                       <ErrorMessage name="CV" component="div" />
                       <label htmlFor="CV">
-                        <img src="img/upload_select_await.png" className="m-1 upload" id="IMG_CV" alt="Upload" />
+                        <img src="img/boton_adjuntar_cv.png" className="m-1 upload" id="IMG_CV" alt="Upload" />
                       </label>
                     </div>
                     <div className="c2">
