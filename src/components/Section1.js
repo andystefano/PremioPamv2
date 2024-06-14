@@ -10,7 +10,7 @@ function Section1() {
 
   return (
     <section id="section_1" class="flex justify-center">
-      <div className="w-full mx-auto  container">
+      <div className="w-full mx-auto  container" style={{backgroundColor: "#e9d9fc"}}>
         <div className="presentan">
          <Presentadores/>                        
         </div>
