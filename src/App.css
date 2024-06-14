@@ -423,6 +423,10 @@ label {
 .frow > .c1 > input {
 	padding: 0px 10px;
 }
+
+.ErrorMessage{
+	min-height: 1rem;
+}
  
 .frow > .c1 > textarea {
     width: 100%;
@@ -448,6 +452,7 @@ label {
     color: #f0000c;
     font-family: "Roboto Mono", monospace;
 }
+
 
  
 

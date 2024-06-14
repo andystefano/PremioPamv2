@@ -4,8 +4,7 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const FILE_SIZE = 10 * 1024 * 1024; // 10 MB
-const SUPPORTED_FORMATS = ['image/jpeg'];
-const SUPPORTED_CV_FORMATS = ['application/pdf'];
+const SUPPORTED_FORMATS = ['image/jpeg','image/png'];
 
 const regionesChilenas = [
   'Arica y Parinacota',
@@ -122,7 +121,8 @@ function SectionFormPostula() {
         .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
           if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
           return SUPPORTED_FORMATS.includes(value.type);
-        }).nullable().notRequired()
+        }).nullable().notRequired(),
+        LINK_WEB: Yup.string().nullable().notRequired(),
       })}
 
         onSubmit={(values, { setSubmitting }) => {
@@ -171,7 +171,9 @@ function SectionFormPostula() {
                     <div className="c1">
                       <label>Nombre y Apellido*</label>
                       <Field type="text" name="NOMBRE_APELLLIDO" id="NOMBRE_APELLLIDO" />
-                      <ErrorMessage name="NOMBRE_APELLLIDO" component="div" />
+                      <div className='ErrorMessage'>
+                        <ErrorMessage name="NOMBRE_APELLLIDO" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -179,12 +181,16 @@ function SectionFormPostula() {
                     <div className="c2">
                       <label>Edad*</label>
                       <Field type="number" name="EDAD" id="EDAD" min="60" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage className='ErrorMessage' name="EDAD" component="div" />
+                      </div>
                     </div>
                     <div className="c2">
                       <label>Fecha de Nacimiento*</label>
                       <Field type="date" name="FECHA_DE_NACIMIENTO" id="FECHA_DE_NACIMIENTO" className="fecha flatpickr-input" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="FECHA_DE_NACIMIENTO" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -192,12 +198,16 @@ function SectionFormPostula() {
                     <div className="c2 edad-tel-desktop">
                       <label>Teléfono*</label>
                       <Field type="tel" name="TELEFONO" id="TELEFONO" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="TELEFONO" component="div" />
+                      </div>
                     </div>
                     <div className="c2 fecha-mail-desktop">
                       <label>E-Mail*</label>
                       <Field type="email" name="EMAIL" id="EMAIL" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="EMAIL" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -205,12 +215,16 @@ function SectionFormPostula() {
                     <div className="c2">
                       <label>Nacionalidad*</label>
                       <Field type="text" name="NACIONALIDAD" id="NACIONALIDAD" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="NACIONALIDAD" component="div" />
+                      </div>
                     </div>
                     <div className="c2 ">
                       <label>País de residencia*</label>
                       <Field type="text" name="LUGAR_RESIDENCIA" id="LUGAR_RESIDENCIA" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="LUGAR_RESIDENCIA" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -226,14 +240,17 @@ function SectionFormPostula() {
                           </option>
                         ))}
                       </Field>
-
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="REGION_RESIDENCIA" component="div" />
+                      </div>
                     </div>
 
                     <div className="c2">
                       <label>Ciudad de residencia*</label>
                       <Field type="text" name="CIUDAD_RESIDENCIA" id="CIUDAD_RESIDENCIA" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="CIUDAD_RESIDENCIA" component="div" />
+                      </div>
                     </div>
 
                   </div>
@@ -242,7 +259,9 @@ function SectionFormPostula() {
                     <div className="c1">
                       <label>Biografía de la artista* (máximo 500 palabras)</label>
                       <Field as="textarea" name="BIOGRAFIA" id="BIOGRAFIA" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="BIOGRAFIA" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -250,7 +269,9 @@ function SectionFormPostula() {
                     <div className="c1">
                       <label>Redes Sociales</label>
                       <Field type="text" name="RRSS" id="RRSS" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="RRSS" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -258,7 +279,9 @@ function SectionFormPostula() {
                     <div className="c1">
                       <label>Postulado por </label>
                       <Field type="text" name="POSTULADA_POR" id="POSTULADA_POR" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="POSTULADA_POR" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -266,7 +289,9 @@ function SectionFormPostula() {
                     <div className="c1">
                       <label>Parentesco</label>
                       <Field type="text" name="PARENTESCO" id="PARENTESCO" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="PARENTESCO" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -285,8 +310,10 @@ function SectionFormPostula() {
                       }}
 
                     />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="FOTOGRAFIA_RETRATO" component="div" />
                       <ErrorMessage name="FOTOGRAFIA_RETRATO_X" component="div" />
+                      </div>
 
                       <label htmlFor="FOTOGRAFIA_RETRATO">
                         <img src="img/boton_adjuntar_retrato.png" className="my-1 upload" id="IMG_FOTOGRAFIA_RETRATO" alt="Upload" />
@@ -301,12 +328,14 @@ function SectionFormPostula() {
 
                 <fieldset>
                   <h3 className="titulo_ficha">2. Ficha técnica</h3>
-                  <p className="campos-obligatorios">Campos con asterisco (*) son obligatorios</p>
+                  <p className="campos-obligatorios mb-6">Campos con asterisco (*) son obligatorios</p>
                   <div className="frow">
                     <div className="c1">
                       <label>Título de la obra*</label>
                       <Field type="text" name="TITULO_DE_OBRA" id="TITULO_DE_OBRA" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="TITULO_DE_OBRA" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -314,12 +343,16 @@ function SectionFormPostula() {
                     <div className="c2">
                       <label>Dimensiones* (medidas en cm)</label>
                       <Field type="text" name="DIMENCIONES" id="DIMENCIONES" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="DIMENCIONES" component="div" />
+                      </div>
                     </div>
                     <div className="c2">
                       <label>Fecha de creación*</label>
                       <Field type="date" name="FECHA_CREACION" id="FECHA_CREACION" className="fecha flatpickr-input" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="FECHA_CREACION" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -327,7 +360,9 @@ function SectionFormPostula() {
                     <div className="c1">
                       <label>Técnica*</label>
                       <Field type="text" name="TECNICA" id="TECNICA" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="TECNICA" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -335,7 +370,9 @@ function SectionFormPostula() {
                     <div className="c1">
                       <label>Descripción de la obra * (máximo 500 palabras)</label>
                       <Field as="textarea" name="STATMENT" id="STATMENT" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="STATMENT" component="div" />
+                      </div>
                     </div>
                   </div>
 
@@ -348,8 +385,10 @@ function SectionFormPostula() {
                         setFieldValue('FOTOGRAFIA_OBRA_1_X', file); // Guarda el archivo en el campo de Formik
                       }}
                       className="hidden" name="FOTOGRAFIA_OBRA_1" id="FOTOGRAFIA_OBRA_1" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="FOTOGRAFIA_OBRA_1" component="div" />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_1_X" component="div" />
+                      </div>
                       <label htmlFor="FOTOGRAFIA_OBRA_1">
                         <img src="img/boton_adjuntar_obra.png" className="my-1 upload" id="IMG_FOTOGRAFIA_OBRA_1" alt="Upload" />
                       </label>
@@ -363,8 +402,10 @@ onChange={(event) => {
   setFieldValue('FOTOGRAFIA_OBRA_2_X', file); // Guarda el archivo en el campo de Formik
 }}
                       className="hidden" name="FOTOGRAFIA_OBRA_2" id="FOTOGRAFIA_OBRA_2" />
+                  <div className='ErrorMessage'>
                       <ErrorMessage name="FOTOGRAFIA_OBRA_2" component="div" />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_2_X" component="div" />
+                  </div>
 
                       <label htmlFor="FOTOGRAFIA_OBRA_2">
                         <img src="img/boton_adjuntar_obra.png" className="my-1 upload" id="IMG_FOTOGRAFIA_OBRA_2" alt="Upload" />
@@ -381,8 +422,10 @@ onChange={(event) => {
                         setFieldValue('FOTOGRAFIA_OBRA_3_X', file); // Guarda el archivo en el campo de Formik
                       }}
                       className="hidden" name="FOTOGRAFIA_OBRA_3" id="FOTOGRAFIA_OBRA_3"  />
+                    <div className='ErrorMessage'>
                       <ErrorMessage name="FOTOGRAFIA_OBRA_3" component="div" />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_3_X" component="div" />
+                    </div>
                       <label htmlFor="FOTOGRAFIA_OBRA_3">
                         <img src="img/boton_adjuntar_obra.png" className="my-1 upload" id="IMG_FOTOGRAFIA_OBRA_3" alt="Upload" />
                       </label>
@@ -398,11 +441,12 @@ onChange={(event) => {
                     <div className="c1">
                       <label>Para obras audiovisuales escribir link (*)</label>
                       <Field type="text" name="LINK_WEB" id="LINK_WEB" />
+                      <div className='ErrorMessage'>
                       <ErrorMessage name="LINK_WEB" component="div" />
+                      </div>
                     </div>
                   </div> 
-
-                  
+  
                 </fieldset>
 
                 <div className="flex justify-center my-2">
