@@ -61,11 +61,7 @@ function SectionFormPostula() {
         .test('fileSize', 'Máximo 10 MB', function (value) {
           if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
           const imgElement = document.getElementById('IMG_FOTOGRAFIA_RETRATO');
-          imgElement.src = '/img/boton_adjuntado.png';
-          console.log('value:::',value);
-          console.log('value.size:::',value.size);
-          console.log('value.length:::',value.length);
-          console.log('FILE_SIZE max:::',FILE_SIZE);          
+          imgElement.src = '/img/boton_adjuntado.png';       
           return value.size <= FILE_SIZE;
         })
         .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
@@ -76,18 +72,35 @@ function SectionFormPostula() {
         .test('fileSize', 'Máximo 10 MB', function (value) {
           if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
           const imgElement = document.getElementById('IMG_FOTOGRAFIA_OBRA_1');
-          imgElement.src = '/img/boton_adjuntado.png';
-          console.log('value:::',value);
-          console.log('value.size:::',value.size);
-          console.log('value.length:::',value.length);
-          console.log('FILE_SIZE max:::',FILE_SIZE);          
+          imgElement.src = '/img/boton_adjuntado.png';      
           return value.size <= FILE_SIZE;
         })
         .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
           if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
           return SUPPORTED_FORMATS.includes(value.type);
+        }),
+        FOTOGRAFIA_OBRA_2_X: Yup.mixed()
+        .test('fileSize', 'Máximo 10 MB', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          const imgElement = document.getElementById('IMG_FOTOGRAFIA_OBRA_2');
+          imgElement.src = '/img/boton_adjuntado.png';      
+          return value.size <= FILE_SIZE;
         })
-
+        .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          return SUPPORTED_FORMATS.includes(value.type);
+        }).nullable().notRequired(),
+        FOTOGRAFIA_OBRA_3_X: Yup.mixed()
+        .test('fileSize', 'Máximo 10 MB', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          const imgElement = document.getElementById('IMG_FOTOGRAFIA_OBRA_3');
+          imgElement.src = '/img/boton_adjuntado.png';      
+          return value.size <= FILE_SIZE;
+        })
+        .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          return SUPPORTED_FORMATS.includes(value.type);
+        }).nullable().notRequired()
       })}
 
         onSubmit={(values, { setSubmitting }) => {
@@ -308,8 +321,14 @@ onChange={(event) => {
                       <label>Fotografía de la obra 2 </label>
                       <Field  type="file"
 
+onChange={(event) => {
+  const file = event.currentTarget.files[0];
+  setFieldValue('FOTOGRAFIA_OBRA_2_X', file); // Guarda el archivo en el campo de Formik
+}}
                       className="hidden" name="FOTOGRAFIA_OBRA_2" id="FOTOGRAFIA_OBRA_2" />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_2" component="div" />
+                      <ErrorMessage name="FOTOGRAFIA_OBRA_2_X" component="div" />
+
                       <label htmlFor="FOTOGRAFIA_OBRA_2">
                         <img src="img/boton_adjuntar_obra.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_2" alt="Upload" />
                       </label>
@@ -319,9 +338,14 @@ onChange={(event) => {
                   <div className="frow">
                     <div className="c2">
                       <label>Fotografía de la obra 3 </label>
-                      <Field type="file"
+                      <Field type="file"             
+                      onChange={(event) => {
+                        const file = event.currentTarget.files[0];
+                        setFieldValue('FOTOGRAFIA_OBRA_3_X', file); // Guarda el archivo en el campo de Formik
+                      }}
                       className="hidden" name="FOTOGRAFIA_OBRA_3" id="FOTOGRAFIA_OBRA_3"  />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_3" component="div" />
+                      <ErrorMessage name="FOTOGRAFIA_OBRA_3_X" component="div" />
                       <label htmlFor="FOTOGRAFIA_OBRA_3">
                         <img src="img/boton_adjuntar_obra.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_3" alt="Upload" />
                       </label>
