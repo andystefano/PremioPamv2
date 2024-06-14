@@ -67,7 +67,7 @@ function SectionFormPostula() {
         .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
           if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
           return SUPPORTED_FORMATS.includes(value.type);
-        }),
+        }).required('El campo de fotografía retrato es requerido'),
         FOTOGRAFIA_OBRA_1_X: Yup.mixed()
         .test('fileSize', 'Máximo 10 MB', function (value) {
           if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
@@ -78,7 +78,7 @@ function SectionFormPostula() {
         .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
           if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
           return SUPPORTED_FORMATS.includes(value.type);
-        }),
+        }).required('El campo de fotografía de obra es requerido'),
         FOTOGRAFIA_OBRA_2_X: Yup.mixed()
         .test('fileSize', 'Máximo 10 MB', function (value) {
           if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
