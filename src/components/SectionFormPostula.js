@@ -153,7 +153,7 @@ function SectionFormPostula() {
     >
       {({ isSubmitting,setFieldValue, handleSubmit }) => (
         <section id="section_1" className="flex justify-center">
-          <div className="w-full mx-auto container">
+          <div className="w-full mx-auto container" style={{backgroundColor: "#e9d9fc"}}>
             <div className="presentan">
               <Presentadores />
             </div>
@@ -405,7 +405,7 @@ onChange={(event) => {
                   
                 </fieldset>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center my-2">
                   <button type="submit" disabled={isSubmitting} className="btn-enviar">Enviar</button>
                 </div>
               </form>
