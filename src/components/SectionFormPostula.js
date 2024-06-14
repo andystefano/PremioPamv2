@@ -251,7 +251,7 @@ function SectionFormPostula() {
                       <ErrorMessage name="FOTOGRAFIA_RETRATO_X" component="div" />
 
                       <label htmlFor="FOTOGRAFIA_RETRATO">
-                        <img src="img/boton_adjuntar_retrato.png" className="m-1 upload" id="IMG_FOTOGRAFIA_RETRATO" alt="Upload" />
+                        <img src="img/boton_adjuntar_retrato.png" className="my-1 upload" id="IMG_FOTOGRAFIA_RETRATO" alt="Upload" />
                       </label>
                     </div>
 
@@ -295,7 +295,7 @@ function SectionFormPostula() {
 
                   <div className="frow">
                     <div className="c1">
-                      <label>Statement* (máximo 500 palabras)</label>
+                      <label>Descripción de la obra * (máximo 500 palabras)</label>
                       <Field as="textarea" name="STATMENT" id="STATMENT" />
                       <ErrorMessage name="STATMENT" component="div" />
                     </div>
@@ -314,7 +314,7 @@ onChange={(event) => {
                       <ErrorMessage name="FOTOGRAFIA_OBRA_1" component="div" />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_1_X" component="div" />
                       <label htmlFor="FOTOGRAFIA_OBRA_1">
-                        <img src="img/boton_adjuntar_obra.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_1" alt="Upload" />
+                        <img src="img/boton_adjuntar_obra.png" className="my-1 upload" id="IMG_FOTOGRAFIA_OBRA_1" alt="Upload" />
                       </label>
                     </div>
                     <div className="c2">
@@ -330,7 +330,7 @@ onChange={(event) => {
                       <ErrorMessage name="FOTOGRAFIA_OBRA_2_X" component="div" />
 
                       <label htmlFor="FOTOGRAFIA_OBRA_2">
-                        <img src="img/boton_adjuntar_obra.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_2" alt="Upload" />
+                        <img src="img/boton_adjuntar_obra.png" className="my-1 upload" id="IMG_FOTOGRAFIA_OBRA_2" alt="Upload" />
                       </label>
                     </div>
                   </div>
@@ -347,7 +347,7 @@ onChange={(event) => {
                       <ErrorMessage name="FOTOGRAFIA_OBRA_3" component="div" />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_3_X" component="div" />
                       <label htmlFor="FOTOGRAFIA_OBRA_3">
-                        <img src="img/boton_adjuntar_obra.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_3" alt="Upload" />
+                        <img src="img/boton_adjuntar_obra.png" className="my-1 upload" id="IMG_FOTOGRAFIA_OBRA_3" alt="Upload" />
                       </label>
                     </div>
                     <div className="c2">
@@ -355,20 +355,7 @@ onChange={(event) => {
                     </div>
                   </div>
 
-                  <div className="frow">
-                    <div className="c2">
-                      <label>Currículum vitae</label>
-                      <Field type="file"
-                                       className="hidden" name="CV" id="CV"  />
-                      <ErrorMessage name="CV" component="div" />
-                      <label htmlFor="CV">
-                        <img src="img/boton_adjuntar_cv.png" className="m-1 upload" id="IMG_CV" alt="Upload" />
-                      </label>
-                    </div>
-                    <div className="c2">
-                      {/* Espacio vacío */}
-                    </div>
-                  </div>
+                  
                 </fieldset>
 
                 <div className="flex justify-center">
