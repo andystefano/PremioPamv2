@@ -57,6 +57,36 @@ function SectionFormPostula() {
         DIMENCIONES: Yup.string().required('Campo obligatorio'),
         TECNICA: Yup.string().required('Campo obligatorio'),
         STATMENT: Yup.string().required('Campo obligatorio'),
+        FOTOGRAFIA_RETRATO_X: Yup.mixed()
+        .test('fileSize', 'Máximo 10 MB', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          const imgElement = document.getElementById('IMG_FOTOGRAFIA_RETRATO');
+          imgElement.src = '/img/boton_adjuntado.png';
+          console.log('value:::',value);
+          console.log('value.size:::',value.size);
+          console.log('value.length:::',value.length);
+          console.log('FILE_SIZE max:::',FILE_SIZE);          
+          return value.size <= FILE_SIZE;
+        })
+        .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          return SUPPORTED_FORMATS.includes(value.type);
+        }),
+        FOTOGRAFIA_OBRA_1_X: Yup.mixed()
+        .test('fileSize', 'Máximo 10 MB', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          const imgElement = document.getElementById('IMG_FOTOGRAFIA_OBRA_1');
+          imgElement.src = '/img/boton_adjuntado.png';
+          console.log('value:::',value);
+          console.log('value.size:::',value.size);
+          console.log('value.length:::',value.length);
+          console.log('FILE_SIZE max:::',FILE_SIZE);          
+          return value.size <= FILE_SIZE;
+        })
+        .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
+          if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
+          return SUPPORTED_FORMATS.includes(value.type);
+        })
 
       })}
 
@@ -197,6 +227,12 @@ function SectionFormPostula() {
                       className="hidden"
                       name="FOTOGRAFIA_RETRATO"
                       id="FOTOGRAFIA_RETRATO"
+                      
+                      onChange={(event) => {
+                        const file = event.currentTarget.files[0];
+                        setFieldValue('FOTOGRAFIA_RETRATO_X', file); // Guarda el archivo en el campo de Formik
+                      }}
+
                     />
                       <ErrorMessage name="FOTOGRAFIA_RETRATO" component="div" />
                       <ErrorMessage name="FOTOGRAFIA_RETRATO_X" component="div" />
@@ -257,9 +293,13 @@ function SectionFormPostula() {
                       <label>Fotografía de la obra 1* </label>
                       <Field  type="file"
 
-
+onChange={(event) => {
+  const file = event.currentTarget.files[0];
+  setFieldValue('FOTOGRAFIA_OBRA_1_X', file); // Guarda el archivo en el campo de Formik
+}}
                       className="hidden" name="FOTOGRAFIA_OBRA_1" id="FOTOGRAFIA_OBRA_1" />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_1" component="div" />
+                      <ErrorMessage name="FOTOGRAFIA_OBRA_1_X" component="div" />
                       <label htmlFor="FOTOGRAFIA_OBRA_1">
                         <img src="img/boton_adjuntar_obra.png" className="m-1 upload" id="IMG_FOTOGRAFIA_OBRA_1" alt="Upload" />
                       </label>
