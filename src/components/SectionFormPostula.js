@@ -7,6 +7,25 @@ const FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 const SUPPORTED_FORMATS = ['image/jpeg'];
 const SUPPORTED_CV_FORMATS = ['application/pdf'];
 
+const regionesChilenas = [
+  'Arica y Parinacota',
+  'Tarapacá',
+  'Antofagasta',
+  'Atacama',
+  'Coquimbo',
+  'Valparaíso',
+  'Metropolitana de Santiago',
+  'Libertador General Bernardo O\'Higgins',
+  'Maule',
+  'Ñuble',
+  'Biobío',
+  'La Araucanía',
+  'Los Ríos',
+  'Los Lagos',
+  'Aysén del General Carlos Ibáñez del Campo',
+  'Magallanes y de la Antártica Chilena',
+  'Otra Fuera de Chile',
+];
 
 function SectionFormPostula() {
 
@@ -20,6 +39,7 @@ function SectionFormPostula() {
         TELEFONO: '',
         EMAIL: '',
         NACIONALIDAD: '',
+        REGION_RESIDENCIA:'',
         LUGAR_RESIDENCIA: '',
         CIUDAD_RESIDENCIA: '',
         BIOGRAFIA: '',
@@ -31,6 +51,7 @@ function SectionFormPostula() {
         FECHA_CREACION: '',
         TECNICA: '',
         STATMENT: '',
+        LINK_WEB: '',
         FOTOGRAFIA_RETRATO: null,
         FOTOGRAFIA_OBRA_1: null,
         FOTOGRAFIA_OBRA_2: null,
@@ -49,6 +70,7 @@ function SectionFormPostula() {
         NACIONALIDAD: Yup.string().required('Campo obligatorio'),
         LUGAR_RESIDENCIA: Yup.string().required('Campo obligatorio'),
         CIUDAD_RESIDENCIA: Yup.string().required('Campo obligatorio'),
+        REGION_RESIDENCIA : Yup.string().required('Campo obligatorio'),
         BIOGRAFIA: Yup.string().required('Campo obligatorio'),
         RRSS: Yup.string().required('Campo obligatorio'),
         POSTULADA_POR: Yup.string().required('Campo obligatorio'),
@@ -180,24 +202,40 @@ function SectionFormPostula() {
                   </div>
 
                   <div className="frow">
-                    <div className="c1">
+                    <div className="c2">
                       <label>Nacionalidad*</label>
                       <Field type="text" name="NACIONALIDAD" id="NACIONALIDAD" />
                       <ErrorMessage name="NACIONALIDAD" component="div" />
                     </div>
-                  </div>
-
-                  <div className="frow">
-                    <div className="c2 residencia-desktop">
+                    <div className="c2 ">
                       <label>País de residencia*</label>
                       <Field type="text" name="LUGAR_RESIDENCIA" id="LUGAR_RESIDENCIA" />
                       <ErrorMessage name="LUGAR_RESIDENCIA" component="div" />
                     </div>
-                    <div className="c2 ciudad-desktop">
+                  </div>
+
+                  <div className="frow">
+
+                    <div className="c2">
+                      <label>Region residencia*</label>
+                      <Field as="select" id="REGION_RESIDENCIA" name="REGION_RESIDENCIA">
+                        <option value="">Selecciona una región</option>
+                        {regionesChilenas.map((region) => (
+                          <option key={region} value={region}>
+                            {region}
+                          </option>
+                        ))}
+                      </Field>
+
+                      <ErrorMessage name="REGION_RESIDENCIA" component="div" />
+                    </div>
+
+                    <div className="c2">
                       <label>Ciudad de residencia*</label>
                       <Field type="text" name="CIUDAD_RESIDENCIA" id="CIUDAD_RESIDENCIA" />
                       <ErrorMessage name="CIUDAD_RESIDENCIA" component="div" />
                     </div>
+
                   </div>
 
                   <div className="frow">
@@ -210,7 +248,7 @@ function SectionFormPostula() {
 
                   <div className="frow">
                     <div className="c1">
-                      <label>Redes Sociales (opcional)</label>
+                      <label>Redes Sociales</label>
                       <Field type="text" name="RRSS" id="RRSS" />
                       <ErrorMessage name="RRSS" component="div" />
                     </div>
@@ -218,7 +256,7 @@ function SectionFormPostula() {
 
                   <div className="frow">
                     <div className="c1">
-                      <label>Postulado por (opcional)</label>
+                      <label>Postulado por </label>
                       <Field type="text" name="POSTULADA_POR" id="POSTULADA_POR" />
                       <ErrorMessage name="POSTULADA_POR" component="div" />
                     </div>
@@ -226,7 +264,7 @@ function SectionFormPostula() {
 
                   <div className="frow">
                     <div className="c1">
-                      <label>Parentesco (opcional)</label>
+                      <label>Parentesco</label>
                       <Field type="text" name="PARENTESCO" id="PARENTESCO" />
                       <ErrorMessage name="PARENTESCO" component="div" />
                     </div>
@@ -305,11 +343,10 @@ function SectionFormPostula() {
                     <div className="c2">
                       <label>Fotografía de la obra 1* </label>
                       <Field  type="file"
-
-onChange={(event) => {
-  const file = event.currentTarget.files[0];
-  setFieldValue('FOTOGRAFIA_OBRA_1_X', file); // Guarda el archivo en el campo de Formik
-}}
+                      onChange={(event) => {
+                        const file = event.currentTarget.files[0];
+                        setFieldValue('FOTOGRAFIA_OBRA_1_X', file); // Guarda el archivo en el campo de Formik
+                      }}
                       className="hidden" name="FOTOGRAFIA_OBRA_1" id="FOTOGRAFIA_OBRA_1" />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_1" component="div" />
                       <ErrorMessage name="FOTOGRAFIA_OBRA_1_X" component="div" />
@@ -354,6 +391,16 @@ onChange={(event) => {
                       {/* Espacio vacío */}
                     </div>
                   </div>
+
+
+                  
+                  <div className="frow">
+                    <div className="c1">
+                      <label>Para obras audiovisuales escribir link (*)</label>
+                      <Field type="text" name="LINK_WEB" id="LINK_WEB" />
+                      <ErrorMessage name="LINK_WEB" component="div" />
+                    </div>
+                  </div> 
 
                   
                 </fieldset>

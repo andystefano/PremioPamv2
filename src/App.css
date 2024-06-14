@@ -460,7 +460,7 @@ label {
     padding-right: 20px;
 }
 
-.frow > .c2 > input {
+.frow > .c2 > input, .frow > .c2 > select {
     padding: 0px 10px;
 }
 
@@ -468,7 +468,7 @@ label {
     visibility: hidden;
 }
 
-.frow > .c2 > input {
+.frow > .c2 > input, .frow > .c2 > select {
     width: 100%;
     height: 35px;
     border: none;
