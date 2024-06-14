@@ -26,6 +26,55 @@ const regionesChilenas = [
   'Otra Fuera de Chile',
 ];
 
+const nacionalidades = [
+  "Afgana", "Albanesa", "Alemana", "Andorrana", "Angoleña", "Antiguana", "Saudí", "Argelina", "Argentina", "Armenia",
+  "Australiana", "Austríaca", "Azerbaiyana", "Bahameña", "Bangladesí", "Barbadense", "Bareiní", "Belga", "Beliceña",
+  "Beninesa", "Bielorrusa", "Birmana", "Boliviana", "Bosnia", "Botswanesa", "Brasileña", "Británica", "Bruneana",
+  "Búlgara", "Burkinesa", "Burundesa", "Butanesa", "Caboverdiana", "Camboyana", "Camerunesa", "Canadiense",
+  "Catarí", "Centroafricana", "Chadiana", "Checa", "Chilena", "China", "Chipriota", "Colombiana", "Comorense",
+  "Congoleña", "Congoleña (Rep. Dem.)", "Costarricense", "Croata", "Cubana", "Danesa", "Dominicana", "Ecuatoriana",
+  "Egipcia", "Salvadoreña", "Emiratí", "Eslovaca", "Eslovena", "Española", "Estadounidense", "Estonia", "Etíope",
+  "Filipina", "Finlandesa", "Fiyiana", "Francesa", "Gabonesa", "Gambiana", "Georgiana", "Ghanesa", "Granadina",
+  "Griega", "Guatemalteca", "Guineana", "Guineana-Bisáu", "Guyanesa", "Haitiana", "Hondureña", "Húngara", "India",
+  "Indonesia", "Iraquí", "Iraní", "Irlandesa", "Islandesa", "Israelí", "Italiana", "Jamaiquina", "Japonesa",
+  "Jordana", "Kazaja", "Keniana", "Kirguís", "Kiribatiana", "Kuwaití", "Laosiana", "Lesotense", "Letona", "Libanesa",
+  "Liberiana", "Libia", "Liechtensteiniana", "Lituana", "Luxemburguesa", "Macedonia", "Malgache", "Malasia",
+  "Malauí", "Maldiva", "Maliense", "Maltés", "Marfileña", "Marroquí", "Marshallina", "Mauriciana", "Mauritana",
+  "Mexicana", "Micronesia", "Moldava", "Monegasca", "Mongola", "Montenegrina", "Mozambiqueña", "Namibia",
+  "Nauruana", "Nepalí", "Nicaragüense", "Nigeriana", "Norcoreana", "Noruega", "Neozelandesa", "Omán", "Neerlandesa",
+  "Pakistani", "Palauana", "Panameña", "Papú", "Paraguaya", "Peruana", "Polaca", "Portuguesa", "Ruandesa", "Rumano",
+  "Rusa", "Samoana", "Sancristobaleña", "Sanvicentina", "Santotomense", "Senegalesa", "Serbia", "Seychellense",
+  "Sierraleonesa", "Singapurense", "Siria", "Somalí", "Sri Lanka", "Sudafricana", "Sudanesa", "Sudanesa del Sur",
+  "Sueca", "Suiza", "Surinamés", "Suazi", "Tailandesa", "Tanzana", "Tayika", "Timorense", "Togolesa", "Tongana",
+  "Trinitense", "Tunecina", "Turca", "Turkmena", "Tuvaluana", "Ucraniana", "Ugandesa", "Uruguaya", "Uzbekistana",
+  "Vanuatuense", "Venezolana", "Vietnamita", "Yemení", "Yibutiana", "Zambiana", "Zimbabuense"
+];
+
+const paises = [
+  "Afganistán", "Albania", "Alemania", "Andorra", "Angola", "Antigua y Barbuda", "Arabia Saudita", "Argelia", "Argentina",
+  "Armenia", "Australia", "Austria", "Azerbaiyán", "Bahamas", "Bangladés", "Barbados", "Baréin", "Bélgica", "Belice",
+  "Benín", "Bielorrusia", "Birmania", "Bolivia", "Bosnia y Herzegovina", "Botsuana", "Brasil", "Brunéi", "Bulgaria",
+  "Burkina Faso", "Burundi", "Bután", "Cabo Verde", "Camboya", "Camerún", "Canadá", "Catar", "Chad", "Chile", "China",
+  "Chipre", "Ciudad del Vaticano", "Colombia", "Comoras", "Corea del Norte", "Corea del Sur", "Costa de Marfil",
+  "Costa Rica", "Croacia", "Cuba", "Dinamarca", "Dominica", "Ecuador", "Egipto", "El Salvador", "Emiratos Árabes Unidos",
+  "Eritrea", "Eslovaquia", "Eslovenia", "España", "Estados Unidos", "Estonia", "Esuatini", "Etiopía", "Filipinas",
+  "Finlandia", "Fiyi", "Francia", "Gabón", "Gambia", "Georgia", "Ghana", "Granada", "Grecia", "Guatemala", "Guyana",
+  "Guinea", "Guinea-Bisáu", "Guinea Ecuatorial", "Haití", "Honduras", "Hungría", "India", "Indonesia", "Irak", "Irán",
+  "Irlanda", "Islandia", "Israel", "Italia", "Jamaica", "Japón", "Jordania", "Kazajistán", "Kenia", "Kirguistán", "Kiribati",
+  "Kuwait", "Laos", "Lesoto", "Letonia", "Líbano", "Liberia", "Libia", "Liechtenstein", "Lituania", "Luxemburgo", "Macedonia",
+  "Madagascar", "Malasia", "Malaui", "Maldivas", "Malí", "Malta", "Marruecos", "Mauricio", "Mauritania", "México",
+  "Micronesia", "Moldavia", "Mónaco", "Mongolia", "Montenegro", "Mozambique", "Namibia", "Nauru", "Nepal", "Nicaragua",
+  "Níger", "Nigeria", "Noruega", "Nueva Zelanda", "Omán", "Países Bajos", "Pakistán", "Palaos", "Panamá", "Papúa Nueva Guinea",
+  "Paraguay", "Perú", "Polonia", "Portugal", "Reino Unido", "República Centroafricana", "República Checa", "República del Congo",
+  "República Democrática del Congo", "República Dominicana", "Ruanda", "Rumanía", "Rusia", "Samoa", "San Cristóbal y Nieves",
+  "San Marino", "San Vicente y las Granadinas", "Santa Lucía", "Santo Tomé y Príncipe", "Senegal", "Serbia", "Seychelles",
+  "Sierra Leona", "Singapur", "Siria", "Somalia", "Sri Lanka", "Sudáfrica", "Sudán", "Sudán del Sur", "Suecia", "Suiza",
+  "Surinam", "Tailandia", "Tanzania", "Tayikistán", "Timor Oriental", "Togo", "Tonga", "Trinidad y Tobago", "Túnez", "Turkmenistán",
+  "Turquía", "Tuvalu", "Ucrania", "Uganda", "Uruguay", "Uzbekistán", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Yibuti",
+  "Zambia", "Zimbabue"
+];
+
+
 function SectionFormPostula() {
 
 
@@ -214,14 +263,24 @@ function SectionFormPostula() {
                   <div className="frow">
                     <div className="c2">
                       <label>Nacionalidad*</label>
-                      <Field type="text" name="NACIONALIDAD" id="NACIONALIDAD" />
+                      <Field type="text" list="NACIONALIDADES" name="NACIONALIDAD" id="NACIONALIDAD" />
+                      <datalist id="NACIONALIDADES">
+                        {nacionalidades.map((nacionalidad, index) => (
+                          <option key={index} value={nacionalidad} />
+                        ))}
+                      </datalist>
                       <div className='ErrorMessage'>
                       <ErrorMessage name="NACIONALIDAD" component="div" />
                       </div>
                     </div>
                     <div className="c2 ">
                       <label>País de residencia*</label>
-                      <Field type="text" name="LUGAR_RESIDENCIA" id="LUGAR_RESIDENCIA" />
+                      <Field type="text"  list="PAISES" name="LUGAR_RESIDENCIA" id="LUGAR_RESIDENCIA" />
+                      <datalist id="PAISES">
+                      {paises.map((pais, index) => (
+                        <option key={index} value={pais} />
+                      ))}
+                      </datalist>
                       <div className='ErrorMessage'>
                       <ErrorMessage name="LUGAR_RESIDENCIA" component="div" />
                       </div>
