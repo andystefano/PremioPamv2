@@ -216,14 +216,18 @@ function SectionFormPostula() {
           console.log('Success:', data);
 
           if(statusCode!=200){
-            alert('Error al recibir respuesta: ' + data.message );
             setErrorPost('Ocurrio un error inesperado al enviar el formulario, por favor reintente más tarde.  Si el problema persiste contactenos a premiopam@antenna.cl .');
             setIsOpen(true);
-
           }else{
-            alert('Formulario enviado con éxito');
+            if(data.status !== 'success'){
+              setErrorPost(data.message);
+              setIsOpen(true);
+            }else{
+              alert('Cambiar a pantalla todo ok');
+            }
           }
 
+          //"status" => "success",
 
 
           setIsPostLoading(false);
