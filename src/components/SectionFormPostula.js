@@ -2,8 +2,9 @@ import React, { useState  } from 'react';
 import Presentadores from './Presentadores';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { Button,Spinner } from "keep-react";
-
+import { Spinner } from "keep-react";
+import { Check } from 'phosphor-react'
+import { Button, Modal } from 'keep-react'
 
 const FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 const SUPPORTED_FORMATS = ['image/jpeg','image/png'];
@@ -81,6 +82,13 @@ function SectionFormPostula() {
 
   const [isPostLoading, setIsPostLoading] = useState(false);
 
+  const [isOpen, setIsOpen] = useState(false)
+  const openModal = () => {
+    setIsOpen(true)
+  }
+  const closeModal = () => {
+    setIsOpen(false)
+  }
 
   return (
     <Formik
@@ -210,6 +218,9 @@ function SectionFormPostula() {
           alert('Formulario enviado con éxito');
           }
 
+
+          setIsOpen(true);
+
           setIsPostLoading(false);
           setSubmitting(false);
         })
@@ -222,6 +233,26 @@ function SectionFormPostula() {
     >
       {({ isSubmitting,setFieldValue, handleSubmit }) => (
         <section id="section_1" className="flex justify-center">
+
+
+<Modal isOpen={isOpen} onClose={closeModal}>
+        <Modal.Body className="flex w-[30rem] flex-col items-center p-6 lg:p-8">
+          <Modal.Icon className="h-20 w-20 border border-success-100 bg-success-50 text-success-500">
+            <Check size={60} />
+          </Modal.Icon>
+          <Modal.Content className="my-4 text-center">
+            <h3 className="mb-2 text-body-1 font-bold text-metal-900">Payment Successful</h3>
+            <p className="mx-auto max-w-xs text-body-4 font-normal text-metal-600">
+              Your document has unsaved changes. Discard or save them as a new page to continue.
+            </p>
+          </Modal.Content>
+          <Modal.Footer>
+            <Button onClick={closeModal} size="sm" color="success">
+              Confirm
+            </Button>
+          </Modal.Footer>
+        </Modal.Body>
+</Modal>
 
           <div className="w-full mx-auto container" style={{backgroundColor: "#e9d9fc"}}>
             <div className="presentan">
