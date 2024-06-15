@@ -3,8 +3,10 @@ import Presentadores from './Presentadores';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Spinner } from "keep-react";
-import { Check } from 'phosphor-react'
-import { Button, Modal } from 'keep-react'
+import { Check } from 'phosphor-react';
+import { Button, Modal } from 'keep-react';
+import { BiErrorAlt } from "react-icons/bi";
+
 
 const FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 const SUPPORTED_FORMATS = ['image/jpeg','image/png'];
@@ -81,6 +83,7 @@ const paises = [
 function SectionFormPostula() {
 
   const [isPostLoading, setIsPostLoading] = useState(false);
+  const [errorPost, setErrorPost] = useState('');
 
   const [isOpen, setIsOpen] = useState(false)
   const openModal = () => {
@@ -214,12 +217,14 @@ function SectionFormPostula() {
 
           if(statusCode!=200){
             alert('Error al recibir respuesta: ' + data.message );
+            setErrorPost('Ocurrio un error inesperado al enviar el formulario, por favor reintente más tarde.  Si el problema persiste contactenos a premiopam@antenna.cl .');
+            setIsOpen(true);
+
           }else{
-          alert('Formulario enviado con éxito');
+            alert('Formulario enviado con éxito');
           }
 
 
-          setIsOpen(true);
 
           setIsPostLoading(false);
           setSubmitting(false);
@@ -238,12 +243,12 @@ function SectionFormPostula() {
 <Modal isOpen={isOpen} onClose={closeModal}>
         <Modal.Body className="flex w-[30rem] flex-col items-center p-6 lg:p-8">
           <Modal.Icon className="h-20 w-20 border border-success-100 bg-success-50 text-success-500">
-            <Check size={60} />
+            <BiErrorAlt size={60} />
           </Modal.Icon>
           <Modal.Content className="my-4 text-center">
-            <h3 className="mb-2 text-body-1 font-bold text-metal-900">Payment Successful</h3>
+            <h3 className="mb-2 text-body-1 font-bold text-metal-900">Error al enviar</h3>
             <p className="mx-auto max-w-xs text-body-4 font-normal text-metal-600">
-              Your document has unsaved changes. Discard or save them as a new page to continue.
+              {errorPost}
             </p>
           </Modal.Content>
           <Modal.Footer>
