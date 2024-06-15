@@ -4,7 +4,6 @@ import SectionFormPostula from './components/SectionFormPostula.js'
 import Footer from './components/Footer.js'
 
 
-
 function Postula() {
   return (
     <div className="App">

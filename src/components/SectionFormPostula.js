@@ -2,6 +2,8 @@ import React, { useState  } from 'react';
 import Presentadores from './Presentadores';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { Button,Spinner } from "keep-react";
+
 
 const FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 const SUPPORTED_FORMATS = ['image/jpeg','image/png'];
@@ -76,6 +78,8 @@ const paises = [
 
 
 function SectionFormPostula() {
+
+  const [isPostLoading, setIsPostLoading] = useState(false);
 
 
   return (
@@ -176,7 +180,9 @@ function SectionFormPostula() {
 
         onSubmit={(values, { setSubmitting }) => {
         // Aquí manejar el envío del formulario por AJAX
-        console.log('Intentando enviar')
+ 
+        console.log('Intentando enviar');
+        setIsPostLoading(true);
 
         const formData = new FormData();
         Object.keys(values).forEach(key => {
@@ -204,6 +210,7 @@ function SectionFormPostula() {
           alert('Formulario enviado con éxito');
           }
 
+          setIsPostLoading(false);
           setSubmitting(false);
         })
         .catch((error) => {
@@ -215,6 +222,7 @@ function SectionFormPostula() {
     >
       {({ isSubmitting,setFieldValue, handleSubmit }) => (
         <section id="section_1" className="flex justify-center">
+
           <div className="w-full mx-auto container" style={{backgroundColor: "#e9d9fc"}}>
             <div className="presentan">
               <Presentadores />
@@ -522,7 +530,19 @@ onChange={(event) => {
                 </fieldset>
 
                 <div className="flex justify-center my-2">
-                  <button type="submit" disabled={isSubmitting} className="btn-enviar">Enviar</button>
+                  <button type="submit" disabled={isSubmitting} className="btn-enviar">
+                  {isPostLoading ? (
+        <span className="pr-2">
+          <Spinner color="info" size="md" />
+        </span>
+      ) : (
+        'Enviar'
+      )}
+      {isPostLoading && 'Enviando...'}
+
+                  </button>
+
+                  
                 </div>
               </form>
             </div>
