@@ -183,14 +183,27 @@ function SectionFormPostula() {
           formData.append(key, values[key]);
         });
 
-        fetch('/GuardaFormulario.php', {
+        fetch('http://localhost/premiopam/error.php', {
           method: 'POST',
           body: formData,
         })
-        .then(response => response.json())
-        .then(data => {
+        .then(response => {
+          const statusCode = response.status;
+          return response.json().then(data => {
+            return { statusCode, data };
+          });
+        })
+        .then(({ statusCode, data }) => {
+
+          console.log('Status Code:', statusCode);
           console.log('Success:', data);
+
+          if(statusCode!=200){
+            alert('Error al recibir respuesta: ' + data.message );
+          }else{
           alert('Formulario enviado con éxito');
+          }
+
           setSubmitting(false);
         })
         .catch((error) => {
