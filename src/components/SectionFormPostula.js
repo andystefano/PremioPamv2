@@ -3,7 +3,6 @@ import Presentadores from './Presentadores';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Spinner } from "keep-react";
-import { Check } from 'phosphor-react';
 import { Button, Modal } from 'keep-react';
 import { BiErrorAlt } from "react-icons/bi";
 
@@ -201,7 +200,7 @@ function SectionFormPostula() {
           formData.append(key, values[key]);
         });
 
-        fetch('http://localhost/premiopam/error.php', {
+        fetch('/GuardaFormulario.php', {
           method: 'POST',
           body: formData,
         })
@@ -225,19 +224,14 @@ function SectionFormPostula() {
               setIsOpen(true);
             }else{
               setPostulacionOk(true);
-              alert('Cambiar a pantalla todo ok');
             }
           }
-
-          //"status" => "success",
-
-
           setIsPostLoading(false);
           setSubmitting(false);
         })
         .catch((error) => {
-          console.error('Error:', error);
-          alert('Hubo un error al enviar el formulario');
+          setErrorPost('Ocurrio un error inesperado al enviar el formulario, por favor reintente más tarde.  Si el problema persiste contactenos a premiopam@antenna.cl .');
+          setIsOpen(true);
           setSubmitting(false);
         });
       }}
@@ -576,7 +570,7 @@ onChange={(event) => {
                   
                   <div className="frow">
                     <div className="c1">
-                      <label>Para obras audiovisuales escribir link (*)</label>
+                      <label>Para obras audiovisuales escribir link</label>
                       <Field type="text" name="LINK_WEB" id="LINK_WEB" />
                       <div className='ErrorMessage'>
                       <ErrorMessage name="LINK_WEB" component="div" />
