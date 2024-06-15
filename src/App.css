@@ -66,6 +66,7 @@ header{
   align-self: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  padding-bottom: 4rem;
 }
 
   .presentan > img {
@@ -131,6 +132,18 @@ h1 {
     margin-top: 1rem;
     margin-bottom: 1rem;
 	font-size: 16px;
+}
+
+.contenido__postulado {
+	color: #F0000C;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 58px;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+    font-size: 30px;
+    max-width: 219px !important;
 }
 
 .presentan__titulo {

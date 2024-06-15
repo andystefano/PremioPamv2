@@ -84,6 +84,7 @@ function SectionFormPostula() {
 
   const [isPostLoading, setIsPostLoading] = useState(false);
   const [errorPost, setErrorPost] = useState('');
+  const [postulacionOk, setPostulacionOk] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false)
   const openModal = () => {
@@ -219,10 +220,11 @@ function SectionFormPostula() {
             setErrorPost('Ocurrio un error inesperado al enviar el formulario, por favor reintente más tarde.  Si el problema persiste contactenos a premiopam@antenna.cl .');
             setIsOpen(true);
           }else{
-            if(data.status !== 'success'){
+            if(data.status != 'success'){
               setErrorPost(data.message);
               setIsOpen(true);
             }else{
+              setPostulacionOk(true);
               alert('Cambiar a pantalla todo ok');
             }
           }
@@ -267,7 +269,22 @@ function SectionFormPostula() {
             <div className="presentan">
               <Presentadores />
             </div>
-            <div className="contenido">
+            
+            {postulacionOk ? 
+            (
+
+<div className="contenido">
+              <h1 className="!mb-0">POSTULACIÓN PREMIO PAM 2024</h1>
+              <p className="!mt-1 !mb-12 contenido__postulado" style={{ lineHeight: 'normal' }}>
+              Hemos recibido correctamente tu
+              postulación al Premio PAM 2024.<br/><br/>
+
+              ¡Muchas gracias!
+              </p>
+</div>
+            )
+            :
+            (<div className="contenido">
               <h1 className="!mb-0">POSTULACIÓN PREMIO PAM 2024</h1>
               <h2 className="!mt-1 !mb-12 contenido__titulo" style={{ lineHeight: 'normal' }}>
                 COMPLETE LA SIGUIENTE INFORMACIÓN:
@@ -585,7 +602,8 @@ onChange={(event) => {
                   
                 </div>
               </form>
-            </div>
+            </div>) }
+
           </div>
         </section>
       )}
