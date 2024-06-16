@@ -103,7 +103,7 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 $headers .= "From: Premio PAM <premiopam@antenna.cl>" . "\r\n";
 
 // Cuerpo del correo electrónico
-$subject = "Postulación recibida";
+$subject = "Ya estás participando";
 $body = '
 <html>
 <body>
