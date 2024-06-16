@@ -268,7 +268,7 @@ function SectionFormPostula() {
             (
 
 <div className="contenido">
-              <h1 className="!mb-0">POSTULACIÓN PREMIO PAM 2024</h1>
+              <h1 className="!mb-0" id="titulo_postulacion">POSTULACIÓN PREMIO PAM 2024</h1>
               <p className="!mt-1 !mb-12 contenido__postulado" style={{ lineHeight: 'normal' }}>
               Hemos recibido correctamente tu
               postulación al Premio PAM 2024.<br/><br/>
@@ -279,8 +279,8 @@ function SectionFormPostula() {
             )
             :
             (<div className="contenido">
-              <h1 className="!mb-0">POSTULACIÓN PREMIO PAM 2024</h1>
-              <h2 className="!mt-1 !mb-12 contenido__titulo" style={{ lineHeight: 'normal' }}>
+              <h1 className="!mb-0"  id="titulo_postulacion">POSTULACIÓN PREMIO PAM 2024</h1>
+              <h2 className="!mt-1 !mb-12 contenido__titulo" id='subtitulo_postulacion' style={{ lineHeight: 'normal' }}>
                 COMPLETE LA SIGUIENTE INFORMACIÓN:
               </h2>
 
