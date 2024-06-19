@@ -1830,8 +1830,9 @@ border-color: #c3c1c1 !important;
 
 $sql = "SELECT * FROM `postulaciones_pam` WHERE `ESTADO_POSTULACION` = '1' ORDER BY `NUMERO` ASC";
 
+$sql = "SELECT * FROM `postulaciones_pam`  ORDER BY `ID_POSTULACION` DESC LIMIT 10";
 
- 
+
 
 include("CONFIGURACION.php");
 
