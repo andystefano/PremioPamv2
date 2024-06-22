@@ -35,7 +35,7 @@ function Section1() {
           <p class="texto__principal">
             Además, el público votará y seleccionará a una artista ganadora, lo
             cual permite democratizar este reconocimiento y difundir más
-            ampliamente a las participantes y sus obras.
+            ampliamente a las participantes.
           </p>
 
           <div class="texto__premios">

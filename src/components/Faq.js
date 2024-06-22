@@ -17,7 +17,7 @@ function Faq() {
         <div
           id="accordion"
         >
-          <AcordeonTab titulo={'¿Hasta qué fecha se puede postular?'} contenido={'Las postulaciones se pueden enviar desde el día lunes 6 de mayo 2024 hasta el día jueves 25 de julio, a las 23:59 hrs. Las postulaciones que lleguen después serán consideradas como fuera de base.'} />
+          <AcordeonTab titulo={'¿Hasta qué fecha se puede postular?'} contenido={'Las postulaciones se pueden enviar desde el día 26 de junio 2024 hasta el día 25 de septiembre, a las 23:59 hrs. Las postulaciones que lleguen después serán consideradas como fuera de base.'} />
           <AcordeonTab titulo={'¿Se puede postular más de una obra?'} contenido={'No, solamente se puede postular una obra por cada artista o postulante.'} />
           <AcordeonTab titulo={'¿Pueden postular artistas que hayan postulado a las versiones anteriores?'} contenido={'Si, las participantes de las convocatorias anteriores pueden postular, a excepción de las ganadoras de las versiones anteriores.'} />
           <AcordeonTab titulo={'¿Es un premio de adquisición de obra?'} contenido={'No, el premio no es de adquisición.'} />
