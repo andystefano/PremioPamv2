@@ -4,6 +4,7 @@ import React  from 'react';
 import { FaInstagram } from "react-icons/fa6";
 import { ImFacebook } from "react-icons/im";
 import { AiOutlineLinkedin } from "react-icons/ai";
+import { TbDownload } from "react-icons/tb";
 
 
 
@@ -44,6 +45,15 @@ function Footer() {
   </a>
 <a href="https://www.premiopam.cl/" target="_blank"><img style={{maxHeight:'20px'}} class="hashtag__footer" src="img/icons/hashtag_1.png" alt="premio-pam"/></a>
 
+</div>
+
+<div class="icons-footer"  style={{ marginTop: '0px' }}>
+  <div style={{ display: 'flex', alignItems: 'center', marginTop: '0px'  }}>
+    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank">
+      <TbDownload size={28} color="#F0000C" /> </a>
+    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank"><span style={{ marginLeft: '8px' }} className='contenido__titulo'>Media kit 2024</span></a>
+   
+  </div>
 </div>
 
  
