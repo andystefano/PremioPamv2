@@ -12,7 +12,7 @@ function Presentadores() {
         <img src="img/COLABORA2.png" alt='GRUPO ROCA'  />  
         <h2 class="presentan__titulo">APOYA:</h2>
         <img src="img/COLABORA1.png" alt='Capitulo Chileno de Mational Musseum of WOMEN in the ARTS' />  
-        <img src="img/APOYA.png" alt='e-press' />                          
+        <img src="img/APOYA.png" alt='e-press' style={{marginTop:'1rem'}} />                          
         </>
   );
 }
