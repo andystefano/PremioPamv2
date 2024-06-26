@@ -223,6 +223,13 @@ function SectionFormPostula() {
               setErrorPost(data.message);
               setIsOpen(true);
             }else{
+              // Calcula el 15% de la altura total de la página
+              const scrollPosition = document.documentElement.scrollHeight * 0.15;
+              // Realiza el scroll a la posición calculada
+              window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth' // Para un desplazamiento suave
+              });
               setPostulacionOk(true);
             }
           }
