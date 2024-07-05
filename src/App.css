@@ -155,6 +155,209 @@ h1 {
 	font-size: 16px;
 	font-weight: 100;
 }
+ 
+.graficoPrincipal {
+    min-height: calc(23vw);
+    max-height: calc(23vw);
+    text-align: center;
+    background-color: white;
+}
+
+.PostulacionContenedor{
+	width: 25%;
+    float: left;
+}
+
+.PostulacionItem{
+	padding-top: 3%;		
+	padding-top: 3%;	
+	background-color: #ffffff;
+    width: 95%;
+    min-height: 720px !important;
+    margin: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+
+	}	
+
+	.PostulacionItem:hover{
+    -webkit-box-shadow: 0px 0px 46px -4px rgb(103 58 183);
+    -moz-box-shadow: 0px 0px 46px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 46px -4px rgb(75 10 120 / 75%);
+	}
+	
+	.PostulacionItem > table{
+		width: 100%;
+		padding-left: 5%;
+		padding-right: 5%;
+		margin-bottom: 2%;
+	}
+
+
+
+	.PostulacionItem > table > tbody > tr > td:nth-child(2) > a {
+		text-align: center;
+    font-size: calc(1.1em);
+    font-family: "akzidenz-grotesk",sans-serif;
+    /* text-align: left; */
+    /* text-decoration: none; */
+    color: white;
+    background-color: black;
+    border-radius: calc(1.1em);
+    /* padding: 4px; */
+    display: inline-block;
+    margin-bottom: calc(1vw);
+    cursor: pointer;
+    padding-left: calc(0.5em);
+    padding-right: calc(0.5em);
+    padding-top: calc(0.4vw);
+    padding-bottom: calc(0.4vw);
+    margin-top: 0px;
+    margin-bottom: 0px;
+	}
+
+
+	.PostulacionItem > table > tbody > tr > td:nth-child(1) > h1{
+	font-size: calc(1em);
+    text-align: left;
+    margin-left: calc(1em);
+    margin-bottom: 0px !important;
+    margin-top: 0px;
+    line-height: calc(1em);
+    color: #000000;
+    letter-spacing: 0;
+	}
+
+
+.PostulacionItem > table > tbody > tr > td:nth-child(2) > a:hover {
+    color: white;
+    background-color: red;
+	font-family:"akzidenz-grotesk",sans-serif;
+
+}
+
+	.PostulacionItem > table > tbody > tr > td:nth-child(2) {
+		text-align: right !important;
+	}
+	
+	.PostulacionItem >  table > tbody > tr > td:nth-child(1) > h1 {
+	font-size: calc(1em);
+    text-align: left;
+    margin-left: calc(1vw);
+    margin-bottom: 0px !important;
+    margin-top: 0px;
+    line-height: calc(1em);
+    color: #000000;
+    letter-spacing: 0;
+	}	
+
+	.PostulacionItem >  table > tbody > tr > td:nth-child(1) > {
+    text-align: center;
+	}	
+
+ 	
+
+	.ImgPrincipal{
+		max-width: 90%;
+		max-height: calc(19.9vw);
+		cursor:pointer;
+		margin-bottom: 15px;
+	}
+
+		
+.contenedorPostulacion{
+	width: 33.3%;
+	float: left;
+}
+		
+
+.PostulacionItem > h1 {
+	font-size: calc(1.2em);
+    text-align: left;
+    margin-left: calc(1vw);
+    margin-bottom: 0px !important;
+    margin-top: 5px;
+    line-height: calc(1.2em);
+    color: #000000;
+    margin-left: 5%;
+    letter-spacing: 0;
+	padding-bottom: 3%;
+}	
+		
+		td {
+    text-align: center;
+}
+		
+		
+		
+ 
+.PostulacionItem > h2  {
+	letter-spacing: 0;
+    margin-left: 5%;
+    color: #0f0f0f;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: center;
+    font-size: calc(2vw);
+    font-family: 'Akzidenz Grotesk BE Bold';
+    text-align: left;
+}
+		
+ 
+.PostulacionItem > h3 {
+	margin-left: 5%;
+    margin-right: 5%;
+    color: #0f0f0f;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: center;
+    font-size: calc(1.1em);
+    font-family: 'Akzidenz Grotesk BE Bold';
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 0px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: calc(1.1em);
+}	
+		
+
+
+
+
+
+
+
+
+.btn_botar{
+    text-align: center;
+    font-size: calc(0.7em);
+    font-size: 12px;
+    font-family: "akzidenz-grotesk", sans-serif;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-radius: 12px;
+    /* padding: 4px; */
+    display: inline-block;
+    margin-bottom: calc(1vw);
+    cursor: pointer;
+    padding-left: calc(0.5em);
+    padding-right: calc(0.5em);
+    padding-top: calc(0.4vw);
+    padding-bottom: calc(0.4vw);
+    /* margin-top: 0px; */
+    margin-bottom: 0px;
+}
+
+
+
+
+
+ 
+
+
 
 #faq_titulo{
 	color: #F0000C;
