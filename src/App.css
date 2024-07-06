@@ -169,15 +169,11 @@ h1 {
 }
 
 .PostulacionItem{
-	padding-top: 3%;		
-	padding-top: 3%;	
 	background-color: #ffffff;
-    width: 95%;
-    min-height: 720px !important;
-    margin: 5%;
-    margin-left: 2%;
-    margin-right: 2%;
-
+  width: 100%;
+  min-height: 720px !important;
+  padding-left: 2%;
+  padding-right: 2%;
 	}	
 
 	.PostulacionItem:hover{
@@ -190,7 +186,6 @@ h1 {
 		width: 100%;
 		padding-left: 5%;
 		padding-right: 5%;
-		margin-bottom: 2%;
 	}
 
 
@@ -305,7 +300,6 @@ h1 {
 		
  
 .PostulacionItem > h3 {
-	margin-left: 5%;
     margin-right: 5%;
     color: #0f0f0f;
     margin-bottom: 0px;
@@ -320,35 +314,51 @@ h1 {
     font-weight: 500;
     line-height: calc(1.1em);
 }	
-		
-
-
-
-
-
-
-
+		 
 
 .btn_botar{
     text-align: center;
     font-size: calc(0.7em);
-    font-size: 12px;
+    font-size: 15px;
     font-family: "akzidenz-grotesk", sans-serif;
     text-align: center;
     text-decoration: none;
     color: white;
     background-color: black;
     border-radius: 12px;
-    /* padding: 4px; */
     display: inline-block;
     margin-bottom: calc(1vw);
-    cursor: pointer;
     padding-left: calc(0.5em);
     padding-right: calc(0.5em);
     padding-top: calc(0.4vw);
     padding-bottom: calc(0.4vw);
-    /* margin-top: 0px; */
     margin-bottom: 0px;
+}
+
+.subtituloVotar{
+  color: #0f0f0f;
+  text-align: left;
+  font-size: 0.95rem;
+  letter-spacing: 0.009rem;
+  margin-top: 2%;
+  font-family: 'Inter', sans-serif;
+  line-height: 16px !important;
+  margin-top: 1%;
+  margin-bottom: 0px;
+  font-weight: 700;
+}
+
+
+.tituloVotar{
+  color: #0f0f0f;
+  text-align: left;
+  font-size: 1.9rem;
+  margin-top: 2%;
+  font-family: 'Inter', sans-serif;
+  margin-top: 1%;
+  margin-bottom: 0px;
+  font-weight: 700;
+  margin-bottom: 5%;
 }
 
 
@@ -1066,3 +1076,6 @@ input[type="submit"]:hover {
 
 }
 
+.PostulacionItemImagen{
+  cursor: url('../public/img/pointer.png'), auto; 
+}
