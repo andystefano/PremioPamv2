@@ -57,11 +57,18 @@ function Votacion() {
  
 
   return (
-    <section id="section_1" class="flex justify-center">
-      <div className="w-full mx-auto  container" style={{backgroundColor: "#e9d9fc"}}>
+    <section id="section_votacion" class="flex justify-center">
+      <div className="w-full mx-auto  " style={{backgroundColor: "#e9d9fc"}}>
         
       <div class="w-full">
-      Aca usar swr
+<h1 className="text-center">VOTA POR TU OBRA FAVORITA</h1>
+      </div>
+
+      <div className="w-full mx-auto">
+        <ol className="instrucciones">
+        <li>* Para hacer efectiva tu votación, debes confirmar el link que recibirás en tu email. </li>
+        <li>** Solo se admite un voto por mail registrado.</li>
+        </ol>
       </div>
 
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

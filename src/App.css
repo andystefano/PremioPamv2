@@ -51,6 +51,18 @@ header{
 		width:100%;
 }
 
+#section_votacion{
+  background-color: #E9D9FC;
+		margin-top: -4px;
+		display: flex;
+		flex-direction: row;
+		width:100%;
+    padding: 4%;
+}
+
+
+
+
 #faq{
   background-color: #E9D9FC;
 }
@@ -361,6 +373,26 @@ h1 {
   margin-bottom: 5%;
 }
 
+
+.contenedorVotacion{
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.instrucciones{
+margin-bottom: 4%;
+}
+
+.instrucciones > li {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  min-width: 100% !important;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-weight: 500;
+  color: black;
+  display: inline-block;
+}
 
 
 
