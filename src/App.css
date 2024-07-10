@@ -52,12 +52,13 @@ header{
 }
 
 #section_votacion{
-  background-color: #E9D9FC;
+    background-color: #E9D9FC;
 		margin-top: -4px;
 		display: flex;
 		flex-direction: row;
 		width:100%;
     padding: 4%;
+    padding-top: 1%;
 }
 
 

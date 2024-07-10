@@ -64,13 +64,16 @@ function Votacion() {
 <h1 className="text-center">VOTA POR TU OBRA FAVORITA</h1>
       </div>
 
-      <div className="w-full mx-auto">
+
+      <div className="w-full mx-auto container">
         <ol className="instrucciones">
         <li>* Para hacer efectiva tu votación, debes confirmar el link que recibirás en tu email. </li>
         <li>** Solo se admite un voto por mail registrado.</li>
         </ol>
       </div>
 
+
+  <div className="w-full mx-auto container">
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {repeatTimes.map((_, index) => (
 
@@ -102,11 +105,12 @@ function Votacion() {
                     </div> 
                   </div>
                 ))}
-
-
-        </div>
+      </div>
+  </div>
 
       </div>
+
+
     </section>
   );
 }
