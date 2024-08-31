@@ -823,6 +823,22 @@ if(tam<768){
 		border-color:#D7040E;
 	}
 
+	.ganadoras-btns {
+		margin-top: 65px;
+    	margin-bottom: 113px;
+	}
+
+	.btn__ganadoras {
+		color: #F0000C;
+		background-color: #E9D9FC;
+		padding: 17px 28px 17px 28px;
+	}
+	.btn__ganadoras:hover {
+		background-color: #D7040E;
+		color: #E9D9FC;
+		border-color:#D7040E;
+	}
+
 	body > header > div:nth-child(3) > div:nth-child(2) > p:nth-child(8) {
     padding-top: 0px;
     margin-top: 3px;
