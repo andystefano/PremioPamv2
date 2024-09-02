@@ -51,6 +51,16 @@ header{
 		width:100%;
 }
 
+#section_ganadoras{
+  background-color: #fff6e6;
+		margin-top: -4px;
+		display: flex;
+		flex-direction: row;
+		width:100%;
+}
+
+
+
 #section_votacion{
     background-color: #E9D9FC;
 		margin-top: -4px;
@@ -93,7 +103,7 @@ header{
     float: left;
     width: 34%;
     padding-left: 8%;
-    background-color: #E9D9FC;
+    background-color: #fff6e6;
     display: flex;
     justify-content: center;
     padding-top: 56px;
@@ -113,6 +123,30 @@ header{
 .icons-header > div {
   padding: 12px 0px 12px 78px;
 }
+
+
+
+.icons-header-ganadoras {
+  padding-top: 12%;
+  float: left;
+  width: 10%;
+  background-color: #fff6e6;
+  text-align: left;
+}
+.icons-header-ganadoras > div {
+  padding: 12px 0px 12px 78px;
+}
+
+.tecnica{
+    font-family: 'Inter', sans-serif;
+    color: #000;
+    font-size: 16px;
+    min-width: 100% !important;
+    font-weight: 100;
+    padding-top: 1rem;
+
+}
+
 .icons__img{
   max-height: 27px;
 }
@@ -194,7 +228,7 @@ h1 {
   padding-top: 56px;
   float: left;
   width: 56%;
-  background-color:#E9D9FC;
+  background-color:#fff6e6;
   text-align: left;
 }
 
@@ -213,7 +247,7 @@ h1 {
 
 .titulo_principalGanadoras{
     color: #2f2727;
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 800;
@@ -1010,6 +1044,10 @@ input[type="submit"]:hover {
 		display: none
 	}
 
+  .icons-header-ganadoras {
+		display: none
+	}
+
 	h1 {
 		font-size: 30px;
 		font-style: normal;
@@ -1221,16 +1259,11 @@ input[type="submit"]:hover {
   cursor: url('../public/img/pointer.png'), auto; 
 }
 
-
-
 .ganadoras_anos {
   color: #F0000C;
-  font-size: 50px;
-  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
-  line-height: 58px;
-  margin-top: 1rem;
   margin-bottom: 1rem;
-  font-size: 22px;
+  font-size:  2.1rem;
+  line-height: 2.1rem;
 }

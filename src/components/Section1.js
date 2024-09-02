@@ -70,7 +70,7 @@ function Section1() {
             <div class="ganadoras-btns"> 
               <a
                 className="btn__ganadoras "
-                href="/postulacion"
+                href="/ganadoras"
               >
                 GANADORAS ANTERIORES
               </a>
