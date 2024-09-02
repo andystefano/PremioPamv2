@@ -1267,3 +1267,12 @@ input[type="submit"]:hover {
   font-size:  2.1rem;
   line-height: 2.1rem;
 }
+
+.zona_foto{
+  min-width: 355px;
+}
+
+
+.contenidoGanadoras > .ganadora:not(:first-child) {
+  padding-top: 3.5rem; /* Equivalente a pt-14 en Tailwind */
+}
