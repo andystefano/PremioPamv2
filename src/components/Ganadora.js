@@ -2,7 +2,7 @@ import React from "react";
 
 
 function Ganadoras(props) {
-    return ( <div className="ganadora" style={{ display: props.ano === props.anoSeleccion ? 'none' : 'unset' }} >
+    return ( <div className="ganadora" style={{ display: props.ano === props.anoSeleccion ? 'unset' : 'none' }} >
         <div>
           <div className="flex w-full">
             <div className="pr-10 pt-4 zona_foto">

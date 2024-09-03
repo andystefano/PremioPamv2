@@ -16,10 +16,10 @@ function GanadorasSection() {
       >
         <div className="presentanGanadoras" style={{ paddingTop: "4.49rem" }}>
           <ul className="ganadoras_anos">
-          <li className="mb-7 underline" onClick={() => setAno(2023)}>2023</li>
-          <li className="mb-7" onClick={() => setAno(2022)}>2022</li>
-          <li className="mb-7" onClick={() => setAno(2020)}>2020</li>
-          <li className="mb-7" onClick={() => setAno(2019)}>2019</li>
+          <li className="mb-7 underline" onClick={() => setAno(2023)}><a>2023</a></li>
+          <li className="mb-7" onClick={() => setAno(2022)}><a>2022</a></li>
+          <li className="mb-7" onClick={() => setAno(2020)}><a>2020</a></li>
+          <li className="mb-7" onClick={() => setAno(2019)}><a>2019</a></li>
           </ul>
         </div>
         <div class="contenidoGanadoras ">
@@ -80,26 +80,26 @@ function GanadorasSection() {
           <div>
             <a
               href="https://www.instagram.com/antennaorg/?hl=es-la"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <FaInstagram size={32} color="#F0000C" />
             </a>
           </div>
           <div>
-            <a href="https://www.facebook.com/antennaorg" target="_blank">
+            <a href="https://www.facebook.com/antennaorg" target="_blank" rel="noreferrer">
               <ImFacebook size={24} color="#F0000C" />
             </a>
           </div>
           <div>
             <a
               href="https://www.linkedin.com/company/antennaorg/"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <AiOutlineLinkedin size={35} color="#F0000C" />
             </a>
           </div>
           <div>
-            <a href="https://www.premiopam.cl/" target="_blank">
+            <a href="https://www.premiopam.cl/" target="_blank" rel="noreferrer">
               <img
                 width="18"
                 style={{ marginLeft: "7px" }}
