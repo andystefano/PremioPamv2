@@ -4,8 +4,9 @@ import React from "react";
 function Ganadoras(props) {
     return ( <div className="ganadora" style={{ display: props.ano === props.anoSeleccion ? 'block' : 'none' }} >
         <div>
-          <div className="flex w-full">
+          <div className="flex flex-col md:flex-row w-full">
             <div className="pr-10 zona_foto">
+
               <img
                 src={`/img/ganadoras/${props.ano}/${props.retrato}`}
                 alt={`Retrato`}
@@ -13,10 +14,10 @@ function Ganadoras(props) {
               />
             </div>
             <div>
-              <h2 class="contenido__tituloGanadoras w-full">
-                GANADORAS PAM {props.ano} / {props.anoSeleccion} 
+              <h2 class="contenido__tituloGanadoras w-full ">
+                GANADORAS PAM {props.ano} 
               </h2>
-              <h1 class="titulo_principalGanadoras w-full">
+              <h1 class="titulo_principalGanadoras w-full ">
                 { props.nombre }
               </h1>
               <p class="text-black w-full">
@@ -33,7 +34,7 @@ function Ganadoras(props) {
             />
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full ">
           <div className="pt-10">
             <ol>
               <li>

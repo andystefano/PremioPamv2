@@ -106,7 +106,7 @@ header{
     background-color: #fff6e6;
     display: flex;
     justify-content: center;
-    padding-top: 56px;
+    padding-top: 4.49rem;
     align-self: flex-start;
     align-items: flex-start;
     flex-direction: column;
@@ -984,7 +984,111 @@ input[type="submit"]:hover {
     font-size: 20px;
     font-weight: 700;
 }
+
+
+
+@media (max-width: 1300px) {
+
+
+  .Derecha{
+  display: none;
+  }
+  
+  .presentanGanadoras{
+    width: 100%;
+    padding-left: 0%;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .contenidoGanadoras {
+    padding-top: 1rem;
+    width: 100%;
+  }
+
+  .icons-header-ganadoras {
+    display: none;
+  }
+  
+
+ 
+  
+  .ganadoras_anos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    width: 80%; /* Ajusta el ancho del contenedor si es necesario */
+    margin: 0 auto;
+  }
+  
+  .ganadoras_anos li {
+    width: calc(25% - 10px);
+    margin: 5px;
+  }
+  
+
+}
+
+
+
 @media (max-width: 768px) {
+  
+
+
+  .presentanGanadoras{
+    width: 100%;
+    padding-left: 0%;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .contenidoGanadoras {
+    padding-top: 1rem;
+    width: 100%;
+  }
+
+  .icons-header-ganadoras {
+    display: none;
+  }
+  
+.zona_foto{
+  width: 80%;
+}
+
+#section_ganadoras{
+  padding:2rem;
+}
+   
+  .ganadoras_anos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    width: 80%; /* Ajusta el ancho del contenedor si es necesario */
+    margin: 0 auto;
+  }
+  
+  .ganadoras_anos li {
+    width: calc(25% - 10px);
+    margin: 5px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	.frow {

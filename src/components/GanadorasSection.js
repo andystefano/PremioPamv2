@@ -13,7 +13,7 @@ function GanadorasSection() {
         className="w-full mx-auto  container"
         style={{ backgroundColor: "#fff6e6" }}
       >
-        <div className="presentanGanadoras" style={{ paddingTop: "4.49rem" }}>
+        <div className="presentanGanadoras">
           <ul className="ganadoras_anos">
           <li
         className={`mb-7 ${ano === 2023 ? 'underline' : ''}`}
