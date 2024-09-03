@@ -225,7 +225,7 @@ h1 {
 
 
 .contenidoGanadoras{
-  padding-top: 56px;
+  padding-top: 73px;
   float: left;
   width: 56%;
   background-color:#fff6e6;
@@ -1273,6 +1273,7 @@ input[type="submit"]:hover {
 }
 
 
-.contenidoGanadoras > .ganadora:not(:first-child) {
-  padding-top: 3.5rem; /* Equivalente a pt-14 en Tailwind */
+.contenidoGanadoras > .ganadora {
+  padding-bottom: 3.5rem; /* Equivalente a pt-14 en Tailwind */
 }
+

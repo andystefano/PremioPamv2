@@ -2,12 +2,12 @@ import React from "react";
 
 
 function Ganadoras(props) {
-    return ( <div className="ganadora" style={{ display: props.ano === props.anoSeleccion ? 'unset' : 'none' }} >
+    return ( <div className="ganadora" style={{ display: props.ano === props.anoSeleccion ? 'block' : 'none' }} >
         <div>
           <div className="flex w-full">
-            <div className="pr-10 pt-4 zona_foto">
+            <div className="pr-10 zona_foto">
               <img
-                src={`/img/ganadoras/${props.retrato}`}
+                src={`/img/ganadoras/${props.ano}/${props.retrato}`}
                 alt={`Retrato`}
                 style={{ width: "345px" }}
               />
@@ -26,7 +26,7 @@ function Ganadoras(props) {
           </div>
           <div className="w-full">
             <img
-              src={`/img/ganadoras/isabel_obra.png`}
+              src={`/img/ganadoras/${props.ano}/${props.obra}`}
               style={{ width: "100%" }}
               alt="Obra"
               className="pt-10"
