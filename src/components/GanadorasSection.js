@@ -42,6 +42,27 @@ function GanadorasSection() {
           </ul>
         </div>
         <div class="contenidoGanadoras ">
+
+
+
+
+        <Ganadoras
+            nombre={"Isabel del Río"}
+            biografia={
+              "Isabel del Río, nacida en 1956, es una artista visual chilena, licenciada en Artes con especialización en grabado por la Pontificia Universidad Católica de Chile y magíster en Artes por la Universidad de Chile. Ha exhibido su trabajo en destacadas instituciones como la Bienal de Praga, el Blanton Museum of Art y el Haus Am Kleist-Park de Berlín."
+            }
+            retrato={"IsabelDelRio.png"}
+            obra={"ObraIsabeldelRio.png"}
+            titulo={"Circuitos Híbrido"}
+            dimensiones={"410 x 100 cm"}
+            fecha={"2007"}
+            tecnica={
+              "120 sistemas de audio programado y pregrabados y plancha de acrílico"
+            }
+            ano={2023}
+            anoSeleccion={ano}
+          />
+
           <Ganadoras
             nombre={"Andrea Fischer"}
             biografia={
@@ -78,24 +99,6 @@ function GanadorasSection() {
 
 
 <Ganadoras
-            nombre={"Isabel del Río"}
-            biografia={
-              "Isabel del Río, nacida en 1956, es una artista visual chilena, licenciada en Artes con especialización en grabado por la Pontificia Universidad Católica de Chile y magíster en Artes por la Universidad de Chile. Ha exhibido su trabajo en destacadas instituciones como la Bienal de Praga, el Blanton Museum of Art y el Haus Am Kleist-Park de Berlín."
-            }
-            retrato={"IsabelDelRio.png"}
-            obra={"ObraIsabeldelRio.png"}
-            titulo={"Circuitos Híbrido"}
-            dimensiones={"410 x 100 cm"}
-            fecha={"2007"}
-            tecnica={
-              "120 sistemas de audio programado y pregrabados y plancha de acrílico"
-            }
-            ano={2023}
-            anoSeleccion={ano}
-          />
-
-
-<Ganadoras
             nombre={"Ximena Izquierdo"}
             biografia={
              "Es artista visual, diseñadora gráfica y docente. Estudió diseño en la Universidad Católica de Valparaíso, Artes Aplicadas en la Universidad de Estrasburgo, Francia, y obtuvo un magíster en Artes Visuales en la Universidad de Chile. Fue fundadora y directora de Izquierdo Diseño y Ojo Izquierdo. Ha sido galardonada en varias ocasiones en Diseño Gráfico en Estados Unidos, Brasil, Australia y Chile. Su obra ha sido expuesta en Chile y España, donde realizó una residencia y mostró su trabajo en Mallorca, en espacios como la Galería Patricia Ready, el MNBA, MAVI, la Universidad de Talca y la Bienal SACO."
@@ -113,12 +116,22 @@ function GanadorasSection() {
           />      
 
 
-
-
-
-
-
-
+<Ganadoras
+            nombre={"Denise Blanchard"}
+            biografia={
+             "Artista visual, especializada en arte textil y con experiencia docente, es licenciada en pedagogía en Artes Plásticas por la Pontificia Universidad Católica de Chile. Nacida en Viña del Mar, actualmente reside en Santiago. Su obra ha sido exhibida en eventos como SOFA Chicago en Estados Unidos, la Red Textil Iberoamericana en Costa Rica, y en las Bienales Internacionales de Arte Textil WTA en México, Argentina y Uruguay. Sus creaciones se encuentran en hoteles como el Enjoy en Antofagasta, el Hotel Noi y el Sheraton San Cristóbal en Santiago, y forman parte de la colección de arte CCU."
+            }
+            retrato={"DeniseBlanchard.png"}
+            obra={"ObraDeniseBlanchard.jpeg"}
+            titulo={"Penélope"}
+            dimensiones={"1,5 x 2 mts"}
+            fecha={"2018"}
+            tecnica={
+              "Bolsas de té usadas, cosidas a mano."
+            }
+            ano={2022}
+            anoSeleccion={ano}
+          />   
 
 <Ganadoras
             nombre={"Claudia Yagnam"}
@@ -137,25 +150,7 @@ function GanadorasSection() {
             anoSeleccion={ano}
           />      
 
-
-
-<Ganadoras
-            nombre={"Denise Blanchard"}
-            biografia={
-             "Artista visual, especializada en arte textil y con experiencia docente, es licenciada en pedagogía en Artes Plásticas por la Pontificia Universidad Católica de Chile. Nacida en Viña del Mar, actualmente reside en Santiago. Su obra ha sido exhibida en eventos como SOFA Chicago en Estados Unidos, la Red Textil Iberoamericana en Costa Rica, y en las Bienales Internacionales de Arte Textil WTA en México, Argentina y Uruguay. Sus creaciones se encuentran en hoteles como el Enjoy en Antofagasta, el Hotel Noi y el Sheraton San Cristóbal en Santiago, y forman parte de la colección de arte CCU."
-            }
-            retrato={"DeniseBlanchard.png"}
-            obra={"ObraDeniseBlanchard.jpeg"}
-            titulo={"Penélope"}
-            dimensiones={"1,5 x 2 mts"}
-            fecha={"2018"}
-            tecnica={
-              "Bolsas de té usadas, cosidas a mano."
-            }
-            ano={2022}
-            anoSeleccion={ano}
-          />      
-
+ 
 
 
 <Ganadoras
