@@ -39,6 +39,23 @@ border-radius: 5px;
   border-radius: 5px;
 }
 
+hr {
+  display: none;
+}
+
+
+
+.zona_foto {
+  min-width: 175px;
+}
+
+
+.zona_foto  > img{
+  width: 173px;
+}
+
+
+
 header{
   background-color: #FFF6E6;
 }
@@ -111,6 +128,7 @@ header{
     align-items: flex-start;
     flex-direction: column;
     padding-bottom: 4rem;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .icons-header {
@@ -235,25 +253,26 @@ h1 {
 
 .contenido__tituloGanadoras {
   color: #2a2425;
-  font-size: 50px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
   font-style: normal;
   font-weight: 700;
   line-height: 16PX;
-  margin-top: 1rem;
-  /* margin-bottom: 1rem; */
-  font-size: 16px;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  font-size: 14px;
 }
 
 .titulo_principalGanadoras{
-    color: #2f2727;
-    font-size: 2.0rem;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 58px;
-    margin-top: 0rem;
-    margin-bottom: 1rem;
+  color: #2f2727;
+  font-size: 1.3rem;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.4rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 .contenido__postuladoGanadoras {
@@ -279,8 +298,11 @@ h1 {
 	font-weight: 100;
 }
 
+.fotoObra{
+  width: 100%;
+  max-width: 65%;
+}
 
- 
 .graficoPrincipal {
     min-height: calc(23vw);
     max-height: calc(23vw);
@@ -1034,14 +1056,31 @@ input[type="submit"]:hover {
 
 
 @media (max-width: 768px) {
-  
 
+  .contenidoGanadoras > .ganadora {
+    padding-bottom: 0rem !important;
+  }
+
+  hr {
+    display: block !important;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contenidoGanadoras > .ganadora:first-child > div > div > div > hr {
+  display: none !important;
+}
+  
+  .fotoObra{
+    width: 100%;
+    max-width: 100% !important;
+  }
 
   .presentanGanadoras{
     width: 100%;
     padding-left: 0%;
     width: 100%;
-    padding-top: 2rem;
+    padding-top: 0.5rem;
     padding-bottom: 1rem;
   }
 
@@ -1054,12 +1093,26 @@ input[type="submit"]:hover {
     display: none;
   }
   
+  .contenido__tituloGanadoras {
+    margin-top: 1.1rem;
+    text-align: center;
+  }
+  
+  .titulo_principalGanadoras{
+    text-align: center;
+  }
+
 .zona_foto{
-  width: 80%;
+  width: 100%;
+}
+
+.zona_foto > img {
+  width: 40%;
+  margin: auto;
 }
 
 #section_ganadoras{
-  padding:2rem;
+  padding:1.3rem;
 }
    
   .ganadoras_anos {
@@ -1067,13 +1120,18 @@ input[type="submit"]:hover {
     flex-wrap: wrap;
     justify-content: center;
     list-style: none;
-    width: 80%; /* Ajusta el ancho del contenedor si es necesario */
+    width: 100%;
     margin: 0 auto;
+    margin-bottom: 0rem !important;
+    margin-top: 0px !important;
+    font-size: 1.5rem !important;
+    line-height: 1.0rem !important;
   }
   
   .ganadoras_anos li {
     width: calc(25% - 10px);
     margin: 5px;
+    text-align: center;
   }
 
 
@@ -1223,14 +1281,32 @@ input[type="submit"]:hover {
         flex-direction: column;
         align-items: center;
 		margin-top: 40px;
-		margin-bottom: 70px;
+		margin-bottom: 35px;
 	}
 
-	.postular-btns > a {
+  .postular-btns > a {
 		margin-top: 35px;
 		max-width: 210px;
     	text-align: center;
 	}
+
+  .ganadoras-btns {
+		display: flex;
+        flex-direction: column;
+        align-items: center;
+		margin-top: 0px;
+		margin-bottom: 70px;
+	}
+
+  
+  .ganadoras-btns > a {
+		margin-top: 0px !important;
+		max-width: 210px;
+    text-align: center;
+    margin-left: 1rem !important;
+	}
+
+
 
 	.ganadoras__text {
 		display:none;
@@ -1373,7 +1449,7 @@ input[type="submit"]:hover {
 }
 
 .zona_foto{
-  min-width: 355px;
+  min-width: 175px;
 }
 
 
