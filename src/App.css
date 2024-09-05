@@ -41,6 +41,7 @@ border-radius: 5px;
 
 hr {
   display: none;
+  border-color: #fff6e6;
 }
 
 
@@ -1059,13 +1060,15 @@ input[type="submit"]:hover {
 
   .contenidoGanadoras > .ganadora {
     padding-bottom: 0rem !important;
+    max-width: 100% !important;
+    margin-bottom: 4rem;
   }
 
   hr {
-    display: block !important;
     margin-top: 2rem;
     margin-bottom: 2rem;
-}
+    display: none;
+  }
 
 .contenidoGanadoras > .ganadora:first-child > div > div > div > hr {
   display: none !important;
@@ -1452,8 +1455,8 @@ input[type="submit"]:hover {
   min-width: 175px;
 }
 
-
 .contenidoGanadoras > .ganadora {
   padding-bottom: 3.5rem; /* Equivalente a pt-14 en Tailwind */
+  max-width: 82%;
 }
 

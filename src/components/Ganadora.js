@@ -20,7 +20,7 @@ function Ganadoras(props) {
               <h1 class="titulo_principalGanadoras w-full ">
                 { props.nombre }
               </h1>
-              <p class="text-black w-full text-justify text-xs sm:text-sm ">
+              <p class="text-black w-full text-justify text-sm sm:text-sm ">
                 { props.biografia }
               </p>
             </div>
@@ -30,7 +30,7 @@ function Ganadoras(props) {
               src={`/img/ganadoras/${props.ano}/${props.obra}`}
               style={{ width: "100%" , maxWidth:"65%" }}
               alt="Obra"
-              className="pt-4 fotoObra"
+              className="pt-6 fotoObra"
             />
           </div>
         </div>
