@@ -39,6 +39,11 @@ border-radius: 5px;
   border-radius: 5px;
 }
 
+
+h2.text-black.font-black.text-5xl.relative.top-0.right-0 {
+  float: right;
+}
+
 hr {
   display: none;
   border-color: #fff6e6;
