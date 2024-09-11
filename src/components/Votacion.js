@@ -62,6 +62,20 @@ function Votacion() {
       .catch((error) => console.log(error));
   }, []);
 
+  const capitalizeText = (str) => {
+   let formattedText = str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+
+      if (formattedText.charAt(formattedText.length - 1) !== ".") {
+        formattedText += ".";
+      }
+    return formattedText;
+  };
+
+
   const Card = ({ data }) => {
     return (
       <div className="border-[5px] border-[#e9d9fc]    hover:border-[5px] hover:border-[#f0000c] transition-all duration-300 " style={{ backgroundColor: "#fff6e6" }}>
@@ -83,18 +97,18 @@ function Votacion() {
         </div>
 
         <div className="w-full bg-red-500 text-center py-2" style={{ backgroundColor: "#f0000c" }}>
-          <a href="" className="text-white font-semibold text-xl" title="Votar" alt="Votar">
+          <a href="" className="text-white font-semibold text-xl font-roboto" title="Votar" alt="Votar">
             VOTAR POR ESTA OBRA
           </a>
         </div>
         <div className="w-full text-black p-5">
-          <h2  className="text-black font-black text-5xl relative top-0 right-0 p-2">/{data.ID_POSTULACION}</h2>
-          <p className="text-black text-normal"><span className="font-bold">Año Creacion</span>: {data["YEAR(FECHA_CREACION)"]}</p>
-          <p className="text-black text-normal"><span className="font-bold">Técnica</span>: {data.TECNICA}</p>
-          <p className="text-black text-normal"><span className="font-bold">Dimensiones</span>: {data.DIMENCIONES}</p>
-          <p className="text-black text-normal"><span className="font-bold">Edad</span>: {data.EDAD}</p>
-          <p className="text-black text-normal"><span className="font-bold">Nacionalidad</span>: {data.NACIONALIDAD}</p>
-          <p className="text-black text-normal"><span className="font-bold">Ciudad</span>: {data.REGION_RESIDENCIA}</p>
+          <h2  className="text-black font-black text-5xl relative top-0 right-0" style={{lineHeight: '46px'}}>/{data.ID_POSTULACION}</h2>
+          <p className="text-black text-normal"><span className="font-bold">Año Creacion</span>: {data["YEAR(FECHA_CREACION)"]}.</p>
+          <p className="text-black text-normal"><span className="font-bold">Técnica</span>: <span className="">{capitalizeText(data.TECNICA)}</span></p>
+          <p className="text-black text-normal"><span className="font-bold">Dimensiones</span>: {(data.DIMENCIONES)}.</p>
+          <p className="text-black text-normal"><span className="font-bold">Edad</span>: {data.EDAD}.</p>
+          <p className="text-black text-normal"><span className="font-bold">Nacionalidad</span>: {capitalizeText(data.NACIONALIDAD)}</p>
+          <p className="text-black text-normal"><span className="font-bold">Ciudad</span>: {capitalizeText(data.REGION_RESIDENCIA)}</p>
         </div>
       </div>
     );
