@@ -13,6 +13,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/postulacion" element={<Postula />} />
         <Route path="/votacion" element={<Votar />} />
+        <Route path="/jurado" element={<Votar votar={false} />} />
         <Route path="/ganadoras" element={<Ganadoras />} />
       </Routes>
     </BrowserRouter>

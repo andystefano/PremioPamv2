@@ -7,13 +7,13 @@ import Footer from './components/Footer.js'
 
 
 
-function Votar() {
+function Votar({ votar = true }) {
   return (
     <div className="App">
       <div id='page'>
       <PamHeader/>
       <main>
-      <Votacion/>
+      <Votacion votar={votar}/>
    
       </main>
 

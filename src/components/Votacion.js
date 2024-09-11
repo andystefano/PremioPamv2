@@ -8,7 +8,7 @@ import ContactFormLightbox from "./ContactFormLightbox";
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 
-function Votacion() {
+function Votacion({ votar = true }) {
   const repeatTimes = Array.from({ length: 5 });
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -17,6 +17,9 @@ function Votacion() {
   const [contactFormOpen, setContactFormOpen] = useState(false);
 
   const openLightbox = (images, index = 0) => {
+    console.log('Las imagenes son:')
+    console.log(images)
+    console.table(images)
     setLightboxImages(images);
     setCurrentImageIndex(index);
     setLightboxOpen(true);
@@ -44,11 +47,7 @@ function Votacion() {
     setContactFormOpen(false);
   };
 
-  const exampleImages = [
-    "https://via.placeholder.com/800x600?text=Imagen+1",
-    "https://via.placeholder.com/800x600?text=Imagen+2",
-    "https://via.placeholder.com/800x600?text=Imagen+3",
-  ];
+ 
 
   const [postulaciones, setPostulaciones] = useState([]);
 
@@ -77,30 +76,52 @@ function Votacion() {
 
 
   const Card = ({ data }) => {
+
+    //{`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
+
+    let obraImages = [];
+
+    if (data.FOTOGRAFIA_OBRA_1!=='') { // Puedes cambiar 'true' por la condición que desees
+      obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`);
+    }
+
+    if (data.FOTOGRAFIA_OBRA_2!=='') { // Puedes cambiar 'true' por la condición que desees
+      obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_2}.jpg`);
+    }
+
+    if (data.FOTOGRAFIA_OBRA_3!=='') { // Puedes cambiar 'true' por la condición que desees
+      obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_3}.jpg`);
+    }
+
     return (
       <div className="border-[5px] border-[#e9d9fc]    hover:border-[5px] hover:border-[#f0000c] transition-all duration-300 " style={{ backgroundColor: "#fff6e6" }}>
         <div className="w-full">
+        {data.FOTOGRAFIA_OBRA_1}|||
+        {data.FOTOGRAFIA_OBRA_2}|||
+        {data.FOTOGRAFIA_OBRA_3}
           <img alt="Imagen Principal Obra"
-          onClick={() => openLightbox(exampleImages, 0)}
+          onClick={() => openLightbox(obraImages, 0)}
           class="lazyload PostulacionItemImagen"
-          id="ImgPrincipal_<?php echo $ID_POSTULACION; ?>"
-          data-id="25"
+          id={`ImgPrincipal_${data.ID_POSTULACION}`}
+          data-id={`25`}
           data-anterior=""
           data-siguiente=""
-          data-actual="52"
-          data-ruta="https://premiopam.cl/media/5/1.jpg"
+          data-actual={`52`}
+          data-ruta={`https://premiopam.cl/media/5/1.jpg`}
           data-imagenes="<?php echo $fotos; ?>"
           loading="lazy"
-          data-src="https://premiopam.cl/media/5/1.jpg"
+          data-src={`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
           src={`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
           style={{ width: "432px", height: "438px", objectFit: "cover" }} className="w-full" />
         </div>
 
+        { votar && (
         <div className="w-full bg-red-500 text-center py-2" style={{ backgroundColor: "#f0000c" }}>
           <a href="" className="text-white font-semibold text-xl font-roboto" title="Votar" alt="Votar">
             VOTAR POR ESTA OBRA
           </a>
-        </div>
+        </div>)}
+
         <div className="w-full text-black p-5">
           <h2  className="text-black font-black text-5xl relative top-0 right-0" style={{lineHeight: '46px'}}>/{data.ID_POSTULACION}</h2>
           <p className="text-black text-normal"><span className="font-bold">Año Creacion</span>: {data["YEAR(FECHA_CREACION)"]}.</p>
@@ -125,7 +146,7 @@ function Votacion() {
           <ol className="instrucciones">
             <li>
               * Para hacer efectiva tu votación, debes confirmar el link que
-              recibirás en tu email.{" "}
+              recibirás en tu email.
             </li>
             <li>** Solo se admite un voto por mail registrado.</li>
           </ol>
