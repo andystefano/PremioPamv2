@@ -8,6 +8,7 @@
     # Ruta "/postula"
     RewriteRule ^postula$ /index.html [L]
     RewriteRule ^votacion$ /index.html [L]
+    RewriteRule ^jurado$ /index.html [L]
 	RewriteRule ^ganadoras$ /index.html [L]
 
 
