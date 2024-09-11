@@ -17,9 +17,9 @@ function Votacion({ votar = true }) {
   const [contactFormOpen, setContactFormOpen] = useState(false);
 
   const openLightbox = (images, index = 0) => {
-    console.log('Las imagenes son:')
-    console.log(images)
-    console.table(images)
+    console.log("Las imagenes son:");
+    console.log(images);
+    console.table(images);
     setLightboxImages(images);
     setCurrentImageIndex(index);
     setLightboxOpen(true);
@@ -47,8 +47,6 @@ function Votacion({ votar = true }) {
     setContactFormOpen(false);
   };
 
- 
-
   const [postulaciones, setPostulaciones] = useState([]);
 
   const baseUrl = "https://premiopam.cl/media/";
@@ -62,22 +60,23 @@ function Votacion({ votar = true }) {
   }, []);
 
   const capitalizeText = (str) => {
-   let formattedText = str
+    let formattedText = str
       .toLowerCase()
       .split(" ")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
 
-      if (formattedText.charAt(formattedText.length - 1) !== ".") {
-        formattedText += ".";
-      }
+    if (formattedText.charAt(formattedText.length - 1) !== ".") {
+      formattedText += ".";
+    }
     return formattedText;
   };
 
   async function verificarYAgregarURL(url) {
     try {
       const response = await fetch(url);
-      if (response.ok) { // Si la respuesta es 200 OK
+      if (response.ok) {
+        // Si la respuesta es 200 OK
         return true;
       } else {
         return false;
@@ -87,79 +86,134 @@ function Votacion({ votar = true }) {
     }
   }
 
-
   const Card = ({ data }) => {
-
     //{`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
 
     let obraImages = [];
 
-    if (data.FOTOGRAFIA_OBRA_1!=='0' && data.FOTOGRAFIA_OBRA_1!=='null' && data.FOTOGRAFIA_OBRA_1!==null) { // Puedes cambiar 'true' por la condición que desees
-      obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`);
+    if (
+      data.FOTOGRAFIA_OBRA_1 !== "0" &&
+      data.FOTOGRAFIA_OBRA_1 !== "null" &&
+      data.FOTOGRAFIA_OBRA_1 !== null
+    ) {
+      // Puedes cambiar 'true' por la condición que desees
+      obraImages.push(
+        `${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`
+      );
     }
 
-    if (data.FOTOGRAFIA_OBRA_2!=='0' && data.FOTOGRAFIA_OBRA_2!=='null' && data.FOTOGRAFIA_OBRA_2!==null) { // Puedes cambiar 'true' por la condición que desees
-      obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_2}.jpg`);
+    if (
+      data.FOTOGRAFIA_OBRA_2 !== "0" &&
+      data.FOTOGRAFIA_OBRA_2 !== "null" &&
+      data.FOTOGRAFIA_OBRA_2 !== null
+    ) {
+      // Puedes cambiar 'true' por la condición que desees
+      obraImages.push(
+        `${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_2}.jpg`
+      );
     }
 
-    if (data.FOTOGRAFIA_OBRA_3!=='0' && data.FOTOGRAFIA_OBRA_3!=='null' && data.FOTOGRAFIA_OBRA_3!==null) { // Puedes cambiar 'true' por la condición que desees
-      obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_3}.jpg`);
+    if (
+      data.FOTOGRAFIA_OBRA_3 !== "0" &&
+      data.FOTOGRAFIA_OBRA_3 !== "null" &&
+      data.FOTOGRAFIA_OBRA_3 !== null
+    ) {
+      // Puedes cambiar 'true' por la condición que desees
+      obraImages.push(
+        `${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_3}.jpg`
+      );
     }
 
     return (
-      <div className="border-[5px] border-[#e9d9fc]    hover:border-[5px] hover:border-[#f0000c] transition-all duration-300 " style={{ backgroundColor: "#fff6e6" }}>
+      <div
+        className="border-[5px] border-[#e9d9fc]    hover:border-[5px] hover:border-[#f0000c] transition-all duration-300 "
+        style={{ backgroundColor: "#fff6e6" }}
+      >
         <div className="w-full">
-        {data.FOTOGRAFIA_OBRA_1}|||
-        {data.FOTOGRAFIA_OBRA_2}|||
-        {data.FOTOGRAFIA_OBRA_3}
-          <img alt="Imagen Principal Obra"
-          onClick={() => openLightbox(obraImages, 0)}
-          class="lazyload PostulacionItemImagen"
-          id={`ImgPrincipal_${data.ID_POSTULACION}`}
-          data-id={`25`}
-          data-anterior=""
-          data-siguiente=""
-          data-actual={`52`}
-          data-ruta={`https://premiopam.cl/media/5/1.jpg`}
-          data-imagenes="<?php echo $fotos; ?>"
-          loading="lazy"
-          data-src={`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
-          src={`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
-          style={{ width: "432px", height: "438px", objectFit: "cover" }} className="w-full" />
+          {data.FOTOGRAFIA_OBRA_1}|||
+          {data.FOTOGRAFIA_OBRA_2}|||
+          {data.FOTOGRAFIA_OBRA_3}
+          agregar ligthbox voatcion form con validaciones ,captcha, navegador, email, ip.
+          <img
+            alt="Imagen Principal Obra"
+            onClick={() => openLightbox(obraImages, 0)}
+            class="lazyload PostulacionItemImagen"
+            id={`ImgPrincipal_${data.ID_POSTULACION}`}
+            data-id={`25`}
+            data-anterior=""
+            data-siguiente=""
+            data-actual={`52`}
+            data-ruta={`https://premiopam.cl/media/5/1.jpg`}
+            data-imagenes="<?php echo $fotos; ?>"
+            loading="lazy"
+            data-src={`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
+            src={`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
+            style={{ width: "432px", height: "438px", objectFit: "cover" }}
+            className="w-full"
+          />
         </div>
 
-        { votar && (
-        <div className="w-full bg-red-500 text-center py-2" style={{ backgroundColor: "#f0000c" }}>
-          <a href="" className="text-white font-semibold text-xl font-roboto" title="Votar" alt="Votar">
-            VOTAR POR ESTA OBRA
-          </a>
-        </div>)}
+        {votar && (
+          <div
+            className="w-full bg-red-500 text-center py-2"
+            style={{ backgroundColor: "#f0000c" }}
+          >
+            <a
+              href="#"
+              onClick={() => openContactForm()}
+              className="text-white font-semibold text-xl font-roboto"
+              title="Votar"
+              alt="Votar"
+            >
+              VOTAR POR ESTA OBRA
+            </a>
+          </div>
+        )}
 
         <div className="w-full text-black p-5">
-          <h2  className="text-black font-black text-5xl relative top-0 right-0" style={{lineHeight: '46px'}}>/{data.ID_POSTULACION}</h2>
-          <p className="text-black text-normal"><span className="font-bold">Año Creacion</span>: {data["YEAR(FECHA_CREACION)"]}.</p>
-          <p className="text-black text-normal"><span className="font-bold">Técnica</span>: <span className="">{capitalizeText(data.TECNICA)}</span></p>
-          <p className="text-black text-normal"><span className="font-bold">Dimensiones</span>: {(data.DIMENCIONES)}.</p>
-          <p className="text-black text-normal"><span className="font-bold">Edad</span>: {data.EDAD}.</p>
-          <p className="text-black text-normal"><span className="font-bold">Nacionalidad</span>: {capitalizeText(data.NACIONALIDAD)}</p>
-          <p className="text-black text-normal"><span className="font-bold">Ciudad</span>: {capitalizeText(data.REGION_RESIDENCIA)}</p>
+          <h2
+            className="text-black font-black text-5xl relative top-0 right-0"
+            style={{ lineHeight: "46px" }}
+          >
+            /{data.ID_POSTULACION}
+          </h2>
+          <p className="text-black text-normal">
+            <span className="font-bold">Año Creacion</span>:{" "}
+            {data["YEAR(FECHA_CREACION)"]}.
+          </p>
+          <p className="text-black text-normal">
+            <span className="font-bold">Técnica</span>:{" "}
+            <span className="">{capitalizeText(data.TECNICA)}</span>
+          </p>
+          <p className="text-black text-normal">
+            <span className="font-bold">Dimensiones</span>: {data.DIMENCIONES}.
+          </p>
+          <p className="text-black text-normal">
+            <span className="font-bold">Edad</span>: {data.EDAD}.
+          </p>
+          <p className="text-black text-normal">
+            <span className="font-bold">Nacionalidad</span>:{" "}
+            {capitalizeText(data.NACIONALIDAD)}
+          </p>
+          <p className="text-black text-normal">
+            <span className="font-bold">Ciudad</span>:{" "}
+            {capitalizeText(data.REGION_RESIDENCIA)}
+          </p>
+          
         </div>
 
-
         <Lightbox
-                        isOpen={lightboxOpen}
-                        closeLightbox={closeLightbox}
-                        images={lightboxImages}
-                        currentImageIndex={currentImageIndex}
-                        nextImage={nextImage}
-                        prevImage={prevImage}
-                      />
-                      <ContactFormLightbox
-                        isOpen={contactFormOpen}
-                        closeLightbox={closeContactForm}
-                      />
-
-
+          isOpen={lightboxOpen}
+          closeLightbox={closeLightbox}
+          images={lightboxImages}
+          currentImageIndex={currentImageIndex}
+          nextImage={nextImage}
+          prevImage={prevImage}
+        />
+        <ContactFormLightbox
+          isOpen={contactFormOpen}
+          closeLightbox={closeContactForm}
+        />
       </div>
     );
   };
