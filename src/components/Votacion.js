@@ -94,15 +94,15 @@ function Votacion({ votar = true }) {
 
     let obraImages = [];
 
-    if (data.FOTOGRAFIA_OBRA_1!=='' && data.FOTOGRAFIA_OBRA_1!=='null' && data.FOTOGRAFIA_OBRA_1!==null) { // Puedes cambiar 'true' por la condición que desees
+    if (data.FOTOGRAFIA_OBRA_1!=='0' && data.FOTOGRAFIA_OBRA_1!=='null' && data.FOTOGRAFIA_OBRA_1!==null) { // Puedes cambiar 'true' por la condición que desees
       obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`);
     }
 
-    if (data.FOTOGRAFIA_OBRA_2!=='' && data.FOTOGRAFIA_OBRA_2!=='null' && data.FOTOGRAFIA_OBRA_2!==null) { // Puedes cambiar 'true' por la condición que desees
+    if (data.FOTOGRAFIA_OBRA_2!=='0' && data.FOTOGRAFIA_OBRA_2!=='null' && data.FOTOGRAFIA_OBRA_2!==null) { // Puedes cambiar 'true' por la condición que desees
       obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_2}.jpg`);
     }
 
-    if (data.FOTOGRAFIA_OBRA_3!=='' && data.FOTOGRAFIA_OBRA_3!=='null' && data.FOTOGRAFIA_OBRA_3!==null) { // Puedes cambiar 'true' por la condición que desees
+    if (data.FOTOGRAFIA_OBRA_3!=='0' && data.FOTOGRAFIA_OBRA_3!=='null' && data.FOTOGRAFIA_OBRA_3!==null) { // Puedes cambiar 'true' por la condición que desees
       obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_3}.jpg`);
     }
 

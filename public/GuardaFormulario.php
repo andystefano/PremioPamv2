@@ -31,9 +31,24 @@ $REGION_RESIDENCIA = $REGION_RESIDENCIA ? $REGION_RESIDENCIA : '';
 
 //FOTOGRAFIA_RETRATO
 $FOTOGRAFIA_RETRATO_X=1;
+$FOTOGRAFIA_OBRA_1='';
+$FOTOGRAFIA_OBRA_2='';
+$FOTOGRAFIA_OBRA_3='';
+
+ 
+
+if (isset($_FILES['FOTOGRAFIA_OBRA_1_X'])) {
 $FOTOGRAFIA_OBRA_1=1;
+}
+
+if (isset($_FILES['FOTOGRAFIA_OBRA_2_X'])) {
 $FOTOGRAFIA_OBRA_2=2;
+}
+
+if (isset($_FILES['FOTOGRAFIA_OBRA_3_X'])) {
 $FOTOGRAFIA_OBRA_3=3;
+}
+
 
 $response['status'] = 'error';
 $response['message'] = 'No logrado';
