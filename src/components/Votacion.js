@@ -130,14 +130,10 @@ function Votacion({ votar = true }) {
         style={{ backgroundColor: "#fff6e6" }}
       >
         <div className="w-full">
-          {data.FOTOGRAFIA_OBRA_1}|||
-          {data.FOTOGRAFIA_OBRA_2}|||
-          {data.FOTOGRAFIA_OBRA_3}
-          agregar ligthbox voatcion form con validaciones ,captcha, navegador, email, ip.
           <img
             alt="Imagen Principal Obra"
             onClick={() => openLightbox(obraImages, 0)}
-            class="lazyload PostulacionItemImagen"
+            className="w-full lazyload PostulacionItemImagen"
             id={`ImgPrincipal_${data.ID_POSTULACION}`}
             data-id={`25`}
             data-anterior=""
@@ -149,7 +145,6 @@ function Votacion({ votar = true }) {
             data-src={`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
             src={`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
             style={{ width: "432px", height: "438px", objectFit: "cover" }}
-            className="w-full"
           />
         </div>
 
@@ -222,11 +217,11 @@ function Votacion({ votar = true }) {
     <section id="section_votacion" class="flex justify-center">
       <div className="w-full mx-auto  " style={{ backgroundColor: "#e9d9fc" }}>
         <div class="w-full">
-          <h1 className="text-center">VOTA POR TU OBRA FAVORITA</h1>
+          <h1 className="text-center leading-22" style={{fontSize:'5.6rem',lineHeight: '5.6rem'}}>VOTA POR TU <br/>OBRA FAVORITA</h1>
         </div>
 
         <div className="w-full mx-auto container">
-          <ol className="instrucciones">
+          <ol className="instrucciones text-center">
             <li>
               * Para hacer efectiva tu votación, debes confirmar el link que
               recibirás en tu email.

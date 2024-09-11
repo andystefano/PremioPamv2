@@ -57,7 +57,6 @@ const navButtonStyle = {
   border: 'none',
   color: 'white',
   fontSize: '4rem',
-  cursor: 'pointer',
 };
 
 const closeButtonStyle = {
@@ -68,7 +67,6 @@ const closeButtonStyle = {
   border: 'none',
   color: 'white',
   fontSize: '1.5rem',
-  cursor: 'pointer',
   display: 'none',
 };
 
