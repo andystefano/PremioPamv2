@@ -74,6 +74,19 @@ function Votacion({ votar = true }) {
     return formattedText;
   };
 
+  async function verificarYAgregarURL(url) {
+    try {
+      const response = await fetch(url);
+      if (response.ok) { // Si la respuesta es 200 OK
+        return true;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      console.log(`Error al verificar la URL: ${url}`);
+    }
+  }
+
 
   const Card = ({ data }) => {
 
@@ -81,15 +94,15 @@ function Votacion({ votar = true }) {
 
     let obraImages = [];
 
-    if (data.FOTOGRAFIA_OBRA_1!=='') { // Puedes cambiar 'true' por la condición que desees
+    if (data.FOTOGRAFIA_OBRA_1!=='' && data.FOTOGRAFIA_OBRA_1!=='null' && data.FOTOGRAFIA_OBRA_1!==null) { // Puedes cambiar 'true' por la condición que desees
       obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`);
     }
 
-    if (data.FOTOGRAFIA_OBRA_2!=='') { // Puedes cambiar 'true' por la condición que desees
+    if (data.FOTOGRAFIA_OBRA_2!=='' && data.FOTOGRAFIA_OBRA_2!=='null' && data.FOTOGRAFIA_OBRA_2!==null) { // Puedes cambiar 'true' por la condición que desees
       obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_2}.jpg`);
     }
 
-    if (data.FOTOGRAFIA_OBRA_3!=='') { // Puedes cambiar 'true' por la condición que desees
+    if (data.FOTOGRAFIA_OBRA_3!=='' && data.FOTOGRAFIA_OBRA_3!=='null' && data.FOTOGRAFIA_OBRA_3!==null) { // Puedes cambiar 'true' por la condición que desees
       obraImages.push(`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_3}.jpg`);
     }
 
@@ -131,6 +144,22 @@ function Votacion({ votar = true }) {
           <p className="text-black text-normal"><span className="font-bold">Nacionalidad</span>: {capitalizeText(data.NACIONALIDAD)}</p>
           <p className="text-black text-normal"><span className="font-bold">Ciudad</span>: {capitalizeText(data.REGION_RESIDENCIA)}</p>
         </div>
+
+
+        <Lightbox
+                        isOpen={lightboxOpen}
+                        closeLightbox={closeLightbox}
+                        images={lightboxImages}
+                        currentImageIndex={currentImageIndex}
+                        nextImage={nextImage}
+                        prevImage={prevImage}
+                      />
+                      <ContactFormLightbox
+                        isOpen={contactFormOpen}
+                        closeLightbox={closeContactForm}
+                      />
+
+
       </div>
     );
   };

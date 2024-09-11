@@ -56,7 +56,7 @@ const navButtonStyle = {
   background: 'none',
   border: 'none',
   color: 'white',
-  fontSize: '2rem',
+  fontSize: '4rem',
   cursor: 'pointer',
 };
 
