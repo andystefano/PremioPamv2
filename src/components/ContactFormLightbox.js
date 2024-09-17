@@ -8,6 +8,27 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
   const [errorLastname, setErrorLastname] = useState('')
   const [errorEmail, setErrorEmail] = useState('')
 
+  const checkEmail = async (email) => {
+    const url = "http://v2024.premiopam.cl/consultaSiVoto.php";
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `email=${encodeURIComponent(email)}`
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error('Error:', error);
+      return false; // En caso de error, retornamos false
+    }
+  };
 
   const validarEmail = (email) => {
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -41,8 +62,6 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
       setErrorLastname("Debe ingresar su apellido.");
     }
 
-
-
     const emailError = validarEmail(email);
 
     if (emailError) {
@@ -50,13 +69,21 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
       setErrorEmail(emailError);
     } else {
       setErrorEmail("");
+      checkEmail(email).then(result => {
+        
+        if (result) {
+          setErrorEmail('Usted ya votó, solo se permite un voto por cada email.');
+        } else {
+          console.log('Su voto se está enviando');
+          if(numErrores===0){
+            closeLightbox();
+          }
+        }
+  
+      });
+
     }
 
-    //Debe ingresar su email. 
-
-    if(numErrores===0){
-    closeLightbox();
-    }
   };
 
   return (
@@ -110,7 +137,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
 
         <ul>
             <li>* Solo se admite un voto por mail registrado.</li>
-            <li>* Para hacer efectiva tu votación, debes confirmar el link que recibirás en tu mail.</li>
+            <li>* Para hacer efectiva tu votación, debes confirmar haciendo click en el link que recibirás en tu mail.</li>
         </ul>
         <br/>
         <button type="submit" id='BtnEnviar'>Enviar</button>
