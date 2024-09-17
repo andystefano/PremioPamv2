@@ -1,13 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root'); // Esto es necesario para accesibilidad
 
 const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
+  const [errorName, setErrorName] = useState('')
+  const [errorLastname, setErrorLastname] = useState('')
+  const [errorEmail, setErrorEmail] = useState('')
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // Aquí puedes manejar el envío del formulario
+    console.log('click en enviar');
+    let numErrores = 0;
+    setErrorName("");
+    //nombre
+    const name = document.getElementById('name').value;
+    const lastname = document.getElementById('lastname').value;
+    const email = document.getElementById('email').value;
+    if (name.length===0){
+      numErrores++;
+      setErrorName("Debe ingresar su nombre.");
+    }
+
+    if (lastname.length===0){
+      numErrores++;
+      setErrorLastname("Debe ingresar su apellido.");
+    }
+
+    if (email.length===0){
+      numErrores++;
+      setErrorEmail("Debe ingresar su email.");
+    }
+
+    //Debe ingresar su email. 
+
+    if(numErrores===0){
     closeLightbox();
+    }
   };
 
   return (
@@ -34,26 +64,29 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
       className="lightbox-overlay"
     >
       <button onClick={closeLightbox} style={closeButtonStyle}>✕</button>
-      <h3 className='subtituloVotar'>VOTO DEL PÚBLICO PREMIO PAM 2024</h3>
-      <h2 class="tituloVotar">PARA COMPLETAR SU VOTO <br/> REGISTRE SUS DATOS</h2>
-      <form onSubmit={handleSubmit}>
+      <h3 className='subtituloVotar select-none'>VOTO DEL PÚBLICO PREMIO PAM 2024</h3>
+      <h2 class="tituloVotar select-none">PARA COMPLETAR SU VOTO <br/> REGISTRE SUS DATOS</h2>
+      <form onSubmit={handleSubmit} className='select-none'>
         <div style={{ marginBottom: '10px' }}>
           <label>
             Nombre:
-            <input type="text" name="name" required style={inputStyle} />
+            <input type="text" name="name" id="name" style={inputStyle} />
           </label>
+          <span className='mt-2 text-sm text-red-600 semifont-bold' id='error_nombre'>{ errorName }</span>
         </div>
         <div style={{ marginBottom: '10px' }}>
           <label>
             Apellido:
-            <input type="text" name="apellido" required style={inputStyle} />
+            <input type="text" name="lastname" id="lastname" style={inputStyle} />
           </label>
+          <span className='mt-2 text-sm text-red-600 semifont-bold' id='error_apellido'>{ errorLastname }</span>
         </div>        
         <div style={{ marginBottom: '10px' }}>
           <label>
             Correo Electrónico:
-            <input type="email" name="email" required style={inputStyle} />
+            <input type="email" name="email" id="email" style={inputStyle} />
           </label>
+          <span className='mt-2 text-sm text-red-600 semifont-bold' id='error_email'>{ errorEmail }</span>
         </div>
 
         <ul>
@@ -61,7 +94,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
             <li>* Para hacer efectiva tu votación, debes confirmar el link que recibirás en tu mail.</li>
         </ul>
         <br/>
-        <button type="submit" id='BtnEnviar'  >Enviar</button>
+        <button type="submit" id='BtnEnviar'>Enviar</button>
       </form>
     </Modal>
   );
