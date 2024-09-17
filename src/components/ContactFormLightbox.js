@@ -8,12 +8,25 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
   const [errorLastname, setErrorLastname] = useState('')
   const [errorEmail, setErrorEmail] = useState('')
 
+
+  const validarEmail = (email) => {
+    const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (email.length === 0) {
+      return "Debe ingresar su email.";
+    } else if (!regexEmail.test(email)) {
+      return "El formato del email es incorrecto.";
+    }
+    return ""; // No hay errores
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // Aquí puedes manejar el envío del formulario
     console.log('click en enviar');
     let numErrores = 0;
     setErrorName("");
+    setErrorLastname("");
+    setErrorEmail("");
     //nombre
     const name = document.getElementById('name').value;
     const lastname = document.getElementById('lastname').value;
@@ -28,9 +41,15 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
       setErrorLastname("Debe ingresar su apellido.");
     }
 
-    if (email.length===0){
+
+
+    const emailError = validarEmail(email);
+
+    if (emailError) {
       numErrores++;
-      setErrorEmail("Debe ingresar su email.");
+      setErrorEmail(emailError);
+    } else {
+      setErrorEmail("");
     }
 
     //Debe ingresar su email. 
@@ -84,7 +103,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
         <div style={{ marginBottom: '10px' }}>
           <label>
             Correo Electrónico:
-            <input type="email" name="email" id="email" style={inputStyle} />
+            <input type="text" name="email" id="email" style={inputStyle} />
           </label>
           <span className='mt-2 text-sm text-red-600 semifont-bold' id='error_email'>{ errorEmail }</span>
         </div>

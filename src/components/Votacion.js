@@ -205,10 +205,6 @@ function Votacion({ votar = true }) {
           nextImage={nextImage}
           prevImage={prevImage}
         />
-        <ContactFormLightbox
-          isOpen={contactFormOpen}
-          closeLightbox={closeContactForm}
-        />
       </div>
     );
   };
@@ -238,6 +234,10 @@ function Votacion({ votar = true }) {
           </div>
         </div>
       </div>
+      <ContactFormLightbox
+          isOpen={contactFormOpen}
+          closeLightbox={closeContactForm}
+        />
     </section>
   );
 }
