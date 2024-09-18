@@ -62,12 +62,12 @@ $respuesta['mensaje']=$mensaje;
 
 
 $IP=$_SERVER["HTTP_X_REAL_IP"];
-$CODIGO_VERIFICACION = MD5(date("YMDHis").rand(0,1000)."_".$ID_POSTULACION);
+$CODIGO_VERIFICACION = MD5(date("YMDHis").rand(0,1000)."_".$idPostulacion);
 
 
 $token = "https://premiopam.cl/confirma.php?token=".$CODIGO_VERIFICACION;
 
-$sql ="INSERT INTO `votos` (`ID_VOTO`, `ID_POSTULACION`, `EMAIL`, `NOMBRE`, `APELLIDO`, `CODIGO_VERIFICACION`, `ESTADO`, `FECHA_VOTO`, `FECHA_CONFIRMACION`, `IP`) VALUES (NULL, '$ID_POSTULACION', '$email', '$nombre', '$apellido', '$CODIGO_VERIFICACION', '0', DATE_SUB(NOW(), INTERVAL 3 HOUR), '0000-00-00 00:00:00.000000', '$IP');";
+$sql ="INSERT INTO `votos` (`ID_VOTO`, `ID_POSTULACION`, `EMAIL`, `NOMBRE`, `APELLIDO`, `CODIGO_VERIFICACION`, `ESTADO`, `FECHA_VOTO`, `FECHA_CONFIRMACION`, `IP`) VALUES (NULL, '$idPostulacion', '$email', '$nombre', '$apellido', '$CODIGO_VERIFICACION', '0', DATE_SUB(NOW(), INTERVAL 3 HOUR), '0000-00-00 00:00:00.000000', '$IP');";
 
  
 

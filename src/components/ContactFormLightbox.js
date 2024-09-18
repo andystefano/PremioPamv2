@@ -41,7 +41,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
 
 
   const registraVoto = async (name,lastname,email,idPostulacion,captchaValue) => {
-    const url = "http://v2024.premiopam.cl/registraVoto.php";
+    const url = "http://v2024.premiopam.cl/registraVotacion.php";
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -49,8 +49,8 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: new URLSearchParams({
-          name: name,
-          lastname: lastname,
+          nombre: name,
+          apellido: lastname,
           email: email,
           idPostulacion: idPostulacion,
           captchaValue: captchaValue
