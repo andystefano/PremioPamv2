@@ -15,6 +15,8 @@ function Votacion({ votar = true }) {
   const [lightboxImages, setLightboxImages] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [contactFormOpen, setContactFormOpen] = useState(false);
+  const [idPostulacion, setIdPostulacion] = useState(0);
+  
 
   const openLightbox = (images, index = 0) => {
     console.log("Las imagenes son:");
@@ -39,7 +41,8 @@ function Votacion({ votar = true }) {
     );
   };
 
-  const openContactForm = () => {
+  const openContactForm = (idPostulacion) => {
+    setIdPostulacion(idPostulacion);
     setContactFormOpen(true);
   };
 
@@ -155,7 +158,7 @@ function Votacion({ votar = true }) {
           >
             <a
               href="#"
-              onClick={() => openContactForm()}
+              onClick={() => openContactForm(data.ID_POSTULACION)}
               className="text-white font-semibold text-xl font-roboto"
               title="Votar"
               alt="Votar"
@@ -210,9 +213,9 @@ function Votacion({ votar = true }) {
   };
 
   return (
-    <section id="section_votacion" class="flex justify-center">
+    <section id="section_votacion" className="flex justify-center">
       <div className="w-full mx-auto  " style={{ backgroundColor: "#e9d9fc" }}>
-        <div class="w-full">
+        <div className="w-full">
           <h1 className="text-center leading-22" style={{fontSize:'5.6rem',lineHeight: '5.6rem'}}>VOTA POR TU <br/>OBRA FAVORITA</h1>
         </div>
 
@@ -227,7 +230,7 @@ function Votacion({ votar = true }) {
         </div>
 
         <div className="w-full mx-auto container">
-          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {postulaciones.map((postulacion) => (
               <Card key={postulacion.ID_POSTULACION} data={postulacion} />
             ))}
@@ -237,6 +240,7 @@ function Votacion({ votar = true }) {
       <ContactFormLightbox
           isOpen={contactFormOpen}
           closeLightbox={closeContactForm}
+          idPostulacion={idPostulacion}
         />
     </section>
   );

@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 Modal.setAppElement('#root'); // Esto es necesario para accesibilidad
 
-const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
+const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
   const [errorName, setErrorName] = useState('')
   const [errorLastname, setErrorLastname] = useState('')
   const [errorEmail, setErrorEmail] = useState('')
+  const [captchaValue, setCaptchaValue] = useState(null);
 
+  const onCaptchaChange = (value) => {
+    setCaptchaValue(value);
+    console.log("Captcha value:", value); // Este valor lo enviarías al backend para validarlo.
+  };
+  
   const checkEmail = async (email) => {
     const url = "http://v2024.premiopam.cl/consultaSiVoto.php";
     try {
@@ -17,6 +25,36 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: `email=${encodeURIComponent(email)}`
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error('Error:', error);
+      return false; // En caso de error, retornamos false
+    }
+  };
+
+
+
+  const registraVoto = async (name,lastname,email,idPostulacion,captchaValue) => {
+    const url = "http://v2024.premiopam.cl/registraVoto.php";
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+          name: name,
+          lastname: lastname,
+          email: email,
+          idPostulacion: idPostulacion,
+          captchaValue: captchaValue
+        }).toString()
       });
   
       if (!response.ok) {
@@ -75,7 +113,21 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
           setErrorEmail('Usted ya votó, solo se permite un voto por cada email.');
         } else {
           console.log('Su voto se está enviando');
-          if(numErrores===0){
+          if (!captchaValue) {
+            setErrorEmail("Por favor, completa el reCAPTCHA.");
+            numErrores++;
+          }
+
+          registraVoto(name,lastname,email,idPostulacion,captchaValue)
+          if((numErrores===0)){
+
+            //captchaValue
+            /*
+            const name = document.getElementById('name').value;
+            const lastname = document.getElementById('lastname').value;
+            const email = document.getElementById('email').value;
+            idPostulacion
+            */
             closeLightbox();
           }
         }
@@ -111,7 +163,8 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
     >
       <button onClick={closeLightbox} style={closeButtonStyle}>✕</button>
       <h3 className='subtituloVotar select-none'>VOTO DEL PÚBLICO PREMIO PAM 2024</h3>
-      <h2 class="tituloVotar select-none">PARA COMPLETAR SU VOTO <br/> REGISTRE SUS DATOS</h2>
+      <h2 className="tituloVotar select-none">PARA COMPLETAR SU VOTO <br/> REGISTRE SUS DATOS</h2>
+      {idPostulacion}
       <form onSubmit={handleSubmit} className='select-none'>
         <div style={{ marginBottom: '10px' }}>
           <label>
@@ -134,6 +187,11 @@ const ContactFormLightbox = ({ isOpen, closeLightbox }) => {
           </label>
           <span className='mt-2 text-sm text-red-600 semifont-bold' id='error_email'>{ errorEmail }</span>
         </div>
+
+        <ReCAPTCHA
+        sitekey={process.env.REACT_APP_RECAPTCHA_SITEKEY}
+        onChange={onCaptchaChange}
+      />
 
         <ul>
             <li>* Solo se admite un voto por mail registrado.</li>

@@ -5,7 +5,7 @@ function PamHeader({titulo,contenido}) {
 
   return (
     <header>
-      <div class="flex justify-center ">
+      <div className="flex justify-center ">
         <div className="w-full mx-auto  container">
           <img id="HeaderIMG"  src="img/HEADER_DESK.png"  alt=""/>
           <img id="HeaderIMG-mobile"  src="img/HEADER_MOVIL.png"  alt=""/>

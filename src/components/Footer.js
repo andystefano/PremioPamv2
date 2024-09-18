@@ -11,7 +11,7 @@ import { TbDownload } from "react-icons/tb";
 function Footer() {
 
   return (
-    <footer  class="flex justify-center ">
+    <footer  className="flex justify-center ">
 
             
 
@@ -26,14 +26,14 @@ function Footer() {
 
 <div id="Derecha">
 
-<a href="mailto:premiopam@antenna.cl"> <h4 class="derecha__bold">Contáctanos</h4>
-<h4 class="derecha__regular">premiopam@antenna.cl</h4></a>
+<a href="mailto:premiopam@antenna.cl"> <h4 className="derecha__bold">Contáctanos</h4>
+<h4 className="derecha__regular">premiopam@antenna.cl</h4></a>
 
  
 
  
 
-<div class="icons-footer">
+<div className="icons-footer">
 <a href="https://www.instagram.com/antennaorg/?hl=es-la" target="_blank">
   <FaInstagram size={32}  color="#F0000C"/>
   </a>
@@ -43,11 +43,11 @@ function Footer() {
 <a href="https://www.linkedin.com/company/antennaorg/" target="_blank">
 <AiOutlineLinkedin size={35}  color="#F0000C"/>
   </a>
-<a href="https://www.premiopam.cl/" target="_blank"><img style={{maxHeight:'20px'}} class="hashtag__footer" src="img/icons/hashtag_1.png" alt="premio-pam"/></a>
+<a href="https://www.premiopam.cl/" target="_blank"><img style={{maxHeight:'20px'}} className="hashtag__footer" src="img/icons/hashtag_1.png" alt="premio-pam"/></a>
 
 </div>
 
-<div class="icons-footer"  style={{ marginTop: '0px' }}>
+<div className="icons-footer"  style={{ marginTop: '0px' }}>
   <div style={{ display: 'flex', alignItems: 'center', marginTop: '0px'  }}>
     <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank">
       <TbDownload size={28} color="#F0000C" /> </a>
@@ -59,7 +59,7 @@ function Footer() {
  
 
 </div>
-<div class="arrow">
+<div className="arrow">
 <a href="#">
 
 <img src="img/arrow.png" />
