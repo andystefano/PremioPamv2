@@ -2,16 +2,17 @@
     RewriteEngine On
     RewriteBase /
 
-    # Ruta "/"
-    RewriteRule ^$ index.html [L]
+    # Excepción para registraVoto.php
+    RewriteRule ^registraVoto.php$ /registraVoto.php [L]
 
-    # Ruta "/postula"
+    # Rutas para React
+    RewriteRule ^$ index.html [L]
     RewriteRule ^postula$ /index.html [L]
     RewriteRule ^votacion$ /index.html [L]
     RewriteRule ^jurado$ /index.html [L]
-	RewriteRule ^ganadoras$ /index.html [L]
+    RewriteRule ^ganadoras$ /index.html [L]
 
-
+    # Si no es un archivo o directorio real, redirige a index.html
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule . /index.html [L]

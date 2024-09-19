@@ -41,7 +41,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
 
 
   const registraVoto = async (name,lastname,email,idPostulacion,captchaValue) => {
-    const url = "http://v2024.premiopam.cl/registraVotacion.php";
+    const url = "http://v2024.premiopam.cl/registraVoto.php";
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -60,7 +60,15 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
+
+      console.log('result bruto:::' + response)
+      console.table(response)
+
+
       const result = await response.json();
+
+      console.log('result json:::' + result)
+
       return result;
     } catch (error) {
       console.error('Error:', error);
@@ -118,7 +126,23 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
             numErrores++;
           }
 
-          registraVoto(name,lastname,email,idPostulacion,captchaValue)
+
+          registraVoto(name,lastname,email,idPostulacion,captchaValue).then(result => {
+        
+            console.log('registraVoto res:::' + registraVoto)
+            
+            if (result.estado==='1' || result.estado===1) {
+              closeLightbox();
+              console.log('Voto registrado correctamente');
+            } else {
+              console.log('Ocurrio un error ');        
+            }
+      
+          });
+    
+
+
+
           if((numErrores===0)){
 
             //captchaValue
@@ -128,7 +152,6 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
             const email = document.getElementById('email').value;
             idPostulacion
             */
-            closeLightbox();
           }
         }
   
