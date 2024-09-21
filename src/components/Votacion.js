@@ -151,7 +151,7 @@ function Votacion({ votar = true }) {
           />
         </div>
 
-        {votar && (
+        {votar && (process.env.REACT_APP_VOTACION_ACTIVA==='1') && (
           <div
             className="w-full bg-red-500 text-center py-2"
             style={{ backgroundColor: "#f0000c" }}
@@ -165,7 +165,7 @@ function Votacion({ votar = true }) {
               VOTAR POR ESTA OBRA
             </a>
           </div>
-        )}
+        )}     
 
         <div className="w-full text-black p-5">
           <h2

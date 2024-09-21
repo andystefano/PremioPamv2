@@ -188,7 +188,6 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
       <button onClick={closeLightbox} style={closeButtonStyle}>✕</button>
       <h3 className='subtituloVotar select-none'>VOTO DEL PÚBLICO PREMIO PAM 2024</h3>
       <h2 className="tituloVotar select-none">PARA COMPLETAR SU VOTO <br/> REGISTRE SUS DATOS</h2>
-      {idPostulacion}
       <form onSubmit={handleSubmit} className='select-none'>
         <div style={{ marginBottom: '10px' }}>
           <label>
@@ -217,7 +216,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
         onChange={onCaptchaChange}
       />
 
-        <ul>
+        <ul className='mt-3'>
             <li>* Solo se admite un voto por mail registrado.</li>
             <li>* Para hacer efectiva tu votación, debes confirmar haciendo click en el link que recibirás en tu mail.</li>
         </ul>
