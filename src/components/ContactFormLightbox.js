@@ -15,6 +15,14 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
     setCaptchaValue(value);
     console.log("Captcha value:", value); // Este valor lo enviarías al backend para validarlo.
   };
+
+  if(process.env.REACT_APP_VOTACION_ACTIVA!==1){
+    Swal.fire({
+      title: "Votaciones Cerradas",
+      text: "No puedes votar en este momento, el periodo de votaciones no esta activo.",
+      icon: "info"
+    });
+  }
   
   const checkEmail = async (email) => {
     const url = "http://v2024.premiopam.cl/consultaSiVoto.php";
