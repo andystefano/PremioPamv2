@@ -157,7 +157,6 @@ function Votacion({ votar = true }) {
             style={{ backgroundColor: "#f0000c" }}
           >
             <a
-              href="#"
               onClick={() => openContactForm(data.ID_POSTULACION)}
               className="text-white font-semibold text-xl font-roboto"
               title="Votar"

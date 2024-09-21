@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import ReCAPTCHA from "react-google-recaptcha";
-
+import Swal from "sweetalert2";
 
 Modal.setAppElement('#root'); // Esto es necesario para accesibilidad
 
@@ -132,6 +132,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
             console.log('registraVoto res:::' + registraVoto)
             
             if (result.estado==='1' || result.estado===1) {
+              Swal.fire("Su voto fue registrado correctamente, ahora solo debes confirmar desde el link que recibirás en tu mail.");
               closeLightbox();
               console.log('Voto registrado correctamente');
             } else {
