@@ -4,6 +4,7 @@ import { AiOutlineLinkedin } from "react-icons/ai";
 import Presentadores from "./Presentadores"; // Si es una exportación por defecto
 import Lightbox from "./Lightbox"; // Si es una exportación por defecto
 import ContactFormLightbox from "./ContactFormLightbox";
+import Swal from "sweetalert2";
 
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
@@ -51,6 +52,35 @@ function Votacion({ votar = true }) {
   };
 
   const [postulaciones, setPostulaciones] = useState([]);
+
+  
+  const [votacionActiva, setVotacionActiva] = useState(false);
+
+  useEffect(() => {
+    if(process.env.REACT_APP_VOTACION_ACTIVA===0 || process.env.REACT_APP_VOTACION_ACTIVA==='0'){
+      setVotacionActiva(false)
+      Swal.fire({
+        html: `
+        <div class="w-full mx-auto">
+        <div class="w-full">
+          <h1 class="titulo_principal_votacion">VOTACIONES CERRADAS</h1>
+        </div>
+        <div class="w-full mx-auto container">
+            <ol class="instrucciones text-center">
+              <li>*No puedes votar en este momento, el periodo de votaciones actualmente se encuentra cerrado.</li>
+            </ol>
+          </div>
+        </div>
+      `,
+      customClass: {
+        popup: 'bg_yellow',
+        confirmButton: 'bg_purple'
+      }
+      });
+    }else{
+      setVotacionActiva(true)
+    }
+  }, [process.env.REACT_APP_VOTACION_ACTIVA]);
 
   const baseUrl = "https://premiopam.cl/media/";
 
@@ -151,7 +181,7 @@ function Votacion({ votar = true }) {
           />
         </div>
 
-        {votar && (process.env.REACT_APP_VOTACION_ACTIVA==='1') && (
+        {votar && (votacionActiva===true) && (
           <div
             className="w-full bg-red-500 text-center py-2"
             style={{ backgroundColor: "#f0000c" }}
@@ -215,7 +245,7 @@ function Votacion({ votar = true }) {
     <section id="section_votacion" className="flex justify-center">
       <div className="w-full mx-auto  " style={{ backgroundColor: "#e9d9fc" }}>
         <div className="w-full">
-          <h1 className="text-center leading-22" style={{fontSize:'5.6rem',lineHeight: '5.6rem'}}>VOTA POR TU <br/>OBRA FAVORITA</h1>
+          <h1 className="titulo_principal_votacion">VOTA POR TU <br/>OBRA FAVORITA</h1>
         </div>
 
         <div className="w-full mx-auto container">

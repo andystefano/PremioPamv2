@@ -210,6 +210,19 @@ h1 {
 }
 
 
+.titulo_principal_votacion{
+	color: #F0000C;
+    font-size: 50px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
 
 
 
@@ -1236,6 +1249,14 @@ input[type="submit"]:hover {
         line-height: 32px;
 	}
 
+  
+	.titulo_principal_votacion{
+		font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+	}
+
 
 
 	body > header > div:nth-child(3) > div:nth-child(2) > p {
@@ -1467,5 +1488,14 @@ input[type="submit"]:hover {
 .contenidoGanadoras > .ganadora {
   padding-bottom: 3.5rem; /* Equivalente a pt-14 en Tailwind */
   max-width: 82%;
+}
+
+.bg_yellow {
+  background-color: #fff6e6 !important;
+}
+
+.bg_purple {
+  background-color: #e9d9fc !important;
+  color: #000000;
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import ReCAPTCHA from "react-google-recaptcha";
 import Swal from "sweetalert2";
@@ -11,18 +11,13 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
   const [errorEmail, setErrorEmail] = useState('')
   const [captchaValue, setCaptchaValue] = useState(null);
 
+
   const onCaptchaChange = (value) => {
     setCaptchaValue(value);
     console.log("Captcha value:", value); // Este valor lo enviarías al backend para validarlo.
   };
 
-  if(process.env.REACT_APP_VOTACION_ACTIVA!==1){
-    Swal.fire({
-      title: "Votaciones Cerradas",
-      text: "No puedes votar en este momento, el periodo de votaciones no esta activo.",
-      icon: "info"
-    });
-  }
+
   
   const checkEmail = async (email) => {
     const url = "http://v2024.premiopam.cl/consultaSiVoto.php";
@@ -140,7 +135,26 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
             console.log('registraVoto res:::' + registraVoto)
             
             if (result.estado==='1' || result.estado===1) {
-              Swal.fire("Su voto fue registrado correctamente, ahora solo debes confirmar desde el link que recibirás en tu mail.");
+              Swal.fire({
+                html: `
+                <div class="w-full mx-auto">
+                <div class="w-full">
+                  <h1 class="titulo_principal_votacion">VOTACION REALIZADA</h1>
+                </div>
+                <div class="w-full mx-auto container">
+                    <ol class="instrucciones text-center">
+                      <li>*Su voto fue registrado correctamente, ahora solo debes confirmar desde el link que recibirás en tu mail.</li>
+                    </ol>
+                  </div>
+                </div>
+              `,
+              customClass: {
+                popup: 'bg_yellow',
+                confirmButton: 'bg_purple'
+              }
+              });
+
+
               closeLightbox();
               console.log('Voto registrado correctamente');
             } else {
