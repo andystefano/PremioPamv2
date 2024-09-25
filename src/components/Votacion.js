@@ -199,31 +199,35 @@ function Votacion({ votar = true }) {
 
         <div className="w-full text-black p-5">
           <h2
-            className="text-black font-black text-5xl relative top-0 right-0"
-            style={{ lineHeight: "46px" }}
+            className="text-black font-black text-4xl relative top-0 right-0"
+            style={{ lineHeight: "36px",float: "right" }}
           >
             /{data.ID_POSTULACION}
           </h2>
-          <p className="text-black text-normal">
+          <p className="text-black text-normal text-caracteristicas">
+            <span className="font-bold">Título</span>:{" "}
+            {data.TITULO_DE_OBRA}.
+          </p>
+          <p className="text-black text-normal text-caracteristicas">
             <span className="font-bold">Año Creacion</span>:{" "}
             {data["YEAR(FECHA_CREACION)"]}.
           </p>
-          <p className="text-black text-normal">
+          <p className="text-black text-normal text-caracteristicas">
             <span className="font-bold">Técnica</span>:{" "}
             <span className="">{capitalizeText(data.TECNICA)}</span>
           </p>
-          <p className="text-black text-normal">
+          <p className="text-black text-normal text-caracteristicas">
             <span className="font-bold">Dimensiones</span>: {data.DIMENCIONES}.
           </p>
-          <p className="text-black text-normal">
+          <p className="text-black text-normal text-caracteristicas">
             <span className="font-bold">Edad</span>: {data.EDAD}.
           </p>
-          <p className="text-black text-normal">
+          <p className="text-black text-normal text-caracteristicas">
             <span className="font-bold">Nacionalidad</span>:{" "}
             {capitalizeText(data.NACIONALIDAD)}
           </p>
-          <p className="text-black text-normal">
-            <span className="font-bold">Ciudad</span>:{" "}
+          <p className="text-black text-normal text-caracteristicas">
+            <span className="font-bold">Residencia</span>:{" "}
             {capitalizeText(data.REGION_RESIDENCIA)}
           </p>
           
