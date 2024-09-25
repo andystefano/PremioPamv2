@@ -133,7 +133,28 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
           registraVoto(name,lastname,email,idPostulacion,captchaValue).then(result => {
         
             console.log('registraVoto res:::' + registraVoto)
-            
+            closeLightbox();
+
+
+            Swal.fire({
+              html: `
+              <div class="w-full mx-auto">
+              <div class="w-full">
+                <h1 class="titulo_principal_votacion">VOTACION REALIZADA</h1>
+              </div>
+              <div class="w-full mx-auto container">
+                  <ol class="instrucciones text-center">
+                    <li>*Su voto fue registrado correctamente, ahora solo debes confirmar desde el link que recibirás en tu mail.</li>
+                  </ol>
+                </div>
+              </div>
+            `,
+            customClass: {
+              popup: 'bg_yellow',
+              confirmButton: 'bg_purple'
+            }
+            });
+
             if (result.estado==='1' || result.estado===1) {
               Swal.fire({
                 html: `
