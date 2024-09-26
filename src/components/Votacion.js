@@ -6,6 +6,7 @@ import Lightbox from "./Lightbox"; // Si es una exportación por defecto
 import ContactFormLightbox from "./ContactFormLightbox";
 import Swal from "sweetalert2";
 
+
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 
@@ -17,6 +18,7 @@ function Votacion({ votar = true }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [contactFormOpen, setContactFormOpen] = useState(false);
   const [idPostulacion, setIdPostulacion] = useState(0);
+  
   
 
   const openLightbox = (images, index = 0) => {

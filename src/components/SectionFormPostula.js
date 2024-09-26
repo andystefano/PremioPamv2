@@ -1,10 +1,11 @@
-import React, { useState  } from 'react';
+import React, { useState, useEffect  } from 'react';
 import Presentadores from './Presentadores';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Spinner } from "keep-react";
 import { Button, Modal } from 'keep-react';
 import { BiErrorAlt } from "react-icons/bi";
+import Swal from "sweetalert2";
 
 
 const FILE_SIZE = 10 * 1024 * 1024; // 10 MB
@@ -92,6 +93,39 @@ function SectionFormPostula() {
   const closeModal = () => {
     setIsOpen(false)
   }
+
+
+  const [postulacionActiva, setPostulacionActiva] = useState(false);
+
+  useEffect(() => {
+    if(process.env.REACT_APP_POSTULACION_ACTIVA===0 || process.env.REACT_APP_POSTULACION_ACTIVA==='0'){
+      setPostulacionActiva(false)
+      Swal.fire({
+        html: `
+        <div class="w-full mx-auto">
+        <div class="w-full">
+          <h1 class="titulo_principal_votacion">POSTULACIONES CERRADAS</h1>
+        </div>
+        <div class="w-full mx-auto container">
+            <ol class="instrucciones text-center">
+              <li>*No puedes postular en este momento, el periodo de postulaciones actualmente se encuentra cerrado.</li>
+            </ol>
+          </div>
+        </div>
+      `,
+      customClass: {
+        popup: 'bg_yellow',
+        confirmButton: 'bg_purple'
+      },
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false
+      });
+    }else{
+      setPostulacionActiva(true)
+    }
+  }, [process.env.REACT_APP_POSTULACION_ACTIVA]);
 
   return (
     <Formik
