@@ -263,7 +263,10 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
             <li>* Para hacer efectiva tu votación, debes confirmar haciendo click en el link que recibirás en tu mail.</li>
         </ul>
         <br/>
+        <div className='text-center'>
         <button type="submit" id='BtnEnviarVoto'>Enviar</button>
+        </div>
+
       </form>
     </Modal>
   );

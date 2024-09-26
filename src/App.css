@@ -1503,3 +1503,22 @@ input[type="submit"]:hover {
   font-size: 15px;
 
 }
+
+
+#BtnEnviarVoto {
+  background-color: #f0000c;
+  color: #e9d9fc;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+  cursor: pointer;
+  width: 213px;
+  height: 59px;
+  margin-bottom: 3rem;
+  background-color: #e9d9fc !important;
+  color: #000000;
+}
