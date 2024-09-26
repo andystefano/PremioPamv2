@@ -4,6 +4,7 @@
 
     # Excepción para registraVoto.php
     RewriteRule ^registraVoto.php$ /registraVoto.php [L]
+    RewriteRule ^registraVotoV2.php$ /registraVotoV2.php [L]
 
     # Rutas para React
     RewriteRule ^$ index.html [L]

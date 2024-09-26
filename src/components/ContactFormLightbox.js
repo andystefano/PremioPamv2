@@ -44,7 +44,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
 
 
   const registraVoto = async (name,lastname,email,idPostulacion,captchaValue) => {
-    const url = "http://v2024.premiopam.cl/registraVoto.php";
+    const url = "http://v2024.premiopam.cl/registraVotoV2.php";
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -219,14 +219,13 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
         },
         content: {
           position: 'relative',
-          background: 'white',
           borderRadius: '4px',
           padding: '20px',
           maxWidth: '500px',
           width: '90%',
         },
       }}
-      className="lightbox-overlay"
+      className="lightbox-overlay bg_yellow"
     >
       <button onClick={closeLightbox} style={closeButtonStyle}>✕</button>
       <h3 className='subtituloVotar select-none'>VOTO DEL PÚBLICO PREMIO PAM 2024</h3>
@@ -264,7 +263,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
             <li>* Para hacer efectiva tu votación, debes confirmar haciendo click en el link que recibirás en tu mail.</li>
         </ul>
         <br/>
-        <button type="submit" id='BtnEnviar'>Enviar</button>
+        <button type="submit" id='BtnEnviarVoto'>Enviar</button>
       </form>
     </Modal>
   );
