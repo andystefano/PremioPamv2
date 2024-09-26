@@ -506,12 +506,13 @@ h1 {
 }
 
 .subtituloVotar{
-  color: #0f0f0f;
+  color: #F0000C;
+  /* font-size: 50px; */
+  font-family: 'Inter', sans-serif;
   text-align: left;
   font-size: 0.95rem;
   letter-spacing: 0.009rem;
   margin-top: 2%;
-  font-family: 'Inter', sans-serif;
   line-height: 16px !important;
   margin-top: 1%;
   margin-bottom: 0px;
@@ -520,7 +521,7 @@ h1 {
 
 
 .tituloVotar{
-  color: #0f0f0f;
+  color: #F0000C;
   text-align: left;
   font-size: 1.9rem;
   margin-top: 2%;
