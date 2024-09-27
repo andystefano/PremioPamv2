@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Incluir la configuración de la base de datos
 include("CONFIGURACION.php");
 
@@ -32,8 +34,13 @@ if (isset($_POST['email'])) {
         $voto = true; // Si hay registros, el email ya ha votado
     }
 
+    $_SESSION['crf'] = md5(date("ymdis")."_PaM24");
+
+    $res['crf'] = $_SESSION['crf'];
+    $res['voto'] = $voto;
+
     // Devolver el resultado en formato JSON
-    echo json_encode($voto);
+    echo json_encode($res);
 
     // Cerrar la consulta
     $stmt->close();

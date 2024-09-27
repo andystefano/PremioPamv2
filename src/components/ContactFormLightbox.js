@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import ReCAPTCHA from "react-google-recaptcha";
 import Swal from "sweetalert2";
 
 Modal.setAppElement('#root'); // Esto es necesario para accesibilidad
@@ -10,6 +9,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
   const [errorLastname, setErrorLastname] = useState('')
   const [errorEmail, setErrorEmail] = useState('')
   const [captchaValue, setCaptchaValue] = useState(null);
+  const [crf, setCrf] = useState(null);
 
 
   const onCaptchaChange = (value) => {
@@ -43,7 +43,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
 
 
 
-  const registraVoto = async (name,lastname,email,idPostulacion,captchaValue) => {
+  const registraVoto = async (name,lastname,email,idPostulacion) => {
     const url = "http://v2024.premiopam.cl/registraVotoV2.php";
     try {
       const response = await fetch(url, {
@@ -56,7 +56,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
           apellido: lastname,
           email: email,
           idPostulacion: idPostulacion,
-          captchaValue: captchaValue
+          crf
         }).toString()
       });
   
@@ -119,20 +119,18 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
     } else {
       setErrorEmail("");
       checkEmail(email).then(result => {
-        
-        if (result) {
+        setCrf(result.crf)
+        if (result.voto) {
           setErrorEmail('Usted ya votó, solo se permite un voto por cada email.');
         } else {
           console.log('Su voto se está enviando');
-          if (!captchaValue) {
-            setErrorEmail("Por favor, completa el reCAPTCHA.");
-            numErrores++;
-          }
+       
 
 
           registraVoto(name,lastname,email,idPostulacion,captchaValue).then(result => {
         
             console.log('registraVoto res:::' + registraVoto)
+            setCrf(null);
             closeLightbox();
 
 
@@ -253,10 +251,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
           <span className='mt-2 text-sm text-red-600 semifont-bold' id='error_email'>{ errorEmail }</span>
         </div>
 
-        <ReCAPTCHA
-        sitekey={process.env.REACT_APP_RECAPTCHA_SITEKEY}
-        onChange={onCaptchaChange}
-      />
+        <div>CRF:{crf}</div>
 
         <ul className='mt-3'>
             <li>* Solo se admite un voto por mail registrado.</li>
