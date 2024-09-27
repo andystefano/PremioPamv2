@@ -88,10 +88,45 @@ function Votacion({ votar = true }) {
 
   // Función para obtener los datos
   useEffect(() => {
-    fetch("http://v2024.premiopam.cl/lista_preseleccion.php")
-      .then((response) => response.json())
-      .then((data) => setPostulaciones(data))
-      .catch((error) => console.log(error));
+
+
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search)
+      const token = urlParams.get('token')
+      if (token) {
+      console.log('se confirma el voto aquiii');
+      Swal.fire({
+        html: `
+        <div class="w-full mx-auto">
+        <div class="w-full">
+          <h1 class="titulo_principal_votacion">¡FELICITACIONES!</h1>
+        </div>
+        <div class="w-full mx-auto container">
+            <ol class="instrucciones text-center">
+              <li>*Su voto esta registrado y confirmado.</li>
+            </ol>
+          </div>
+        </div>
+      `,
+      customClass: {
+        popup: 'bg_yellow',
+        confirmButton: 'bg_purple'
+      },
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false
+      });
+
+      }else{
+        //Cargar Lista de preseleccionados
+        fetch("http://v2024.premiopam.cl/lista_preseleccion.php")
+        .then((response) => response.json())
+        .then((data) => setPostulaciones(data))
+        .catch((error) => console.log(error));
+      }
+    }
+
   }, []);
 
   const capitalizeText = (str) => {
