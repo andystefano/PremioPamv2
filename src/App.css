@@ -1523,3 +1523,19 @@ input[type="submit"]:hover {
   background-color: #e9d9fc !important;
   color: #000000;
 }
+
+
+
+.loading_full{
+  background-color: #f4c2f783;
+  display: flex;
+  justify-content: center;  /* Centra horizontalmente */
+  align-items: center;      /* Centra verticalmente */
+  position: fixed;          /* Para que el spinner esté fijo en la pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw;             /* Ocupa todo el ancho de la pantalla */
+  height: 100vh;            /* Ocupa todo el alto de la pantalla */
+  background-color: rgba(255, 255, 255, 0.8);  /* Fondo semitransparente opcional */
+  z-index: 1000;            /* Asegúrate de que esté sobre otros elementos */
+}

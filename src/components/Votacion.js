@@ -5,9 +5,13 @@ import Presentadores from "./Presentadores"; // Si es una exportación por defec
 import Lightbox from "./Lightbox"; // Si es una exportación por defecto
 import ContactFormLightbox from "./ContactFormLightbox";
 import Swal from "sweetalert2";
+//import { LoaderContext } from './LoaderContext';
+import { LoadingContext } from './LoadingContext';
 
 
-import React, { useState, useEffect } from "react";
+
+
+import React, { useState, useEffect, useContext  } from "react";
 import Modal from "react-modal";
 
 function Votacion({ votar = true }) {
@@ -18,8 +22,11 @@ function Votacion({ votar = true }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [contactFormOpen, setContactFormOpen] = useState(false);
   const [idPostulacion, setIdPostulacion] = useState(0);
-  
-  
+  //  const { setLoading } = useContext(LoaderContext);
+
+  const { loading, setLoading } = useContext(LoadingContext);
+
+ 
 
   const openLightbox = (images, index = 0) => {
     console.log("Las imagenes son:");
@@ -88,7 +95,8 @@ function Votacion({ votar = true }) {
 
   // Función para obtener los datos
   useEffect(() => {
-
+   // setLoading(false);
+   //setLoading(true)
 
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search)
@@ -120,10 +128,15 @@ function Votacion({ votar = true }) {
 
       }else{
         //Cargar Lista de preseleccionados
+        setLoading(true)
+
         fetch("http://v2024.premiopam.cl/lista_preseleccion.php")
         .then((response) => response.json())
         .then((data) => setPostulaciones(data))
         .catch((error) => console.log(error));
+
+        setLoading(false)
+
       }
     }
 

@@ -5,9 +5,29 @@ import Home from './Home';
 import Postula from './Postula';
 import Votar from './Votar';
 import Ganadoras from './Ganadoras';
+import { MetroSpinner } from "react-spinners-kit";
+
+
+
+import React, {  useContext } from 'react';
+
+
+import {LoadingContext, LoadingProvider } from './components/LoadingContext';
+
+
 
 const App = () => {
-  return (
+  //const { loading } = useContext(LoaderContext);  // Usa el contexto para el estado de carga
+  const { loading, setLoading } = useContext(LoadingContext);
+
+  return (<LoadingProvider>
+
+        { loading && (
+          <div className="loading_full">
+            {loading && <MetroSpinner size={90} color="#F0000C" />}
+          </div>
+        )}
+    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -17,6 +37,7 @@ const App = () => {
         <Route path="/ganadoras" element={<Ganadoras />} />
       </Routes>
     </BrowserRouter>
+    </LoadingProvider>
   );
 };
 
