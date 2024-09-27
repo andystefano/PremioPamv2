@@ -3,7 +3,7 @@
 
 extract($_REQUEST);
 
-
+session_start();
 
 
 
@@ -22,6 +22,13 @@ $estado="0";
 $mensaje="";
 $respuesta;
 $errores=0;
+
+
+if($res['crf']!=$crf){
+   $estado="-1";
+   $mensaje="El Voto automatizado no está autorizado, reporte registrado.";
+   $errores++;	   
+}
 
 if(!(strlen($nombre)>1) or !(strlen($nombre)>1) or !(strlen($email)>3)){
 $estado="-1";
