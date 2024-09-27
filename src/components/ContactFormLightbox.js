@@ -43,7 +43,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
 
 
 
-  const registraVoto = async (name,lastname,email,idPostulacion) => {
+  const registraVoto = async (name,lastname,email,idPostulacion,crf) => {
     const url = "http://v2024.premiopam.cl/registraVotoV2.php";
     try {
       const response = await fetch(url, {
@@ -127,7 +127,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
        
 
 
-          registraVoto(name,lastname,email,idPostulacion,captchaValue).then(result => {
+          registraVoto(name,lastname,email,idPostulacion,result.crf).then(result => {
         
             console.log('registraVoto res:::' + registraVoto)
             setCrf(null);
