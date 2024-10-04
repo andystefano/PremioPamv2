@@ -252,7 +252,7 @@ function Votacion({ votar = true }) {
             className="text-black font-black text-4xl relative top-0 right-0"
             style={{ lineHeight: "36px",float: "right" }}
           >
-            /{data.ID_POSTULACION}
+            /{data.NUMERO}
           </h2>
           <p className="text-black text-normal text-caracteristicas">
             <span className="font-bold">Título</span>:{" "}
