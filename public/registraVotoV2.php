@@ -9,6 +9,9 @@ session_start();
 
  
 include("CONFIGURACION.php");
+include("FNConfirmaVotoMail2024.php");
+
+
 
 $mysqli = new mysqli($_ENV['DB_HOST'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME']);
 $sql = "SELECT count(*) as Cantidad FROM `votos` WHERE `EMAIL` = '".$email."';";
@@ -24,9 +27,9 @@ $respuesta;
 $errores=0;
 
 
-if($res['crf']!=$crf){
+if($_SESSION['crf']!=$crf){
    $estado="-1";
-   $mensaje="El Voto automatizado no está autorizado, reporte registrado.";
+   $mensaje="Voto no autorizado, reporte registrado. ".$crf." /".$_SESSION['crf']."_";
    $errores++;	   
 }
 
@@ -70,129 +73,7 @@ if($stmt->execute()){
 
 	$estado="1";
 	$mensaje="Confirma tu voto con<br/>el link que enviamos<br/>a tu mail.";
-	
-
-         $email_user = "no-responder@premiopam.cl"; //Mi correo
-
-
-         $contenido = "
-         <style>
-
-            @font-face {font-family: \"Akzidenz Grotesk BE Bold\"; src: url(\"//db.onlinewebfonts.com/t/0fecedcc2f33a0880b3f56b9290da4d5.eot\"); src: url(\"//db.onlinewebfonts.com/t/0fecedcc2f33a0880b3f56b9290da4d5.eot?#iefix\") format(\"embedded-opentype\"), url(\"//db.onlinewebfonts.com/t/0fecedcc2f33a0880b3f56b9290da4d5.woff2\") format(\"woff2\"), url(\"//db.onlinewebfonts.com/t/0fecedcc2f33a0880b3f56b9290da4d5.woff\") format(\"woff\"), url(\"//db.onlinewebfonts.com/t/0fecedcc2f33a0880b3f56b9290da4d5.ttf\") format(\"truetype\"), url(\"//db.onlinewebfonts.com/t/0fecedcc2f33a0880b3f56b9290da4d5.svg#Akzidenz Grotesk BE Bold\") format(\"svg\"); }
-
-         </style>
-         <table border= \"0 \" style= \"width: 100%;max-width: 600px; margin: 0 auto; \">
-            <tbody>
-               <tr>
-                  <td style= \"width: 50%;text-align: left;vertical-align: top;font-family:  'Akzidenz Grotesk BE Bold'\">
-                     <img style= \"width: 85%; \" src= \"https://premiopam.cl/img/PremioPamLogoBlanco.png \">		
-                  </td>
-                  <td style= \"width: 50%;vertical-align: top; \">
-                     <h1 style= \"
-                        display: block;
-                        font-size: calc(1.5vw);
-                        margin-block-start: unset;
-                        margin-block-end: unset;
-                        margin-inline-start: unset;
-                        margin-inline-end: unset;
-                        font-weight: bold;
-                        font-family:  'Akzidenz Grotesk BE Bold';
-                        \">Hola!</h1>
-                     <p style= \"
-                        display: block;
-                        font-size: calc(1.05vw);
-                        margin-block-start: unset;
-                        margin-block-end: unset;
-                        margin-inline-start: unset;
-                        margin-inline-end: unset;
-                        font-weight: bold;
-                        font-family:  'Akzidenz Grotesk BE Bold ';
-                        margin-top: calc(1vw);
-                        margin-bottom: calc(1vw);
-                        color: black;
-                        \">Para completar la votación, haz clic en el siguiente link</p>
-                     <a href= \"".$token."\" target= \"_blank \"  style= \"
-                        display: block;
-                        font-size: calc(1.05vw);
-                        margin-block-start: unset;
-                        margin-block-end: unset;
-                        margin-inline-start: unset;
-                        margin-inline-end: unset;
-                        font-weight: bold;
-                        font-family:  'Akzidenz Grotesk BE Bold ';
-                        margin-top: calc(1vw);
-                        margin-bottom: calc(1vw);
-                        color: blue;
-                        \">".$token."</a>
-                     
-               <p><strong style= \"
-                        display: block;
-                        font-size: calc(1.05vw);
-                        margin-block-start: unset;
-                        margin-block-end: unset;
-                        margin-inline-start: unset;
-                        margin-inline-end: unset;
-                        font-weight: bold;
-                        font-family:  'Akzidenz Grotesk BE Bold';
-                        margin-top: calc(1vw);
-                        margin-bottom: calc(1vw);
-                        color: black;
-                        \">* Si no puedes hacer click en el enlace, copia y pega el link en el navegador.</strong></p>
-                     
-                     <p><strong style= \"
-                        display: block;
-                        font-size: calc(1.05vw);
-                        margin-block-start: unset;
-                        margin-block-end: unset;
-                        margin-inline-start: unset;
-                        margin-inline-end: unset;
-                        font-weight: bold;
-                        font-family:  'Akzidenz Grotesk BE Bold';
-                        margin-top: calc(1vw);
-                        margin-bottom: calc(1vw);
-                        color: black;
-                        \">Muchas gracias.</strong></p>
-                     <p><strong style= \"
-                        display: block;
-                        font-size: calc(1vw);
-                        margin-block-start: unset;
-                        margin-block-end: unset;
-                        margin-inline-start: unset;
-                        margin-inline-end: unset;
-                        font-weight: bold;
-                        font-family:  'Akzidenz Grotesk BE Bold ';
-                        margin-top: calc(1vw);
-                        margin-bottom: calc(1vw);
-                        \">FUNDACIÓN ANTENNA</strong></p>
-                  </td>
-               </tr>
-               <tr>
-                  <td colspan= \"2 \">
-                     <img style= \"width: 100% \" src= \"https://premiopam.cl/img/presenta.png \">
-                  </td>
-               </tr>
-            </tbody>
-         </table>";
-
-
-
-
-         $headers = "MIME-Version: 1.0" . "\r\n";
-         $headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
-         $headers .= "From: $email_user" . "\r\n";
-         $headers .= "Reply-To: $email_user" . "\r\n";
-         $headers .= "X-Mailer: PHP/" . phpversion();
-
-         $the_subject = "Confirma tu voto";
-
-         // Envío del correo
-         $mailEnviado = mail($email, $the_subject, $contenido, $headers);
-
-         if ($mailEnviado) {
-            echo "El correo se envió correctamente.";
-         } else {
-            echo "Hubo un error al enviar el correo.";
-         }
+   enviarCorreoVotacion($email,$token);
 
 
          if(!($mailEnviado)) {
