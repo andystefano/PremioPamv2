@@ -103,9 +103,7 @@ function Votacion({ votar = true }) {
       const token = urlParams.get('token')
       if (token) {
       console.log('se confirma el voto aquiii');
-
-      //https://premiopam.cl/confirma.php?token=232332
-      fetch("http://v2024.premiopam.cl/confirma.php?token=" + token)
+      fetch("https://v2024.premiopam.cl/confirma.php?token=" + token)
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
@@ -137,7 +135,7 @@ function Votacion({ votar = true }) {
         //Cargar Lista de preseleccionados
         setLoading(true)
 
-        fetch("http://v2024.premiopam.cl/lista_preseleccion.php")
+        fetch("https://v2024.premiopam.cl/lista_preseleccion.php")
         .then((response) => response.json())
         .then((data) => setPostulaciones(data))
         .catch((error) => console.log(error));
