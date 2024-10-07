@@ -23,6 +23,7 @@ function Votacion({ votar = true }) {
   const [contactFormOpen, setContactFormOpen] = useState(false);
   const [idPostulacion, setIdPostulacion] = useState(0);
   const [ postulacionItem, setPostulacionItem ] = useState('');
+  const [ postulacionVideo, setPostulacionVideo ] = useState('');
 
   //  const { setLoading } = useContext(LoaderContext);
 
@@ -30,10 +31,11 @@ function Votacion({ votar = true }) {
 
  
 
-  const openLightbox = (images, index = 0) => {
+  const openLightbox = (images, index = 0, VIDEO_LINK) => {
     console.log("Las imagenes son:");
     console.log(images);
     console.table(images);
+    setPostulacionVideo(VIDEO_LINK);
     setLightboxImages(images);
     setCurrentImageIndex(index);
     setLightboxOpen(true);
@@ -223,7 +225,7 @@ function Votacion({ votar = true }) {
         <div className="w-full">
           <img
             alt="Imagen Principal Obra"
-            onClick={() => openLightbox(obraImages, 0)}
+            onClick={() => openLightbox(obraImages, 0, data.VIDEO_LINK)}
             className="w-full lazyload PostulacionItemImagen"
             id={`ImgPrincipal_${data.ID_POSTULACION}`}
             data-id={`25`}
@@ -292,7 +294,7 @@ function Votacion({ votar = true }) {
         </div>
 
         <Lightbox
-          postulacionItem={postulacionItem}
+          postulacionItem={data}
           isOpen={lightboxOpen}
           closeLightbox={closeLightbox}
           images={lightboxImages}
