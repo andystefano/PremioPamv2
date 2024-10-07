@@ -259,7 +259,7 @@ function Votacion({ votar = true }) {
           >
             /{data.NUMERO}
           </h2>
-          <p className="text-black text-normal text-caracteristicas">
+          <p className="text-black text-normal text-caracteristicas break-words">
             <span className="font-bold">Título</span>:{" "}
             {data.TITULO_DE_OBRA}.
           </p>
