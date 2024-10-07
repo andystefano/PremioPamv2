@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root'); // Esto es necesario para accesibilidad
 
-const Lightbox = ({ isOpen, closeLightbox, images, currentImageIndex, nextImage, prevImage }) => {
+const Lightbox = ({ isOpen, closeLightbox, images, currentImageIndex, nextImage, prevImage, postulacionItem }) => {
   const handleClickOutside = (event) => {
     if (event.target.className.includes('lightbox-overlay')) {
       closeLightbox();
@@ -36,6 +36,7 @@ const Lightbox = ({ isOpen, closeLightbox, images, currentImageIndex, nextImage,
       className="lightbox-overlay"
       onClick={handleClickOutside}
     >
+      ||{postulacionItem.VIDEO_LINK}||
       {images.length > 0 && (
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
           <button onClick={prevImage} style={navButtonStyle}>‹</button>

@@ -22,6 +22,8 @@ function Votacion({ votar = true }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [contactFormOpen, setContactFormOpen] = useState(false);
   const [idPostulacion, setIdPostulacion] = useState(0);
+  const [ postulacionItem, setPostulacionItem ] = useState('');
+
   //  const { setLoading } = useContext(LoaderContext);
 
   const { loading, setLoading } = useContext(LoadingContext);
@@ -51,7 +53,8 @@ function Votacion({ votar = true }) {
     );
   };
 
-  const openContactForm = (idPostulacion) => {
+  const openContactForm = (idPostulacion, postulacion) => {
+    setPostulacionItem(postulacion);
     setIdPostulacion(idPostulacion);
     setContactFormOpen(true);
   };
@@ -242,7 +245,7 @@ function Votacion({ votar = true }) {
             style={{ backgroundColor: "#f0000c" }}
           >
             <a
-              onClick={() => openContactForm(data.ID_POSTULACION)}
+              onClick={() => openContactForm(data.ID_POSTULACION, data)}
               className="text-white font-semibold text-xl font-roboto"
               title="Votar"
               alt="Votar"
@@ -289,6 +292,7 @@ function Votacion({ votar = true }) {
         </div>
 
         <Lightbox
+          postulacionItem={postulacionItem}
           isOpen={lightboxOpen}
           closeLightbox={closeLightbox}
           images={lightboxImages}
@@ -319,9 +323,16 @@ function Votacion({ votar = true }) {
 
         <div className="w-full mx-auto container">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {postulaciones.map((postulacion) => (
-              <Card key={postulacion.ID_POSTULACION} data={postulacion} />
-            ))}
+        {postulaciones.map((postulacion) => {
+          // Llamas a setPostulacionItem con el postulacion actual
+          
+          
+          // Retornas el componente JSX correspondiente
+          return (
+            <Card key={postulacion.ID_POSTULACION} data={postulacion} />
+          );
+        })}
+                  
           </div>
         </div>
       </div>
