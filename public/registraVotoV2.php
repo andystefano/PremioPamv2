@@ -26,12 +26,12 @@ $mensaje="";
 $respuesta;
 $errores=0;
 
-
+/*
 if($_SESSION['crf']!=$crf){
    $estado="-1";
    $mensaje="Voto no autorizado, reporte registrado. ".$crf." /".$_SESSION['crf']."_";
    $errores++;	   
-}
+} */
 
 if(!(strlen($nombre)>1) or !(strlen($nombre)>1) or !(strlen($email)>3)){
 $estado="-1";
@@ -73,7 +73,7 @@ if($stmt->execute()){
 
 	$estado="1";
 	$mensaje="Confirma tu voto con<br/>el link que enviamos<br/>a tu mail.";
-   enviarCorreoVotacion($email,$token);
+   enviarCorreoVotacion($email,$CODIGO_VERIFICACION);
 
 
          if(!($mailEnviado)) {

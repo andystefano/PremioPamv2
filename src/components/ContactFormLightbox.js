@@ -64,13 +64,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
         throw new Error('Network response was not ok');
       }
 
-      console.log('result bruto:::' + response)
-      console.table(response)
-
-
       const result = await response.json();
-
-      console.log('result json:::' + result)
 
       return result;
     } catch (error) {
@@ -92,7 +86,6 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Aquí puedes manejar el envío del formulario
-    console.log('click en enviar');
     let numErrores = 0;
     setErrorName("");
     setErrorLastname("");
@@ -120,40 +113,16 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
       setErrorEmail("");
       checkEmail(email).then(result => {
         setCrf(result.crf)
-        if (result.voto) {
+        if (result.voto === 'true' || result.voto === true) {
           setErrorEmail('Usted ya votó, solo se permite un voto por cada email.');
+          numErrores++;
         } else {
-          console.log('Su voto se está enviando');
-       
-
-
+          console.log('Su voto se está enviando a registrar');
           registraVoto(name,lastname,email,idPostulacion,result.crf).then(result => {
-        
-            console.log('registraVoto res:::' + registraVoto)
-            setCrf(null);
-            closeLightbox();
-
-
-            Swal.fire({
-              html: `
-              <div class="w-full mx-auto">
-              <div class="w-full">
-                <h1 class="titulo_principal_votacion">VOTACION REALIZADA</h1>
-              </div>
-              <div class="w-full mx-auto container">
-                  <ol class="instrucciones text-center">
-                    <li>*Su voto fue registrado correctamente, ahora solo debes confirmar desde el link que recibirás en tu mail.</li>
-                  </ol>
-                </div>
-              </div>
-            `,
-            customClass: {
-              popup: 'bg_yellow',
-              confirmButton: 'bg_purple'
-            }
-            });
-
             if (result.estado==='1' || result.estado===1) {
+              console.log('registraVoto res:::' + registraVoto)
+              setCrf(null);
+              closeLightbox();
               Swal.fire({
                 html: `
                 <div class="w-full mx-auto">
@@ -172,19 +141,13 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
                 confirmButton: 'bg_purple'
               }
               });
-
-
               closeLightbox();
               console.log('Voto registrado correctamente');
             } else {
               console.log('Ocurrio un error ');        
             }
-      
           });
     
-
-
-
           if((numErrores===0)){
 
             //captchaValue
@@ -250,8 +213,6 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
           </label>
           <span className='mt-2 text-sm text-red-600 semifont-bold' id='error_email'>{ errorEmail }</span>
         </div>
-
-        <div>CRF:{crf}</div>
 
         <ul className='mt-3'>
             <li>* Solo se admite un voto por mail registrado.</li>

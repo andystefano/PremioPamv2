@@ -2,7 +2,7 @@
 
 function enviarCorreoVotacion($destinatario,$token) {
     // Asunto del correo
-    $asunto = "Confirma tu Voto Premio PAM";
+    $asunto = "Confirma tu voto Premio PAM";
 
     // Encabezados para el correo electrónico
     $encabezados = "MIME-Version: 1.0" . "\r\n";

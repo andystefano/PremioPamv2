@@ -103,6 +103,13 @@ function Votacion({ votar = true }) {
       const token = urlParams.get('token')
       if (token) {
       console.log('se confirma el voto aquiii');
+
+      //https://premiopam.cl/confirma.php?token=232332
+      fetch("http://v2024.premiopam.cl/confirma.php?token=" + token)
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+
       Swal.fire({
         html: `
         <div class="w-full mx-auto">
