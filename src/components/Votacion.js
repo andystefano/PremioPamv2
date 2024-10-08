@@ -24,6 +24,7 @@ function Votacion({ votar = true }) {
   const [idPostulacion, setIdPostulacion] = useState(0);
   const [ postulacionItem, setPostulacionItem ] = useState('');
   const [ postulacionVideo, setPostulacionVideo ] = useState('');
+  const [loadingImg, setLoadingImg] = useState(true);
 
   //  const { setLoading } = useContext(LoaderContext);
 
@@ -44,12 +45,14 @@ function Votacion({ votar = true }) {
 
   const nextImage = () => {
     setCurrentImageIndex((currentImageIndex + 1) % lightboxImages.length);
+    setLoadingImg(true);
   };
 
   const prevImage = () => {
     setCurrentImageIndex(
       (currentImageIndex - 1 + lightboxImages.length) % lightboxImages.length
     );
+    setLoadingImg(true);
   };
 
   const openContactForm = (idPostulacion, postulacion) => {
@@ -331,6 +334,8 @@ function Votacion({ votar = true }) {
           currentImageIndex={currentImageIndex}
           nextImage={nextImage}
           prevImage={prevImage}
+          loadingImg={loadingImg}
+          setLoadingImg={setLoadingImg}
         />
       <ContactFormLightbox
           isOpen={contactFormOpen}

@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState  } from "react";
 import Modal from 'react-modal';
 import { FaPlayCircle } from "react-icons/fa";
+import { MetroSpinner } from "react-spinners-kit";
 
 Modal.setAppElement('#root'); // Esto es necesario para accesibilidad
 
-const Lightbox = ({ isOpen, closeLightbox, images, currentImageIndex, nextImage, prevImage, postulacionVideo }) => {
+const Lightbox = ({ isOpen, closeLightbox, images, currentImageIndex, nextImage, prevImage, postulacionVideo,loadingImg,setLoadingImg }) => {
+
+
+
+  const handleImageLoad = () => {
+    console.log('cambiar a false ya se cargo')
+    setLoadingImg(false); // Actualiza el estado cuando la imagen se ha cargado
+  };
+
   const handleClickOutside = (event) => {
     if (event.target.className.includes('lightbox-overlay')) {
       closeLightbox();
@@ -55,25 +64,37 @@ const Lightbox = ({ isOpen, closeLightbox, images, currentImageIndex, nextImage,
     <FaPlayCircle size={240} style={{ color: "white", fontSize: "120px" }} />
   </div>
 
-      <img
+
+{loadingImg && <MetroSpinner size={90} color="#F0000C" />}
+<img
             src={images[currentImageIndex]}
             alt={`Imagen ${currentImageIndex + 1}`}
             style={{ maxHeight: '80vh', maxWidth: '80vw', margin: '0 20px' }}
-          /></a>
+            onLoad={() => setLoadingImg(false)} // Llama a setLoadingImg(false) cuando la imagen ha cargado
+            />
+      </a>
 </div>
       </>)
       
       }
 
+
+{loadingImg && <MetroSpinner size={90} color="#F0000C" />}
+
+
       {images.length > 0 && postulacionVideo ==='' && (
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-          {postulacionVideo === '' && (<><button onClick={prevImage} style={navButtonStyle}>‹</button></>)}
-          <img
+          {postulacionVideo === '' && images.length > 1 && (<><button onClick={prevImage} style={navButtonStyle}>‹</button></>)}
+
+         <img
             src={images[currentImageIndex]}
             alt={`Imagen ${currentImageIndex + 1}`}
             style={{ maxHeight: '80vh', maxWidth: '80vw', margin: '0 20px' }}
-          />
-          {postulacionVideo === '' && (<><button onClick={nextImage} style={navButtonStyle}>›</button></>)}
+            onLoad={() => setLoadingImg(false)} // Llama a setLoadingImg(false) cuando la imagen ha cargado
+            />
+
+          
+          {postulacionVideo === '' && images.length > 1 && (<><button onClick={nextImage} style={navButtonStyle}>›</button></>)}
           <button onClick={closeLightbox} style={closeButtonStyle}>✕</button>
         </div>
       )}
