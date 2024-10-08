@@ -108,7 +108,7 @@ function Votacion({ votar = true }) {
       const token = urlParams.get('token')
       if (token) {
       console.log('se confirma el voto aquiii');
-      fetch("https://v2024.premiopam.cl/confirma.php?token=" + token)
+      fetch("https://premiopam.cl/confirma.php?token=" + token)
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
@@ -292,10 +292,16 @@ function Votacion({ votar = true }) {
     <section id="section_votacion" className="flex justify-center">
       <div className="w-full mx-auto  " style={{ backgroundColor: "#e9d9fc" }}>
         <div className="w-full">
-          <h1 className="titulo_principal_votacion">VOTA POR TU <br/>OBRA FAVORITA</h1>
-        </div>
+          
+       {votar ? (
+        <h1 className="titulo_principal_votacion">VOTA POR TU <br />OBRA FAVORITA</h1>
+      ) : (
+        <h1 className="titulo_principal_votacion">SELECCION JURADO</h1>
+      )}
 
-        <div className="w-full mx-auto container">
+       </div>
+
+       {votar && (<div className="w-full mx-auto container">
           <ol className="instrucciones text-center">
             <li>
               * Para hacer efectiva tu votación, debes confirmar el link que
@@ -303,7 +309,7 @@ function Votacion({ votar = true }) {
             </li>
             <li>** Solo se admite un voto por mail registrado.</li>
           </ol>
-        </div>
+        </div>)}
 
         <div className="w-full mx-auto container">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
