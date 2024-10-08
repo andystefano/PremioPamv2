@@ -9,7 +9,7 @@ function enviarCorreoVotacion($destinatario,$token) {
     $encabezados .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $encabezados .= "From: no-responder@premiopam.cl" . "\r\n"; // Cambia esto al correo del remitente
 
-    $urlBase = "https://v2024.premiopam.cl/";
+    $urlBase = "https://wwww.premiopam.cl/";
 
   // Contenido del correo (tu HTML)
   $mensaje = '
@@ -30,7 +30,7 @@ function enviarCorreoVotacion($destinatario,$token) {
         <table style="background-color: white; padding: 2em 2em 2em 2em; display: block; margin-top: 2em; margin-bottom: 2em;" border="0" cellpadding="0" cellspacing="0" width="100%">
           <tr>
             <td style="width: 45%; text-align: left; vertical-align: top;">
-              <img src="https://v2024.premiopam.cl/img/mails/confirmaVoto/logo.png" style="width: 80%;" alt="" />
+              <img src="https://www.premiopam.cl/img/mails/confirmaVoto/logo.png" style="width: 80%;" alt="" />
             </td>
             <td style="width: 55%">
               <h1 style="font-size: 1.875em; font-style: normal; font-weight: 900; line-height: 2.3125em; color: #f0000c; font-family: Inter, sans-serif;">
@@ -58,7 +58,7 @@ function enviarCorreoVotacion($destinatario,$token) {
           </tr>
           <tr>
             <td colspan="2">
-              <img src="https://v2024.premiopam.cl/img/mails/confirmaVoto/presentan.png" width="100%" alt="sss" style="width: 100%; margin-top: 2em" />
+              <img src="https://www.premiopam.cl/img/mails/confirmaVoto/presentan.png" width="100%" alt="sss" style="width: 100%; margin-top: 2em" />
             </td>
           </tr>
         </table>
