@@ -95,7 +95,8 @@ const closeButtonStyle = {
   background: 'none',
   border: 'none',
   color: 'white',
-  fontSize: '1.5rem'
+  fontSize: '1.5rem',
+  display: 'none'
 };
 
 export default Lightbox;
