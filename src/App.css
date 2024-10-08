@@ -1201,7 +1201,7 @@ input[type="submit"]:hover {
 		display: block;
 	}
 
-	#HeaderIMG, #IMGGanadoras {
+	#HeaderIMG, #IMGGanadoras, .HeaderIMG {
 		display:none;
 	}
 	#HeaderIMG-mobile {

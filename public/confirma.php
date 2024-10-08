@@ -1,5 +1,12 @@
 <?php
 
+// Permitir solicitudes desde cualquier origen (modifica * si quieres restringir a un dominio específico)
+header("Access-Control-Allow-Origin: *");
+
+// Métodos permitidos
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+
+
 extract($_REQUEST);
 
 

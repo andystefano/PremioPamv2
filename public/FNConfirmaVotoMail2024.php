@@ -9,7 +9,7 @@ function enviarCorreoVotacion($destinatario,$token) {
     $encabezados .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $encabezados .= "From: no-responder@premiopam.cl" . "\r\n"; // Cambia esto al correo del remitente
 
-    $urlBase = "https://wwww.premiopam.cl/";
+    $urlBase = "https://www.premiopam.cl/";
 
   // Contenido del correo (tu HTML)
   $mensaje = '
