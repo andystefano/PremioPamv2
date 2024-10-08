@@ -20,7 +20,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
 
   
   const checkEmail = async (email) => {
-    const url = "https://v2024.premiopam.cl/consultaSiVoto.php";
+    const url = "https://www.premiopam.cl/consultaSiVoto.php";
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -44,7 +44,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
 
 
   const registraVoto = async (name,lastname,email,idPostulacion,crf) => {
-    const url = "https://v2024.premiopam.cl/registraVotoV2.php";
+    const url = "https://www.premiopam.cl/registraVotoV2.php";
     try {
       const response = await fetch(url, {
         method: 'POST',
