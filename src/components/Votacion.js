@@ -261,16 +261,13 @@ function Votacion({ votar = true }) {
             /{data.NUMERO}
           </h2>
           <p className="text-black text-normal text-caracteristicas break-words">
-            <span className="font-bold">Título</span>:
-            {data.TITULO_DE_OBRA}.
+            <span className="font-bold">Título</span>: {data.TITULO_DE_OBRA}.
           </p>
           <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Año Creacion</span>:
-            {data["YEAR(FECHA_CREACION)"]}.
+            <span className="font-bold">Año Creacion</span>: {data["YEAR(FECHA_CREACION)"]}.
           </p>
           <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Técnica</span>:
-            <span className="">{capitalizeText(data.TECNICA)}</span>
+            <span className="font-bold">Técnica</span>: <span className="">{capitalizeText(data.TECNICA)}</span>
           </p>
           <p className="text-black text-normal text-caracteristicas">
             <span className="font-bold">Dimensiones</span>: {data.DIMENCIONES}.
@@ -279,12 +276,10 @@ function Votacion({ votar = true }) {
             <span className="font-bold">Edad</span>: {data.EDAD}.
           </p>
           <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Nacionalidad</span>:
-            {capitalizeText(data.NACIONALIDAD)}
+            <span className="font-bold">Nacionalidad</span>: {capitalizeText(data.NACIONALIDAD)}
           </p>
           <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Residencia</span>:
-            {capitalizeText(data.REGION_RESIDENCIA)}
+            <span className="font-bold">Residencia</span>: {capitalizeText(data.REGION_RESIDENCIA)}
           </p>
           
         </div>
