@@ -225,12 +225,8 @@ function Votacion({ votar = true }) {
             onClick={() => openLightbox(obraImages, 0, data.VIDEO_LINK)  }
             className="w-full lazyload PostulacionItemImagen"
             id={`ImgPrincipal_${data.ID_POSTULACION}`}
-            data-id={`25`}
             data-anterior=""
             data-siguiente=""
-            data-actual={`52`}
-            data-ruta={`https://premiopam.cl/media/5/1.jpg`}
-            data-imagenes="<?php echo $fotos; ?>"
             loading="lazy"
             data-src={`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
             src={`${baseUrl}${data.ID_POSTULACION}/${data.FOTOGRAFIA_OBRA_1}.jpg`}
@@ -262,15 +258,15 @@ function Votacion({ votar = true }) {
             /{data.NUMERO}
           </h2>
           <p className="text-black text-normal text-caracteristicas break-words">
-            <span className="font-bold">Título</span>:{" "}
+            <span className="font-bold">Título</span>:
             {data.TITULO_DE_OBRA}.
           </p>
           <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Año Creacion</span>:{" "}
+            <span className="font-bold">Año Creacion</span>:
             {data["YEAR(FECHA_CREACION)"]}.
           </p>
           <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Técnica</span>:{" "}
+            <span className="font-bold">Técnica</span>:
             <span className="">{capitalizeText(data.TECNICA)}</span>
           </p>
           <p className="text-black text-normal text-caracteristicas">
@@ -280,25 +276,16 @@ function Votacion({ votar = true }) {
             <span className="font-bold">Edad</span>: {data.EDAD}.
           </p>
           <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Nacionalidad</span>:{" "}
+            <span className="font-bold">Nacionalidad</span>:
             {capitalizeText(data.NACIONALIDAD)}
           </p>
           <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Residencia</span>:{" "}
+            <span className="font-bold">Residencia</span>:
             {capitalizeText(data.REGION_RESIDENCIA)}
           </p>
           
         </div>
 
-        <Lightbox
-          postulacionVideo={postulacionVideo}
-          isOpen={lightboxOpen}
-          closeLightbox={closeLightbox}
-          images={lightboxImages}
-          currentImageIndex={currentImageIndex}
-          nextImage={nextImage}
-          prevImage={prevImage}
-        />
       </div>
     );
   };
@@ -335,6 +322,16 @@ function Votacion({ votar = true }) {
           </div>
         </div>
       </div>
+      
+      <Lightbox
+          postulacionVideo={postulacionVideo}
+          isOpen={lightboxOpen}
+          closeLightbox={closeLightbox}
+          images={lightboxImages}
+          currentImageIndex={currentImageIndex}
+          nextImage={nextImage}
+          prevImage={prevImage}
+        />
       <ContactFormLightbox
           isOpen={contactFormOpen}
           closeLightbox={closeContactForm}
