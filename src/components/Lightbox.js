@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { FaPlayCircle } from "react-icons/fa";
 
 Modal.setAppElement('#root'); // Esto es necesario para accesibilidad
 
@@ -9,9 +10,6 @@ const Lightbox = ({ isOpen, closeLightbox, images, currentImageIndex, nextImage,
       closeLightbox();
     }
   };
-
-  console.log('postulacionItem dentro ligthbox:::')
-  console.log(postulacionVideo)
 
   return (
     <Modal
@@ -40,17 +38,42 @@ const Lightbox = ({ isOpen, closeLightbox, images, currentImageIndex, nextImage,
       onClick={handleClickOutside}
     >
 
-      ||{postulacionVideo}||  
+      {
+      postulacionVideo !=='' && (<>
+<div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+<a href={postulacionVideo} target='_blank'>
+<div
+    className='playButton'
+    style={{
+      position: 'absolute',
+      top: '50%', // Ajusta este valor según donde quieras que esté en la parte superior
+      left: '50%',
+      transform: 'translate(-50%, -50%)', // Traduce tanto en X como en Y
+      zIndex: 1 // Para que esté por encima de la imagen
+    }}
+  >
+    <FaPlayCircle size={240} style={{ color: "white", fontSize: "120px" }} />
+  </div>
 
-      {images.length > 0 && (
+      <img
+            src={images[currentImageIndex]}
+            alt={`Imagen ${currentImageIndex + 1}`}
+            style={{ maxHeight: '80vh', maxWidth: '80vw', margin: '0 20px' }}
+          /></a>
+</div>
+      </>)
+      
+      }
+
+      {images.length > 0 && postulacionVideo ==='' && (
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-          <button onClick={prevImage} style={navButtonStyle}>‹</button>
+          {postulacionVideo === '' && (<><button onClick={prevImage} style={navButtonStyle}>‹</button></>)}
           <img
             src={images[currentImageIndex]}
             alt={`Imagen ${currentImageIndex + 1}`}
             style={{ maxHeight: '80vh', maxWidth: '80vw', margin: '0 20px' }}
           />
-          <button onClick={nextImage} style={navButtonStyle}>›</button>
+          {postulacionVideo === '' && (<><button onClick={nextImage} style={navButtonStyle}>›</button></>)}
           <button onClick={closeLightbox} style={closeButtonStyle}>✕</button>
         </div>
       )}
@@ -72,8 +95,7 @@ const closeButtonStyle = {
   background: 'none',
   border: 'none',
   color: 'white',
-  fontSize: '1.5rem',
-  display: 'none',
+  fontSize: '1.5rem'
 };
 
 export default Lightbox;
