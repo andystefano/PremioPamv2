@@ -38,7 +38,7 @@ function Ganadoras(props) {
           <div className="pt-4 text-black w-full text-justify text-xs sm:text-sm ">
             <ol>
               <li>
-                Título : Circuitos Híbridos Dimensiones : { props.titulo }
+                Título : { props.titulo }
               </li>
               <li>Fecha de creación : { props.fecha }</li>
               <li>
