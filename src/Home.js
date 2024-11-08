@@ -20,8 +20,10 @@ function Home() {
       ) : (
           <Section1 />
       )}
+
       <Section2/>
-      <Faq/>
+      {process.env.REACT_APP_RESULTADOS_ACTIVO !== '1' && (<Faq/>)}
+
       </main>
 
      <Footer/>
