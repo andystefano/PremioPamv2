@@ -82,7 +82,7 @@ function SectionResultados() {
                   <div>
                     <h2 className="contenido__tituloGanadorasActual">{ganador.lugar}</h2>
                     <h1 className="titulo_principalGanadorasActual w-full">{ganador.nombre}</h1>
-                    <p className="text-black w-full text-justify text-sm sm:text-sm contenidoGanadorasActual" style={{ color: '#F0000C', fontSize: '18px' }}>
+                    <p className="text-black w-full  contenidoGanadorasActual" style={{ color: '#F0000C', fontSize: '16px' }}>
                       {ganador.descripcion}
                     </p>
                   </div>
@@ -93,7 +93,7 @@ function SectionResultados() {
               </div>
               <div className="w-full ">
                 <div className="pt-4 text-black w-full text-justify text-xs sm:text-sm" style={{ color: '#F0000C',marginBottom:'6rem' }}>
-                  <ol>
+                  <ol style={{maxWidth:'330px'}}>
                     <li><strong>Título</strong> : {ganador.tituloObra}</li>
                     <li><strong>Dimensiones</strong> : {ganador.dimensiones}</li>
                   </ol>
