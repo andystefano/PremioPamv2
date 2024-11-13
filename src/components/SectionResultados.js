@@ -12,7 +12,7 @@ function SectionResultados() {
     {
       lugar: "Primer lugar Premio PAM 2024",
       nombre: "Alicia Villarreal",
-      descripcion: "Licenciada en Arte y reconocida por sus instalaciones, Villarreal fue galardonada por su obra Grabar el Territorio, una instalación de 43 bancos escolares intervenidos que crea una cartografía simbólica del centro y sur de Chile. Su obra explora la memoria, la educación y el arte, contribuyendo a la identidad nacional.",
+      descripcion: "Licenciada en Arte y reconocida por sus instalaciones, Villarreal, artista representada por la Galería Patricia Ready, fue galardonada por su obra Grabar el Territorio, una instalación de 43 bancos escolares intervenidos que crea una cartografía simbólica del centro y sur de Chile. Su obra explora la memoria, la educación y el arte, contribuyendo a la identidad nacional.",
       tituloObra: "Grabar el Territorio",
       dimensiones: "La instalación ocupa un espacio aproximado de 350 cm de ancho x 840 cm de largo x 62 cm de altura",
       fotoArtista: "/img/ganadoras/2024/Alicia.png",
