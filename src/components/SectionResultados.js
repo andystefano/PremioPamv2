@@ -92,7 +92,12 @@ function SectionResultados() {
                 </div>
               </div>
               <div className="w-full ">
-                <div className="pt-4 text-black w-full text-justify text-xs sm:text-sm" style={{ color: '#F0000C',marginBottom:'6rem' }}>
+                <div className="pt-4 text-black w-full text-justify text-xs sm:text-sm"
+                  style={{
+                    color: '#F0000C',
+                    marginBottom: window.innerWidth <= 640 ? '0' : '6rem'
+                  }}
+                >
                   <ol style={{maxWidth:'330px'}}>
                     <li><strong>Título</strong> : {ganador.tituloObra}</li>
                     <li><strong>Dimensiones</strong> : {ganador.dimensiones}</li>

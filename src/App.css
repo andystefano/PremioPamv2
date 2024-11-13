@@ -348,8 +348,8 @@ h1 {
 }
 
 .contenidoGanadorasActual{
-  max-width: 85% !important;
-  text-align: left;
+  max-width: 100% !important;
+  text-align: center;
 }
 
 
@@ -1162,13 +1162,26 @@ input[type="submit"]:hover {
 @media (max-width: 768px) {
 
 
-.ganadora_actual{
-  padding: 0px 31px 20px 31px;
-  margin-top: 0rem;
-  text-align: center;
+  .titulo_principalGanadorasActual {
+    color: #F0000C;
+    font-size: 2.8rem;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 70px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
 }
+
+  .ganadora_actual{
+    padding: 0px 31px 0px 31px;
+    margin-top: 0rem;
+    text-align: center;
+  }
  
-  
   .contenidoGanadoras > .ganadora {
     padding-bottom: 0rem !important;
     max-width: 100% !important;
@@ -1230,7 +1243,7 @@ input[type="submit"]:hover {
 }
 
 .zona_fotoActual > img {
-  width: 40%;
+  width: 45%;
   margin: auto;
 }
 
@@ -1342,10 +1355,10 @@ input[type="submit"]:hover {
 	}
 
 	.titulo_principal{
-		font-size: 30px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 32px;
+    font-size: 41px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 42px;
 	}
 
   
@@ -1379,9 +1392,10 @@ input[type="submit"]:hover {
 	}
 
 	.texto__principal {
-        max-width: 100%;
-        padding: 0px 31px 20px 31px;
-        text-align: start;
+    max-width: 100%;
+    padding: 0px 31px 20px 31px;
+    text-align: start;
+    line-height: 22px;
 	}
 	.texto__principal > p {
 		font-size: 22px;
@@ -1644,6 +1658,7 @@ input[type="submit"]:hover {
   .contenido__tituloGanadorasActual{
     margin: auto;
     margin-top: 2rem;
+    font-size: 14px;
   }
 }
 
