@@ -1185,7 +1185,7 @@ input[type="submit"]:hover {
   }
 
   .contenidoGanadorasActual{
-    max-width: 85% !important;
+    max-width: 100% !important;
     text-align: center;
   }
 
