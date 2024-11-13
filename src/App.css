@@ -348,8 +348,8 @@ h1 {
 }
 
 .contenidoGanadorasActual{
-  max-width: 100% !important;
-  text-align: center;
+  max-width: 85% !important;
+  text-align: left;
 }
 
 
@@ -753,6 +753,20 @@ margin-top: 4rem;
 .btn__ganadoras2 {
 }
 .btn__ganadoras2:hover {
+  background-color: #D7040E;
+  color: #E9D9FC;
+}
+
+.ganadoras-btns2Movil{
+  padding: 5px;
+}
+
+.btn__ganadoras2Movil {
+  display: none;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.btn__ganadoras2Movil:hover {
   background-color: #D7040E;
   color: #E9D9FC;
 }
@@ -1161,6 +1175,19 @@ input[type="submit"]:hover {
 
 @media (max-width: 768px) {
 
+
+  .btn__ganadoras2Movil {
+    display: block;
+  }
+  .btn__ganadoras2Movil:hover {
+    background-color: #D7040E;
+    color: #E9D9FC;
+  }
+
+  .contenidoGanadorasActual{
+    max-width: 85% !important;
+    text-align: center;
+  }
 
   .titulo_principalGanadorasActual {
     color: #F0000C;

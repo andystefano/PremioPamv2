@@ -104,12 +104,15 @@ function SectionResultados() {
                   </ol>
                 </div>
               </div>
+
+
             </div>
           ))}
 
 
 
 
+<div class="ganadoras-btns2" style={{marginTop:'0px',padding:'5rem'}}><a class="btn__ganadoras2Movil" href="/ganadoras">GANADORAS ANTERIORES</a></div>
 
 
 
