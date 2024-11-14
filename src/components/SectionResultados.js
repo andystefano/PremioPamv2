@@ -15,6 +15,7 @@ function SectionResultados() {
       descripcion: "Licenciada en Arte y reconocida por sus instalaciones, Villarreal, artista representada por la Galería Patricia Ready, fue galardonada por su obra Grabar el Territorio, una instalación de 43 bancos escolares intervenidos que crea una cartografía simbólica del centro y sur de Chile. Su obra explora la memoria, la educación y el arte, contribuyendo a la identidad nacional.",
       tituloObra: "Grabar el Territorio",
       dimensiones: "La instalación ocupa un espacio aproximado de 350 cm de ancho x 840 cm de largo x 62 cm de altura",
+      tecnica:"Intervención de objetos con corte, ensamblaje y serigrafía para construir una instalación",
       fotoArtista: "/img/ganadoras/2024/Alicia.png",
       fotoObra: "/img/ganadoras/2024/ObraAlicia.jpg"
     },
@@ -24,6 +25,7 @@ function SectionResultados() {
       descripcion: "Artista textil de gran trayectoria, Chacón-Ávila desarrolló su carrera en París y fue reconocida por Criatura Textil (Avatar), una obra que combina fibras naturales y representa la conexión entre técnicas ancestrales y contemporáneas, explorando la transformación y el ciclo de la vida.",
       tituloObra: "Criatura Textil (Avatar), 2023-2024",
       dimensiones: "230 x 200 x 100 cm",
+      tecnica:"Nudos y cordeles",
       fotoArtista: "/img/ganadoras/2024/Ester.png",
       fotoObra: "/img/ganadoras/2024/ObraEster.png"
     },
@@ -33,6 +35,7 @@ function SectionResultados() {
       descripcion: "Magíster en Historia del Arte y docente, Wilson fue destacada por Telón de Fondo, una instalación compuesta por lienzos y un video, que reflexiona sobre la fugacidad del tiempo y la experiencia humana a través de imágenes en tinta que evocan los ritos y las experiencias íntimas.",
       tituloObra: "Telón de Fondo",
       dimensiones: "Instalación medidas variables - 10 lienzos de 350 x 280 cm cada uno y un video",
+      tecnica:"Dibujo tinta china sobre gaza de lino",
       fotoArtista: "/img/ganadoras/2024/Angela.png",
       fotoObra: "/img/ganadoras/2024/ObraAngela.jpg"
     },
@@ -42,6 +45,7 @@ function SectionResultados() {
       descripcion: "Nacida en la ex oficina salitrera Victoria, Valderrama se convierte en la primera artista autodidacta en recibir este premio. Su obra Frutas de Pica, una monumental escultura en hormigón armado que representa las frutas típicas del oasis de Pica, es un ícono cultural de la zona y deja un legado tangible para su comunidad.",
       tituloObra: "Frutas de Pica",
       dimensiones: "220-130-110-160-130 cm",
+      tecnica:"Hormigón armado-cimiento-sobrecimiento-fierros-mallas metalicas hexagonales-concreto-mortero",
       fotoArtista: "/img/ganadoras/2024/Alejandrina.png",
       fotoObra: "/img/ganadoras/2024/ObraAlejandrina.jpeg"
     }
@@ -61,16 +65,13 @@ function SectionResultados() {
           </h1>
 
           <p class="texto__principal font-bold">
-          Con más de 330 postulaciones y 20,000 votos del público, la quinta edición del Premio Artista Mujer (PAM) ha sido un hito.
+          Con más de 330 postulaciones y 20.000 votos del público, la quinta edición del Premio Artista Mujer (PAM) ha sido un hito.
           </p>
 
           <p class="texto__principal mb-5">
-          Fundación Antenna y Bank of America han premiado a cuatro destacadas artistas visuales en un evento que reafirma su compromiso con la promoción de las mujeres en el arte.Con una participación que duplicó la del año anterior, el Premio PAM sigue consolidándose como un referente en el panorama artístico nacional e internacional. Desde su creación, más de 980 artistas han participado, enriqueciendo el tejido cultural con una diversidad de voces y estilos.
+          Fundación Antenna y Bank of America han premiado a cuatro destacadas artistas visuales en un evento que reafirma su compromiso con la promoción de las mujeres en el arte. Con una participación que duplicó la del año anterior, el Premio PAM sigue consolidándose como un referente en el panorama artístico nacional e internacional. Desde su creación, más de 980 artistas han participado, enriqueciendo el tejido cultural con una diversidad de voces y estilos.
           </p>
-  
-    
 
-     {/* Itera sobre los ganadores y renderiza cada uno */}
      {ganadores.map((ganador, index) => (
             <div className="ganadora_actual" key={index}>
               <div>
@@ -101,6 +102,7 @@ function SectionResultados() {
                   <ol style={{maxWidth:'330px'}}>
                     <li><strong>Título</strong> : {ganador.tituloObra}</li>
                     <li><strong>Dimensiones</strong> : {ganador.dimensiones}</li>
+                    <li><strong>Técnica</strong> : {ganador.tecnica}</li>
                   </ol>
                 </div>
               </div>
