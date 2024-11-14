@@ -40,6 +40,11 @@ border-radius: 5px;
   border-radius: 5px;
 }
 
+
+.salto{
+  display: none;
+}
+
 .font-roboto{
   font-family: 'Roboto Mono', monospace;
 }
@@ -1201,6 +1206,10 @@ input[type="submit"]:hover {
     text-decoration: underline;
     text-underline-offset: 10px;
     text-decoration-thickness: 5px;
+}
+
+.salto{
+  display: block;
 }
 
   .ganadora_actual{

@@ -21,7 +21,7 @@ function SectionResultados() {
     },
     {
       lugar: "Mención Honrosa Premio PAM 2024",
-      nombre: "Ester Chacón-Ávila",
+      nombre: "Ester <br class=\"salto\" /> Chacón-Ávila",
       descripcion: "Artista textil de gran trayectoria, Chacón-Ávila desarrolló su carrera en París y fue reconocida por Criatura Textil (Avatar), una obra que combina fibras naturales y representa la conexión entre técnicas ancestrales y contemporáneas, explorando la transformación y el ciclo de la vida.",
       tituloObra: "Criatura Textil (Avatar), 2023-2024",
       dimensiones: "230 x 200 x 100 cm",
@@ -82,7 +82,11 @@ function SectionResultados() {
                   </div>
                   <div>
                     <h2 className="contenido__tituloGanadorasActual">{ganador.lugar}</h2>
-                    <h1 className="titulo_principalGanadorasActual w-full">{ganador.nombre}</h1>
+                    <h1 className="titulo_principalGanadorasActual w-full" dangerouslySetInnerHTML={{ __html: ganador.nombre }}>
+                    
+
+
+                     </h1>
                     <p className="text-black w-full  contenidoGanadorasActual" style={{ color: '#F0000C', fontSize: '16px' }}>
                       {ganador.descripcion}
                     </p>
