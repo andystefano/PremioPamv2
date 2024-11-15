@@ -65,11 +65,11 @@ function SectionResultados() {
           </h1>
 
           <p class="texto__principal font-bold">
-          Con más de 330 postulaciones y 20.000 votos del público, la quinta edición del Premio Artista Mujer (PAM) ha sido un hito.
+          Con 330 postulaciones y 20.000 votos del público, la quinta edición del Premio Artista Mujer (PAM) ha sido un éxito.
           </p>
 
           <p class="texto__principal mb-5">
-          Fundación Antenna y Bank of America han premiado a cuatro destacadas artistas visuales en un evento que reafirma su compromiso con la promoción de las mujeres en el arte. Con una participación que duplicó la del año anterior, el Premio PAM sigue consolidándose como un referente en el panorama artístico nacional e internacional. Desde su creación, más de 980 artistas han participado, enriqueciendo el tejido cultural con una diversidad de voces y estilos.
+          Fundación Antenna y Bank of America en colaboración con Grupo Roca han premiado a cuatro destacadas artistas visuales en un reconocimiento que reafirma su compromiso con la promoción de las mujeres en el arte. Con una participación que duplicó la del año anterior, el Premio PAM se consolida como un referente en el panorama artístico nacional e internacional. Desde su creación, más de 980 artistas han participado, enriqueciendo el tejido cultural con una diversidad de voces y estilos.
           </p>
 
      {ganadores.map((ganador, index) => (
