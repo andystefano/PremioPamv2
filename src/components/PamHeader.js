@@ -16,7 +16,7 @@ function PamHeader({titulo,contenido}) {
 
         <img className="HeaderIMG"  src="img/header/web.png"  alt=""/>
   
-        <img id="HeaderIMG-mobile"  src="img/HEADER_MOVIL.png"  alt=""/>
+        <img id="HeaderIMG-mobile"  src="img/header/movil.png"  alt=""/>
         <img id="LOGOS_MOVIL"  src="img/CONVOCATORIA_MOVIL.png"  alt=""   
         onClick={(process.env.REACT_APP_VOTACION_ACTIVA === '1' || process.env.REACT_APP_VOTACION_ACTIVA === 1) 
           ? () => window.location.href = '/votacion' 
