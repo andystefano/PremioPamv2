@@ -14,10 +14,10 @@ function Presentadores() {
         <img src="img/COLABORA1.png" alt='Capitulo Chileno de Mational Musseum of WOMEN in the ARTS' />  
         <img src="img/APOYA.png" alt='e-press' style={{marginTop:'1rem'}} />  
 
-        {process.env.REACT_APP_RESULTADOS_ACTIVO === 1 || process.env.REACT_APP_RESULTADOS_ACTIVO === '1' && (<div>
-            <div class="ganadoras-btns2"> 
+        {process.env.REACT_APP_BTN_GANADORAS_ANTERIORES_ACTIVO === 1 || process.env.REACT_APP_BTN_GANADORAS_ANTERIORES_ACTIVO === '1' && (<div>
+            <div class="ganadoras-btn-presentan"> 
                 <a
-                  className="btn__ganadoras2"
+                  className=""
                   href="/ganadoras"
                 >
                   GANADORAS ANTERIORES

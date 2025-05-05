@@ -119,7 +119,7 @@ Con una participación que duplicó la del año anterior, el Premio PAM se conso
 
 
 
-<div class="ganadoras-btns2" style={{marginTop:'0px',padding:'5rem'}}><a class="btn__ganadoras2Movil" href="/ganadoras">GANADORAS ANTERIORES</a></div>
+<div class="ganadoras-btn-presentan" style={{marginTop:'0px',padding:'5rem'}}><a class="btn__ganadoras2Movil" href="/ganadoras">GANADORAS ANTERIORES</a></div>
 
 
 

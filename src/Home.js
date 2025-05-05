@@ -14,18 +14,16 @@ function Home() {
     <div className="App">
       <div id='page'>
       <PamHeader/>
-      <main>
-      {process.env.REACT_APP_RESULTADOS_ACTIVO === '1' ? (
-      <SectionResultados />
-      ) : (
-          <Section1 />
-      )}
+      {/* <SectionResultados />*/}
+      <Section1 />
 
-      <Section2/>
-      {process.env.REACT_APP_RESULTADOS_ACTIVO !== '1' && (<Faq/>)}
-
-      </main>
-
+      {/* <Section2 />*/}
+      Franja fechas Importantes Roja
+      ___<br/>
+      Section Amarilla Fechas
+      Fechas  Fechas  Fechas  Fechas
+      Fechas  Fechas  Fechas  Fechas
+      <Faq/>
      <Footer/>
       </div>
     </div>

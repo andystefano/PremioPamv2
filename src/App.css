@@ -7,13 +7,9 @@ body {
 }
 
  
-
 a, button, .upload, img.PostulacionItemImagen, button {
 	cursor: url('../public/img/pointer.png'), auto;
-  }
-
-
-  
+}
 
 ::-webkit-scrollbar {
   width: 15px;
@@ -622,8 +618,8 @@ margin-bottom: 4%;
 
 #faq_titulo{
 	color: #F0000C;
-    font-family: Inter, sans-serif;
-    font-weight: 600;
+  font-family: Inter, sans-serif;
+  font-weight: 800;
 	font-size: 2.25rem;
 	line-height: 2.5rem;
 }
@@ -693,20 +689,7 @@ p {
 .premio__semibold {
   font-weight:600;
 }
-.postular-btns {
-  margin-top: 65px;
-    margin-bottom: 60px;
-}
-.postular-btns > a {
-  text-decoration: none;
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  border: solid 2px #F0000C;
-  cursor:pointer;
-}
+
 
 
 .ganadoras-btns {
@@ -737,12 +720,16 @@ p {
 }
 
 
+/* Confirmados 2025 */
 
-.ganadoras-btns2 {
+
+
+
+.ganadoras-btn-presentan {
 margin-top: 4rem;
 }
 
-.ganadoras-btns2 > a {
+.ganadoras-btn-presentan > a {
   text-decoration: none;
   font-family: 'Inter', sans-serif;
   font-size: 20px;
@@ -751,16 +738,56 @@ margin-top: 4rem;
   line-height: normal;
   cursor: pointer;
   color: #F0000C;
-  padding: 17px 28px 17px 28px;
+  padding: 13px 18px 13px 18px;;
   border: 2px solid red;
+  border-top-left-radius: 80px 80px;
+  border-bottom-left-radius: 80px 80px;
+  border-top-right-radius: 80px 80px;
+  border-bottom-right-radius: 80px 80px;
 }
 
-.btn__ganadoras2 {
-}
-.btn__ganadoras2:hover {
+.ganadoras-btn-presentan > a:hover {
   background-color: #D7040E;
   color: #E9D9FC;
 }
+
+
+
+.postular-btns {
+  margin-top: 65px;
+    margin-bottom: 60px;
+}
+.postular-btns > a {
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: solid 2px #F0000C;
+  cursor:pointer;
+}
+
+.btn__bases {
+  font-size: 30px;
+  color: #F0000C;
+  background-color: #E9D9FC;
+  padding: 11px 18px 11px 18px;;
+  border-top-left-radius: 80px 80px;
+  border-bottom-left-radius: 80px 80px;
+  border-top-right-radius: 80px 80px;
+  border-bottom-right-radius: 80px 80px;
+}
+.btn__bases:hover {
+  background-color: #D7040E;
+  color: #E9D9FC;
+  border-color:#D7040E;
+}
+
+
+/* Fin Confirmados 2025 */
+
+
 
 .ganadoras-btns2Movil{
   padding: 5px;
@@ -789,18 +816,8 @@ margin-top: 4rem;
   padding: 17px 28px 17px 28px;
   text-align: center;
 }
-.btn__bases {
-  color: #F0000C;
-  background-color: #E9D9FC;
-  padding: 17px 28px 17px 28px;
-}
 .btn__postula:hover {
   background-color: #D7040E;
-  border-color:#D7040E;
-}
-.btn__bases:hover {
-  background-color: #D7040E;
-  color: #E9D9FC;
   border-color:#D7040E;
 }
 

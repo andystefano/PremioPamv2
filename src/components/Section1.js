@@ -56,9 +56,7 @@ function Section1() {
               </p>
             </div>
             <div class="postular-btns">
-              <a class="btn__bases" href="bases_pam_2024.pdf" target="_blank">
-                BASES 2024
-              </a>
+
 
         { (process.env.REACT_APP_POSTULACION_ACTIVA === 1 ||  process.env.REACT_APP_POSTULACION_ACTIVA === '1') && (<a
                 className="btn__bases"
@@ -67,6 +65,11 @@ function Section1() {
                 POSTULA TU OBRA AQUÍ
               </a>
         )} 
+
+        <a class="btn__bases" href="bases_pam_2024.pdf" target="_blank">
+                BASES 2024
+              </a>
+
         { (process.env.REACT_APP_VOTACION_ACTIVA === 1 ||  process.env.REACT_APP_VOTACION_ACTIVA === '1') && (
             <a
                 className="btn__bases"
@@ -77,14 +80,7 @@ function Section1() {
         )}   
     
             </div>
-            <div class="ganadoras-btns"> 
-              <a
-                className="btn__ganadoras "
-                href="/ganadoras"
-              >
-                GANADORAS ANTERIORES
-              </a>
-            </div>
+           
           </div>
         </div>
 
