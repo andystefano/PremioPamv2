@@ -1169,7 +1169,7 @@ input[type="submit"]:hover {
   }
   
   .ganadoras_anos li {
-    width: calc(25% - 10px);
+    width: calc(20% - 10px);
     margin: 5px;
   }
   
@@ -1303,7 +1303,7 @@ input[type="submit"]:hover {
   }
   
   .ganadoras_anos li {
-    width: calc(25% - 10px);
+    width: calc(20% - 10px);
     margin: 5px;
     text-align: center;
   }

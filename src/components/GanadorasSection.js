@@ -5,7 +5,7 @@ import { AiOutlineLinkedin } from "react-icons/ai";
 import Ganadoras from "./Ganadora";
 
 function GanadorasSection() {
-  const [ano, setAno] = useState(2023);
+  const [ano, setAno] = useState(2024);
 
   return (
     <section id="section_ganadoras" class="flex justify-center">
@@ -15,33 +15,94 @@ function GanadorasSection() {
       >
         <div className="presentanGanadoras">
           <ul className="ganadoras_anos">
+        <li
+        className={`mb-7 ${ano === 2024 ? 'underline' : ''}`}
+        onClick={() => setAno(2024)}
+      >
+        <a href='#2024'>2024</a>
+      </li>
           <li
         className={`mb-7 ${ano === 2023 ? 'underline' : ''}`}
         onClick={() => setAno(2023)}
       >
-        <a>2023</a>
+        <a href="#2023">2023</a>
       </li>
       <li
         className={`mb-7 ${ano === 2022 ? 'underline' : ''}`}
         onClick={() => setAno(2022)}
       >
-        <a>2022</a>
+        <a href="#2022">2022</a>
       </li>
       <li
         className={`mb-7 ${ano === 2021 ? 'underline' : ''}`}
         onClick={() => setAno(2021)}
       >
-        <a>2021</a>
+        <a href="#2021">2021</a>
       </li>
       <li
         className={`mb-7 ${ano === 2020 ? 'underline' : ''}`}
         onClick={() => setAno(2020)}
       >
-        <a>2020</a>
+        <a href="#2020">2020</a>
       </li>
           </ul>
         </div>
         <div class="contenidoGanadoras ">
+
+
+        <Ganadoras
+            nombre={"Alicia Villarreal"}
+            biografia={
+              "Licenciada en Arte y reconocida por sus instalaciones, Villarreal, artista representada por la Galería Patricia Ready, fue galardonada por su obra Grabar el Territorio, una instalación de 43 bancos escolares intervenidos que crea una cartografía simbólica del centro y sur de Chile. Su obra explora la memoria, la educación y el arte, contribuyendo a la identidad nacional."
+            }
+            retrato={"Alicia.png"}
+            obra={"ObraAlicia.jpg"}
+            titulo={"Grabar el Territorio"}
+            dimensiones={"La instalación ocupa un espacio aproximado de 350 cm de ancho x 840 cm de largo x 62 cm de altura"}
+            fecha={"-"}
+            tecnica={
+              "Intervención de objetos con corte, ensamblaje y serigrafía para construir una instalación"
+            }
+            ano={2024}
+            anoSeleccion={ano}
+          />
+
+
+<Ganadoras
+            nombre={"Ester Chacón-Ávila"}
+            biografia={
+              "Artista textil de gran trayectoria, Chacón-Ávila desarrolló su carrera en París y fue reconocida por Criatura Textil (Avatar), una obra que combina fibras naturales y representa la conexión entre técnicas ancestrales y contemporáneas, explorando la transformación y el ciclo de la vida."
+            }
+            retrato={"Ester.png"}
+            obra={"ObraEster.png"}
+            titulo={"Criatura Textil (Avatar), 2023-2024"}
+            dimensiones={"230 x 200 x 100 cm"}
+            fecha={"-"}
+            tecnica={
+              "Nudos y cordeles"
+            }
+            ano={2024}
+            anoSeleccion={ano}
+          />
+
+<Ganadoras
+            nombre={"Ángela Wilson"}
+            biografia={
+              "Magíster en Historia del Arte y docente, Wilson fue destacada por Telón de Fondo, una instalación compuesta por lienzos y un video, que reflexiona sobre la fugacidad del tiempo y la experiencia humana a través de imágenes en tinta que evocan los ritos y las experiencias íntimas."
+            }
+            retrato={"Angela.png"}
+            obra={"ObraAngela.jpg"}
+            titulo={"Telón de Fondo"}
+            dimensiones={"Instalación medidas variables - 10 lienzos de 350 x 280 cm cada uno y un video"}
+            fecha={"-"}
+            tecnica={
+              "Dibujo tinta china sobre gaza de lino"
+            }
+            ano={2024}
+            anoSeleccion={ano}
+          />          
+
+
 
 
 
