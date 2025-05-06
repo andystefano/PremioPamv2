@@ -54,7 +54,7 @@ function SectionResultados() {
 
   return (
     <section id="section_1" class="flex justify-center">
-      <div className="w-full mx-auto  container" style={{backgroundColor: "#e9d9fc"}}>
+      <div className="w-full mx-auto  " style={{backgroundColor: "#e9d9fc"}}>
         <div className="presentan" style={{paddingTop: '4.49rem'}}>
          <Presentadores/>                        
         </div>

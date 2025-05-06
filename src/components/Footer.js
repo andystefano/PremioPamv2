@@ -51,7 +51,7 @@ function Footer() {
   <div style={{ display: 'flex', alignItems: 'center', marginTop: '0px'  }}>
     <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank">
       <TbDownload size={28} color="#F0000C" /> </a>
-    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank"><span style={{ marginLeft: '8px' }} className='contenido__titulo'>Media kit 2024</span></a>
+    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank"><span style={{ marginLeft: '8px' }} className='contenido__titulo'>Media kit 2025</span></a>
    
   </div>
 </div>

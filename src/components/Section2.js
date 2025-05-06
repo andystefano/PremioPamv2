@@ -5,7 +5,7 @@ function Section2() {
 
   return (
     <section id='section_2' class="flex justify-center bg-[#e9d9fc]">
-          <div id="Ganadores" className="w-full mx-auto  container">
+          <div id="Ganadores" className="w-full mx-auto  ">
 					  <img id="IMGGanadoras" src="img/animated_desk.png" />
 					  <img id="IMGGanadoras-mobile" src="img/animated_desk.png" />
 					</div>
