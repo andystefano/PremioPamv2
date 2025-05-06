@@ -19,8 +19,8 @@ function Footer() {
 
 <div id="Izquierda">
 
-<img id="IMGLogoFooterDesk" src="img/logoFooterDesk.png" />
-<img id="IMGLogoFooterMovil" src="img/logoFooterMovil.png" />
+<img id="IMGLogoFooterDesk" src="img/footer/web.png" />
+<img id="IMGLogoFooterMovil" src="img/footer/movil.png" />
 
 </div>
 

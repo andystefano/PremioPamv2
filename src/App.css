@@ -723,6 +723,14 @@ p {
 /* Confirmados 2025 */
 
 
+#section_fecha{
+	color: #fff6e6;
+    font-size: 17px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px;
+}
 
 
 .ganadoras-btn-presentan {

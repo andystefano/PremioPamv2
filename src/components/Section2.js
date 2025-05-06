@@ -4,12 +4,12 @@ import React  from 'react';
 function Section2() {
 
   return (
-    <section id='section_2'  class="flex justify-center ">
+    <section id='section_2' class="flex justify-center bg-[#e9d9fc]">
           <div id="Ganadores" className="w-full mx-auto  container">
 					  <img id="IMGGanadoras" src="img/animated_desk.png" />
 					  <img id="IMGGanadoras-mobile" src="img/animated_desk.png" />
 					</div>
-      </section>
+    </section>
   );
 }
 

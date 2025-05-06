@@ -7,8 +7,8 @@ function PamHeader({titulo,contenido}) {
 
   return (
     <header>
-      <div className="flex justify-center ">
-        <div className="w-full mx-auto  container">
+      <div className="flex justify-center bg-[#e9d9fc]">
+        <div className="w-full mx-auto  container bg-[#e9d9fc]">
           <div className="flex justify-between items-center px-4">
             <div>AntennaLogo</div>
             <div>BancoBiceLogo</div>
