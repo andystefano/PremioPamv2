@@ -13,19 +13,11 @@ function PamHeader({ titulo, contenido }) {
           </div>
 
           <img className="HeaderIMG" src="img/header/web.png" alt="" />
-
           <img id="HeaderIMG-mobile" src="img/header/movil.png" alt="" />
-          <img
-            id="LOGOS_MOVIL"
-            src="img/CONVOCATORIA_MOVIL.png"
-            alt=""
-            onClick={
-              process.env.REACT_APP_VOTACION_ACTIVA === "1" ||
-              process.env.REACT_APP_VOTACION_ACTIVA === 1
-                ? () => (window.location.href = "/votacion")
-                : null
-            }
-          />
+          <div className="flex justify-between items-center px-4">
+            <div>CONVOCATORIA ABIERTA</div>
+            <div>HASTA EL 26 DE AGOSTO 2025</div>
+          </div>
         </div>
       </div>
       <div className="w-full mx-auto  container_logo_movil">

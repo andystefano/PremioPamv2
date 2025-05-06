@@ -15,9 +15,10 @@ function Section1() {
          <Presentadores/>                        
         </div>
         <div class="contenido">
-          <h2 class="contenido__titulo">PREMIO PAM 2024</h2>
+          <h2 class="contenido__titulo">PREMIO PAM 2024 | <span>SEIS AÑOS, SEIS RAZONES</span></h2>
           <h1 className='titulo_principal'>
-            CINCO AÑOS RECONOCIENDO <br /> ARTISTAS MUJERES
+          SEIS EDICIONES CELEBRANDO
+          A LAS MUJERES ARTISTAS EN CHILE.
           </h1>
 
           <p class="texto__principal">

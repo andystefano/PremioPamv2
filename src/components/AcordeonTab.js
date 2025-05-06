@@ -1,5 +1,5 @@
-import { TiArrowSortedDown } from "react-icons/ti";
-import { TiArrowSortedUp } from "react-icons/ti";
+import { AiOutlineDown } from "react-icons/ai";
+import { AiOutlineUp } from "react-icons/ai";
 
 
 import React  from 'react';
@@ -14,7 +14,7 @@ function AcordeonTab({titulo,contenido}) {
     <div className="acordeon-radius px-4  mt-2">
             <div className="flex items-center ml-auto"  style={{
                   color: '#F0000C',
-                  borderBottom:'3px solid #f0e9e9'
+                  borderBottom:'5px solid #f0e9e9'
                 }}>
               <div
                 className="text-black  font-unbounded  font-normal text-left w-11/12"
@@ -26,11 +26,11 @@ function AcordeonTab({titulo,contenido}) {
               </div>
               {openTab===false && (
               <span className="text-white w-1/12 flex items-end pl-1 cursor-pointer">
-                <TiArrowSortedDown style={{color:'#F0000C'}} className={openTab ? 'hidden' : ''} size={30} onClick={() => setOpenTab(true)} />
+                <AiOutlineDown style={{color:'#F0000C'}} className={openTab ? 'hidden' : ''} size={30} onClick={() => setOpenTab(true)} />
               </span>)}
               {openTab && (
               <span className="text-white w-1/12 flex items-end pl-1 cursor-pointer">
-                <TiArrowSortedUp style={{color:'#F0000C'}} className={openTab ? '' : 'hidden'} size={30} onClick={() => setOpenTab(false)} />
+                <AiOutlineUp style={{color:'#F0000C'}} className={openTab ? '' : 'hidden'} size={30} onClick={() => setOpenTab(false)} />
               </span>)}
               
             </div>

@@ -218,7 +218,7 @@ h1 {
     font-size: 50px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 58px;
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -252,6 +252,10 @@ h1 {
     margin-top: 1rem;
     margin-bottom: 1rem;
 	font-size: 16px;
+}
+
+.contenido__titulo > span {
+  font-weight: 400;
 }
 
 .contenido__postulado {
@@ -1087,7 +1091,7 @@ label {
 .titulo__item_faq{
 	font-size: 18px;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 700;
 	line-height: 26px;	
 	padding: 12px;
 	color: #f0000c;
