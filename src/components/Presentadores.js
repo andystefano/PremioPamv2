@@ -3,7 +3,7 @@ import React  from 'react';
 
 function Presentadores() {
 
-  return (<>
+  return (<div>
         <h2 className="presentan__titulo">PRESENTA:</h2>
         <img src="img/PRESENTA.png" alt='Fundación Antenna' />
         <h2 className="presentan__titulo">AUSPICIA:</h2>
@@ -25,7 +25,7 @@ function Presentadores() {
             </div></div>)}
           
 
-        </>
+        </div>
   );
 }
 

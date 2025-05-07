@@ -122,19 +122,10 @@ header{
 
 .presentan{
   float: left;
-  width: 40%;
-  padding-left: 8%;
-  background-color: #E9D9FC;
-  display: flex;
-  justify-content: center;
-  padding-top: 56px;
-  align-self: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  padding-bottom: 4rem;
+  width: 32%;
 }
 
-  .presentan > img {
+  .presentan > div > img {
     margin-bottom: 1.5rem;
     margin-right: 3rem;
     width: 54%;
@@ -197,7 +188,7 @@ header{
 .contenido{
   padding-top: 56px;
   float: left;
-  width: 50%;
+  width: 58%;
   background-color:#E9D9FC;
   text-align: left;
 }

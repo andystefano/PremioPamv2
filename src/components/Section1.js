@@ -11,7 +11,7 @@ function Section1() {
   return (
     <section id="section_1" class="flex justify-center">
       <div className="w-full mx-auto  " style={{backgroundColor: "#e9d9fc"}}>
-        <div className="presentan" style={{paddingTop: '4.49rem'}}>
+        <div className="presentan h-full flex flex-col justify-between pl-8">
          <Presentadores/>                        
         </div>
         <div class="contenido">
@@ -21,41 +21,22 @@ function Section1() {
           A LAS MUJERES ARTISTAS EN CHILE.
           </h1>
 
-          <p class="texto__principal">
-            Fundación Antenna y Bank of America presentan la quinta versión del
-            Premio PAM Artista Mujer, que invita a artistas visuales mujeres
-            desde los 60 años.
+          <p className="text-[#F0000C] text-2xl font-black">
+          Reconocemos a mujeres artistas visuales sobre los 60 años,
+          en plena vigencia creativa.
           </p>
 
-          <p class="texto__principal">
-            Un jurado de expertos escogerá a la artista ganadora y a dos
-            menciones honrosas a través de un proceso ciego, es decir, teniendo
-            únicamente la obra como referente.
+          <p className="text-[#F0000C] text-2xl font-ligth mt-10">
+          Si eres artista, o conoces a una creadora que merezca este
+          reconocimiento, este es tu momento.
           </p>
 
-          <p class="texto__principal">
-            Además, el público votará y seleccionará a una artista ganadora, lo
-            cual permite democratizar este reconocimiento y difundir más
-            ampliamente a las participantes.
-          </p>
+
 
           <div class="texto__premios">
-            <h2 id="premios_titulo">PREMIOS</h2>
-            <div class="premio__container">
-              <p class="premio__medium">
-                Primer lugar:&nbsp;<strong>$5.000.000 </strong>{" "}
-              </p>
-            </div>
-            <div class="premio__container">
-              <p class="premio__medium">
-                Premio del público:&nbsp;<strong>$2.000.000</strong>{" "}
-              </p>
-            </div>
-            <div class="premio__container">
-              <p class="premio__medium">
-                Mención honrosa (2):&nbsp;<strong>$1.500.000</strong>{" "}
-              </p>
-            </div>
+        
+           
+            
             <div class="postular-btns">
 
 
@@ -63,12 +44,12 @@ function Section1() {
                 className="btn__bases"
                 href="/postulacion"
               >
-                POSTULA TU OBRA AQUÍ
+                POSTULA AQUÍ
               </a>
         )} 
 
         <a class="btn__bases" href="bases_pam_2024.pdf" target="_blank">
-                BASES 2024
+                BASES 2025
               </a>
 
         { (process.env.REACT_APP_VOTACION_ACTIVA === 1 ||  process.env.REACT_APP_VOTACION_ACTIVA === '1') && (
@@ -79,6 +60,19 @@ function Section1() {
                 VOTAR AQUÍ
               </a>
         )}   
+
+
+        <h3 className="text-[#F0000C] text-2xl font-black mt-10 block">¿POR QUÉ PREMIAR A MUJERES ARTISTAS SOBRE LOS 68 AÑOS?</h3>
+
+
+        <ol  className="text-[#F0000C] text-2xl font-extraligth list-decimal list-inside space-y-2 pl-5">
+  <li>Porque son nuestro presente, no el pasado.</li>
+  <li>Porque hay historias que todavía no se han contado y obras que aún esperan ser vistas.</li>
+  <li>Porque su camino inspira a quienes están comenzando.</li>
+  <li>Porque la trayectoria merece ser reconocida en vida.</li>
+  <li>Porque cada obra es una declaración de libertad y vigencia.</li>
+  <li>Porque ya son seis ediciones y seguimos encontrando razones para visibilizarlas.</li>
+</ol>
     
             </div>
            
