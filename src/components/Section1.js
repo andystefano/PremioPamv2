@@ -4,14 +4,15 @@ import { FaInstagram } from "react-icons/fa6";
 import { ImFacebook } from "react-icons/im";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import Presentadores from './Presentadores'; // Si es una exportación por defecto
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 
 function Section1() {
 
   return (
-    <section id="section_1" class="flex justify-center">
+    <section id="section_1" class="flex justify-center pb-5">
       <div className="w-full mx-auto  " style={{backgroundColor: "#e9d9fc"}}>
-        <div className="presentan h-full flex flex-col justify-between pl-8">
+        <div className="presentan h-full flex flex-col justify-end pl-8 ">
          <Presentadores/>                        
         </div>
         <div class="contenido">
@@ -62,16 +63,24 @@ function Section1() {
         )}   
 
 
-        <h3 className="text-[#F0000C] text-2xl font-black mt-10 block">¿POR QUÉ PREMIAR A MUJERES ARTISTAS SOBRE LOS 68 AÑOS?</h3>
+    
+
+          <div className="flex items-start mt-10 text-[#F0000C] ml-0">
+  <HiOutlineArrowNarrowRight className="mr-1 flex-shrink-0" size={65} />
+  <h3 className="text-2xl font-black mt-3">
+    ¿POR QUÉ PREMIAR A MUJERES ARTISTAS SOBRE LOS 68 AÑOS?
+  </h3>
+</div>
 
 
-        <ol  className="text-[#F0000C] text-2xl font-extraligth list-decimal list-inside space-y-2 pl-5">
-  <li>Porque son nuestro presente, no el pasado.</li>
-  <li>Porque hay historias que todavía no se han contado y obras que aún esperan ser vistas.</li>
-  <li>Porque su camino inspira a quienes están comenzando.</li>
-  <li>Porque la trayectoria merece ser reconocida en vida.</li>
-  <li>Porque cada obra es una declaración de libertad y vigencia.</li>
-  <li>Porque ya son seis ediciones y seguimos encontrando razones para visibilizarlas.</li>
+
+        <ol  className="text-[#F0000C] text-2xl font-extraligth list-decimal list-inside space-y-2 pl-5 max-w-[75%] ml-12">
+  <li className='pt-4'><span className='font-bold'>Porque</span> son nuestro presente, no el pasado.</li>
+  <li className='pt-4'><span className='font-bold'>Porque</span> hay historias que todavía no se han contado y obras que aún esperan ser vistas.</li>
+  <li className='pt-4'><span className='font-bold'>Porque</span> su camino inspira a quienes están comenzando.</li>
+  <li className='pt-4'><span className='font-bold'>Porque</span> la trayectoria merece ser reconocida en vida.</li>
+  <li className='pt-4'><span className='font-bold'>Porque</span> cada obra es una declaración de libertad y vigencia.</li>
+  <li className='pt-4'><span className='font-bold'>Porque</span> ya son seis ediciones y seguimos encontrando razones para visibilizarlas.</li>
 </ol>
     
             </div>
