@@ -16,18 +16,18 @@ function Section1() {
          <Presentadores/>                        
         </div>
         <div class="contenido">
-          <h2 class="contenido__titulo">PREMIO PAM 2024 | <span>SEIS AÑOS, SEIS RAZONES</span></h2>
+          <h2 class="contenido__titulo">PREMIO PAM 2024 <b>|</b> <span>SEIS AÑOS, SEIS RAZONES</span></h2>
           <h1 className='titulo_principal'>
-          SEIS EDICIONES CELEBRANDO
+          SEIS EDICIONES CELEBRANDO<br/>
           A LAS MUJERES ARTISTAS EN CHILE.
           </h1>
 
-          <p className="text-[#F0000C] text-2xl font-black">
+          <p className="text-[#F0000C] text-2xl font-black mt-[4.9rem] max-w-[80%]">
           Reconocemos a mujeres artistas visuales sobre los 60 años,
           en plena vigencia creativa.
           </p>
 
-          <p className="text-[#F0000C] text-2xl font-ligth mt-10">
+          <p className="text-[#F0000C] text-3xl font-ligth mt-5 max-w-[80%]">
           Si eres artista, o conoces a una creadora que merezca este
           reconocimiento, este es tu momento.
           </p>
@@ -65,7 +65,7 @@ function Section1() {
 
     
 
-          <div className="flex items-start mt-10 text-[#F0000C] ml-0">
+          <div className="flex items-start mt-[6.5rem] text-[#F0000C] ml-0">
   <HiOutlineArrowNarrowRight className="mr-1 flex-shrink-0" size={65} />
   <h3 className="text-2xl font-black mt-3">
     ¿POR QUÉ PREMIAR A MUJERES ARTISTAS SOBRE LOS 68 AÑOS?

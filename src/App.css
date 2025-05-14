@@ -1,5 +1,7 @@
 @import "keep-react/css";
- 
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
+
 
 body {
   cursor: url('../public/img/cursor.png'), auto;
@@ -205,14 +207,17 @@ h1 {
 }
 
 .titulo_principal{
-	color: #F0000C;
-    font-size: 50px;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 58px;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+  color: #F0000C;
+  font-size: 45px;
+  font-family: rob;
+  /* font-family: 'Roboto Mono', monospace; */
+  /* font-style: normal; */
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  line-height: 58px;
+  margin-top: 1.6rem;
+  margin-bottom: 2rem;
+  max-width: 94%;
 }
 
 
@@ -234,19 +239,23 @@ h1 {
 
 
 .contenido__titulo {
-	color: #F0000C;
-    font-size: 50px;
-    font-family: 'Roboto Mono', monospace;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 58px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-	font-size: 16px;
+  color: #F0000C;
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 58px;
+  margin-top: 3.6rem;
+  margin-bottom: 1rem;
+  font-size: 24.7px;
 }
 
 .contenido__titulo > span {
   font-weight: 400;
+}
+
+.contenido__titulo > b {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .contenido__postulado {
@@ -763,7 +772,7 @@ margin-top: 4rem;
 .postular-btns > a {
   text-decoration: none;
   font-family: 'Inter', sans-serif;
-  font-size: 24px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
