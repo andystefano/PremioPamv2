@@ -120,6 +120,7 @@ header{
 
 #faq{
   background-color: #E9D9FC;
+  padding-top: 3.8rem;
 }
 
 .presentan{
@@ -129,8 +130,8 @@ header{
 
   .presentan > div > img {
     margin-bottom: 1.5rem;
-    margin-right: 3rem;
-    width: 54%;
+    margin-left: 2.9rem;
+    width: 72%;
   }
 
 
@@ -277,7 +278,8 @@ h1 {
     font-style: normal;
     line-height: 58px;
     margin-bottom: 1rem;
-	font-size: 16px;
+    margin-left: 2.9rem;
+	font-size: 18px;
 	font-weight: 100;
 }
 
@@ -621,7 +623,6 @@ margin-bottom: 4%;
 
 
 #faq_titulo{
-    margin-top: 3.8rem;
     color: #F0000C;
     font-family: Inter, sans-serif;
     font-weight: 700;
@@ -730,23 +731,26 @@ p {
 
 
 #section_fecha{
-	color: #fff6e6;
-    font-size: 17px;
+  color: #fff6e6;
+    font-size: 21px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 700;
-    line-height: 58px;
+    line-height: 21px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 
 .ganadoras-btn-presentan {
 margin-top: 4rem;
+margin-left: 2.9rem;
 }
 
 .ganadoras-btn-presentan > a {
   text-decoration: none;
   font-family: 'Inter', sans-serif;
-  font-size: 20px;
+  font-size: 21px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
