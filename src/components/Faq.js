@@ -7,7 +7,7 @@ function Faq() {
   return (
     <section id="faq" className={isVisible ? 'bg-dark-senal' : 'hidden'}>
       {isVisible && (
-        <><div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6">
+        <><div className="px-4 pb-5 mx-auto lg:pb-5 lg:px-6">
           <h2 id="faq_titulo" className="pt-20 mb-6 text-4xl font-normal tracking-tight text-left text-cream lg:mb-8 lg:text-4xl font-unbounded">
             PREGUNTAS <br /> FRECUENTES
           </h2>
