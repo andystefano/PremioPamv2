@@ -1215,6 +1215,34 @@ input[type="submit"]:hover {
 
 @media (max-width: 768px) {
 
+  #section_fecha{
+        font-size: 16px;
+  }
+
+
+  .titulo__item_faq {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    padding: 11px;
+    color: #f0000c;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    color: #F0000C;
+    font-size: 14px;
+}
+
+  #faq_titulo {
+    color: #F0000C;
+    font-family: Inter, sans-serif;
+    font-weight: 800;
+    line-height: 2.35rem;
+    font-size: 2.35rem;
+    margin-left: 1rem;
+}
 
   .btn__ganadoras2Movil {
     display: block;
@@ -1427,10 +1455,10 @@ input[type="submit"]:hover {
 	}
 
 	.titulo_principal{
-    font-size: 41px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 42px;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 31px;
 	}
 
   
@@ -1455,7 +1483,7 @@ input[type="submit"]:hover {
 	}
 
 	.contenido__titulo {
-		font-size: 16px;
+		font-size: 14px;
 		padding: 0px 26px;
 	}
 
@@ -1503,9 +1531,10 @@ input[type="submit"]:hover {
 	}
 
   .postular-btns > a {
-		margin-top: 35px;
+		margin-top: 20px;
 		max-width: 210px;
     	text-align: center;
+      font-size: 15px;
 	}
 
   .ganadoras-btns {
