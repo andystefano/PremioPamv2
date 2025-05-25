@@ -16,7 +16,7 @@ function Section() {
               <HiOutlineArrowNarrowRight className="mt-2 mr-2 flex-shrink-0 self-start block md:hidden  lg:hidden  xl:hidden " size={45} />          
               <div>
                 <div className="font-bold text-lg md:text-2xl lg:text-2xl xl:text-2xl text-left mt-4">APERTURA CONVOCATORIA</div>
-                <div className="text-lg md:text-2xl lg:text-2xl xl:text-2xl font-extralight text-left">26 DE JULIO</div>
+                <div className="text-lg md:text-2xl lg:text-2xl xl:text-2xl font-extralight text-left">10 DE JUNIO AL 25 DE AGOSTO</div>
               </div>
             </div>
           </div>
@@ -26,8 +26,8 @@ function Section() {
             <div className="flex  items-start">
               <HiOutlineArrowNarrowRight className="mt-0 mr-2 flex-shrink-0 self-start hidden md:block  lg:block  xl:block  " size={65} />
               <HiOutlineArrowNarrowRight className="mt-2 mr-2 flex-shrink-0 self-start block md:hidden  lg:hidden  xl:hidden " size={45} />              <div>
-                <div className="font-bold text-lg md:text-2xl lg:text-2xl xl:text-2xl text-left mt-4">APERTURA CONVOCATORIA</div>
-                <div className="text-lg md:text-2xl lg:text-2xl xl:text-2xl font-extralight text-left">26 DE JULIO</div>
+                <div className="font-bold text-lg md:text-2xl lg:text-2xl xl:text-2xl text-left mt-4">VOTO DEL PUBLICO</div>
+                <div className="text-lg md:text-2xl lg:text-2xl xl:text-2xl font-extralight text-left">22 DE SEPTIEMBRE AL 20 DE OCTUBRE</div>
               </div>
             </div>
           </div>
@@ -37,33 +37,12 @@ function Section() {
             <div className="flex  items-start">
               <HiOutlineArrowNarrowRight className="mt-0 mr-2 flex-shrink-0 self-start hidden md:block  lg:block  xl:block  " size={65} />
               <HiOutlineArrowNarrowRight className="mt-2 mr-2 flex-shrink-0 self-start block md:hidden  lg:hidden  xl:hidden " size={45} />              <div>
-                <div className="font-bold text-lg md:text-2xl lg:text-2xl xl:text-2xl text-left mt-4">APERTURA CONVOCATORIA</div>
-                <div className="text-lg md:text-2xl lg:text-2xl xl:text-2xl font-extralight text-left">26 DE JULIO</div>
+                <div className="font-bold text-lg md:text-2xl lg:text-2xl xl:text-2xl text-left mt-4">ANUNCIO GANADORAS</div>
+                <div className="text-lg md:text-2xl lg:text-2xl xl:text-2xl font-extralight text-left">NOVIEMBRE</div>
               </div>
             </div>
           </div>
-          
-          {/* Item 4 */}
-          <div className="px-5 md:p-5 lg:p-5 xl:p-5  relative">
-            <div className="flex  items-start">
-              <HiOutlineArrowNarrowRight className="mt-0 mr-2 flex-shrink-0 self-start hidden md:block  lg:block  xl:block  " size={65} />
-              <HiOutlineArrowNarrowRight className="mt-2 mr-2 flex-shrink-0 self-start block md:hidden  lg:hidden  xl:hidden " size={45} />              <div>
-                <div className="font-bold text-lg md:text-2xl lg:text-2xl xl:text-2xl text-left mt-4">APERTURA CONVOCATORIA</div>
-                <div className="text-lg md:text-2xl lg:text-2xl xl:text-2xl font-extralight text-left">26 DE JULIO</div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Item 5 */}
-          <div className=" px-5 md:p-5 lg:p-5 xl:p-5   relative">
-            <div className="flex  items-start">
-              <HiOutlineArrowNarrowRight className="mt-0 mr-2 flex-shrink-0 self-start hidden md:block  lg:block  xl:block  " size={65} />
-              <HiOutlineArrowNarrowRight className="mt-2 mr-2 flex-shrink-0 self-start block md:hidden  lg:hidden  xl:hidden " size={45} />              <div>
-                <div className="font-bold text-lg md:text-2xl lg:text-2xl xl:text-2xl text-left mt-4">APERTURA CONVOCATORIA</div>
-                <div className="text-lg md:text-2xl lg:text-2xl xl:text-2xl font-extralight text-left">26 DE JULIO</div>
-              </div>
-            </div>
-          </div>
+           
         </div>
       </div>
     </section>

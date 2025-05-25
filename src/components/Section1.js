@@ -16,18 +16,18 @@ function Section1() {
          <Presentadores/>                        
         </div>
         <div class="contenido">
-          <h2 class="contenido__titulo">PREMIO PAM 2024 <b>|</b> <span>SEIS AÑOS, SEIS RAZONES</span></h2>
+          <h2 class="contenido__titulo">PREMIO PAM 2025 <b>|</b> <span>SEIS AÑOS, SEIS RAZONES</span></h2>
           <h1 className='titulo_principal'>
           SEIS EDICIONES CELEBRANDO<br/>
           A LAS MUJERES ARTISTAS EN CHILE.
           </h1>
 
-          <p className="text-[#F0000C] text-md md:text-2xl lg:text-2xl xl:text-2xl font-black md:mt-[4.9rem] lg:mt-[4.9rem] xl:mt-[4.9rem] max-w-[100%] md:max-w-[80%] lg:max-w-[80%]  xl:max-w-[80%]  px-4 md:px-0 lg:px-0 xl:px-0">
+          <p className="font-inter text-[#F0000C] text-md md:text-2xl lg:text-2xl xl:text-2xl font-black md:mt-[4.9rem] lg:mt-[4.9rem] xl:mt-[4.9rem] max-w-[100%] md:max-w-[80%] lg:max-w-[80%]  xl:max-w-[80%]  px-4 md:px-0 lg:px-0 xl:px-0">
           Reconocemos a mujeres artistas visuales sobre los 60 años,
           en plena vigencia creativa.
           </p>
 
-          <p className="text-[#F0000C]  text-md md:text-3xl lg:text-3xl xl:text-3xl font-ligth mt-5 max-w-[100%] md:max-w-[80%] lg:max-w-[80%]  xl:max-w-[80%] px-4 md:px-0 lg:px-0 xl:px-0">
+          <p className="font-inter text-[#F0000C]  text-md md:text-3xl lg:text-3xl xl:text-3xl font-ligth mt-5 max-w-[100%] md:max-w-[80%] lg:max-w-[80%]  xl:max-w-[80%] px-4 md:px-0 lg:px-0 xl:px-0">
           Si eres artista, o conoces a una creadora que merezca este
           reconocimiento, este es tu momento.
           </p>
@@ -67,14 +67,14 @@ function Section1() {
 
           <div className="md:flex md:items-start mt-[6.5rem] text-[#F0000C] ml-0 ">
   <HiOutlineArrowNarrowRight className="hidden md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
-  <h3 className="text-xl mx-4 md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
+  <h3 className="font-roboto text-xl mx-4 md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
     ¿POR QUÉ PREMIAR A MUJERES ARTISTAS SOBRE LOS 60 AÑOS?
   </h3>
 </div>
 
 
 
-        <ol  className="text-[#F0000C] text-xl md:text-2xl font-extraligth list-decimal list-inside space-y-2 md:pl-5 max-w-[90%] md:max-w-[75%] lg:max-w-[75%] xl:max-w-[75%] md:ml-12">
+        <ol  className="font-inter text-[#F0000C] text-xl md:text-2xl font-extraligth list-decimal list-inside space-y-2 md:pl-5 max-w-[90%] md:max-w-[75%] lg:max-w-[75%] xl:max-w-[75%] md:ml-12">
   <li className='pt-4'><span className='font-bold'>Porque</span> son nuestro presente, no el pasado.</li>
   <li className='pt-4'><span className='font-bold'>Porque</span> hay historias que todavía no se han contado y obras que aún esperan ser vistas.</li>
   <li className='pt-4'><span className='font-bold'>Porque</span> su camino inspira a quienes están comenzando.</li>

@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 
 body {
   cursor: url('../public/img/cursor.png'), auto;
@@ -46,6 +48,12 @@ border-radius: 5px;
 .font-roboto{
   font-family: 'Roboto Mono', monospace;
 }
+
+.font-inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
 
 h2.text-black.font-black.text-5xl.relative.top-0.right-0 {
   float: right;
@@ -1095,6 +1103,7 @@ label {
 
 
 .titulo__item_faq{
+  font-family: "Inter", sans-serif;
 	font-size: 26px;
 	font-style: normal;
 	font-weight: 700;
@@ -1221,6 +1230,7 @@ input[type="submit"]:hover {
 
 
   .titulo__item_faq {
+    font-family: "Inter", sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;

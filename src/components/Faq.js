@@ -16,7 +16,7 @@ function Faq() {
 
 
 
-            <div className="max-w-screen-md mx-auto">
+            <div className="min-w-screen-lg mx-auto">
               <div id="accordion">
                 <AcordeonTab titulo="¿Hasta qué fecha se puede postular?" contenido="Las postulaciones se pueden enviar desde el día 26 de junio 2024 hasta el día 25 de septiembre, a las 23:59 hrs. Las postulaciones que lleguen después serán consideradas como fuera de base." />
                 <AcordeonTab titulo="¿Se puede postular más de una obra?" contenido="No, solamente se puede postular una obra por cada artista o postulante." />

@@ -25,11 +25,11 @@ function AcordeonTab({titulo,contenido}) {
                 </h3>
               </div>
               {openTab===false && (
-              <span className="text-white w-1/12 flex items-end pl-1 cursor-pointer">
+              <span className="text-white w-1/12 flex justify-end items-center pl-1 cursor-pointer">
                 <AiOutlineDown style={{color:'#F0000C'}} className={openTab ? 'hidden' : ''} size={30} onClick={() => setOpenTab(true)} />
               </span>)}
               {openTab && (
-              <span className="text-white w-1/12 flex items-end pl-1 cursor-pointer">
+              <span className="text-white w-1/12 flex justify-end items-center pl-1 cursor-pointer">
                 <AiOutlineUp style={{color:'#F0000C'}} className={openTab ? '' : 'hidden'} size={30} onClick={() => setOpenTab(false)} />
               </span>)}
               
