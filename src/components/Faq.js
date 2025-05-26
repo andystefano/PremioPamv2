@@ -11,8 +11,61 @@ function Faq() {
           <h2 id="faq_titulo" className="pt-20 mb-6 text-4xl font-normal tracking-tight text-left text-cream lg:mb-8 lg:text-4xl font-unbounded">
             PREGUNTAS <br /> FRECUENTES
           </h2>
+        </div>
 
-        </div><div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6">
+
+
+        <div className="flex px-4 pb-5 mx-auto lg:pb-5 lg:px-6">
+  {/* Columna izquierda: el h2 usa solo el ancho que necesita */}
+  <div className="pt-20 flex-none">
+    <h2
+      id="faq_titulo"
+      className="mb-6 text-4xl font-normal tracking-tight text-left text-cream lg:mb-8 lg:text-4xl font-unbounded"
+    >
+      PREGUNTAS <br /> FRECUENTES
+    </h2>
+  </div>
+
+  {/* Columna derecha: ocupa el resto del espacio */}
+  <div className="pt-20 flex-grow pl-8">
+    {/* Aquí va el contenido que se ajusta al espacio restante */}
+    <div className="bg-white rounded-lg p-4 shadow">
+      <p className="text-gray-700">
+        Aquí puedes colocar el contenido relacionado a las preguntas frecuentes o cualquier otro contenido.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div className="flex px-4 pb-5 mx-auto lg:pb-5 lg:px-6">
+  {/* Columna izquierda: el h2 usa solo el ancho que necesita */}
+  <div className="pt-20 flex-none">
+    <h2
+      id="faq_titulo"
+      className="mb-6 text-4xl font-normal tracking-tight text-left text-cream lg:mb-8 lg:text-4xl font-unbounded"
+    >
+      PREGUNTAS <br /> FRECUENTES
+    </h2>
+  </div>
+
+  {/* Columna derecha: ocupa el resto del espacio */}
+  <div className="pt-20 flex-grow pl-8">
+    {/* Aquí va el contenido que se ajusta al espacio restante */}
+    <div className="bg-white rounded-lg p-4 shadow">
+      <p className="text-gray-700">
+        Aquí puedes colocar el contenido relacionado a las preguntas frecuentes o cualquier otro contenido.
+      </p>
+    </div>
+  </div>
+</div>
+
+        
+        <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6">
 
 
 
