@@ -4,6 +4,28 @@ import React  from 'react';
 function Presentadores() {
 
   return (<div className='mt-auto  pb-10 mb-7'>
+
+
+       <div class="ganadoras-btn-presentan"> 
+                <a
+                  className=""
+                  href="/ganadoras"
+                >
+                  POSTULA AQUI
+                </a>
+        </div>
+
+
+
+       <div class="ganadoras-btn-presentan mb-28"> 
+                <a
+                  className=""
+                  href="/ganadoras"
+                >
+                  BASES 2025
+                </a>
+        </div>
+
         <h2 className="presentan__titulo">COLABORA:</h2>
         <img src="img/AUSPICIA.png" alt='Bank Of America' />  
         <img src="img/COLABORA2.png" alt='GRUPO ROCA'  />  

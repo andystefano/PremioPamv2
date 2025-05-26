@@ -41,17 +41,6 @@ function Section1() {
             <div class="postular-btns">
 
 
-        { (process.env.REACT_APP_POSTULACION_ACTIVA === 1 ||  process.env.REACT_APP_POSTULACION_ACTIVA === '1') && (<a
-                className="btn__bases"
-                href="/postulacion"
-              >
-                POSTULA AQUÍ
-              </a>
-        )} 
-
-        <a class="btn__bases" href="bases_pam_2024.pdf" target="_blank">
-                BASES 2025
-              </a>
 
         { (process.env.REACT_APP_VOTACION_ACTIVA === 1 ||  process.env.REACT_APP_VOTACION_ACTIVA === '1') && (
             <a
