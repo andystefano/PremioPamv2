@@ -197,7 +197,6 @@ header{
 }
 
 .contenido{
-  padding-top: 56px;
   float: left;
   width: 58%;
   background-color:#E9D9FC;
@@ -216,17 +215,15 @@ h1 {
 }
 
 .titulo_principal{
-  color: #F0000C;
-  font-size: 45px;
-  font-family: rob;
-  /* font-family: 'Roboto Mono', monospace; */
-  /* font-style: normal; */
-  font-family: 'Inter', sans-serif;
-  font-weight: 800;
-  line-height: 58px;
-  margin-top: 1.6rem;
-  margin-bottom: 2rem;
-  max-width: 94%;
+letter-spacing: 0.017em;
+    color: #F0000C;
+    font-size: 53px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    line-height: 61px;
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
 }
 
 
@@ -252,14 +249,14 @@ h1 {
   font-family: 'Roboto Mono', monospace;
   font-style: normal;
   font-weight: 600;
-  line-height: 58px;
-  margin-top: 3.6rem;
+  line-height: 0px;
   margin-bottom: 1rem;
   font-size: 24.7px;
 }
 
 .contenido__titulo > span {
-  font-weight: 400;
+  font-weight: 100;
+  word-spacing: -0.1rem;
 }
 
 .contenido__titulo > b {
@@ -751,7 +748,6 @@ p {
 
 
 .ganadoras-btn-presentan {
-margin-top: 4rem;
 margin-left: 2.9rem;
 }
 

@@ -3,7 +3,7 @@ import React  from 'react';
 
 function Presentadores() {
 
-  return (<div className='mt-auto  pb-10 mb-7'>
+  return (<div className='mt-0  pb-10 mb-7'>
 
 
        <div class="ganadoras-btn-presentan"> 
@@ -17,7 +17,7 @@ function Presentadores() {
 
 
 
-       <div class="ganadoras-btn-presentan mb-28"> 
+       <div class="ganadoras-btn-presentan mb-28 mt-16"> 
                 <a
                   className=""
                   href="/ganadoras"
