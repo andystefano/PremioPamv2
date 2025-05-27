@@ -11,7 +11,7 @@ function AcordeonTab({titulo,contenido}) {
 
 
   return (
-    <div className="acordeon-radius px-0 md:px-4 lg:px-4 xl:px-4  mt-2">
+    <div className="acordeon-radius mt-2">
             <div className="flex items-center ml-auto"  style={{
                   color: '#F0000C',
                   borderBottom:'5px solid #f0e9e9'
