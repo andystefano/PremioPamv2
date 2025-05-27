@@ -753,13 +753,13 @@ margin-left: 2.9rem;
 .ganadoras-btn-presentan > a {
   text-decoration: none;
   font-family: 'Inter', sans-serif;
-  font-size: 21px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   cursor: pointer;
   color: #F0000C;
-  padding: 13px 18px 13px 18px;;
+  padding: 18px 24px 18px 23px;
   border: 2px solid red;
   border-top-left-radius: 80px 80px;
   border-bottom-left-radius: 80px 80px;

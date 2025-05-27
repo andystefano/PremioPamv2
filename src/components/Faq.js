@@ -5,7 +5,7 @@ function Faq() {
   const isVisible = process.env.REACT_APP_FAQ_VISIBLE === '1';
 
   return (
-    <section id="faq" className={isVisible ? 'bg-dark-senal' : 'hidden'}>
+    <section id="faq" className="px-24 py-24">
       {isVisible && (
         <><div className=" mx-auto ">
           <h2 id="faq_titulo" className="block md:hidden lg:hidden xl:hidden  mb-6 text-4xl font-normal tracking-tight text-left text-cream lg:mb-8 lg:text-4xl font-unbounded">
@@ -67,10 +67,7 @@ function Faq() {
  
 
         
-        <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6">
-
-
-
+        <div id='version_movil' className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6 block md:hidden  lg:hidden  xl:hidden  ">
             <div className="min-w-screen-lg mx-auto">
               <div id="accordion">
                 <AcordeonTab titulo="¿Hasta qué fecha se puede postular?" contenido="Las postulaciones se pueden enviar desde el día 26 de junio 2024 hasta el día 25 de septiembre, a las 23:59 hrs. Las postulaciones que lleguen después serán consideradas como fuera de base." />
