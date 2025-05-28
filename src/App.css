@@ -1211,6 +1211,7 @@ input[type="submit"]:hover {
     width: calc(20% - 10px);
     margin: 5px;
   }
+
   
 
 }
@@ -1218,6 +1219,8 @@ input[type="submit"]:hover {
 
 
 @media (max-width: 768px) {
+
+ 
 
   #section_fecha{
         font-size: 16px;

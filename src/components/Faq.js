@@ -5,7 +5,7 @@ function Faq() {
   const isVisible = process.env.REACT_APP_FAQ_VISIBLE === '1';
 
   return (
-    <section id="faq" className="px-24 py-24">
+    <section id="faq" className="px-12 py-12 md:px-24 md:py-24 lg:px-24 lg:py-24 xl:px-24 xl:py-24 ">
       {isVisible && (
         <><div className=" mx-auto ">
           <h2 id="faq_titulo" className="block md:hidden lg:hidden xl:hidden  mb-6 text-4xl font-normal tracking-tight text-left text-cream lg:mb-8 lg:text-4xl font-unbounded">
@@ -20,14 +20,14 @@ function Faq() {
   <div className=" flex-none">
     <h2
       id="faq_titulo"
-      className="mb-6 text-4xl font-normal tracking-tight text-left text-cream lg:mb-8 lg:text-4xl font-unbounded"
+      className="hidden md:block lg:block xl:block  mb-6 text-4xl font-normal tracking-tight text-left text-cream lg:mb-8 lg:text-4xl font-unbounded"
     >
       PREGUNTAS <br /> FRECUENTES
     </h2>
   </div>
 
   {/* Columna derecha: ocupa el resto del espacio */}
-  <div className="pt-20 flex-grow pl-8">
+  <div className="pt-20 flex-grow pl-8 hidden md:block  lg:block xl:block" id='version_movil'>
     {/* Aquí va el contenido que se ajusta al espacio restante */}
     <div className="">
       
@@ -67,8 +67,8 @@ function Faq() {
  
 
         
-        <div id='version_movil' className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6 block md:hidden  lg:hidden  xl:hidden  ">
-            <div className="min-w-screen-lg mx-auto">
+        <div id='version_movil' className="mt-10 block md:hidden lg:hidden xl:hidden">
+            <div className="">
               <div id="accordion">
                 <AcordeonTab titulo="¿Hasta qué fecha se puede postular?" contenido="Las postulaciones se pueden enviar desde el día 26 de junio 2024 hasta el día 25 de septiembre, a las 23:59 hrs. Las postulaciones que lleguen después serán consideradas como fuera de base." />
                 <AcordeonTab titulo="¿Se puede postular más de una obra?" contenido="No, solamente se puede postular una obra por cada artista o postulante." />
