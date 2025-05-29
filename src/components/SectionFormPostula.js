@@ -102,12 +102,12 @@ function SectionFormPostula() {
       setPostulacionActiva(false)
       Swal.fire({
         html: `
-        <div class="w-full mx-auto">
-        <div class="w-full">
-          <h1 class="titulo_principal_votacion">POSTULACIONES CERRADAS</h1>
+        <div className="w-full mx-auto">
+        <div className="w-full">
+          <h1 className="titulo_principal_votacion">POSTULACIONES CERRADAS</h1>
         </div>
-        <div class="w-full mx-auto container">
-            <ol class="instrucciones text-center">
+        <div className="w-full mx-auto container">
+            <ol className="instrucciones text-center">
               <li>*No puedes postular en este momento, el periodo de postulaciones actualmente se encuentra cerrado.</li>
             </ol>
           </div>

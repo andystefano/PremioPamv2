@@ -14,13 +14,13 @@ function Ganadoras(props) {
               />
             </div>
             <div>
-              <h2 class="contenido__tituloGanadoras w-full ">
+              <h2 className="contenido__tituloGanadoras w-full ">
                 GANADORAS PAM {props.ano} 
               </h2>
-              <h1 class="titulo_principalGanadoras w-full ">
+              <h1 className="titulo_principalGanadoras w-full ">
                 { props.nombre }
               </h1>
-              <p class="text-black w-full text-justify text-sm sm:text-sm ">
+              <p className="text-black w-full text-justify text-sm sm:text-sm ">
                 { props.biografia }
               </p>
             </div>

@@ -9,7 +9,7 @@ import Footer from './components/Footer.js'
 
 function Ganadoras() {
   return (
-    <div className="App max-w-screen-2xl mx-auto bg-[#e9d9fc]">
+    <div className="App">
       <div id='page'>
       <PamHeader/>
       <main>

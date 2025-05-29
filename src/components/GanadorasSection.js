@@ -8,7 +8,7 @@ function GanadorasSection() {
   const [ano, setAno] = useState(2024);
 
   return (
-    <section id="section_ganadoras" class="flex justify-center">
+    <section id="section_ganadoras" className="flex justify-center">
       <div
         className="w-full mx-auto  container"
         style={{ backgroundColor: "#fff6e6" }}
@@ -47,7 +47,7 @@ function GanadorasSection() {
       </li>
           </ul>
         </div>
-        <div class="contenidoGanadoras ">
+        <div className="contenidoGanadoras ">
 
 
         <Ganadoras
@@ -403,7 +403,7 @@ function GanadorasSection() {
 
         </div>
 
-        <div class="icons-header-ganadoras ">
+        <div className="icons-header-ganadoras ">
           <div>
             <a
               href="https://www.instagram.com/antennaorg/?hl=es-la"
@@ -440,7 +440,7 @@ function GanadorasSection() {
               <img
                 width="18"
                 style={{ marginLeft: "7px" }}
-                class="icons__hastag"
+                className="icons__hastag"
                 src="img/icons/hashtag_vertical.png"
                 alt="premio-pam"
               />

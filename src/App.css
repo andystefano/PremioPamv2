@@ -7,7 +7,7 @@
 
 body {
   cursor: url('../public/img/cursor.png'), auto;
-
+  background-color: #e9d9fc;
 }
 
  
@@ -735,7 +735,7 @@ p {
 /* Confirmados 2025 */
 
 
-#section_fecha{
+#section_fecha, .section_destacada{
   color: #fff6e6;
     font-size: 21px;
     font-family: 'Inter', sans-serif;
@@ -1227,7 +1227,7 @@ input[type="submit"]:hover {
         text-align: center;
   }
 
-  #section_fecha{
+  #section_fecha, .section_destacada{
         font-size: 16px;
   }
 

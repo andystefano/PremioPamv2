@@ -21,7 +21,7 @@ function SectionResultados() {
     },
     {
       lugar: "Mención Honrosa Premio PAM 2024",
-      nombre: "Ester <br class=\"salto\" /> Chacón-Ávila",
+      nombre: "Ester <br className=\"salto\" /> Chacón-Ávila",
       descripcion: "Artista textil de gran trayectoria, Chacón-Ávila desarrolló su carrera en París y fue reconocida por Criatura Textil (Avatar), una obra que combina fibras naturales y representa la conexión entre técnicas ancestrales y contemporáneas, explorando la transformación y el ciclo de la vida.",
       tituloObra: "Criatura Textil (Avatar), 2023-2024",
       dimensiones: "230 x 200 x 100 cm",
@@ -53,22 +53,22 @@ function SectionResultados() {
   
 
   return (
-    <section id="section_1" class="flex justify-center">
+    <section id="section_1" className="flex justify-center">
       <div className="w-full mx-auto  " style={{backgroundColor: "#e9d9fc"}}>
         <div className="presentan" style={{paddingTop: '4.49rem'}}>
          <Presentadores/>                        
         </div>
-        <div class="contenido">
-          <h2 class="contenido__titulo">PREMIO PAM 2024:</h2>
+        <div className="contenido">
+          <h2 className="contenido__titulo">PREMIO PAM 2024:</h2>
           <h1 className='titulo_principal'>
             CONOCE LAS GANADORAS
           </h1>
 
-          <p class="texto__principal font-bold">
+          <p className="texto__principal font-bold">
           Con 330 postulaciones y 20.000 votos del público, la quinta edición del Premio Artista Mujer (PAM) ha sido un éxito.
           </p>
 
-          <p class="texto__principal mb-5">
+          <p className="texto__principal mb-5">
           Fundación Antenna y Bank of America, en colaboración con Grupo Roca, han premiado a cuatro destacadas artistas visuales, en un reconocimiento que reafirma su compromiso con la promoción de las mujeres en el arte. 
 Con una participación que duplicó la del año anterior, el Premio PAM se consolida como un referente en el panorama artístico nacional e internacional. Desde su creación, más de 980 artistas han participado, enriqueciendo el tejido cultural con una diversidad de voces y estilos.
           </p>
@@ -119,14 +119,14 @@ Con una participación que duplicó la del año anterior, el Premio PAM se conso
 
 
 
-<div class="ganadoras-btn-presentan" style={{marginTop:'0px',padding:'5rem'}}><a class="btn__ganadoras2Movil" href="/ganadoras">GANADORAS ANTERIORES</a></div>
+<div className="ganadoras-btn-presentan" style={{marginTop:'0px',padding:'5rem'}}><a className="btn__ganadoras2Movil" href="/ganadoras">GANADORAS ANTERIORES</a></div>
 
 
 
 
         </div>
 
-        <div class="icons-header">
+        <div className="icons-header">
           <div>
             <a href="https://www.instagram.com/antennaorg/?hl=es-la" target="_blank">
               <FaInstagram size={32} color="#F0000C" />
@@ -148,7 +148,7 @@ Con una participación que duplicó la del año anterior, el Premio PAM se conso
           <div>
             <a href="https://www.premiopam.cl/" target="_blank">
               <img  width="18" style={{marginLeft:'7px'}}
-                class="icons__hastag"
+                className="icons__hastag"
                 src="img/icons/hashtag_vertical.png"
                 alt="premio-pam"
               />

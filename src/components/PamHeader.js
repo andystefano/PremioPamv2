@@ -8,7 +8,7 @@ function PamHeader({ titulo, contenido }) {
       <div className="flex justify-center bg-[#e9d9fc]">
         <div className="w-full mx-auto   bg-[#e9d9fc]">
           <div className="flex justify-between items-center px-8 pt-8 pb-8">
-            <div><img src="/img/header/AntennaLogo.png" alt="Logo Fundación Antenna" className="max-h-[2.0rem]  md:max-h-[3.5rem] lg:max-h-[3.5rem]  xl:max-h-[3.5rem]" /></div>
+            <div><a href="/"><img src="/img/header/AntennaLogo.png" alt="Logo Fundación Antenna" className="max-h-[2.0rem]  md:max-h-[3.5rem] lg:max-h-[3.5rem]  xl:max-h-[3.5rem]" /></a></div>
             <div></div>
           </div>
 

@@ -10,13 +10,13 @@ import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 function Section1() {
 
   return (
-    <section id="section_1" class="flex justify-center pb-5">
+    <section id="section_1" className="flex justify-center pb-5">
       <div className="w-full mx-auto mt-12 md:mt-[4.7rem] lg:mt-[4.7rem] xl:mt-[4.7rem] xs:px-6 px-6 md:px-0  lg:px-0  xl:px-0  md:mt-[8.7rem] lg:mt-[8.7rem] xl:mt-[8.7rem]" style={{backgroundColor: "#e9d9fc"}}>
         <div className="presentan h-full flex flex-col justify-start hidden md:block lg:block xl:block">
          <Presentadores/>                        
         </div>
-        <div class="contenido">
-          <h2 class="contenido__titulo">PREMIO PAM 2025 <b>|</b> <span>SEIS AÑOS, SEIS RAZONES</span></h2>
+        <div className="contenido">
+          <h2 className="contenido__titulo">PREMIO PAM 2025 <b>|</b> <span>SEIS AÑOS, SEIS RAZONES</span></h2>
           <h1 className='titulo_principal'>
           SEIS EDICIONES CELEBRANDO<br/>
           A LAS MUJERES ARTISTAS EN CHILE.
@@ -34,11 +34,11 @@ function Section1() {
 
 
 
-          <div class="texto__premios">
+          <div className="texto__premios">
         
            
             
-            <div class="postular-btns">
+            <div className="postular-btns">
 
 
 
@@ -76,7 +76,7 @@ function Section1() {
           </div>
         </div>
 
-        <div class="icons-header">
+        <div className="icons-header">
           <div>
             <a href="https://www.instagram.com/antennaorg/?hl=es-la" target="_blank">
               <FaInstagram size={32} color="#F0000C" />
@@ -98,7 +98,7 @@ function Section1() {
           <div>
             <a href="https://www.premiopam.cl/" target="_blank">
               <img  width="18" style={{marginLeft:'7px'}}
-                class="icons__hastag"
+                className="icons__hastag"
                 src="img/icons/hashtag_vertical.png"
                 alt="premio-pam"
               />
@@ -113,7 +113,7 @@ function Section1() {
 
 
 
-       <div class="ganadoras-btn-presentan mt-16  block md:hidden lg:hidden xl:hidden"> 
+       <div className="ganadoras-btn-presentan mt-16  block md:hidden lg:hidden xl:hidden"> 
                 <a
                   className=""
                   target='_blank'
@@ -123,7 +123,7 @@ function Section1() {
                 </a>
         </div>
 
-        <div class="ganadoras-btn-presentan mb-28 mt-16  block md:hidden lg:hidden xl:hidden"> 
+        <div className="ganadoras-btn-presentan mb-28 mt-16  block md:hidden lg:hidden xl:hidden"> 
                 <a
                   className=""
                   href="/postulacion"
