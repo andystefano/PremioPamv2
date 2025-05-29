@@ -12,7 +12,7 @@ function Section1() {
   return (
     <section id="section_1" class="flex justify-center pb-5">
       <div className="w-full mx-auto mt-12 md:mt-[4.7rem] lg:mt-[4.7rem] xl:mt-[4.7rem] xs:px-6 px-6 md:px-0  lg:px-0  xl:px-0  md:mt-[8.7rem] lg:mt-[8.7rem] xl:mt-[8.7rem]" style={{backgroundColor: "#e9d9fc"}}>
-        <div className="presentan h-full flex flex-col justify-start pl-8 hidden md:block lg:block xl:block">
+        <div className="presentan h-full flex flex-col justify-start hidden md:block lg:block xl:block">
          <Presentadores/>                        
         </div>
         <div class="contenido">
@@ -113,21 +113,22 @@ function Section1() {
 
 
 
-       <div class="ganadoras-btn-presentan mt-16"> 
+       <div class="ganadoras-btn-presentan mt-16  block md:hidden lg:hidden xl:hidden"> 
                 <a
                   className=""
-                  href="/bases.zip"
+                  target='_blank'
+                  href="https://drive.google.com/file/d/13xk4SU09kp0_PN1cmJqlHeZvf4ywZlyW/view?usp=sharing"
                 >
                   BASES 2025
                 </a>
         </div>
 
-        <div class="ganadoras-btn-presentan mb-28 mt-16"> 
+        <div class="ganadoras-btn-presentan mb-28 mt-16  block md:hidden lg:hidden xl:hidden"> 
                 <a
                   className=""
                   href="/postulacion"
                 >
-                  POSTULA AQUI
+                  POSTULA AQUÍ
                 </a>
         </div>
 

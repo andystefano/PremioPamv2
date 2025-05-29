@@ -257,7 +257,7 @@ letter-spacing: 0.017em;
 
 .contenido__titulo > span {
   font-weight: 100;
-  word-spacing: -0.1rem;
+  word-spacing: -0.3rem;
 }
 
 .contenido__titulo > b {
@@ -1787,4 +1787,14 @@ p {
     display: none !important;
 }
 
+.ganadoras-btn-presentan > a {
+  font-size: 1.1rem !important;
+}
+
+}
+
+@media (max-width: 1429px) {
+  .ganadoras-btn-presentan > a {
+    font-size: 1.1rem !important;;
+  }
 }

@@ -13,8 +13,6 @@ function Faq() {
           </h2>
         </div>
 
-
-
         <div className="flex">
   {/* Columna izquierda: el h2 usa solo el ancho que necesita */}
   <div className=" flex-none">
@@ -32,7 +30,7 @@ function Faq() {
     <div className="">
       
          <div id="accordion" className='mt-36'>
-                <AcordeonTab titulo="¿Hasta qué fecha se puede postular?" contenido="Las postulaciones se pueden enviar desde el día 26 de junio 2024 hasta el día 25 de septiembre, a las 23:59 hrs. Las postulaciones que lleguen después serán consideradas como fuera de base." />
+                <AcordeonTab titulo="¿Hasta qué fecha se puede postular?" contenido="Las postulaciones se pueden enviar desde el día 10 de junio 2025 hasta el día 25 de agosto, a las 23:59 hrs. Las postulaciones que lleguen después serán consideradas como fuera de base." />
                 <AcordeonTab titulo="¿Se puede postular más de una obra?" contenido="No, solamente se puede postular una obra por cada artista o postulante." />
                 <AcordeonTab titulo="¿Pueden postular artistas que hayan postulado a las versiones anteriores?" contenido="Si, las participantes de las convocatorias anteriores pueden postular, a excepción de las ganadoras de las versiones anteriores." />
                 <AcordeonTab titulo="¿Es un premio de adquisición de obra?" contenido="No, el premio no es de adquisición." />
@@ -70,7 +68,7 @@ function Faq() {
         <div id='version_movil' className="mt-10 block md:hidden lg:hidden xl:hidden">
             <div className="">
               <div id="accordion">
-                <AcordeonTab titulo="¿Hasta qué fecha se puede postular?" contenido="Las postulaciones se pueden enviar desde el día 26 de junio 2024 hasta el día 25 de septiembre, a las 23:59 hrs. Las postulaciones que lleguen después serán consideradas como fuera de base." />
+                <AcordeonTab titulo="¿Hasta qué fecha se puede postular?" contenido="Las postulaciones se pueden enviar desde el día 10 de junio 2025 hasta el día 25 de agosto, a las 23:59 hrs. Las postulaciones que lleguen después serán consideradas como fuera de base." />
                 <AcordeonTab titulo="¿Se puede postular más de una obra?" contenido="No, solamente se puede postular una obra por cada artista o postulante." />
                 <AcordeonTab titulo="¿Pueden postular artistas que hayan postulado a las versiones anteriores?" contenido="Si, las participantes de las convocatorias anteriores pueden postular, a excepción de las ganadoras de las versiones anteriores." />
                 <AcordeonTab titulo="¿Es un premio de adquisición de obra?" contenido="No, el premio no es de adquisición." />

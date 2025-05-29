@@ -301,7 +301,7 @@ function SectionFormPostula() {
 </Modal>
 
           <div className="w-full mx-auto mt-12 md:mt-[4.7rem] lg:mt-[4.7rem] xl:mt-[4.7rem] xs:px-6 px-6 md:px-0  lg:px-0  xl:px-0  md:mt-[8.7rem] lg:mt-[8.7rem] xl:mt-[8.7rem]" style={{backgroundColor: "#e9d9fc"}}>
-            <div className="presentan h-full flex flex-col justify-start pl-8 hidden md:block lg:block xl:block ">
+            <div className="presentan h-full flex flex-col justify-start hidden md:block lg:block xl:block ">
               <Presentadores />
             </div>
             
@@ -403,7 +403,7 @@ function SectionFormPostula() {
                   <div className="frow">
 
                     <div className="c2">
-                      <label>Region residencia*</label>
+                      <label>Región residencia*</label>
                       <Field as="select" id="REGION_RESIDENCIA" name="REGION_RESIDENCIA">
                         <option value="">Selecciona una región</option>
                         {regionesChilenas.map((region) => (

@@ -12,8 +12,8 @@ function Section() {
   <span>FECHAS IMPORTANTES</span>
   <span className='hidden md:block lg:block xl:block'>FECHAS IMPORTANTES</span>
   <span className='hidden md:block lg:block xl:block'>FECHAS IMPORTANTES</span>
-  <span className='hidden md:block lg:block xl:block'>FECHAS IMPORTANTES</span>
-  <span className='hidden md:block lg:block xl:block'>FECHAS IMPORTANTES</span>
+  <span className='hidden min1348:block'>FECHAS IMPORTANTES</span>
+  <span className='hidden xl1605:block'>FECHAS IMPORTANTES</span>
 </div>
 					</div>
       </section>
