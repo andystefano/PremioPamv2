@@ -3,7 +3,7 @@ import React  from 'react';
 
 function Presentadores() {
 
-  return (<div className='mt-0  pb-10 mb-7'>
+  return (<div className='mt-0  pb-10 mb-7 hidden md:block lg:block xl:block'>
 
 
        <div class="ganadoras-btn-presentan"> 
