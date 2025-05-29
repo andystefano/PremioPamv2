@@ -47,7 +47,7 @@ function Footer() {
 
 </div>
 
-<div className="icons-footer"  style={{ marginTop: '0px' }}>
+<div className="icons-footer"  style={{ marginTop: '15px' }}>
   <div style={{ display: 'flex', alignItems: 'center', marginTop: '0px'  }}>
     <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank">
       <TbDownload size={28} color="#F0000C" /> </a>
