@@ -8,7 +8,7 @@ import Footer from './components/Footer.js'
 function Postula() {
   return (
 
-    <div className="App">
+    <div className="App max-w-screen-2xl mx-auto bg-[#e9d9fc]">
     <div id='page'>
     <PamHeader/>
     {/* <SectionResultados />*/}
