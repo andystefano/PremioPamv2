@@ -159,14 +159,15 @@ header{
 }
 
 .icons-header {
-  padding-top: 12%;
+  padding-top: 15%;
   float: left;
   width: 10%;
   background-color: #E9D9FC;
   text-align: left;
 }
 .icons-header > div {
-  padding: 12px 0px 12px 78px;
+  padding: 12px 18px 12px 78px;
+  float: right;
 }
 
 
@@ -285,7 +286,7 @@ letter-spacing: 0.017em;
     margin-bottom: 1rem;
     margin-left: 2.9rem;
 	font-size: 18px;
-	font-weight: 100;
+	font-weight: 400;
 }
 
 
@@ -1249,7 +1250,6 @@ p {
     font-weight: 800;
     line-height: 2.35rem;
     font-size: 2.35rem;
-    margin-left: 1rem;
 }
 
   .btn__ganadoras2Movil {
@@ -1440,12 +1440,10 @@ p {
 	}
 
 	.contenido{
-		padding-top: 15px;
 		width: 100%;
 		width: 100%;
 	}
 	.contenido > h1 {
-		padding: 0px 26px 18px;
 	}
 	.icons-header {
 		display: none
@@ -1492,7 +1490,7 @@ p {
 
 	.contenido__titulo {
 		font-size: 14px;
-		padding: 0px 26px;
+    line-height: unset;
 	}
 
 	.contenido__subtitulo {
