@@ -12,7 +12,7 @@ function Section1() {
   return (
     <section id="section_1" class="flex justify-center pb-5">
       <div className="w-full mx-auto mt-12 md:mt-[4.7rem] lg:mt-[4.7rem] xl:mt-[4.7rem] xs:px-6 px-6 md:px-0  lg:px-0  xl:px-0  md:mt-[8.7rem] lg:mt-[8.7rem] xl:mt-[8.7rem]" style={{backgroundColor: "#e9d9fc"}}>
-        <div className="presentan h-full flex flex-col justify-start pl-8 ">
+        <div className="presentan h-full flex flex-col justify-start pl-8 hidden md:block lg:block xl:block">
          <Presentadores/>                        
         </div>
         <div class="contenido">
@@ -52,7 +52,8 @@ function Section1() {
         )}   
 
 
-    
+
+<HiOutlineArrowNarrowRight className="mt-0 text-[#f0000c] mr-2 flex-shrink-0 self-start  block md:hidden  lg:hidden  xl:hidden  " size={65} />
 
           <div className="md:flex md:items-start md:mt-[6.5rem] lg:mt-[6.5rem] xl:mt-[6.5rem] text-[#F0000C] ml-0 w-full">
   <HiOutlineArrowNarrowRight className="hidden md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
@@ -69,7 +70,7 @@ function Section1() {
   <li className='pt-4'><span className='font-bold'>Porque</span> su camino inspira a quienes están comenzando.</li>
   <li className='pt-4'><span className='font-bold'>Porque</span> la trayectoria merece ser reconocida en vida.</li>
   <li className='pt-4'><span className='font-bold'>Porque</span> cada obra es una declaración de libertad y vigencia.</li>
-  <li className='pt-4'><span className='font-bold'>Porque</span> ya son seis ediciones y seguimos encontrando razones para visibilizarlas.</li>
+  <li className='pt-4 pb-12'><span className='font-bold'>Porque</span> ya son seis ediciones y seguimos encontrando razones para visibilizarlas.</li>
 </ol>
     
             </div>
@@ -106,6 +107,32 @@ function Section1() {
             </a>
           </div>
         </div>
+
+
+
+
+
+
+
+
+       <div class="ganadoras-btn-presentan mt-16"> 
+                <a
+                  className=""
+                  href="/bases.zip"
+                >
+                  BASES 2025
+                </a>
+        </div>
+
+        <div class="ganadoras-btn-presentan mb-28 mt-16"> 
+                <a
+                  className=""
+                  href="/postulacion"
+                >
+                  POSTULA AQUI
+                </a>
+        </div>
+
       </div>
     </section>
   );

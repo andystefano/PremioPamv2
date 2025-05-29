@@ -1222,6 +1222,10 @@ input[type="submit"]:hover {
 @media (max-width: 768px) {
 
  
+  .ganadoras-btn-presentan{
+        margin-left: 0rem;
+        text-align: center;
+  }
 
   #section_fecha{
         font-size: 16px;
