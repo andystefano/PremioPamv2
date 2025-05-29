@@ -34,24 +34,24 @@ function Footer() {
  
 
 <div className="icons-footer">
-<a href="https://www.instagram.com/antennaorg/?hl=es-la" target="_blank">
+<a href="https://www.instagram.com/antennaorg/?hl=es-la" target="_blank" rel="noreferrer">
   <FaInstagram size={32}  color="#F0000C"/>
   </a>
-<a href="https://www.facebook.com/antennaorg" target="_blank">
+<a href="https://www.facebook.com/antennaorg" target="_blank" rel="noreferrer">
 <ImFacebook size={24}  color="#F0000C"/>
   </a>
-<a href="https://www.linkedin.com/company/antennaorg/" target="_blank">
+<a href="https://www.linkedin.com/company/antennaorg/" target="_blank" rel="noreferrer">
 <AiOutlineLinkedin size={35}  color="#F0000C"/>
   </a>
-<a href="https://www.premiopam.cl/" target="_blank"><img style={{maxHeight:'20px'}} className="hashtag__footer" src="img/icons/hashtag_1.png" alt="premio-pam"/></a>
+<a href="https://www.premiopam.cl/" target="_blank" rel="noreferrer"><img style={{maxHeight:'20px'}} className="hashtag__footer" src="img/icons/hashtag_1.png" alt="premio-pam"/></a>
 
 </div>
 
 <div className="icons-footer"  style={{ marginTop: '15px' }}>
   <div style={{ display: 'flex', alignItems: 'center', marginTop: '0px'  }}>
-    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank">
+    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank" rel="noreferrer">
       <TbDownload size={28} color="#F0000C" /> </a>
-    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank"><span style={{ marginLeft: '8px' }} className='contenido__titulo'>Media kit 2025</span></a>
+    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank" rel="noreferrer"><span style={{ marginLeft: '8px' }} className='contenido__titulo'>Media kit 2025</span></a>
    
   </div>
 </div>
@@ -75,24 +75,24 @@ function Footer() {
 <h1 className='mx-12' >Contáctanos</h1>
 <h1 className='mx-12' style={{fontSize: '26px', fontWeight: '300'}}>premiopam@antenna.cl</h1>
 <div className="icons-footer mx-12">
-<a href="https://www.instagram.com/antennaorg/?hl=es-la" target="_blank">
+<a href="https://www.instagram.com/antennaorg/?hl=es-la" target="_blank" rel="noreferrer">
   <FaInstagram size={32}  color="#F0000C"/>
   </a>
-<a href="https://www.facebook.com/antennaorg" target="_blank">
+<a href="https://www.facebook.com/antennaorg" target="_blank" rel="noreferrer">
 <ImFacebook size={24}  color="#F0000C"/>
   </a>
-<a href="https://www.linkedin.com/company/antennaorg/" target="_blank">
+<a href="https://www.linkedin.com/company/antennaorg/" target="_blank" rel="noreferrer">
 <AiOutlineLinkedin size={35}  color="#F0000C"/>
   </a>
-<a href="https://www.premiopam.cl/" target="_blank"><img style={{maxHeight:'20px'}} className="hashtag__footer" src="img/icons/hashtag_1.png" alt="premio-pam"/></a>
+<a href="https://www.premiopam.cl/" target="_blank" rel="noreferrer"><img style={{maxHeight:'20px'}} className="hashtag__footer" src="img/icons/hashtag_1.png" alt="premio-pam"/></a>
 
 </div>
 
 <div className="icons-footer mx-12"  style={{ marginTop: '15px' }}>
   <div style={{ display: 'flex', alignItems: 'center', marginTop: '0px'  }}>
-    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank">
+    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank" rel="noreferrer">
       <TbDownload size={28} color="#F0000C" /> </a>
-    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank"><span style={{ marginLeft: '8px' }} className='contenido__titulo'>Media kit 2025</span></a>
+    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank" rel="noreferrer"><span style={{ marginLeft: '8px' }} className='contenido__titulo'>Media kit 2025</span></a>
    
   </div>
 </div>
