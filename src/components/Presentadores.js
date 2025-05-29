@@ -9,7 +9,7 @@ function Presentadores() {
        <div class="ganadoras-btn-presentan"> 
                 <a
                   className=""
-                  href="/ganadoras"
+                  href="/postulacion"
                 >
                   POSTULA AQUI
                 </a>
@@ -20,7 +20,7 @@ function Presentadores() {
        <div class="ganadoras-btn-presentan mb-28 mt-16"> 
                 <a
                   className=""
-                  href="/ganadoras"
+                  href="/bases.zip"
                 >
                   BASES 2025
                 </a>

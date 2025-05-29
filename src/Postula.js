@@ -4,19 +4,18 @@ import SectionFormPostula from './components/SectionFormPostula.js'
 import Footer from './components/Footer.js'
 
 
+
 function Postula() {
   return (
-    <div className="App">
-      <div id='page'>
-      <PamHeader/>
-      <main>
-       
-       <SectionFormPostula/>
-      </main>
 
-     <Footer/>
-      </div>
+    <div className="App">
+    <div id='page'>
+    <PamHeader/>
+    {/* <SectionResultados />*/}
+    <SectionFormPostula/>
+   <Footer/>
     </div>
+  </div>
   );
 }
 
