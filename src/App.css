@@ -1432,7 +1432,7 @@ p {
 	}
 
 	.presentan{
-		display: none;
+		display: none !important;
 	}
 
 	.container {
