@@ -50,11 +50,9 @@ function Section1() {
                 VOTAR AQUÍ
               </a>
         )}   
-
-
-
-<HiOutlineArrowNarrowRight className="mt-0 text-[#f0000c] mr-2 flex-shrink-0 self-start  block md:hidden  lg:hidden  xl:hidden  " size={65} />
-
+??#
+<HiOutlineArrowNarrowRight className="mt-0 text-[#f0000c] mr-2 flex-shrink-0 self-start  block md:hidden lg:hidden xl:hidden" size={65} />
+#??
           <div className="md:flex md:items-start md:mt-[6.5rem] lg:mt-[6.5rem] xl:mt-[6.5rem] text-[#F0000C] ml-0 w-full">
   <HiOutlineArrowNarrowRight className="hidden md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
   <h3 className="font-roboto text-xl mx-0 md:mx-4 lg:mx-4 xl:mx-4 md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
