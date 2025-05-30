@@ -70,13 +70,13 @@ function Footer() {
 </div>
 
 
-<div className='w-full  block md:hidden lg:hidden xl:hidden' id='Footer-2-Movil'>
+<div className='w-full block md:hidden lg:hidden xl:hidden' id='Footer-2-Movil'>
 
-<h1 className='mx-12'  style={{fontSize: '2rem'}} >Contáctanos</h1>
-<h1 className='mx-12' style={{fontSize: '26px', fontWeight: '300'}}>premiopam@antenna.cl</h1>
+<h1 className='mx-12 text-2xl'>Contáctanos</h1>
+<h1 className='mx-12 text-xl font-medium' style={{fontWeight: '300'}}>premiopam@antenna.cl</h1>
 <div className="icons-footer mx-12">
 <a href="https://www.instagram.com/antennaorg/?hl=es-la" target="_blank" rel="noreferrer">
-  <FaInstagram size={32}  color="#F0000C"/>
+  <FaInstagram size={32} color="#F0000C"/>
   </a>
 <a href="https://www.facebook.com/antennaorg" target="_blank" rel="noreferrer">
 <ImFacebook size={24}  color="#F0000C"/>
