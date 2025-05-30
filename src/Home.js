@@ -13,7 +13,7 @@ import SectionFechas from './components/SectionFechas.js'
 
 function Home() {
   return (
-    <div className="App">
+    <div className="App ">
       <div id='page'>
       <PamHeader/>
       {/* <SectionResultados />*/}
@@ -21,7 +21,7 @@ function Home() {
       <SectionRoja/>
       <SectionFechas/>
       <Faq/>
-      <section id='section_destacada' className='bg-[#f0000c] text-white text-center py-2 font-regular font-inter text-xl'>
+      <section id='section_destacada' className='bg-[#f0000c] text-white text-center py-2 font-regular font-inter text-2xl py-3'>
         <a href='/ganadoras'>CONOCE A LAS <span className='font-bold'>GANADORAS ANTERIORES</span></a>
       </section>
      <Footer/>

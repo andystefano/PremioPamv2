@@ -22,12 +22,12 @@ function Section1() {
           A LAS MUJERES ARTISTAS EN CHILE.
           </h1>
 
-          <p className="font-inter text-[#F0000C] text-[1.4rem] md:text-2xl md:leading-[2.1rem]  lg:text-2xl lg:leading-[2.1rem]  xl:text-2xl xl:leading-[2.1rem]    font-semibold	md:mt-[4.4rem] lg:mt-[4.4rem] xl:mt-[4.4rem] max-w-[100%] md:max-w-[80%] lg:max-w-[80%]  xl:max-w-[80%]  px-0 md:px-0 lg:px-0 xl:px-0 ">
+          <p className="font-inter text-[#F0000C] text-xl md:text-2xl md:leading-[2.1rem]  lg:text-2xl lg:leading-[2.1rem]  xl:text-2xl xl:leading-[2.1rem]    font-semibold	md:mt-[4.4rem] lg:mt-[4.4rem] xl:mt-[4.4rem] max-w-[100%] md:max-w-[700px] lg:max-w-[700px]  xl:max-w-[700px]  px-0 md:px-0 lg:px-0 xl:px-0 ">
           Reconocemos a mujeres artistas visuales sobre los 60 años,
           en plena vigencia creativa.
           </p>
 
-          <p className="font-inter text-[#F0000C] text-[1.4rem] md:text-2xl lg:text-2xl xl:text-2xl font-ligth mt-5 max-w-[100%] md:max-w-[80%] lg:max-w-[80%]  xl:max-w-[80%] px-0 md:px-0 lg:px-0 xl:px-0 tracking-[-1px] [word-spacing:3px]">
+          <p className="font-inter text-[#F0000C] text-xl md:text-2xl lg:text-2xl xl:text-2xl font-ligth mt-5 max-w-[100%] md:max-w-[700px] lg:max-w-[700px]  xl:max-w-[700px] px-0 md:px-0 lg:px-0 xl:px-0 [word-spacing:3px]">
           Si eres artista, o conoces a una creadora que merezca este
           reconocimiento, este es tu momento.
           </p>
@@ -68,7 +68,7 @@ function Section1() {
   <li className='pt-4'><span className='font-bold'>Porque</span> su camino inspira a quienes están comenzando.</li>
   <li className='pt-4'><span className='font-bold'>Porque</span> la trayectoria merece ser reconocida en vida.</li>
   <li className='pt-4'><span className='font-bold'>Porque</span> cada obra es una declaración de libertad y vigencia.</li>
-  <li className='pt-4 pb-12'><span className='font-bold'>Porque</span> ya son seis ediciones y seguimos encontrando razones para visibilizarlas.</li>
+  <li className='pt-4 pb-8 md:pb-12 lg:pb-12 xl:pb-12'><span className='font-bold'>Porque</span> ya son seis ediciones y seguimos encontrando razones para visibilizarlas.</li>
 </ol>
     
             </div>
@@ -113,7 +113,7 @@ function Section1() {
 
 
 
-       <div className="ganadoras-btn-presentan mt-16  block md:hidden lg:hidden xl:hidden"> 
+       <div className="ganadoras-btn-presentan mt-0 md:mt-16 lg:mt-16 xl:mt-16  block md:hidden lg:hidden xl:hidden"> 
                 <a
                   className=""
                   target='_blank'
@@ -123,7 +123,7 @@ function Section1() {
                 </a>
         </div>
 
-        <div className="ganadoras-btn-presentan mb-28 mt-16  block md:hidden lg:hidden xl:hidden"> 
+        <div className="ganadoras-btn-presentan mb-12 md:mb-28  lg:mb-28  xl:mb-28  mt-16  block md:hidden lg:hidden xl:hidden"> 
                 <a
                   className=""
                   href="/postulacion"

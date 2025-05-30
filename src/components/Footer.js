@@ -26,7 +26,7 @@ function Footer() {
 
 <div id="Derecha">
 
-<a href="mailto:premiopam@antenna.cl"> <h4 className="derecha__bold">Contáctanos</h4>
+<a href="mailto:premiopam@antenna.cl"> <h4 className="derecha__bold" id="contactanos_title">Contáctanos</h4>
 <h4 className="derecha__regular">premiopam@antenna.cl</h4></a>
 
  
@@ -72,8 +72,8 @@ function Footer() {
 
 <div className='w-full block md:hidden lg:hidden xl:hidden' id='Footer-2-Movil'>
 
-<h1 className='mx-12 text-2xl'>Contáctanos</h1>
-<h1 className='mx-12 text-xl font-medium' style={{fontWeight: '300'}}>premiopam@antenna.cl</h1>
+<h1 className='mx-12 text-2xl' id='contactanos_title'>Contáctanos</h1>
+<h1 className='mx-12 text-xl font-medium' id="contactanos_email" style={{fontWeight: '300'}}>premiopam@antenna.cl</h1>
 <div className="icons-footer mx-12">
 <a href="https://www.instagram.com/antennaorg/?hl=es-la" target="_blank" rel="noreferrer">
   <FaInstagram size={32} color="#F0000C"/>
