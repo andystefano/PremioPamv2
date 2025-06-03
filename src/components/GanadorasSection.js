@@ -104,6 +104,23 @@ function GanadorasSection() {
 
 
 
+<Ganadoras
+            nombre={"Alejandrina Valderrama"}
+            biografia={
+              "Nacida en la ex oficina salitrera Victoria, Valderrama se convierte en la primera artista autodidacta en recibir este premio. Su obra Frutas de Pica, una monumental escultura en hormigón armado que representa las frutas típicas del oasis de Pica, es un ícono cultural de la zona y deja un legado tangible para su comunidad."
+            }
+            retrato={"Alejandrina.png"}
+            obra={"ObraAlejandrina.jpeg"}
+            titulo={"Frutas de Pica"}
+            dimensiones={"220-130-110-160-130 cm"}
+            fecha={"-"}
+            tecnica={
+              "Hormigón armado-cimiento-sobrecimiento-fierros-mallas metalicas hexagonales-concreto-mortero"
+            }
+            ano={2024}
+            anoSeleccion={ano}
+          />
+
 
 
 
