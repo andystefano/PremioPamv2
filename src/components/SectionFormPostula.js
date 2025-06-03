@@ -2,10 +2,11 @@ import React, { useState, useEffect  } from 'react';
 import Presentadores from './Presentadores';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { Spinner } from "keep-react";
-import { Button, Modal } from 'keep-react';
+import  {  Modal }  from "keep-react";
 import { BiErrorAlt } from "react-icons/bi";
 import Swal from "sweetalert2";
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 
 const FILE_SIZE = 10 * 1024 * 1024; // 10 MB
@@ -186,7 +187,7 @@ function SectionFormPostula() {
         .test('fileFormat', 'Formato de archivo debe ser JPG', function (value) {
           if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
           return SUPPORTED_FORMATS.includes(value.type);
-        }).required('El campo de fotografía retrato es requerido'),
+        }).required('Adjunta una foto a color, de buena calidad y con el rostro visible'),
         FOTOGRAFIA_OBRA_1_X: Yup.mixed()
         .test('fileSize', 'Máximo 10 MB', function (value) {
           if (!value) return true; // Si no se proporciona ningún archivo, la validación pasa
@@ -281,24 +282,7 @@ function SectionFormPostula() {
         <section id="section_1" className="flex justify-center">
 
 
-<Modal isOpen={isOpen} onClose={closeModal}>
-        <Modal.Body className="flex w-[30rem] flex-col items-center p-6 lg:p-8">
-          <Modal.Icon className="h-20 w-20 border border-success-100 bg-success-50 text-success-500">
-            <BiErrorAlt size={60} />
-          </Modal.Icon>
-          <Modal.Content className="my-4 text-center">
-            <h3 className="mb-2 text-body-1 font-bold text-metal-900">Error al enviar</h3>
-            <p className="mx-auto max-w-xs text-body-4 font-normal text-metal-600">
-              {errorPost}
-            </p>
-          </Modal.Content>
-          <Modal.Footer>
-            <Button onClick={closeModal} size="sm" color="success">
-              Confirm
-            </Button>
-          </Modal.Footer>
-        </Modal.Body>
-</Modal>
+
 
           <div className="w-full mx-auto mt-12 md:mt-[4.7rem] lg:mt-[4.7rem] xl:mt-[4.7rem] xs:px-6 px-6 md:px-0  lg:px-0  xl:px-0  md:mt-[8.7rem] lg:mt-[8.7rem] xl:mt-[8.7rem]" style={{backgroundColor: "#e9d9fc"}}>
             <div className="presentan h-full flex flex-col justify-start hidden md:block lg:block xl:block ">
@@ -487,9 +471,10 @@ function SectionFormPostula() {
                       <ErrorMessage name="FOTOGRAFIA_RETRATO_X" component="div" />
                       </div>
 
+                      <Tippy theme="pam-theme" content="Adjunta una foto a color, de buena calidad y con el rostro visible.">
                       <label htmlFor="FOTOGRAFIA_RETRATO">
                         <img src="img/boton_adjuntar_retrato.png" className="my-1 upload" id="IMG_FOTOGRAFIA_RETRATO" alt="Upload" />
-                      </label>
+                      </label></Tippy>
                     </div>
 
                     <div className="c2">
@@ -625,7 +610,7 @@ onChange={(event) => {
                   <button type="submit" disabled={isSubmitting} className="btn-enviar">
                   {isPostLoading ? (
         <span className="pr-2">
-          <Spinner color="info" size="md" />
+          ({/*<Spinner color="info" size="md" />*/})
         </span>
       ) : (
         'Enviar'

@@ -420,7 +420,10 @@ function GanadorasSection() {
 
         </div>
 
-        <div className="icons-header-ganadoras ">
+
+      </div>
+
+              <div className="icons-header-ganadoras ">
           <div>
             <a
               href="https://www.instagram.com/antennaorg/?hl=es-la"
@@ -464,7 +467,7 @@ function GanadorasSection() {
             </a>
           </div>
         </div>
-      </div>
+        
     </section>
   );
 }

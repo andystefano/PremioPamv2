@@ -41,6 +41,21 @@ border-radius: 5px;
 }
 
 
+/* En tu archivo CSS global */
+.tippy-box[data-theme~='pam-theme'] {
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 6px 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Roboto Mono", monospace;
+  background-color: #f0020e;
+}
+.tippy-box[data-theme~='pam-theme'][data-placement^='top'] > .tippy-arrow::before {
+  border-top-color: #f0020e;
+}
+
+
 #contactanos_title{
   margin-top: 0px !important;
   margin-bottom: 0px  !important;
@@ -1808,3 +1823,4 @@ p {
     font-size: 1.1rem !important;;
   }
 }
+
