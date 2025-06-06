@@ -117,7 +117,7 @@ function Section1() {
                 <a
                   className=""
                   target='_blank'
-                  href="https://drive.google.com/file/d/13xk4SU09kp0_PN1cmJqlHeZvf4ywZlyW/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1KxT2mQTMT2AL8v8kAMFeRMlGx0eC9oPm/view?usp=sharing"
                 >
                   BASES 2025
                 </a>
