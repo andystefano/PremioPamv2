@@ -115,7 +115,7 @@ function GanadorasSection() {
             dimensiones={"220-130-110-160-130 cm"}
             fecha={"-"}
             tecnica={
-              "Hormigón armado-cimiento-sobrecimiento-fierros-mallas metalicas hexagonales-concreto-mortero"
+              "Hormigón armado cimiento sobrecimiento fierros mallas metalicas hexagonales concreto mortero"
             }
             ano={2024}
             anoSeleccion={ano}
