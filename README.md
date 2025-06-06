@@ -1,3 +1,8 @@
+#claves ssh paar deploid
+
+ssh-keygen -t rsa -b 4096 -f github_action_deploy
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
