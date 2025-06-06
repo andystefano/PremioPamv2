@@ -1,0 +1,27 @@
+name: Crear y subir deploid_details.txt al servidor
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Crear archivo deploid_details.txt
+        run: |
+          echo "Fecha y hora del deploy: $(date -u)" > deploid_details.txt
+          echo "Rama: ${{ github.ref_name }}" >> deploid_details.txt
+
+      - name: Configurar clave SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Subir deploid_details.txt al servidor
+        run: |
+          scp deploid_details.txt ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_DIR_DEVELOP }}
