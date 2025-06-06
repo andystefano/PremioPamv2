@@ -189,7 +189,7 @@ const ContactFormLightbox = ({ isOpen, closeLightbox, idPostulacion }) => {
       className="lightbox-overlay bg_yellow"
     >
       <button onClick={closeLightbox} style={closeButtonStyle}>✕</button>
-      <h3 className='subtituloVotar select-none'>VOTO DEL PÚBLICO PREMIO PAM 2024</h3>
+      <h3 className='subtituloVotar select-none'>VOTO DEL PÚBLICO PREMIO PAM 2025</h3>
       <h2 className="tituloVotar select-none">PARA COMPLETAR SU VOTO <br/> REGISTRE SUS DATOS</h2>
       <form onSubmit={handleSubmit} className='select-none'>
         <div style={{ marginBottom: '10px' }}>
