@@ -293,18 +293,42 @@ function SectionFormPostula() {
             (
 
 <div className="contenido">
-              <h1 className="!mb-0" id="titulo_postulacion">POSTULACIÓN PREMIO PAM 2024</h1>
-              <p className="!mt-1 !mb-12 contenido__postulado" style={{ lineHeight: 'normal' }}>
+              <h1 className="!mb-0" id="titulo_postulacion">POSTULACIÓN PREMIO PAM 2025</h1>
+
+              <p className="font-inter text-[#F0000C] text-xl md:text-2xl md:leading-[2.1rem]  lg:text-2xl lg:leading-[2.1rem]  xl:text-2xl xl:leading-[2.1rem]    font-semibold	md:mt-[4.4rem] lg:mt-[4.4rem] xl:mt-[4.4rem]   px-0 md:px-0 lg:px-0 xl:px-0 ">
               Hemos recibido correctamente tu
-              postulación al Premio PAM 2024.<br/><br/>
+              postulación al Premio PAM 2025.<br/><br/>
 
               ¡Muchas gracias!
-              </p>
+          </p>
+
+<p className="font-inter text-[#F0000C] text-lg md:text-xl font-light mt-6 max-w-[700px]">
+  📩 Te hemos enviado una confirmación a tu correo electrónico.
+</p>
+
+
+
+<div className="mt-10 max-w-[700px]">
+  <h2 className="font-inter text-[#F0000C] text-xl md:text-2xl font-semibold mb-4">🔎 ¿Qué sucede ahora?</h2>
+  
+  <ul className="list-disc pl-6 text-[#F0000C] font-inter text-base md:text-lg font-light space-y-2">
+    <li><strong>Apertura convocatoria:</strong> 10 de junio al 25 de agosto</li>
+    <li><strong>Voto del público:</strong> 22 de septiembre al 20 de octubre</li>
+    <li><strong>Anuncio ganadoras:</strong> 2 de noviembre</li>
+  </ul>
+</div>
+
+<div className="mt-10">
+  <a href="/" class="inline-block bg-[#F0000C] text-white font-inter text-base md:text-lg font-semibold px-6 py-3 rounded-lg hover:bg-[#cc0009] transition">
+    Volver al sitio principal
+  </a>
+</div>
+
 </div>
             )
             :
             (<div className="contenido">
-              <h1 className="!mb-0"  id="titulo_postulacion">POSTULACIÓN PREMIO PAM 2024</h1>
+              <h1 className="!mb-0"  id="titulo_postulacion">POSTULACIÓN PREMIO PAM 2025</h1>
               <h2 className="!mt-1 !mb-12 contenido__titulo" id='subtitulo_postulacion' style={{ lineHeight: 'normal' }}>
                 COMPLETE LA SIGUIENTE INFORMACIÓN:
               </h2>
