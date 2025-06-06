@@ -24,4 +24,4 @@ jobs:
 
       - name: Subir deploid_details.txt al servidor
         run: |
-          scp deploid_details.txt ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_DIR }}
+          scp deploid_details.txt ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_DIR_DEVELOP }}
