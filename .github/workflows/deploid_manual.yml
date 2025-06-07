@@ -10,18 +10,22 @@ on:
         type: choice
         options:
           - development
-          - staging
           - production
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    environment: ${{ inputs.environment }}
+    environment: ${{ inputs.environment == 'development' && 'DEVELOP' || 'MASTER' }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.environment == 'development' && 'develop' || 'master' }}
 
-      - name: Mostrar ambiente
-        run: echo "Desplegando en ${{ inputs.environment }}"
+      - name: Mostrar ambiente y directorio remoto
+        run: |
+          echo "Desplegando en ${{ inputs.environment }}"
+          echo "Environment usado: ${{ inputs.environment == 'development' && 'DEVELOP' || 'MASTER' }}"
+          echo "Directorio remoto: ${{ vars.REMOTE_DIR }}"
