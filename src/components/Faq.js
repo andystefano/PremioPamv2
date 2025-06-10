@@ -32,7 +32,7 @@ function Faq() {
          <div id="accordion" className='mt-36'>
                 <AcordeonTab titulo="¿Hasta qué fecha se puede postular?" contenido="Las postulaciones se pueden enviar desde el día 10 de junio 2025 hasta el día 25 de agosto, a las 23:59 hrs. Las postulaciones que lleguen después serán consideradas como fuera de base." />
                 <AcordeonTab titulo="¿Se puede postular más de una obra?" contenido="No, solamente se puede postular una obra por cada artista o postulante." />
-                <AcordeonTab titulo="¿Pueden postular artistas que hayan postulado a las versiones anteriores?" contenido="Si, las participantes de las convocatorias anteriores pueden postular, a excepción de las ganadoras de las versiones anteriores." />
+                <AcordeonTab titulo="¿Pueden postular artistas que hayan postulado a las versiones anteriores?" contenido="Sí, las participantes de convocatorias anteriores pueden postular, excepto aquellas que hayan obtenido el primer lugar en cualquiera de las versiones anteriores." />
                 <AcordeonTab titulo="¿Es un premio de adquisición de obra?" contenido="No, el premio no es de adquisición." />
                 <AcordeonTab
                   titulo="¿Qué quiere decir un jurado ciego?"
