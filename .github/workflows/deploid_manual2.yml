@@ -1,0 +1,32 @@
+name: Deploy Manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Ambiente a desplegar'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment: ${{ inputs.environment == 'development' && 'DEVELOP' || 'MASTER' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.environment == 'development' && 'develop' || 'master' }}
+
+      - name: Mostrar ambiente y directorio remoto
+        run: |
+          echo "Desplegando en ${{ inputs.environment }}"
+          echo "Environment usado: ${{ inputs.environment == 'development' && 'DEVELOP' || 'MASTER' }}"
+          echo "Rama desde donde se ejecutó: ${{ github.ref_name }}"
+          echo "Directorio remoto: ${{ vars.REMOTE_DIR }}"
