@@ -90,9 +90,9 @@ function Footer() {
 
 <div className="icons-footer mx-12"  style={{ marginTop: '15px' }}>
   <div style={{ display: 'flex', alignItems: 'center', marginTop: '0px'  }}>
-    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank" rel="noreferrer">
+    <a href="https://drive.google.com/drive/folders/1--Y8LA_iAzs-Z2IsB7ZgxFryvPfTOxfG" target="_blank" rel="noreferrer">
       <TbDownload size={28} color="#F0000C" /> </a>
-    <a href="https://drive.google.com/drive/folders/1S9ERKjvwknrvjhQMJxogi0Lv7QpOB7Xc?usp=drive_link " target="_blank" rel="noreferrer"><span style={{ marginLeft: '8px' }} className='contenido__titulo'>Media kit 2025</span></a>
+    <a href="https://drive.google.com/drive/folders/1--Y8LA_iAzs-Z2IsB7ZgxFryvPfTOxfG" target="_blank" rel="noreferrer"><span style={{ marginLeft: '8px' }} className='contenido__titulo'>Media kit 2025</span></a>
    
   </div>
 </div>

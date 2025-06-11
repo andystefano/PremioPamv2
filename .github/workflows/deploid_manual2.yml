@@ -1,4 +1,4 @@
-name: Deploy Manual
+name: Deploy Manual 2
 
 on:
   workflow_dispatch:
@@ -28,4 +28,5 @@ jobs:
         run: |
           echo "Desplegando en ${{ inputs.environment }}"
           echo "Environment usado: ${{ inputs.environment == 'development' && 'DEVELOP' || 'MASTER' }}"
+          echo "Rama desde donde se ejecutó: ${{ github.ref_name }}"
           echo "Directorio remoto: ${{ vars.REMOTE_DIR }}"

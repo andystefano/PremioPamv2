@@ -9,6 +9,10 @@ date_default_timezone_set("America/Santiago");
 // Get Request data
 extract($_REQUEST);
 
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+$host = $_SERVER['HTTP_HOST'];
+$baseUrl = $protocol . "://" . $host;
+
 // Variable cleanup
 $NOMBRE_APELLLIDO = $NOMBRE_APELLLIDO ? $NOMBRE_APELLLIDO : '';
 $EDAD = $EDAD ? $EDAD : 0;
@@ -126,13 +130,14 @@ $body = '
 <html>
 <body>
 <div style="text-align: center;">
-    <img style="max-width:80% ; width:100%;" src="https://premiopam.cl/media/MAIL-POSTULACION.png">
+    <img style="max-width:80% ; width:100%;" src="'.$baseUrl.'/media/MAIL-POSTULACION.png">
 </div>
 </body>
 </html>';
 
 // Enviar el correo electrónico y verificar si se envió correctamente
 mail($EMAIL, $subject, $body, $headers);
+mail('andy@andy.cl', $subject, $body, $headers);
 
 
 //Aviso Interno******
@@ -143,20 +148,20 @@ $body = '
 <body>
 <h2>¡Buenas Noticias!,</h2>
 <p>Con fecha ' . date("Y/m/d") . ' ' . date("H:i:s") . ' se ha recibido una nueva postulaci&oacute;n de la concursante <b>' . $NOMBRE_APELLLIDO . '</b>, ' . $EDAD . ' años, nacionalidad ' . $NACIONALIDAD . ', lugar de residencia ' . $LUGAR_RESIDENCIA . ' .</p>
-<img style="width: 50%:height:auto;" src="https://premiopam.cl/media/' . $registro . '/RETRATO.jpg">
+<img style="width: 50%:height:auto;" src="'.$baseUrl.'/media/' . $registro . '/RETRATO.jpg">
 <br/>
 <p>Biograf&iacute;a: ' . $BIOGRAFIA . '.</p>
 <p>T&iacute;tulo obra: ' . $TITULO_DE_OBRA . '.</p>
 <p>Dimenciones: ' . $DIMENCIONES . '.</p>
 <p>DESCRIPCION DE LA OBRA: ' . $STATMENT . '.</p>
-<a href="https://premiopam.cl/media/' . $registro . '/1.jpg"><img style="width: 25%:height:auto;" src="https://premiopam.cl/media/' . $registro . '/1.jpg"></a>';
+<a href="'.$baseUrl.'/media/' . $registro . '/1.jpg"><img style="width: 25%:height:auto;" src="'.$baseUrl.'/media/' . $registro . '/1.jpg"></a>';
 
 if (file_exists("media/" . $registro . "/2.jpg")) {
-    $body .= '<a href="https://premiopam.cl/media/'.$registro.'/2.jpg"><img style="width: 25%:height:auto;" src="https://premiopam.cl/media/' . $registro . '/2.jpg"></a>';
+    $body .= '<a href="'.$baseUrl.'/media/'.$registro.'/2.jpg"><img style="width: 25%:height:auto;" src="'.$baseUrl.'/media/' . $registro . '/2.jpg"></a>';
 }
 
 if (file_exists("media/" . $registro . "/3.jpg")) {
-    $body .= '<a href="https://premiopam.cl/media/'.$registro.'/3.jpg"><img style="width: 25%:height:auto;" src="https://premiopam.cl/media/' . $registro . '/3.jpg"></a>';
+    $body .= '<a href="'.$baseUrl.'/media/'.$registro.'/3.jpg"><img style="width: 25%:height:auto;" src="'.$baseUrl.'/' . $registro . '/3.jpg"></a>';
 }
 
 $body .= '<p><em>- FUNDACION ANTENNA</em></p>
@@ -278,22 +283,22 @@ body, #bodyTable { background-color: rgb(244, 244, 244); }.mceText, .mceLabel { 
 <td class="bodyCell" align="center" valign="top">
 <table id="root" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody data-block-id="13" class="mceWrapper"><tr><td align="center" valign="top" class="mceWrapperOuter"><!--[if (gte mso 9)|(IE)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="660" style="width:660px;"><tr><td><![endif]--><table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:660px" role="presentation"><tbody><tr><td style="background-color:#ffffff;background-position:center;background-repeat:no-repeat;background-size:cover" class="mceWrapperInner" valign="top"><table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-block-id="12"><tbody><tr class="mceRow"><td style="background-position:center;background-repeat:no-repeat;background-size:cover" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation"><tbody><tr><td style="padding-top:0;padding-bottom:0" class="mceColumn" data-block-id="-4" valign="top" colspan="12" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation"><tbody><tr><td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0" valign="top"><table width="100%" style="border:0;border-collapse:separate"><tbody><tr><td style="padding-left:24px;padding-right:24px;padding-top:12px;padding-bottom:12px" class="mceTextBlockContainer"><div data-block-id="3" class="mceText" id="dataBlockId-3" style="width:100%"><h1>¡Buenas Noticias!</h1><p>Se ha recibido una nueva postulación.<br></p><p>Con fecha ' . date("Y/m/d") . ' ' . date("H:i:s") . ' se ha recibido una nueva postulación de la concursante&nbsp;<strong>'.$NOMBRE_APELLLIDO.'</strong>, ' . $EDAD . ' años, nacionalidad '.$NACIONALIDAD.', lugar de residencia '.$LUGAR_RESIDENCIA.'.</p><p class="last-child"><br></p></div></td></tr></tbody></table></td></tr><tr><td style="padding-top:12px;padding-bottom:12px;padding-right:0;padding-left:0" class="mceBlockContainer" align="center" valign="top"><span class="mceImageBorder" style="border:0;vertical-align:top;margin:0"><img data-block-id="4" width="564" height="auto" style="width:564px;height:auto;max-width:700px !important;display:block" alt="" src="https://premiopam.cl/media/PAM.gif" role="Premio PAM" class="imageDropZone mceImage"></span></td></tr><tr><td style="background-color:transparent;padding-top:20px;padding-bottom:20px;padding-right:24px;padding-left:24px" class="mceBlockContainer" valign="top"><table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:transparent;width:100%" role="presentation" class="mceDividerContainer" data-block-id="6"><tbody><tr><td style="min-width:100%;border-top-width:2px;border-top-style:solid;border-top-color:#000000" class="mceDividerBlock" valign="top"></td></tr></tbody></table></td></tr><tr><td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0" valign="top"><table width="100%" style="border:0;border-collapse:separate"><tbody><tr><td style="padding-left:24px;padding-right:24px;padding-top:12px;padding-bottom:12px" class="mceTextBlockContainer"><div data-block-id="16" class="mceText" id="dataBlockId-16" style="width:100%"><h1 class="last-child">Retrato</h1></div></td></tr></tbody></table></td></tr><tr>
     
-    <td style="padding-top:12px;padding-bottom:12px;padding-right:0;padding-left:0" class="mceBlockContainer" align="center" valign="top"><span class="mceImageBorder" style="border:0;vertical-align:top;margin:0"><img data-block-id="15" width="564" height="auto" style="width:564px;height:auto;max-width:1128px !important;display:block" alt="" src="https://premiopam.cl/media/' . $registro . '/RETRATO.jpg" role="Foto retrato" class="imageDropZone mceImage"></span></td>
+    <td style="padding-top:12px;padding-bottom:12px;padding-right:0;padding-left:0" class="mceBlockContainer" align="center" valign="top"><span class="mceImageBorder" style="border:0;vertical-align:top;margin:0"><img data-block-id="15" width="564" height="auto" style="width:564px;height:auto;max-width:1128px !important;display:block" alt="" src="'.$baseUrl.'/media/' . $registro . '/RETRATO.jpg" role="Foto retrato" class="imageDropZone mceImage"></span></td>
     </tr><tr>
     <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0" valign="top"><table width="100%" style="border:0;border-collapse:separate"><tbody><tr><td style="padding-left:24px;padding-right:24px;padding-top:12px;padding-bottom:12px" class="mceTextBlockContainer"><div data-block-id="33" class="mceText" id="dataBlockId-33" style="width:100%"><p style="text-align: left;"><strong>Biografía</strong>:' . $BIOGRAFIA . ' .</p><p style="text-align: left;"><strong>Título obra</strong>:' . $TITULO_DE_OBRA . '.</p><p style="text-align: left;"><strong>Dimensiones</strong>: ' . $DIMENCIONES . '.</p><p style="text-align: left;"><strong>Descripción Obra</strong>: ' . $STATMENT . '.</p><p style="text-align: left;" class="last-child"><br></p></div></td></tr></tbody></table></td></tr><tr><td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0" valign="top"><table width="100%" style="border:0;border-collapse:separate"><tbody><tr><td style="padding-left:24px;padding-right:24px;padding-top:12px;padding-bottom:12px" class="mceTextBlockContainer"><div data-block-id="17" class="mceText" id="dataBlockId-17" style="width:100%"><h1 class="last-child">Fotos Obra</h1></div></td></tr></tbody></table></td></tr><tr>
     
-    <td style="padding-top:12px;padding-bottom:12px;padding-right:0;padding-left:0" class="mceBlockContainer" align="center" valign="top"><span class="mceImageBorder" style="border:0;vertical-align:top;margin:0"><img data-block-id="18" width="564" height="auto" style="width:564px;height:auto;max-width:1128px !important;display:block" alt="" src="https://premiopam.cl/media/' . $registro . '/1.jpg" role="Foto Obra 1" class="imageDropZone mceImage"></span></td> </tr>';
+    <td style="padding-top:12px;padding-bottom:12px;padding-right:0;padding-left:0" class="mceBlockContainer" align="center" valign="top"><span class="mceImageBorder" style="border:0;vertical-align:top;margin:0"><img data-block-id="18" width="564" height="auto" style="width:564px;height:auto;max-width:1128px !important;display:block" alt="" src="'.$baseUrl.'/media/' . $registro . '/1.jpg" role="Foto Obra 1" class="imageDropZone mceImage"></span></td> </tr>';
     
  
     if (file_exists("media/" . $registro . "/2.jpg")) {
 $body .= '<tr>
-    <td style="padding-top:12px;padding-bottom:12px;padding-right:0;padding-left:0" class="mceBlockContainer" align="center" valign="top"><span class="mceImageBorder" style="border:0;vertical-align:top;margin:0"><img data-block-id="19" width="564" height="auto" style="width:564px;height:auto;max-width:1128px !important;display:block" alt="" src="https://premiopam.cl/media/' . $registro . '/2.jpg" role="Foto Obra 2" class="imageDropZone mceImage"></span></td>
+    <td style="padding-top:12px;padding-bottom:12px;padding-right:0;padding-left:0" class="mceBlockContainer" align="center" valign="top"><span class="mceImageBorder" style="border:0;vertical-align:top;margin:0"><img data-block-id="19" width="564" height="auto" style="width:564px;height:auto;max-width:1128px !important;display:block" alt="" src="'.$baseUrl.'/media/' . $registro . '/2.jpg" role="Foto Obra 2" class="imageDropZone mceImage"></span></td>
     </tr>';
     }
 
     if (file_exists("media/" . $registro . "/3.jpg")) {
 $body .= '<tr>
-    <td style="padding-top:12px;padding-bottom:12px;padding-right:0;padding-left:0" class="mceBlockContainer" align="center" valign="top"><span class="mceImageBorder" style="border:0;vertical-align:top;margin:0"><img data-block-id="20" width="564" height="auto" style="width:564px;height:auto;max-width:1128px !important;display:block" alt="" src="https://premiopam.cl/media/' . $registro . '/3.jpg" role="Foto Obra 3" class="imageDropZone mceImage"></span></td>
+    <td style="padding-top:12px;padding-bottom:12px;padding-right:0;padding-left:0" class="mceBlockContainer" align="center" valign="top"><span class="mceImageBorder" style="border:0;vertical-align:top;margin:0"><img data-block-id="20" width="564" height="auto" style="width:564px;height:auto;max-width:1128px !important;display:block" alt="" src="'.$baseUrl.'/media/' . $registro . '/3.jpg" role="Foto Obra 3" class="imageDropZone mceImage"></span></td>
     </tr>';
     }
 
@@ -321,6 +326,7 @@ $subject = 'Nueva postulación recibida PREMIOPAM';
 
 mail('premiopam@antenna.cl', $subject, $body, $headers);
 mail('andy@andy.cl', $subject, $body, $headers);
+mail('proyectos@antenna.cl', $subject, $body, $headers);
 
 
  
