@@ -30,7 +30,6 @@ function Presentadores() {
 
 <div className='promo'>
 <HiOutlineArrowNarrowRight className="hidden text-[#f0000c]  md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
-
 <h4>Primer lugar:</h4>
 <h3>$5.000.000</h3>
 <h4>Premio del público:</h4>

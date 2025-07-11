@@ -1270,6 +1270,12 @@ input[type="submit"]:hover {
 @media (max-width: 768px) {
 
  
+  .promo {
+    margin-left: 0rem !important; 
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
   .ganadoras-btn-presentan{
         margin-left: 0rem;
         text-align: center;

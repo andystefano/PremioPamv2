@@ -16,6 +16,8 @@ function Section1() {
          <Presentadores/>                        
         </div>
         <div className="contenido">
+
+          
           <h2 className="contenido__titulo">PREMIO PAM 2025 <b>|</b> <span>SEIS AÑOS, SEIS RAZONES</span></h2>
           <h1 className='titulo_principal'>
           SEIS EDICIONES CELEBRANDO<br/>
@@ -51,6 +53,8 @@ function Section1() {
               </a>
         )}   
 
+        
+
 <HiOutlineArrowNarrowRight className="mt-0 text-[#f0000c] mr-2 flex-shrink-0 self-start  block md:hidden lg:hidden xl:hidden" size={65} />
 
           <div className="md:flex md:items-start md:mt-[6.5rem] lg:mt-[6.5rem] xl:mt-[6.5rem] text-[#F0000C] ml-0 w-full">
@@ -72,6 +76,9 @@ function Section1() {
 </ol>
     
             </div>
+
+
+            
            
           </div>
         </div>
@@ -124,13 +131,25 @@ function Section1() {
         </div>
 
         <div className="ganadoras-btn-presentan mb-12 md:mb-28  lg:mb-28  xl:mb-28  mt-16  block md:hidden lg:hidden xl:hidden"> 
-                <a
+                <a id='postula_btn_desk'
                   className=""
                   href="/postulacion"
                 >
                   POSTULA AQUÍ
                 </a>
         </div>
+
+
+
+        <div className='promo'>
+<HiOutlineArrowNarrowRight className="hidden text-[#f0000c]  md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
+<h4>Primer lugar:</h4>
+<h3>$5.000.000</h3>
+<h4>Premio del público:</h4>
+<h3>$2.000.000</h3>
+<h4>Menciones honrosas (2):</h4>
+<h3>$1.500.000</h3>
+</div>
 
       </div>
     </section>
