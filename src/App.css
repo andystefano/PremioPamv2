@@ -799,7 +799,30 @@ margin-left: 2.9rem;
   color: #E9D9FC;
 }
 
+#postula_btn_desk{
+  background-color: #D7040E;
+  color: #E9D9FC;  
+}
 
+.promo{
+  margin-left: 2.9rem;
+  margin-bottom: 2rem;
+}
+
+.promo > h4{
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: normal;
+  color: #F0000C;
+}
+
+.promo > h3{
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: normal;
+  color: #F0000C;
+  margin-bottom: 1.1rem;
+}
 
 .postular-btns {
   margin-top: 65px;

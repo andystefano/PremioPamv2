@@ -1,4 +1,6 @@
 import React  from 'react';
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+
 
 function Presentadores() {
 
@@ -6,7 +8,7 @@ function Presentadores() {
 
 
        <div className="ganadoras-btn-presentan"> 
-                <a
+                <a id='postula_btn_desk'
                   className=""
                   href="/postulacion"
                 >
@@ -25,6 +27,19 @@ function Presentadores() {
                   BASES 2025
                 </a>
         </div>
+
+<div className='promo'>
+<HiOutlineArrowNarrowRight className="hidden md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
+
+<h4>Primer lugar:</h4>
+<h3>$55.000.000</h3>
+<h4>Premio del público:</h4>
+<h3>$2.000.000</h3>
+<h4>Menciones honrosas (2):</h4>
+<h3>$51.500.000</h3>
+</div>
+
+
         {/* <h2 className="presentan__titulo">PRESENTA:</h2> 
         <img src="img/PRESENTA.png" alt='Fundación Antenna' className=''  />  
 
