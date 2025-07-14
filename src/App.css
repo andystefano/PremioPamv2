@@ -800,13 +800,13 @@ margin-left: 2.9rem;
 }
 
 #postula_btn_desk{
-  background-color: #D7040E;
+  background-color: #f0000c;
   color: #E9D9FC;  
 }
 
 .promo{
   margin-left: 2.9rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .promo > h4{
@@ -1272,10 +1272,18 @@ input[type="submit"]:hover {
  
   .promo {
     margin-left: 0rem !important; 
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
     text-align: center;
 }
 
+.promo > h4{
+  font-size: 1.1rem;
+}
+
+
+.promo > h3{
+  font-size: 1.4rem;;
+}
   .ganadoras-btn-presentan{
         margin-left: 0rem;
         text-align: center;
