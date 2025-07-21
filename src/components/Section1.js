@@ -54,7 +54,7 @@ function Section1() {
           </div>
 
 
-          <h2 className="contenido__titulo">PREMIO PAM 2025 <b>|</b> <span>SEIS AÑOS, SEIS RAZONES</span></h2>
+          <h2 className="contenido__titulo">PREMIO PAM 2025</h2>
           <h1 className='titulo_principal'>
             SEIS EDICIONES CELEBRANDO<br />
             A LAS MUJERES ARTISTAS EN CHILE.
