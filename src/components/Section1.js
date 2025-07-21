@@ -60,17 +60,28 @@ function Section1() {
             A LAS MUJERES ARTISTAS EN CHILE.
           </h1>
 
-          <p className="font-inter text-[#F0000C] text-xl md:text-2xl md:leading-[2.1rem]  lg:text-2xl lg:leading-[2.1rem]  xl:text-2xl xl:leading-[2.1rem]    font-semibold	md:mt-[4.4rem] lg:mt-[4.4rem] xl:mt-[4.4rem] max-w-[100%] md:max-w-[700px] lg:max-w-[700px]  xl:max-w-[700px]  px-0 md:px-0 lg:px-0 xl:px-0 ">
-            Reconocemos a mujeres artistas visuales sobre los 60 años,
-            en plena vigencia creativa.
+
+          <p className="font-inter text-[#F0000C] text-xl md:text-2xl lg:text-2xl xl:text-2xl font-ligth mt-5 max-w-[100%] md:max-w-[700px] lg:max-w-[700px]  xl:max-w-[950px] px-0 md:px-0 lg:px-0 xl:px-0 [word-spacing:3px]">
+          Si eres una mujer artista, con o sin trayectoria, y tienes más de 60 años esta convocatoria es para ti.
           </p>
 
-          <p className="font-inter text-[#F0000C] text-xl md:text-2xl lg:text-2xl xl:text-2xl font-ligth mt-5 max-w-[100%] md:max-w-[700px] lg:max-w-[700px]  xl:max-w-[700px] px-0 md:px-0 lg:px-0 xl:px-0 [word-spacing:3px]">
-            Si eres artista, o conoces a una creadora que merezca este
-            reconocimiento, este es tu momento.
+          <HiOutlineArrowNarrowRight className="mt-0 text-[#f0000c] mr-2 flex-shrink-0 self-start  block md:hidden lg:hidden xl:hidden" size={65} />
+
+              <div className="md:flex md:items-start md:mt-[2rem] lg:mt-[2rem] xl:mt-[2rem] text-[#F0000C] ml-0 w-full">
+                <HiOutlineArrowNarrowRight className="hidden md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
+                <h3 className="font-roboto text-xl mx-0 md:mx-4 lg:mx-4 xl:mx-4 md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
+                $10.000.000 en premios, $5.000.000 para el primer lugar. 
+                </h3>
+              </div>
+
+          <p className="font-inter text-[#F0000C] text-xl md:text-2xl lg:text-2xl xl:text-2xl font-ligth mt-5 max-w-[100%] md:max-w-[700px] lg:max-w-[700px]  xl:max-w-[950px] px-0 md:px-0 lg:px-0 xl:px-0 [word-spacing:3px]">
+              No importa si llevas décadas creando o si estás mostrando tu primera obra: queremos conocer tu trabajo y visibilizar tu historia.
           </p>
 
 
+          <p className="font-inter text-[#F0000C] text-xl md:text-2xl lg:text-2xl xl:text-2xl font-ligth mt-5 max-w-[100%] md:max-w-[700px] lg:max-w-[700px]  xl:max-w-[950px] px-0 md:px-0 lg:px-0 xl:px-0 [word-spacing:3px]">
+          Premio PAM de Fundación Antenna y Bank of America es un reconocimiento que, desde hace seis años, destaca el trabajo de mujeres artistas visuales mayores de 60 años en Chile.
+          </p>
 
           <div className="texto__premios">
 
@@ -90,13 +101,9 @@ function Section1() {
               )}
 
 
-
-              <HiOutlineArrowNarrowRight className="mt-0 text-[#f0000c] mr-2 flex-shrink-0 self-start  block md:hidden lg:hidden xl:hidden" size={65} />
-
-              <div className="md:flex md:items-start md:mt-[6.5rem] lg:mt-[6.5rem] xl:mt-[6.5rem] text-[#F0000C] ml-0 w-full">
-                <HiOutlineArrowNarrowRight className="hidden md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
-                <h3 className="font-roboto text-xl mx-0 md:mx-4 lg:mx-4 xl:mx-4 md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
-                  ¿POR QUÉ PREMIAR A MUJERES ARTISTAS SOBRE LOS 60 AÑOS?
+              <div className="md:flex md:items-start md:mt-[1rem] lg:mt-[1rem] xl:mt-[1rem] text-[#F0000C] ml-0 w-full">
+                <h3 className="font-roboto text-xl mx-0  md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
+                  ¿POR QUÉ EXISTE ESTE PREMIO?                  
                 </h3>
               </div>
 
@@ -108,7 +115,7 @@ function Section1() {
                 <li className='pt-4'><span className='font-bold'>Porque</span> su camino inspira a quienes están comenzando.</li>
                 <li className='pt-4'><span className='font-bold'>Porque</span> la trayectoria merece ser reconocida en vida.</li>
                 <li className='pt-4'><span className='font-bold'>Porque</span> cada obra es una declaración de libertad y vigencia.</li>
-                <li className='pt-4 pb-8 md:pb-12 lg:pb-12 xl:pb-12'><span className='font-bold'>Porque</span> ya son seis ediciones y seguimos encontrando razones para visibilizarlas.</li>
+                <li className='pt-4'><span className='font-bold'>Porque</span> ya son seis ediciones y seguimos encontrando razones para visibilizarlas.</li>
               </ol>
 
             </div>
@@ -117,6 +124,43 @@ function Section1() {
 
 
           </div>
+
+
+
+          <div className="md:flex md:items-start md:mt-[1rem] lg:mt-[1rem] xl:mt-[1rem] text-[#F0000C] ml-0 w-full">
+                <h3 className="font-roboto text-xl mx-0  md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
+                  ¿QUIENES PUEDEN POSTULAR?                  
+                </h3>
+          </div>
+
+
+          <p className="font-inter text-[#F0000C] text-xl md:text-2xl lg:text-2xl xl:text-2xl font-ligth mt-5 max-w-[100%] md:max-w-[700px] lg:max-w-[700px]  xl:max-w-[950px] px-0 md:px-0 lg:px-0 xl:px-0 [word-spacing:3px]">
+          Mujeres artistas visuales, con y sin trayectoria, mayores de 60 años, nacidas o residentes en Chile, y chilenas residentes en el extranjero.
+          </p>          
+
+
+
+          <p className="font-inter text-[#F0000C] text-xl md:text-2xl lg:text-2xl xl:text-2xl font-ligth mt-5 max-w-[100%] md:max-w-[700px] lg:max-w-[700px]  xl:max-w-[950px] px-0 md:px-0 lg:px-0 xl:px-0 [word-spacing:3px]">
+          Puedes postular tú misma o ser postulada por otra persona.
+          </p>     
+
+
+
+          <p className="font-inter text-[#F0000C] text-xl md:text-2xl lg:text-2xl xl:text-2xl font-ligth mt-5 max-w-[100%] md:max-w-[700px] lg:max-w-[700px]  xl:max-w-[950px] px-0 md:px-0 lg:px-0 xl:px-0 [word-spacing:3px]">
+          <span className='font-bold'>Es un premio para artistas con y sin trayectoria.</span> Buscamos reconocer y visibilizar tu trabajo en el momento presente, sin importar cuántas exposiciones tengas o si estás comenzando.
+
+          </p>  
+
+
+          <div className="ganadoras-btn-presentan   mt-16 mb-5 block  " style={{marginLeft: '0rem' }}>
+            <a id='postula_btn_desk'
+              className=""
+              href="/postulacion"
+            >
+              POSTULA AQUÍ
+            </a>
+          </div>
+
         </div>
 
         <div className="icons-header">
