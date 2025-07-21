@@ -18,7 +18,7 @@ function Presentadores() {
 
 
 
-       <div className="ganadoras-btn-presentan mb-10 mt-16"> 
+       <div className="ganadoras-btn-presentan mb-40 mt-16"> 
                 <a
                   className=""
                   target='_blank'
@@ -28,15 +28,6 @@ function Presentadores() {
                 </a>
         </div>
 
-<div className='promo'>
-<HiOutlineArrowNarrowRight className="hidden text-[#f0000c]  md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
-<h4>Primer lugar:</h4>
-<h3>$5.000.000</h3>
-<h4>Premio del público:</h4>
-<h3>$2.000.000</h3>
-<h4>Menciones honrosas (2):</h4>
-<h3>$1.500.000</h3>
-</div>
 
 
         {/* <h2 className="presentan__titulo">PRESENTA:</h2> 

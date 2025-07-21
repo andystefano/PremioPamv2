@@ -56,8 +56,9 @@ function Section1() {
 
           <h2 className="contenido__titulo">PREMIO PAM 2025</h2>
           <h1 className='titulo_principal'>
-            SEIS EDICIONES CELEBRANDO<br />
-            A LAS MUJERES ARTISTAS EN CHILE.
+          6 AÑOS, 6 RAZONES<br />
+          PARA POSTULAR
+
           </h1>
 
 
@@ -69,7 +70,7 @@ function Section1() {
 
               <div className="md:flex md:items-start md:mt-[2rem] lg:mt-[2rem] xl:mt-[2rem] text-[#F0000C] ml-0 w-full">
                 <HiOutlineArrowNarrowRight className="hidden md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
-                <h3 className="font-roboto text-xl mx-0 md:mx-4 lg:mx-4 xl:mx-4 md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
+                <h3 className="font-inter text-xl mx-0 md:mx-4 lg:mx-4 xl:mx-4 md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
                 $10.000.000 en premios, $5.000.000 para el primer lugar. 
                 </h3>
               </div>
@@ -102,7 +103,7 @@ function Section1() {
 
 
               <div className="md:flex md:items-start md:mt-[1rem] lg:mt-[1rem] xl:mt-[1rem] text-[#F0000C] ml-0 w-full">
-                <h3 className="font-roboto text-xl mx-0  md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
+                <h3 className="font-inter text-xl mx-0  md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
                   ¿POR QUÉ EXISTE ESTE PREMIO?                  
                 </h3>
               </div>
@@ -128,7 +129,7 @@ function Section1() {
 
 
           <div className="md:flex md:items-start md:mt-[1rem] lg:mt-[1rem] xl:mt-[1rem] text-[#F0000C] ml-0 w-full">
-                <h3 className="font-roboto text-xl mx-0  md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
+                <h3 className="font-inter text-xl mx-0  md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
                   ¿QUIENES PUEDEN POSTULAR?                  
                 </h3>
           </div>
