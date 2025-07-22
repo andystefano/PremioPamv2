@@ -42,18 +42,6 @@ function Section1() {
           </div>
 
 
-
-          <div className='promo block md:hidden lg:hidden xl:hidden'>
-            <HiOutlineArrowNarrowRight className="hidden text-[#f0000c]  md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
-            <h4>Primer lugar:</h4>
-            <h3>$5.000.000</h3>
-            <h4>Premio del público:</h4>
-            <h3>$2.000.000</h3>
-            <h4>Menciones honrosas (2):</h4>
-            <h3>$1.500.000</h3>
-          </div>
-
-
           <h2 className="contenido__titulo">PREMIO PAM 2025</h2>
           <h1 className='titulo_principal'>
           6 AÑOS, 6 RAZONES<br />
@@ -70,7 +58,7 @@ function Section1() {
 
               <div className="md:flex md:items-start md:mt-[2rem] lg:mt-[2rem] xl:mt-[2rem] text-[#F0000C] ml-0 w-full">
                 <HiOutlineArrowNarrowRight className="hidden md:block lg:block xl:block mr-1 flex-shrink-0" size={65} />
-                <h3 className="font-inter text-xl mx-0 md:mx-4 lg:mx-4 xl:mx-4 md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
+                <h3 className="font-inter text-xl mx-0 md:mx-4 lg:mx-4 xl:mx-4 md:text-2xl lg:text-2xl xl:text-2xl  font-bold mt-3">
                 $10.000.000 en premios, $5.000.000 para el primer lugar. 
                 </h3>
               </div>
@@ -84,7 +72,7 @@ function Section1() {
           Premio PAM de Fundación Antenna y Bank of America es un reconocimiento que, desde hace seis años, destaca el trabajo de mujeres artistas visuales mayores de 60 años en Chile.
           </p>
 
-          <div className="texto__premios">
+          <div className="texto__premios my-15">
 
 
 
@@ -102,8 +90,8 @@ function Section1() {
               )}
 
 
-              <div className="md:flex md:items-start md:mt-[1rem] lg:mt-[1rem] xl:mt-[1rem] text-[#F0000C] ml-0 w-full">
-                <h3 className="font-inter text-xl mx-0  md:text-2xl lg:text-2xl xl:text-2xl  font-black mt-3">
+              <div className="md:flex md:items-start text-[#F0000C] ml-0 w-full">
+                <h3 className="font-inter text-xl mx-0  md:text-2xl lg:text-2xl xl:text-2xl  font-black">
                   ¿POR QUÉ EXISTE ESTE PREMIO?                  
                 </h3>
               </div>
