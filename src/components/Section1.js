@@ -15,7 +15,7 @@ function Section1() {
         <div className="presentan h-full flex flex-col justify-start hidden md:block lg:block xl:block">
           <Presentadores />
         </div>
-        <div className="contenido">
+        <div className="contenido pb-12">
 
 
 
@@ -72,7 +72,7 @@ function Section1() {
           Premio PAM de Fundación Antenna y Bank of America es un reconocimiento que, desde hace seis años, destaca el trabajo de mujeres artistas visuales mayores de 60 años en Chile.
           </p>
 
-          <div className="texto__premios my-15">
+          <div className="texto__premios my-14">
 
 
 
@@ -141,7 +141,7 @@ function Section1() {
           </p>  
 
 
-          <div className="ganadoras-btn-presentan   mt-16 mb-5 block  " style={{marginLeft: '0rem' }}>
+          <div className="ganadoras-btn-presentan   mt-16 mb-12 block  " style={{marginLeft: '0rem' }}>
             <a id='postula_btn_desk'
               className=""
               href="/postulacion"
