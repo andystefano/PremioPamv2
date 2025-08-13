@@ -1024,6 +1024,8 @@ function SectionFormPostula() {
                       </div>
                     </div>
 
+      
+
                     <div className="frow">
                       <div className="c2">
                         <label>Fotografía de la obra 1* </label>
@@ -1121,18 +1123,24 @@ function SectionFormPostula() {
                             alt="Upload"
                           />
                         </label>
+
+                        
                       </div>
-                      <div className="c2">{/* Espacio vacío */}</div>
+                      <div className="c2">
+                        <p className="font-inter text-[#F0000C] text-base font-medium mt-20 block">
+                          Postula con una (1) obra. Recuerda que no debe salir tu rostro ni firma en la foto.</p>
+                      </div>
                     </div>
 
                     <div className="frow">
-                      <div className="c1">
+                      <div className="c2">
                         <label>Para obras audiovisuales escribir link</label>
                         <Field type="text" name="LINK_WEB" id="LINK_WEB" />
                         <div className="ErrorMessage">
                           <ErrorMessage name="LINK_WEB" component="div" />
                         </div>
                       </div>
+                      
                     </div>
                   </fieldset>
 
