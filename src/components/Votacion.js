@@ -109,6 +109,8 @@ function Votacion({ votar = true }) {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search)
       const token = urlParams.get('token')
+      const numeroParam = urlParams.get('numero')
+      
       if (token) {
       console.log('se confirma el voto aquiii');
       fetch("https://premiopam.cl/confirma.php?token=" + token)
@@ -150,6 +152,11 @@ function Votacion({ votar = true }) {
           const shuffledData = [...data].sort(() => Math.random() - 0.5);
           setPostulaciones(shuffledData);
           setFilteredPostulaciones(shuffledData);
+          
+          // Si hay parámetro numero en la URL, establecerlo en el buscador
+          if (numeroParam) {
+            setSearchTerm(numeroParam);
+          }
         })
         .catch((error) => console.log(error));
 
