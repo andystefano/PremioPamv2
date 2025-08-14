@@ -2,6 +2,7 @@ import { FaInstagram } from "react-icons/fa6";
 import { ImFacebook } from "react-icons/im";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
+import { FaShare } from "react-icons/fa";
 import Presentadores from "./Presentadores"; // Si es una exportación por defecto
 import Lightbox from "./Lightbox"; // Si es una exportación por defecto
 import ContactFormLightbox from "./ContactFormLightbox";
@@ -309,6 +310,28 @@ function Votacion({ votar = true }) {
             <span className="font-bold">Residencia</span>: {capitalizeText(data.REGION_RESIDENCIA)}
           </p>
           
+          {/* Botón de compartir en esquina inferior derecha de cada tarjeta */}
+          <div className="flex justify-end mt-4">
+            <button
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({
+                    title: `Obra: ${data.TITULO_DE_OBRA}`,
+                    text: `Mira esta obra del Premio PAM: ${data.TITULO_DE_OBRA} - Número ${data.NUMERO}`,
+                    url: window.location.href
+                  });
+                } else {
+                  // Fallback para navegadores que no soportan Web Share API
+                  navigator.clipboard.writeText(window.location.href);
+                  // Aquí podrías mostrar un toast o alert de confirmación
+                }
+              }}
+              className="bg-[#f0000c] hover:bg-[#d0000a] text-white p-2 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+              title="Compartir obra"
+            >
+              <FaShare className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
       </div>
@@ -402,9 +425,9 @@ function Votacion({ votar = true }) {
           isOpen={contactFormOpen}
           closeLightbox={closeContactForm}
           idPostulacion={idPostulacion}
-        />
-    </section>
-  );
-}
+                          />
+      </section>
+   );
+ }
 
 export default Votacion;
