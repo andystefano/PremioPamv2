@@ -142,7 +142,11 @@ function Votacion({ votar = true }) {
 
         fetch("https://v2024.premiopam.cl/lista_preseleccion.php")
         .then((response) => response.json())
-        .then((data) => setPostulaciones(data))
+        .then((data) => {
+          // Mezclar aleatoriamente el array de postulaciones
+          const shuffledData = [...data].sort(() => Math.random() - 0.5);
+          setPostulaciones(shuffledData);
+        })
         .catch((error) => console.log(error));
 
         setLoading(false)
