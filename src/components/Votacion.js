@@ -1,6 +1,7 @@
 import { FaInstagram } from "react-icons/fa6";
 import { ImFacebook } from "react-icons/im";
 import { AiOutlineLinkedin } from "react-icons/ai";
+import { FaSearch } from "react-icons/fa";
 import Presentadores from "./Presentadores"; // Si es una exportación por defecto
 import Lightbox from "./Lightbox"; // Si es una exportación por defecto
 import ContactFormLightbox from "./ContactFormLightbox";
@@ -25,6 +26,8 @@ function Votacion({ votar = true }) {
   const [ postulacionItem, setPostulacionItem ] = useState('');
   const [ postulacionVideo, setPostulacionVideo ] = useState('');
   const [loadingImg, setLoadingImg] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredPostulaciones, setFilteredPostulaciones] = useState([]);
 
   //  const { setLoading } = useContext(LoaderContext);
 
@@ -146,6 +149,7 @@ function Votacion({ votar = true }) {
           // Mezclar aleatoriamente el array de postulaciones
           const shuffledData = [...data].sort(() => Math.random() - 0.5);
           setPostulaciones(shuffledData);
+          setFilteredPostulaciones(shuffledData);
         })
         .catch((error) => console.log(error));
 
@@ -155,6 +159,18 @@ function Votacion({ votar = true }) {
     }
 
   }, []);
+
+  // Función para filtrar postulaciones
+  useEffect(() => {
+    if (searchTerm.trim() === '') {
+      setFilteredPostulaciones(postulaciones);
+    } else {
+      const filtered = postulaciones.filter(postulacion => 
+        postulacion.NUMERO.toString().includes(searchTerm.trim())
+      );
+      setFilteredPostulaciones(filtered);
+    }
+  }, [searchTerm, postulaciones]);
 
   const capitalizeText = (str) => {
     let formattedText = str
@@ -315,9 +331,42 @@ function Votacion({ votar = true }) {
           </ol>
         </div>)}
 
+        {/* Buscador */}
+        <div className="w-full mx-auto container mb-8">
+          <div className="max-w-md mx-auto">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <FaSearch className="h-5 w-5 text-gray-400" />
+              </div>
+              <input
+                type="text"
+                placeholder="Buscar por número de postulación..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg leading-5 bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-[#f0000c] focus:border-[#f0000c] transition-all duration-200 shadow-sm"
+                style={{
+                  backgroundColor: "#fff6e6",
+                  borderColor: "#e9d9fc",
+                  fontFamily: "'Roboto Mono', monospace"
+                }}
+              />
+            </div>
+            {searchTerm && (
+              <div className="mt-2 text-center">
+                <span className="text-sm text-gray-600 font-roboto">
+                  {filteredPostulaciones.length === 0 
+                    ? "No se encontraron postulaciones con ese número" 
+                    : `Se encontraron ${filteredPostulaciones.length} postulación${filteredPostulaciones.length !== 1 ? 'es' : ''}`
+                  }
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+
         <div className="w-full mx-auto container">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {postulaciones.map((postulacion) => {
+        {filteredPostulaciones.map((postulacion) => {
           // Llamas a setPostulacionItem con el postulacion actual
           
           
