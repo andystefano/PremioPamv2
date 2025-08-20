@@ -246,6 +246,8 @@ function Votacion({ votar = true }) {
     }
 
     return (
+      
+      <div>
       <div
         className="border-[5px] border-[#e9d9fc]    hover:border-[5px] hover:border-[#f0000c] transition-all duration-300 "
         style={{ backgroundColor: "#fff6e6" }}
@@ -281,37 +283,38 @@ function Votacion({ votar = true }) {
           </div>
         )}     
 
-        <div className="w-full text-black p-5">
-          <h2
-            className="text-black font-black text-4xl relative top-0 right-0"
-            style={{ lineHeight: "36px",float: "right" }}
-          >
-            /{data.NUMERO}
-          </h2>
-          <p className="text-black text-normal text-caracteristicas break-words">
-            <span className="font-bold">Título</span>: {data.TITULO_DE_OBRA}.
-          </p>
-          <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Año Creacion</span>: {data["YEAR(FECHA_CREACION)"]}.
-          </p>
-          <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Técnica</span>: <span className="">{capitalizeText(data.TECNICA)}</span>
-          </p>
-          <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Dimensiones</span>: {data.DIMENCIONES}.
-          </p>
-          <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Edad</span>: {data.EDAD}.
-          </p>
-          <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Nacionalidad</span>: {capitalizeText(data.NACIONALIDAD)}
-          </p>
-          <p className="text-black text-normal text-caracteristicas">
-            <span className="font-bold">Residencia</span>: {capitalizeText(data.REGION_RESIDENCIA)}
-          </p>
-          
-          {/* Botón de compartir en esquina inferior derecha de cada tarjeta */}
-          <div className="flex justify-end mt-4">
+                                   <div className="w-full text-black p-5 min-h-[300px]">
+            <h2
+              className="text-black font-black text-4xl relative top-0 right-0"
+              style={{ lineHeight: "36px",float: "right" }}
+            >
+              /{data.NUMERO}
+            </h2>
+            <p className="text-black text-normal text-caracteristicas break-words">
+              <span className="font-bold">Título</span>: {data.TITULO_DE_OBRA}.
+            </p>
+            <p className="text-black text-normal text-caracteristicas">
+              <span className="font-bold">Año Creacion</span>: {data["YEAR(FECHA_CREACION)"]}.
+            </p>
+            <p className="text-black text-normal text-caracteristicas">
+              <span className="font-bold">Técnica</span>: <span className="">{capitalizeText(data.TECNICA)}</span>
+            </p>
+            <p className="text-black text-normal text-caracteristicas">
+              <span className="font-bold">Dimensiones</span>: {data.DIMENCIONES}.
+            </p>
+            <p className="text-black text-normal text-caracteristicas">
+              <span className="font-bold">Edad</span>: {data.EDAD}.
+            </p>
+            <p className="text-black text-normal text-caracteristicas">
+              <span className="font-bold">Nacionalidad</span>: {capitalizeText(data.NACIONALIDAD)}
+            </p>
+            <p className="text-black text-normal text-caracteristicas">
+              <span className="font-bold">Residencia</span>: {capitalizeText(data.REGION_RESIDENCIA)}
+            </p>
+          </div>
+
+          {/* Botón de compartir debajo del contenido */}
+          <div className="w-full flex justify-end p-3" style={{ backgroundColor: "rgb(255, 246, 230);" }}>
             <button
               onClick={() => {
                 if (navigator.share) {
@@ -332,9 +335,10 @@ function Votacion({ votar = true }) {
               <FaShare className="w-4 h-4" />
             </button>
           </div>
-        </div>
 
-      </div>
+       </div>
+
+</div>
     );
   };
 
